@@ -1,33 +1,31 @@
 import { stories, characters } from "./data/stories.js";
 const $ = (s, r = document) => r.querySelector(s);
 
-// Character illustration component
-const avatar = (c) => `<svg viewBox="0 0 120 140" role="img" aria-label="Illustration of ${c.name}">
+// Character illustration (used only in the Instagram series strip)
+const avatar = (c) => `<svg viewBox="0 0 120 140" role="img" aria-label="Illustration of ${c.name}, a character from the Tiny Stories series">
 <path d="M16 140c0-32 20-44 44-44s44 12 44 44z" fill="${c.top}"/><circle cx="60" cy="62" r="34" fill="#fbe3d0"/>
 <path d="M25 64c-2-30 14-44 35-44s37 14 35 44c-7-16-21-24-35-24S32 48 25 64z" fill="${c.hair}"/>${c.bun ? `<circle cx="60" cy="15" r="11" fill="${c.hair}"/>` : ""}
 <circle cx="47" cy="68" r="3.2" fill="#2d2a2e"/><circle cx="73" cy="68" r="3.2" fill="#2d2a2e"/>
 <ellipse cx="40" cy="77" rx="6" ry="3.5" fill="#f4a6b4" opacity=".6"/><ellipse cx="80" cy="77" rx="6" ry="3.5" fill="#f4a6b4" opacity=".6"/>
 <path d="M53 79q7 7 14 0" stroke="#2d2a2e" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>`;
 
-// Hero scene
-$("#hero-scene").innerHTML = `<span class="bubble a" lang="ja">こんにちは！</span><span class="bubble b">Hi, I'm Alex!</span>` +
- characters.map((c) => `<div class="ch">${avatar(c)}</div>`).join("");
+$("#ig-chars").innerHTML = characters.map(avatar).join("");
 
-// Character cards
-$("#characters").innerHTML = characters.map((c) => `<article class="card person">${avatar(c)}<div><h3>${c.name}</h3><p>${c.blurb}</p></div></article>`).join("");
-
-// Story cards
+// Free-content story cards
 $("#story-list").innerHTML = stories.map((s, i) => `<article class="card story">
  <div class="thumb"><span lang="ja">${s.phrase}</span><span class="play" aria-hidden="true"></span></div>
  <div class="sbody"><div class="badges"><span>${s.difficulty}</span><span>${s.category}</span></div>
  <h3>${s.title}</h3><p lang="ja" style="font-weight:700">${s.phrase}</p><p>${s.description}</p>
  <button class="btn" data-i="${i}" aria-label="Watch story: ${s.title}">Watch story</button></div></article>`).join("");
 
+// Instagram series quick links
+$("#ig-stories").innerHTML = stories.map((s, i) => `<li><button data-i="${i}">${s.title}</button></li>`).join("");
+
 // Video component: mp4/webm, YouTube, Instagram, or placeholder
 function player(u, t) {
  if (!u) return `<div class="vid"><p>The video for “${t}” will play here.</p></div>`;
  const y = u.match(/(?:youtu\.be\/|v=|shorts\/)([\w-]{11})/);
- let inner = /\.(mp4|webm)(\?|$)/.test(u) ? `<video controls playsinline preload="none" src="${u}"></video>`
+ const inner = /\.(mp4|webm)(\?|$)/.test(u) ? `<video controls playsinline preload="none" src="${u}"></video>`
   : y ? `<iframe src="https://www.youtube-nocookie.com/embed/${y[1]}" title="${t}" allowfullscreen loading="lazy"></iframe>`
   : `<iframe src="${u.replace(/\/?(\?.*)?$/, "/")}embed" title="${t}" loading="lazy"></iframe>`;
  return `<div class="vid">${inner}</div>`;
@@ -43,7 +41,7 @@ function openStory(s) {
  $(".close", body).onclick = () => dlg.close();
  dlg.showModal();
 }
-$("#story-list").addEventListener("click", (e) => { const b = e.target.closest("[data-i]"); if (b) openStory(stories[b.dataset.i]); });
+document.addEventListener("click", (e) => { const b = e.target.closest("[data-i]"); if (b) openStory(stories[b.dataset.i]); });
 dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
 dlg.addEventListener("close", () => (body.innerHTML = ""));
 

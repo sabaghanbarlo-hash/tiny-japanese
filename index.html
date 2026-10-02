@@ -3,19 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tiny Japanese | Learn Japanese Through Tiny Stories</title>
-<meta name="description" content="Learn Japanese through short conversations, everyday situations, and tiny stories. Beginner-friendly Japanese lessons from Tiny Japanese.">
+<title>Learn Japanese Through Anime, Stories &amp; Real Japanese | Tiny Japanese</title>
+<meta name="description" content="Learn Japanese through anime, stories, and real conversations. Japanese for beginners, Japanese phrases, vocabulary, and grammar from Tiny Japanese.">
 <meta name="theme-color" content="#fbf6ee">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Tiny Japanese 🇯🇵">
-<meta property="og:description" content="Japanese, one tiny story at a time.">
+<meta property="og:title" content="Tiny Japanese | Learn Japanese through the things you love">
+<meta property="og:description" content="Japanese for beginners, real conversations, and (soon) Japanese through anime.">
 <meta property="og:image" content="https://sabaghanbarlo-hash.github.io/tiny-japanese/og.svg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23b8475c'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white'%3E%E6%97%A5%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;900&display=swap">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="theme.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -24,93 +25,119 @@
  <a class="logo" href="#top" aria-label="Tiny Japanese home"><span class="seal" lang="ja">日</span>Tiny Japanese</a>
  <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span><span></span></button>
  <nav id="menu" aria-label="Main">
-  <a href="#stories">Stories</a><a href="#about">About</a>
+  <a href="#top">Home</a><a href="#learn">Learn</a><a href="#anime">Anime Japanese</a><a href="#resources">Resources</a><a href="#about">About</a>
   <a class="btn sm" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
  </nav>
 </header>
 <main id="main">
 <section class="hero" id="top">
- <div class="drift" aria-hidden="true" lang="ja"><i>こ</i><i>ん</i><i>に</i><i>ち</i><i>は</i></div>
  <div class="wrap hero-grid">
   <div>
-   <p class="eyebrow">Beginner Japanese · 日本語</p>
-   <h1>Japanese, one tiny story at a time.</h1>
-   <p class="lead">Learn Japanese through short conversations, everyday situations, and little stories you'll actually remember.</p>
-   <div class="cta-row"><a class="btn" href="#stories">Watch the stories</a><a class="btn ghost" href="https://www.instagram.com/" target="_blank" rel="noopener">Follow on Instagram</a></div>
+   <p class="eyebrow">A modern Japanese-learning space</p>
+   <h1>Learn Japanese through the things you love.</h1>
+   <p class="lead">Conversations, everyday phrases, vocabulary, grammar, culture, and anime. Japanese can feel overwhelming at first. Let's make it smaller.</p>
+   <div class="cta-row"><a class="btn" href="#learn">Start Learning</a><a class="btn ghost" href="https://www.instagram.com/" target="_blank" rel="noopener">Follow on Instagram</a></div>
   </div>
-  <div class="scene" id="hero-scene" aria-label="Mika and Alex chatting"></div>
+  <ul class="notebook" aria-label="Japanese words and their meanings">
+   <li class="big"><span class="jp" lang="ja">日本語</span><small>nihongo · the Japanese language</small></li>
+   <li><span class="jp" lang="ja">学ぶ</span><small>manabu · to learn</small></li>
+   <li><span class="jp" lang="ja">ことば</span><small>kotoba · words</small></li>
+   <li><span class="jp" lang="ja">アニメ</span><small>anime</small></li>
+   <li><span class="jp" lang="ja">日常</span><small>nichijō · everyday life</small></li>
+  </ul>
  </div>
 </section>
 
-<section class="wrap intro reveal">
- <h2>Japanese doesn't have to feel like studying.</h2>
- <p class="lead">Sometimes the easiest way to remember a new phrase is to see it happen.</p>
- <p class="lead">Tiny Japanese turns everyday Japanese into tiny conversations and stories, so you can learn naturally, one little moment at a time.</p>
- <div class="grid3">
-  <article class="card"><span class="ico" aria-hidden="true">🗣️</span><h3>Tiny Conversations</h3><p>Short Japanese conversations based on everyday situations.</p></article>
-  <article class="card"><span class="ico" aria-hidden="true">🧠</span><h3>Useful Japanese</h3><p>Learn words and phrases you can actually use.</p></article>
-  <article class="card"><span class="ico" aria-hidden="true">🌱</span><h3>Beginner Friendly</h3><p>Start small, understand more, and build your Japanese step by step.</p></article>
- </div>
+<section class="wrap split reveal">
+ <h2>A different way to learn Japanese</h2>
+ <div><p class="lead">Japanese doesn't have to be learned only from a textbook. It sticks better when it's connected to something real: a conversation, a song, a scene from a show you love.</p>
+ <p class="lead">The idea is simple. Learn one phrase. Understand why it works. Then use it.</p></div>
 </section>
 
-<section class="band reveal" aria-labelledby="how">
+<section class="band reveal" id="pillars" aria-labelledby="pl">
  <div class="wrap">
-  <h2 id="how">How Tiny Japanese works</h2>
-  <ol class="steps">
-   <li><b>01</b><h3>Watch</h3><p>Follow Mika and Alex through a tiny everyday story.</p></li>
-   <li><b>02</b><h3>Understand</h3><p>Read the Japanese, romaji, and English translation.</p></li>
-   <li><b>03</b><h3>Remember</h3><p>Take one useful phrase with you.</p></li>
-  </ol>
+  <h2 id="pl">What you'll find here</h2>
+  <p class="lead">One brand, several kinds of content. Some is here today, the rest is on its way.</p>
+  <div class="grid3">
+   <article class="card"><span class="tag now">Available now</span><h3>Mini Stories</h3><p>Short conversations and scenarios, first shared on Instagram.</p></article>
+   <article class="card"><span class="tag later">Coming later</span><h3>Japanese Basics</h3><p>Hiragana, katakana, vocabulary, grammar, and pronunciation.</p></article>
+   <article class="card"><span class="tag later">Coming later</span><h3>Real Japanese</h3><p>Everyday expressions, listening, and natural phrases.</p></article>
+   <article class="card"><span class="tag later">Coming later</span><h3>Japanese Through Anime</h3><p>Vocabulary, expressions, and context from the stories you already love.</p></article>
+   <article class="card"><span class="tag later">Coming later</span><h3>Japanese &amp; Culture</h3><p>Understand the language inside the culture it comes from.</p></article>
+  </div>
  </div>
 </section>
 
-<section class="wrap reveal" id="stories" aria-labelledby="st">
- <h2 id="st">Latest Tiny Stories</h2>
- <p class="lead">Learn Japanese through little moments.</p>
+<section class="wrap reveal" id="learn" aria-labelledby="lf">
+ <h2 id="lf">Learn for free</h2>
+ <p class="lead">Start with the Japanese you're actually excited about. Every mini conversation includes the Japanese, romaji, English, and one phrase to take with you.</p>
  <div class="grid3" id="story-list"></div>
+ <h3 class="sub">More on the way</h3>
+ <ul class="chips">
+  <li>Japanese phrases <i>Soon</i></li><li>Beginner vocabulary <i>Soon</i></li><li>Grammar guides <i>Soon</i></li><li>Anime Japanese <i>Soon</i></li>
+ </ul>
 </section>
 
-<section class="wrap reveal" aria-labelledby="bs">
- <h2 id="bs">Start with the basics</h2>
- <p class="lead">New to Japanese? Start here.</p>
- <div class="grid4">
-  <article class="card mini"><h3 lang="ja">あ Hiragana</h3><p>Learn the Japanese writing system.</p></article>
-  <article class="card mini"><h3>Basic Phrases</h3><p>Start speaking with simple everyday expressions.</p></article>
-  <article class="card mini"><h3>Everyday Japanese</h3><p>Learn phrases you'll actually hear.</p></article>
-  <article class="card mini"><h3>Conversations</h3><p>Put everything together.</p></article>
- </div>
-</section>
-
-<section class="band reveal" id="about" aria-labelledby="ab">
+<section class="anime reveal" id="anime" aria-labelledby="an">
  <div class="wrap">
-  <h2 id="ab">Welcome to Tiny Japanese.</h2>
-  <p class="lead">Tiny Japanese was created for people who want to learn Japanese without feeling overwhelmed.</p>
-  <p class="lead">Instead of starting with giant vocabulary lists and complicated explanations, we focus on small conversations, everyday situations, and memorable stories.</p>
-  <p class="lead">A little Japanese every day can add up.</p>
-  <div class="grid2" id="characters"></div>
+  <span class="tag later dark">Coming later</span>
+  <h2 id="an">Japanese Through Anime</h2>
+  <p class="lead">Why study Japanese only from a textbook when you can learn from the stories you already love?</p>
+  <p class="lead">Future lessons will explore vocabulary, expressions, grammar, pronunciation, listening, and cultural context through anime.</p>
+  <p class="fine">Tiny Japanese is an independent project and is not affiliated with any anime studio, publisher, or franchise.</p>
+  <span class="ghost-jp" aria-hidden="true" lang="ja">物語</span>
  </div>
 </section>
 
-<section class="wrap reveal">
- <div class="follow">
-  <h2>Learn with us on Instagram.</h2>
-  <p class="lead">New tiny Japanese stories, phrases, and everyday Japanese.</p>
-  <a class="btn light" href="https://www.instagram.com/" target="_blank" rel="noopener">Follow Tiny Japanese</a>
-  <span class="kana" aria-hidden="true" lang="ja">はじめまして</span>
+<section class="wrap reveal" id="resources" aria-labelledby="rs">
+ <h2 id="rs">Study resources</h2>
+ <p class="lead">Printable kana charts, vocabulary lists, and practice sheets are planned. They'll live here as they're ready.</p>
+ <ul class="chips"><li>Kana charts <i>Planned</i></li><li>Vocabulary lists <i>Planned</i></li><li>Practice sheets <i>Planned</i></li></ul>
+</section>
+
+<section class="band reveal" id="instagram" aria-labelledby="ig">
+ <div class="wrap">
+  <h2 id="ig">Follow along on Instagram</h2>
+  <p class="lead">Short Japanese conversations, useful expressions, and new ways to make Japanese a little more fun.</p>
+  <div class="series card">
+   <div class="duo" id="ig-chars"></div>
+   <div><h3>From the Tiny Stories series</h3><p>Animated mini conversations with two original characters, Mika and Alex. They're one format among many, and every story is also here with full text.</p>
+   <ul class="chips" id="ig-stories"></ul></div>
+  </div>
+  <a class="btn" href="https://www.instagram.com/" target="_blank" rel="noopener">Follow Tiny Japanese</a>
+ </div>
+</section>
+
+<section class="wrap about reveal" id="about" aria-labelledby="ab">
+ <h2 id="ab">Hi, I'm [YOUR NAME].</h2>
+ <!-- Edit this section: add your name, photo, and your own story. -->
+ <div>
+  <p class="lead">I'm building this space for people who want to learn Japanese in a way that feels useful, interesting, and connected to real life.</p>
+  <p class="lead">Japanese can be learned through:</p>
+  <ul class="chips"><li>anime</li><li>music</li><li>conversations</li><li>everyday situations</li><li>stories</li><li>culture</li><li>whatever you're genuinely curious about</li></ul>
  </div>
 </section>
 
 <section class="wrap soon reveal">
- <h2>Something new is coming.</h2>
- <p>We're building more ways to make Japanese feel a little easier.</p>
- <a class="btn ghost" href="https://www.instagram.com/" target="_blank" rel="noopener">Stay tuned</a>
+ <h2>More coming soon.</h2>
+ <p>I'm building deeper Japanese lessons, structured courses, and resources for learners who want to go further.</p>
+ <a class="btn ghost" href="https://www.instagram.com/" target="_blank" rel="noopener">Follow along</a>
+</section>
+
+<section class="wrap reveal">
+ <div class="follow">
+  <h2>Ready to start?</h2>
+  <p class="lead">Pick one phrase, understand why it works, and use it today.</p>
+  <a class="btn light" href="#learn">Start Learning</a>
+  <span class="kana" aria-hidden="true" lang="ja">学ぶ</span>
+ </div>
 </section>
 </main>
 
 <footer>
  <div class="wrap foot">
-  <div><strong>Tiny Japanese 🇯🇵</strong><p>Japanese, one tiny story at a time.</p></div>
-  <nav aria-label="Footer"><a href="#stories">Stories</a><a href="#about">About</a><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></nav>
+  <div><strong>Tiny Japanese 🇯🇵</strong><p>Learn Japanese through the things you love.</p></div>
+  <nav aria-label="Footer"><a href="#learn">Learn</a><a href="#anime">Anime Japanese</a><a href="#resources">Resources</a><a href="#about">About</a><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></nav>
   <a class="ig" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Tiny Japanese on Instagram"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
  </div>
  <p class="copy">© 2026 Tiny Japanese</p>

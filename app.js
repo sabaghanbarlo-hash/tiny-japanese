@@ -13,7 +13,7 @@ if (list) {
  <p class="topic">${esc(l.topic)}</p>
  <p>${esc(l.description)}</p>
  <ul class="vprev" aria-label="Vocabulary preview">${l.vocab.slice(0, 3).map((v) => `<li><span lang="ja">${esc(v.ja)}</span> <small>${esc(v.romaji)}</small></li>`).join("")}</ul>
- <a class="btn" href="lesson.html?id=${encodeURIComponent(l.id)}" aria-label="Open Lesson ${l.number}: ${esc(l.title)}">Open lesson</a>
+ <a class="btn" href="learn/${encodeURIComponent(l.id)}.html" aria-label="Open Lesson ${l.number}: ${esc(l.title)}">Open lesson</a>
 </article>`).join("");
 }
 

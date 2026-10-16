@@ -1,8 +1,9 @@
-# Tiny Japanese 🇯🇵
+# Tiny Japanese
 
-A Japanese-learning site (plain HTML/CSS/JS, no build step). Instagram is one channel; this site is the hub.
+Free beginner Japanese lessons. Plain HTML/CSS/JS, no build step, no backend.
 
-- Add a free lesson/story: copy an object in `data/stories.js` (`videoUrl` accepts .mp4, YouTube, or Instagram Reel links).
-- Personalize the creator section: search `[YOUR NAME]` in `index.html`.
-- Replace the Instagram URL (`https://www.instagram.com/`) in `index.html` with the real account.
-- Brand-level styling lives in `theme.css`; shared components in `styles.css`.
+- `index.html` home, `lessons.html` library, `lesson.html?id=<lesson-id>` lesson pages (link to these from Reels).
+- Add a lesson: copy an object in `data/lessons.js` (dialogue, vocab, grammar, quiz), give it the next number and a new id. Cards, navigation and quiz appear automatically.
+- Instagram URL and contact email: `data/site.js`. Instagram links stay hidden while `instagramUrl` is empty.
+- Styling: `theme.css` (brand), `styles.css` (shared), `lesson.css` (lessons and cards).
+- Production URL: https://tiny-japanese.sabagh1.workers.dev/

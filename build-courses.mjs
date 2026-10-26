@@ -86,7 +86,7 @@ for (const c of courses) {
 
 // ---- Course catalog ------------------------------------------------------------------------------
 write("courses.html", shell(
-  { title: "Japanese Courses for Beginners | Tiny Japanese", desc: "Step-by-step beginner Japanese courses: learn to read hiragana, and hold your first real conversations. Short lessons with vocabulary, grammar and quizzes.", type: "website" },
+  { title: "Japanese Courses for Beginners | Tiny Japanese", desc: "Step-by-step beginner Japanese courses: learn to read hiragana and katakana, and hold your first real conversations. Short lessons with vocabulary, grammar and quizzes.", type: "website" },
   `<section class="wrap page-top">
  <p class="eyebrow">Step by step</p>
  <h1 class="h1-md">Japanese Courses</h1>
@@ -101,7 +101,7 @@ let home = fs.readFileSync(homePath, "utf8");
 const block = `<!-- courses:start -->
 <section class="wrap" id="courses" aria-labelledby="co-h">
  <h2 id="co-h">Courses</h2>
- <p class="lead">Follow a topic from start to finish: learn to read hiragana, then hold your first conversations.</p>
+ <p class="lead">Follow a topic from start to finish: learn to read hiragana and katakana, then hold your first conversations.</p>
  <div class="lesson-grid">${courses.map((c) => courseCard(c, "h3")).join("")}</div>
  <p class="more"><a class="btn ghost" href="/courses.html">See all courses</a></p>
 </section>

@@ -3,6 +3,7 @@
 // Selling later: set `price` (e.g. "$19") and `buyUrl` (a checkout link from Gumroad, Payhip, Lemon Squeezy, Ko-fi, etc.).
 // While `buyUrl` is empty the course shows "Free while we launch" and no buy button. See README for the full note on locking lessons.
 import { hiraganaLessons } from "./course-hiragana.js";
+import { katakanaLessons } from "./course-katakana.js";
 import { conversationLessons } from "./course-conversations.js";
 
 export const courses = [
@@ -22,6 +23,23 @@ export const courses = [
     audience: "Complete beginners. No Japanese needed.",
     price: "", buyUrl: "",
     lessons: hiraganaLessons
+  },
+  {
+    id: "katakana-starter",
+    title: "Katakana Starter",
+    tagline: "Read every katakana character in 11 short lessons.",
+    level: "Beginner",
+    topic: "Reading & writing",
+    description: "The second Japanese script, built on the sounds you already know from hiragana. Learn all 46 basic characters, the sound marks, combined sounds, small ッ and the extra sounds for foreign words, then practise on menus, countries, names and real sentences.",
+    outcomes: [
+      "Read and say all 46 basic katakana",
+      "Read voiced sounds, combined sounds, small ッ and the long vowel mark ー",
+      "Read the extra sounds used for foreign words (ティ, ファ, チェ)",
+      "Read menus, country names, places and your own name in katakana"
+    ],
+    audience: "Learners who can read hiragana (take Hiragana Starter first if not).",
+    price: "", buyUrl: "",
+    lessons: katakanaLessons
   },
   {
     id: "first-conversations",

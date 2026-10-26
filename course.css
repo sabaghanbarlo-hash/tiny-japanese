@@ -1,0 +1,30 @@
+/* Courses: catalog, course overview, kana charts and course lessons. Loaded after lesson.css. */
+.body-p{margin-top:.8rem;max-width:68ch}
+.course-card .vprev li{font-weight:600;font-size:.9rem;border-radius:14px}
+.meta{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;margin:.8rem 0}
+.meta li{background:#fff;border-radius:99px;padding:4px 14px;font-weight:700;font-size:.9rem;color:#5a2330}
+.price-box{background:#fff;border-radius:18px;padding:14px 18px;margin-top:1.2rem;max-width:520px}
+.price-box .tag{margin-bottom:6px}.price-box .price{font-weight:900;font-size:1.6rem;color:var(--rose);margin-bottom:8px}
+.price-box a:not(.btn){color:var(--rose);font-weight:700}
+.progress{margin-top:.8rem;font-weight:700;color:var(--green)}
+/* kana charts */
+.kana-grid{list-style:none;padding:0;margin-top:12px;display:grid;grid-template-columns:repeat(var(--cols,5),minmax(0,1fr));gap:8px;max-width:560px}
+.kc{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;background:#fff;border-radius:14px;padding:10px 4px;min-height:84px;box-shadow:0 2px 0 #0000000a}
+.kc.empty{background:transparent;box-shadow:none}
+.kj{font:700 clamp(1.6rem,7vw,2.2rem)/1.1 "Noto Sans JP",var(--f)}
+.kr{color:#8a2f43;font-weight:800;font-size:.95rem}
+/* syllabus */
+.syllabus{list-style:none;padding:0;display:grid;gap:10px;margin-top:12px}
+.syllabus a{display:grid;grid-template-columns:44px 1fr 28px;align-items:center;gap:12px;background:#fff;border-radius:16px;padding:12px 16px;text-decoration:none;min-height:64px;box-shadow:0 2px 0 #0000000a;transition:transform .2s,box-shadow .2s}
+.syllabus a:hover{transform:translateY(-2px);box-shadow:0 10px 22px #2d2a2e12}
+.sn{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--sakura);color:var(--rose);font-weight:800}
+.st{display:flex;flex-direction:column}.st small{color:var(--soft);font-size:.9rem;line-height:1.4}
+.sd{width:24px;height:24px;border-radius:50%;border:2px solid #b8475c44}
+.is-done .sd{background:#4d7c49;border-color:#4d7c49;position:relative}
+.is-done .sd::after{content:"";position:absolute;left:7px;top:3px;width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+.is-done .sn{background:#dcebd8;color:#32502f}
+.done-box{text-align:center}
+.done-box .btn[aria-pressed=true]{background:#dcebd8;border-color:#4d7c49;color:#1f3a1d}
+.dialogue .who{text-transform:none}
+.course-head .cta-row{margin-top:1rem}
+@media(prefers-reduced-motion:reduce){.syllabus a{transition:none}.syllabus a:hover{transform:none}}

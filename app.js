@@ -19,6 +19,7 @@ if (list) {
 
 // Instagram links stay hidden until SITE.instagramUrl is set
 if (SITE.instagramUrl) document.querySelectorAll("[data-ig]").forEach((a) => { a.href = SITE.instagramUrl; a.hidden = false; });
+if (SITE.youtubeUrl) document.querySelectorAll("[data-yt]").forEach((a) => { a.href = SITE.youtubeUrl; a.hidden = false; });
 const y = $("#year"); if (y) y.textContent = new Date().getFullYear();
 
 // Mobile menu

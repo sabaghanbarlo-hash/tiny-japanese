@@ -9,6 +9,8 @@ import { conversationLessons } from "./course-conversations.js";
 export const courses = [
   {
     id: "hiragana-starter",
+    pdf: "/downloads/hiragana-starter-workbook.pdf",
+    videoCredit: "Stroke order animation uses KanjiVG data (CC BY-SA 3.0, kanjivg.tagaini.net).",
     title: "Hiragana Starter",
     tagline: "Read every hiragana character in 11 short lessons.",
     level: "Absolute beginner",
@@ -26,6 +28,8 @@ export const courses = [
   },
   {
     id: "katakana-starter",
+    pdf: "/downloads/katakana-starter-workbook.pdf",
+    videoCredit: "Stroke order animation uses KanjiVG data (CC BY-SA 3.0, kanjivg.tagaini.net).",
     title: "Katakana Starter",
     tagline: "Read every katakana character in 11 short lessons.",
     level: "Beginner",
@@ -43,6 +47,7 @@ export const courses = [
   },
   {
     id: "first-conversations",
+    pdf: "/downloads/first-conversations-workbook.pdf",
     title: "First Conversations",
     tagline: "Ten everyday situations, from greetings to asking for help.",
     level: "Beginner",

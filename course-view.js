@@ -3,6 +3,10 @@ import { esc } from "./lesson-view.js";
 
 export const lessonPath = (c, l) => `/courses/${c.id}/${String(l.number).padStart(2, "0")}-${l.id}.html`;
 export const coursePath = (c) => `/courses/${c.id}/index.html`;
+// Lesson videos are made by video-tools/make-videos.mjs and live in /videos/<course>/<NN-lesson>.mp4 (+ .jpg poster).
+const vbase = (c, l) => `/videos/${c.id}/${String(l.number).padStart(2, "0")}-${l.id}`;
+export const videoPath = (c, l) => `${vbase(c, l)}.mp4`;
+export const posterPath = (c, l) => `${vbase(c, l)}.jpg`;
 
 // "20 min" -> 20
 const mins = (t) => parseInt(String(t || "0"), 10) || 0;
@@ -43,6 +47,9 @@ export function lessonHTML(c, l, prev, next) {
 <nav class="crumbs" aria-label="Breadcrumb"><a href="${coursePath(c)}">← ${esc(c.title)}</a></nav>
 <header class="lesson-head"><p class="num">Lesson ${l.number} of ${n} · ${esc(l.time || "")}</p><h1 class="h1-md">${esc(l.title)}</h1>
 <p class="lead"><strong>Goal:</strong> ${esc(l.objective)}</p></header>
+<section class="block video-block" aria-labelledby="vid-h"><h2 id="vid-h">Watch the lesson</h2>
+<video controls preload="none" playsinline poster="${posterPath(c, l)}" aria-label="Video for lesson ${l.number}: ${esc(l.title)}"><source src="${videoPath(c, l)}" type="video/mp4">Your browser can't play this video.</video>
+<p class="muted">This video has no sound: watch it, then say every sound out loud yourself.${c.videoCredit ? ` ${esc(c.videoCredit)}` : ""}</p></section>
 ${hasDialogue ? `<div class="toggles" role="group" aria-label="Show or hide help"><label><input type="checkbox" id="t-ro" checked> Romaji</label><label><input type="checkbox" id="t-en" checked> English</label></div>` : ""}
 ${l.blocks.map(blockHTML).join("\n")}
 <section class="block" aria-labelledby="qz-h"><h2 id="qz-h">Quick quiz</h2><p class="muted">Tap an answer to see feedback straight away. Your score is only kept while this page is open.</p><div id="quiz">${staticQuiz(l.quiz)}</div></section>
@@ -67,7 +74,7 @@ export function overviewHTML(c, SITE) {
 <ul class="meta"><li>${c.lessons.length} lessons</li><li>${hoursLabel(c)}</li><li>${esc(c.topic)}</li></ul>
 <p class="lead">${esc(c.description)}</p>
 ${priceBox(c, SITE)}
-<p class="cta-row"><a class="btn" id="start-btn" href="${lessonPath(c, c.lessons[0])}">Start lesson 1</a></p>
+<p class="cta-row"><a class="btn" id="start-btn" href="${lessonPath(c, c.lessons[0])}">Start lesson 1</a>${c.pdf ? ` <a class="btn ghost" href="${esc(c.pdf)}" download>Download the workbook (PDF)</a>` : ""}</p>
 <p class="progress" id="progress" role="status" hidden></p></header>
 <section class="block" aria-labelledby="out-h"><h2 id="out-h">What you'll learn</h2><ul class="notes">${c.outcomes.map((o) => `<li>${esc(o)}</li>`).join("")}</ul><p class="muted"><strong>Who it's for:</strong> ${esc(c.audience)}</p></section>
 <section class="block" aria-labelledby="syl-h"><h2 id="syl-h">Lessons</h2>

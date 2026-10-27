@@ -15,3 +15,11 @@ Free beginner Japanese lessons. Plain HTML/CSS/JS, no build step, no backend.
 - After editing any of them run `node build-lessons.mjs` and `node build-courses.mjs`, then commit the generated files.
 - Lesson progress ("Mark lesson as complete") is saved in the visitor's own browser only. There are no accounts.
 - **Selling a course:** set `price` and `buyUrl` (a checkout link from Gumroad, Payhip, Lemon Squeezy, etc.) on the course in `data/courses.js`; the course page then shows a Buy button instead of "Free while we launch". This site is static, so lessons cannot be locked behind a login by themselves. To charge for the lessons, either sell a downloadable version (PDF/workbook) through the checkout platform, or move the paid lessons behind a members-only service.
+
+## Videos and workbooks
+
+- Every course lesson has a short silent video (`videos/<course>/<NN-lesson>.mp4` plus a `.jpg` poster) shown at the top of the lesson page, and every course has a printable workbook PDF in `downloads/`. Both are generated from the course data, so they stay in sync with the lessons.
+- Regenerate after changing lesson content: `node video-tools/make-videos.mjs [course-id] [lesson]` and `node video-tools/make-pdfs.mjs [course-id]` (needs Node, Playwright with Chromium, ffmpeg and a Japanese font such as Noto Sans CJK JP). Then run `node build-courses.mjs` and commit.
+- Kana stroke-order animation uses KanjiVG (c) Ulrich Apel, CC BY-SA 3.0, http://kanjivg.tagaini.net. `video-tools/strokes.json` is built from it with `video-tools/build-strokes.py`. Keep the credit line (set as `videoCredit` in `data/courses.js`) and share videos that use it under the same licence.
+- **Selling:** the workbooks in `downloads/` are public files. When you start charging, move them out of the repo and deliver them through the checkout platform (Gumroad, Payhip, etc.) instead, and remove the `pdf` line for that course in `data/courses.js`.
+- To add narration later, render the videos with an audio track (any Japanese text-to-speech) and mux it in `make-videos.mjs`.

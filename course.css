@@ -28,3 +28,6 @@
 .dialogue .who{text-transform:none}
 .course-head .cta-row{margin-top:1rem}
 @media(prefers-reduced-motion:reduce){.syllabus a{transition:none}.syllabus a:hover{transform:none}}
+
+.video-block video{display:block;width:100%;max-width:820px;aspect-ratio:16/9;border-radius:18px;background:#2d2a2e;margin-top:12px;box-shadow:0 10px 30px #2d2a2e1a}
+.course-head .cta-row{display:flex;flex-wrap:wrap;gap:10px}

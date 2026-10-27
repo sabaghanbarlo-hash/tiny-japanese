@@ -1,5 +1,12 @@
 // Course rendering. Used by build-courses.mjs (static pages in /courses/) and course.js (adds interactivity in the browser).
 import { esc } from "./lesson-view.js";
+import { audioMap } from "./data/audio-map.js";
+
+// "Hear it" clips (made by video-tools/make-audio.mjs). A button only appears when its clip exists.
+const kata = (t) => [...t].map((c) => (c >= "\u3041" && c <= "\u3096" ? String.fromCharCode(c.charCodeAt(0) + 0x60) : c)).join("");
+const clip = (text, voice, speed) => { const id = audioMap[`${voice}|${speed}|${text}`]; return id ? `/audio/${id}.mp3` : ""; };
+const SPEAKER = `<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`;
+const hearBtn = (src, label) => (src ? `<button type="button" class="hear" data-audio="${src}" aria-label="Hear ${esc(label)}">${SPEAKER}</button>` : "");
 
 export const lessonPath = (c, l) => `/courses/${c.id}/${String(l.number).padStart(2, "0")}-${l.id}.html`;
 export const coursePath = (c) => `/courses/${c.id}/index.html`;
@@ -13,7 +20,7 @@ const mins = (t) => parseInt(String(t || "0"), 10) || 0;
 export const totalMinutes = (c) => c.lessons.reduce((n, l) => n + mins(l.time), 0);
 export const hoursLabel = (c) => { const m = totalMinutes(c); return m >= 60 ? `about ${Math.round(m / 30) / 2} hours` : `${m} minutes`; };
 
-const wordRow = (v) => `<li><span class="vja" lang="ja">${esc(v.ja)}${v.kana ? ` <small>(${esc(v.kana)})</small>` : ""}</span><span class="vro">${esc(v.romaji)}</span><span class="ven">${esc(v.en)}</span></li>`;
+const wordRow = (v) => `<li><span class="vja" lang="ja">${esc(v.ja)}${v.kana ? ` <small>(${esc(v.kana)})</small>` : ""}${hearBtn(clip(v.ja, "mika", 0.85), v.ja)}</span><span class="vro">${esc(v.romaji)}</span><span class="ven">${esc(v.en)}</span></li>`;
 
 function blockHTML(b, i) {
   const h = (t) => (t ? `<h2 id="b${i}-h">${esc(t)}</h2>` : "");
@@ -23,7 +30,7 @@ function blockHTML(b, i) {
       return `${open}${b.paras.map((p) => `<p class="body-p">${esc(p)}</p>`).join("")}</section>`;
     case "kana": {
       const cols = b.cols || (b.items.length <= 3 ? b.items.length : /combined/i.test(b.title || "") ? 3 : 5);
-      return `${open}<ul class="kana-grid" style="--cols:${cols}">${b.items.map((c) => c.k ? `<li class="kc"><span class="kj" lang="ja">${esc(c.k)}</span><span class="kr">${esc(c.r)}</span></li>` : `<li class="kc empty" aria-hidden="true"></li>`).join("")}</ul></section>`;
+      return `${open}<ul class="kana-grid" style="--cols:${cols}">${b.items.map((c) => c.k ? (clip(kata(c.k), "mika", 0.8) ? `<li class="kc"><button type="button" class="kc-btn" data-audio="${clip(kata(c.k), "mika", 0.8)}" aria-label="Hear ${esc(c.k)}, ${esc(c.r)}"><span class="kj" lang="ja">${esc(c.k)}</span><span class="kr">${esc(c.r)}</span></button></li>` : `<li class="kc"><span class="kj" lang="ja">${esc(c.k)}</span><span class="kr">${esc(c.r)}</span></li>`) : `<li class="kc empty" aria-hidden="true"></li>`).join("")}</ul></section>`;
     }
     case "words":
       return `${open}<ul class="vocab">${b.items.map(wordRow).join("")}</ul></section>`;
@@ -32,7 +39,7 @@ function blockHTML(b, i) {
     case "tips":
       return `${open}<ul class="notes">${b.items.map((n) => `<li>${esc(n)}</li>`).join("")}</ul></section>`;
     case "dialogue":
-      return `${open}<ul class="dialogue">${b.lines.map((d) => `<li><span class="who">${esc(d.who)}</span><div class="ja" lang="ja">${esc(d.ja)}</div><div class="ro">${esc(d.romaji)}</div><div class="en">${esc(d.en)}</div></li>`).join("")}</ul></section>`;
+      return `${open}<ul class="dialogue">${b.lines.map((d) => `<li><span class="who">${esc(d.who)}</span><div class="ja" lang="ja">${esc(d.ja)}${hearBtn(clip(d.ja.replace(/[「」]/g, ""), d.who === "Alex" ? "alex" : "mika", 0.9), d.ja)}</div><div class="ro">${esc(d.romaji)}</div><div class="en">${esc(d.en)}</div></li>`).join("")}</ul></section>`;
     default:
       throw new Error("Unknown block type: " + b.type);
   }
@@ -49,7 +56,7 @@ export function lessonHTML(c, l, prev, next) {
 <p class="lead"><strong>Goal:</strong> ${esc(l.objective)}</p></header>
 <section class="block video-block" aria-labelledby="vid-h"><h2 id="vid-h">Watch the lesson</h2>
 <video controls preload="none" playsinline poster="${posterPath(c, l)}" aria-label="Video for lesson ${l.number}: ${esc(l.title)}"><source src="${videoPath(c, l)}" type="video/mp4">Your browser can't play this video.</video>
-<p class="muted">Turn your sound on: listen to each sound, then say it out loud yourself.${c.videoCredit ? ` ${esc(c.videoCredit)}` : ""}</p></section>
+<p class="muted">Turn your sound on: listen to each sound, then say it out loud yourself. Tap any character or speaker button on this page to hear it again.${c.videoCredit ? ` ${esc(c.videoCredit)}` : ""}</p></section>
 ${hasDialogue ? `<div class="toggles" role="group" aria-label="Show or hide help"><label><input type="checkbox" id="t-ro" checked> Romaji</label><label><input type="checkbox" id="t-en" checked> English</label></div>` : ""}
 ${l.blocks.map(blockHTML).join("\n")}
 <section class="block" aria-labelledby="qz-h"><h2 id="qz-h">Quick quiz</h2><p class="muted">Tap an answer to see feedback straight away. Your score is only kept while this page is open.</p><div id="quiz">${staticQuiz(l.quiz)}</div></section>
@@ -94,6 +101,23 @@ export function courseCard(c, h = "h2") {
 }
 
 // ---- Browser-side behaviour --------------------------------------------------------------------
+// One click handler for every [data-audio] button on the page; starting a clip stops the previous one.
+export function wireAudio(root) {
+  let audio = null, btn = null;
+  const stop = () => { if (audio) audio.pause(); if (btn) btn.classList.remove("playing"); audio = btn = null; };
+  root.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-audio]");
+    if (!b) return;
+    const again = b === btn;
+    stop();
+    if (again) return;
+    const a = new Audio(b.dataset.audio);
+    audio = a; btn = b; b.classList.add("playing");
+    a.onended = a.onerror = () => { if (btn === b) stop(); };
+    a.play().catch(() => { if (btn === b) stop(); });
+  });
+}
+
 const key = (c) => `tj:progress:${c.id}`;
 export const readProgress = (c) => { try { const v = JSON.parse(localStorage.getItem(key(c)) || "[]"); return Array.isArray(v) ? v : []; } catch { return []; } };
 const writeProgress = (c, ids) => { try { localStorage.setItem(key(c), JSON.stringify(ids)); } catch { /* storage unavailable: progress simply isn't kept */ } };

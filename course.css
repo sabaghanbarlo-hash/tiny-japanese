@@ -31,3 +31,17 @@
 
 .video-block video{display:block;width:100%;max-width:820px;aspect-ratio:16/9;border-radius:18px;background:#2d2a2e;margin-top:12px;box-shadow:0 10px 30px #2d2a2e1a}
 .course-head .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+
+/* "Hear it" buttons */
+.hear{display:none;align-items:center;justify-content:center;width:34px;height:34px;margin-left:8px;border-radius:50%;border:0;background:var(--sakura);color:var(--rose);cursor:pointer;vertical-align:middle;flex:none;transition:background .2s,transform .2s}
+.js .hear{display:inline-flex}
+.hear:hover,.hear.playing{background:var(--rose);color:#fff}
+.hear:focus-visible,.kc-btn:focus-visible{outline:3px solid var(--rose);outline-offset:2px}
+.kc{padding:0}
+.kc:not(.empty) .kj,.kc:not(.empty) .kr{pointer-events:none}
+.kc-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:100%;min-height:84px;padding:10px 4px;background:none;border:0;border-radius:14px;font:inherit;color:inherit;cursor:default}
+.js .kc-btn{cursor:pointer}
+.js .kc-btn:hover{background:var(--sakura)}
+.kc-btn:has(.kj):active,.kc-btn[data-audio].playing{background:var(--sakura)}
+.dialogue .ja .hear{width:30px;height:30px}
+@media(prefers-reduced-motion:reduce){.hear{transition:none}}

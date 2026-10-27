@@ -49,7 +49,7 @@ export function lessonHTML(c, l, prev, next) {
 <p class="lead"><strong>Goal:</strong> ${esc(l.objective)}</p></header>
 <section class="block video-block" aria-labelledby="vid-h"><h2 id="vid-h">Watch the lesson</h2>
 <video controls preload="none" playsinline poster="${posterPath(c, l)}" aria-label="Video for lesson ${l.number}: ${esc(l.title)}"><source src="${videoPath(c, l)}" type="video/mp4">Your browser can't play this video.</video>
-<p class="muted">This video has no sound: watch it, then say every sound out loud yourself.${c.videoCredit ? ` ${esc(c.videoCredit)}` : ""}</p></section>
+<p class="muted">Turn your sound on: listen to each sound, then say it out loud yourself.${c.videoCredit ? ` ${esc(c.videoCredit)}` : ""}</p></section>
 ${hasDialogue ? `<div class="toggles" role="group" aria-label="Show or hide help"><label><input type="checkbox" id="t-ro" checked> Romaji</label><label><input type="checkbox" id="t-en" checked> English</label></div>` : ""}
 ${l.blocks.map(blockHTML).join("\n")}
 <section class="block" aria-labelledby="qz-h"><h2 id="qz-h">Quick quiz</h2><p class="muted">Tap an answer to see feedback straight away. Your score is only kept while this page is open.</p><div id="quiz">${staticQuiz(l.quiz)}</div></section>

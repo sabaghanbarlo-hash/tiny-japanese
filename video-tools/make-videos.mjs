@@ -2,12 +2,13 @@
 //   node video-tools/make-videos.mjs                  all courses
 //   node video-tools/make-videos.mjs katakana-starter  one course
 //   node video-tools/make-videos.mjs hiragana-starter 02-k-row   one lesson (match on the file-name part)
-// Needs: Node, Playwright (chromium), ffmpeg, a Japanese font (Noto Sans CJK JP). Output: videos/<course>/<NN-lesson>.mp4 and .jpg poster.
+// Needs: Node, Playwright (chromium), ffmpeg, a Japanese font (Noto Sans CJK JP), and Python with pyopenjtalk for the narration (see tts.py). Output: videos/<course>/<NN-lesson>.mp4 and .jpg poster.
 // Kana stroke order comes from KanjiVG (c) Ulrich Apel, CC BY-SA 3.0, http://kanjivg.tagaini.net (see strokes.json, build-strokes.py).
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
+import crypto from "node:crypto";
 import { createRequire } from "node:module";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
@@ -22,6 +23,9 @@ const [, , onlyCourse, onlyLesson] = process.argv;
 const W = 1280, H = 720, FPS = 15;
 const SKIP = new Set(["ぢ", "づ", "ヂ", "ヅ", "ヴ"]);
 const pad = (n) => String(n).padStart(2, "0");
+// Hiragana -> katakana, so single characters like は and へ are read as sounds, not as grammar particles.
+const kata = (t) => [...t].map((c) => (c >= "\u3041" && c <= "\u3096" ? String.fromCharCode(c.charCodeAt(0) + 0x60) : c)).join("");
+const say = (text, voice = "mika", speed = 0.85) => ({ text, voice, speed });
 
 const PAGE = `<!doctype html><meta charset="utf-8"><style>
 *{box-sizing:border-box;margin:0}
@@ -101,7 +105,7 @@ function lessonScenes(c, l) {
   const n = c.lessons.length;
   const footer = `${c.title} · Lesson ${l.number} of ${n}`;
   const f = (done) => ({ footer, done });
-  const add = (s, dur) => scenes.push({ s, dur });
+  const add = (s, dur, sp) => scenes.push({ s, dur, say: sp });
 
   add({ type: "title", eyebrow: `${c.title} · Lesson ${l.number} of ${n}`, title: l.title, sub: l.summary, ...f(0) }, 3.2);
 
@@ -113,19 +117,20 @@ function lessonScenes(c, l) {
     for (const ch of singles(b)) {
       const d = strokes[ch.k], N = Math.round(0.8 * FPS);
       const base = { type: "char", ch: ch.k, romaji: ch.r, d, label: `${b.title} · ${script}`, footer, done: (idx + 1) / Math.max(total, 1) };
-      add({ ...base, p: 0 }, 0.7);
+      const sc = say(kata(ch.k), "mika", 0.8);
+      add({ ...base, p: 0 }, 0.7, sc);
       for (let i = 0; i < d.length; i++) {
         for (let k = 1; k <= N; k++) add({ ...base, p: i + k / N }, 1 / FPS);
         add({ ...base, p: i + 1 }, 0.25);
       }
-      add({ ...base, p: d.length }, 1.6);
+      add({ ...base, p: d.length }, 1.6, sc);
       idx++;
     }
   }
 
   for (const b of l.blocks.filter(isMulti)) {
     b.items.filter((c0) => c0.k && !SKIP.has(c0.k)).forEach((it, i, arr) => {
-      add({ type: "card", label: b.title, ja: it.k, romaji: it.r, en: "", stage: 2, ...f((i + 1) / arr.length) }, 1.3);
+      add({ type: "card", label: b.title, ja: it.k, romaji: it.r, en: "", stage: 2, ...f((i + 1) / arr.length) }, 1.3, say(kata(it.k), "mika", 0.85));
     });
   }
 
@@ -133,16 +138,17 @@ function lessonScenes(c, l) {
   for (const b of l.blocks.filter((x) => x.type === "words")) {
     b.items.slice(0, wordCap).forEach((w, i, arr) => {
       const base = { type: "card", label: b.title, ja: w.ja, romaji: w.romaji, en: w.en, ...f((i + 1) / arr.length) };
-      add({ ...base, stage: 1 }, 1.5);
-      add({ ...base, stage: 2 }, 2.2);
+      add({ ...base, stage: 1 }, 1.5, say(w.ja));
+      add({ ...base, stage: 2 }, 2.2, say(w.ja));
     });
   }
 
   let lines = l.blocks.filter((x) => x.type === "dialogue").flatMap((b) => b.lines.map((d) => ({ ...d, label: b.title }))).slice(0, 14);
   lines.forEach((d, i) => {
     const base = { type: "phrase", who: d.who, ja: d.ja, romaji: d.romaji, en: d.en, label: d.label, ...f((i + 1) / lines.length) };
-    add({ ...base, stage: 1 }, 1.8);
-    add({ ...base, stage: 2 }, 1.8);
+    const sp = say(d.ja.replace(/[「」]/g, ""), d.who === "Alex" ? "alex" : "mika", 0.9);
+    add({ ...base, stage: 1 }, 1.8, sp);
+    add({ ...base, stage: 2 }, 1.8, sp);
     add({ ...base, stage: 3 }, 2.6);
   });
 
@@ -166,6 +172,16 @@ for (const c of courses) {
     fs.mkdirSync(outDir, { recursive: true });
     const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "tjv-"));
     const scenes = lessonScenes(c, l);
+    // Narration: make the clips, then stretch each scene so its clip fits.
+    const jobs = new Map();
+    for (const sc of scenes) if (sc.say) { const key = crypto.createHash("sha1").update(JSON.stringify(sc.say)).digest("hex").slice(0, 16); sc.key = key; jobs.set(key, { key, ...sc.say }); }
+    const ttsDir = path.join(os.tmpdir(), "tj-tts");
+    const lens = JSON.parse(execFileSync("python3", [path.join(here, "tts.py"), ttsDir], { input: JSON.stringify([...jobs.values()]), maxBuffer: 1 << 26 }).toString());
+    const events = []; let clock = 0;
+    for (const sc of scenes) {
+      if (sc.key) { sc.dur = Math.max(sc.dur, lens[sc.key] + 0.4); events.push({ at: clock, file: path.join(ttsDir, sc.key + ".wav") }); }
+      clock += sc.dur;
+    }
     const list = [];
     let last = null, cache = null, frame = 0;
     for (const { s, dur } of scenes) {
@@ -185,11 +201,13 @@ for (const c of courses) {
     const listFile = path.join(tmp, "list.txt");
     fs.writeFileSync(listFile, list.join("\n"));
     const out = path.join(outDir, `${name}.mp4`);
-    execFileSync("ffmpeg", ["-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", listFile, "-vf", `fps=30,scale=${W}:${H},format=yuv420p`,
-      "-c:v", "libx264", "-preset", "veryfast", "-crf", "27", "-movflags", "+faststart", "-an", out]);
+    const inputs = ["-f", "concat", "-safe", "0", "-i", listFile, ...events.flatMap((e) => ["-i", e.file])];
+    const fc = events.map((e, i) => `[${i + 1}:a]adelay=${Math.round(e.at * 1000)}:all=1[a${i}]`).join(";") + ";" + events.map((_, i) => `[a${i}]`).join("") + `amix=inputs=${events.length}:normalize=0:duration=longest,volume=1.4,alimiter=limit=0.95[aout]`;
+    execFileSync("ffmpeg", ["-y", "-v", "error", ...inputs, "-filter_complex", fc, "-map", "0:v", "-map", "[aout]", "-vf", `fps=30,scale=${W}:${H},format=yuv420p`,
+      "-c:v", "libx264", "-preset", "veryfast", "-crf", "27", "-c:a", "aac", "-b:a", "80k", "-ac", "1", "-movflags", "+faststart", out], { maxBuffer: 1 << 26 });
     execFileSync("ffmpeg", ["-y", "-v", "error", "-i", path.join(tmp, "poster.png"), "-q:v", "4", path.join(outDir, `${name}.jpg`)]);
     fs.rmSync(tmp, { recursive: true, force: true });
-    const secs = scenes.reduce((a, x) => a + x.dur, 0);
+    const secs = clock;
     console.log(`${c.id}/${name}.mp4  ${secs.toFixed(0)}s  ${(fs.statSync(out).size / 1e6).toFixed(2)} MB`);
     made++;
   }

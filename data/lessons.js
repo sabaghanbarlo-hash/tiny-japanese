@@ -155,4 +155,668 @@ const coreLessons = [
  }
 ];
 
-export const lessons = [...coreLessons, ...instagramLessons];
+
+const bridgeLessons = [
+  {
+    "id": "at-the-restaurant",
+    "number": 5,
+    "title": "At the Restaurant",
+    "topic": "Ordering food",
+    "level": "Absolute beginner",
+    "description": "Order a meal politely.",
+    "objective": "Ask for a table, menu, food, and water.",
+    "intro": "Mika and Alex practise ordering at a restaurant.",
+    "dialogue": [
+      {
+        "who": "Mika",
+        "ja": "すみません。ふたりです。",
+        "romaji": "Sumimasen. Futari desu.",
+        "en": "Excuse me. Two people."
+      },
+      {
+        "who": "Alex",
+        "ja": "メニューをおねがいします。",
+        "romaji": "Menyuu o onegaishimasu.",
+        "en": "The menu, please."
+      },
+      {
+        "who": "Mika",
+        "ja": "カレーをください。",
+        "romaji": "Karee o kudasai.",
+        "en": "Curry, please."
+      },
+      {
+        "who": "Alex",
+        "ja": "みずもおねがいします。",
+        "romaji": "Mizu mo onegaishimasu.",
+        "en": "Water too, please."
+      }
+    ],
+    "vocab": [
+      {
+        "ja": "メニュー",
+        "kana": "メニュー",
+        "romaji": "menyuu",
+        "en": "menu"
+      },
+      {
+        "ja": "カレー",
+        "kana": "カレー",
+        "romaji": "karee",
+        "en": "curry"
+      },
+      {
+        "ja": "みず",
+        "kana": "みず",
+        "romaji": "mizu",
+        "en": "water"
+      },
+      {
+        "ja": "ください",
+        "kana": "ください",
+        "romaji": "kudasai",
+        "en": "please give me"
+      }
+    ],
+    "grammar": [
+      {
+        "title": "Item + をください",
+        "body": "Use をください to politely ask for an item. も means also or too."
+      }
+    ],
+    "notes": [
+      "Practise the polite request aloud."
+    ],
+    "extra": [],
+    "quiz": [
+      {
+        "q": "How do you ask for curry, please?",
+        "options": [
+          "カレーをください。",
+          "えきはどこですか？",
+          "おはようございます。"
+        ],
+        "answer": 0,
+        "explain": "カレーをください means Curry, please."
+      }
+    ]
+  },
+  {
+    "id": "shopping",
+    "number": 6,
+    "title": "Shopping",
+    "topic": "Asking prices",
+    "level": "Absolute beginner",
+    "description": "Ask how much something costs and buy it.",
+    "objective": "Ask a price and make a simple purchase.",
+    "intro": "Mika and Alex shop for an item.",
+    "dialogue": [
+      {
+        "who": "Alex",
+        "ja": "これはいくらですか？",
+        "romaji": "Kore wa ikura desu ka?",
+        "en": "How much is this?"
+      },
+      {
+        "who": "Mika",
+        "ja": "せんえんです。",
+        "romaji": "Sen en desu.",
+        "en": "It is 1,000 yen."
+      },
+      {
+        "who": "Alex",
+        "ja": "そうですか。",
+        "romaji": "Sou desu ka.",
+        "en": "I see."
+      },
+      {
+        "who": "Alex",
+        "ja": "これをください。",
+        "romaji": "Kore o kudasai.",
+        "en": "I’ll take this, please."
+      }
+    ],
+    "vocab": [
+      {
+        "ja": "これ",
+        "kana": "これ",
+        "romaji": "kore",
+        "en": "this"
+      },
+      {
+        "ja": "いくら",
+        "kana": "いくら",
+        "romaji": "ikura",
+        "en": "how much"
+      },
+      {
+        "ja": "せんえん",
+        "kana": "せんえん",
+        "romaji": "sen en",
+        "en": "1,000 yen"
+      },
+      {
+        "ja": "そうですか",
+        "kana": "そうですか",
+        "romaji": "sou desu ka",
+        "en": "I see"
+      }
+    ],
+    "grammar": [
+      {
+        "title": "これはいくらですか",
+        "body": "Use これはいくらですか to ask “How much is this?” Use をください to ask to buy an item."
+      }
+    ],
+    "notes": [
+      "Prices and pronunciation can vary by context."
+    ],
+    "extra": [],
+    "quiz": [
+      {
+        "q": "What does いくら mean?",
+        "options": [
+          "Where",
+          "How much",
+          "Thank you"
+        ],
+        "answer": 1,
+        "explain": "いくら means how much."
+      }
+    ]
+  },
+  {
+    "id": "talking-about-family",
+    "number": 7,
+    "title": "Talking About Family",
+    "topic": "Introducing family",
+    "level": "Absolute beginner",
+    "description": "Introduce family members.",
+    "objective": "Say who is in your family.",
+    "intro": "Mika introduces her family to Alex.",
+    "dialogue": [
+      {
+        "who": "Mika",
+        "ja": "これはわたしのかぞくです。",
+        "romaji": "Kore wa watashi no kazoku desu.",
+        "en": "This is my family."
+      },
+      {
+        "who": "Alex",
+        "ja": "そうですか。",
+        "romaji": "Sou desu ka.",
+        "en": "I see."
+      },
+      {
+        "who": "Mika",
+        "ja": "こちらはあねです。",
+        "romaji": "Kochira wa ane desu.",
+        "en": "This is my older sister."
+      },
+      {
+        "who": "Mika",
+        "ja": "こちらはおとうとです。",
+        "romaji": "Kochira wa otouto desu.",
+        "en": "This is my younger brother."
+      }
+    ],
+    "vocab": [
+      {
+        "ja": "かぞく",
+        "kana": "かぞく",
+        "romaji": "kazoku",
+        "en": "family"
+      },
+      {
+        "ja": "わたし",
+        "kana": "わたし",
+        "romaji": "watashi",
+        "en": "I / me"
+      },
+      {
+        "ja": "あね",
+        "kana": "あね",
+        "romaji": "ane",
+        "en": "older sister (your own)"
+      },
+      {
+        "ja": "おとうと",
+        "kana": "おとうと",
+        "romaji": "otouto",
+        "en": "younger brother"
+      }
+    ],
+    "grammar": [
+      {
+        "title": "The particle の",
+        "body": "の connects nouns and can show possession: わたしのかぞく means my family."
+      }
+    ],
+    "notes": [
+      "Japanese family terms can change when speaking about your own family versus someone else’s."
+    ],
+    "extra": [],
+    "quiz": [
+      {
+        "q": "What does かぞく mean?",
+        "options": [
+          "Family",
+          "Station",
+          "Water"
+        ],
+        "answer": 0,
+        "explain": "かぞく means family."
+      }
+    ]
+  },
+  {
+    "id": "at-school",
+    "number": 8,
+    "title": "At School",
+    "topic": "Classroom objects",
+    "level": "Absolute beginner",
+    "description": "Ask what an object is and identify it.",
+    "objective": "Ask what something is and name simple objects.",
+    "intro": "Alex and Mika practise classroom vocabulary.",
+    "dialogue": [
+      {
+        "who": "Alex",
+        "ja": "これはなんですか？",
+        "romaji": "Kore wa nan desu ka?",
+        "en": "What is this?"
+      },
+      {
+        "who": "Mika",
+        "ja": "ほんです。",
+        "romaji": "Hon desu.",
+        "en": "It is a book."
+      },
+      {
+        "who": "Alex",
+        "ja": "これはえんぴつですか？",
+        "romaji": "Kore wa enpitsu desu ka?",
+        "en": "Is this a pencil?"
+      },
+      {
+        "who": "Mika",
+        "ja": "はい、そうです。",
+        "romaji": "Hai, sou desu.",
+        "en": "Yes, that’s right."
+      }
+    ],
+    "vocab": [
+      {
+        "ja": "これ",
+        "kana": "これ",
+        "romaji": "kore",
+        "en": "this"
+      },
+      {
+        "ja": "なん",
+        "kana": "なん",
+        "romaji": "nan",
+        "en": "what"
+      },
+      {
+        "ja": "ほん",
+        "kana": "ほん",
+        "romaji": "hon",
+        "en": "book"
+      },
+      {
+        "ja": "えんぴつ",
+        "kana": "えんぴつ",
+        "romaji": "enpitsu",
+        "en": "pencil"
+      }
+    ],
+    "grammar": [
+      {
+        "title": "Questions with か",
+        "body": "これはなんですか means “What is this?” Add か to make a polite yes/no question."
+      }
+    ],
+    "notes": [
+      "Try naming objects around you in Japanese."
+    ],
+    "extra": [],
+    "quiz": [
+      {
+        "q": "What does ほん mean?",
+        "options": [
+          "Pencil",
+          "Book",
+          "Family"
+        ],
+        "answer": 1,
+        "explain": "ほん means book."
+      }
+    ]
+  },
+  {
+    "id": "what-time-is-it",
+    "number": 9,
+    "title": "What Time Is It?",
+    "topic": "Asking the time",
+    "level": "Absolute beginner",
+    "description": "Ask for and understand the time.",
+    "objective": "Ask what time it is and say a simple hour.",
+    "intro": "Alex asks Mika the time.",
+    "dialogue": [
+      {
+        "who": "Alex",
+        "ja": "いま、なんじですか？",
+        "romaji": "Ima, nanji desu ka?",
+        "en": "What time is it now?"
+      },
+      {
+        "who": "Mika",
+        "ja": "さんじです。",
+        "romaji": "Sanji desu.",
+        "en": "It is three o’clock."
+      },
+      {
+        "who": "Alex",
+        "ja": "ありがとうございます。",
+        "romaji": "Arigatou gozaimasu.",
+        "en": "Thank you very much."
+      },
+      {
+        "who": "Mika",
+        "ja": "どういたしまして。",
+        "romaji": "Dou itashimashite.",
+        "en": "You’re welcome."
+      }
+    ],
+    "vocab": [
+      {
+        "ja": "いま",
+        "kana": "いま",
+        "romaji": "ima",
+        "en": "now"
+      },
+      {
+        "ja": "なんじ",
+        "kana": "なんじ",
+        "romaji": "nanji",
+        "en": "what time"
+      },
+      {
+        "ja": "さんじ",
+        "kana": "さんじ",
+        "romaji": "sanji",
+        "en": "three o’clock"
+      }
+    ],
+    "grammar": [
+      {
+        "title": "Numbers + じ",
+        "body": "Put a number before じ to say the hour; さんじ means three o’clock."
+      }
+    ],
+    "notes": [
+      "Some Japanese hour readings are irregular; learn them one at a time."
+    ],
+    "extra": [],
+    "quiz": [
+      {
+        "q": "How do you ask “What time is it?”",
+        "options": [
+          "いま、なんじですか？",
+          "これはなんですか？",
+          "どこですか？"
+        ],
+        "answer": 0,
+        "explain": "いま、なんじですか asks what time it is now."
+      }
+    ]
+  },
+  {
+    "id": "making-plans",
+    "number": 10,
+    "title": "Making Plans",
+    "topic": "Inviting a friend",
+    "level": "Absolute beginner",
+    "description": "Invite someone for coffee and agree on a time.",
+    "objective": "Make a simple invitation and arrange to meet.",
+    "intro": "Mika invites Alex for coffee.",
+    "dialogue": [
+      {
+        "who": "Mika",
+        "ja": "いっしょにコーヒーをのみませんか？",
+        "romaji": "Issho ni koohii o nomimasen ka?",
+        "en": "Would you like to drink coffee together?"
+      },
+      {
+        "who": "Alex",
+        "ja": "いいですね！",
+        "romaji": "Ii desu ne!",
+        "en": "That sounds good!"
+      },
+      {
+        "who": "Mika",
+        "ja": "さんじにあいましょう。",
+        "romaji": "Sanji ni aimashou.",
+        "en": "Let’s meet at three."
+      },
+      {
+        "who": "Alex",
+        "ja": "はい、またあとで！",
+        "romaji": "Hai, mata ato de!",
+        "en": "Okay, see you later!"
+      }
+    ],
+    "vocab": [
+      {
+        "ja": "いっしょに",
+        "kana": "いっしょに",
+        "romaji": "issho ni",
+        "en": "together"
+      },
+      {
+        "ja": "コーヒー",
+        "kana": "コーヒー",
+        "romaji": "koohii",
+        "en": "coffee"
+      },
+      {
+        "ja": "いいですね",
+        "kana": "いいですね",
+        "romaji": "ii desu ne",
+        "en": "sounds good"
+      }
+    ],
+    "grammar": [
+      {
+        "title": "Invitations with ませんか",
+        "body": "A verb ending in ませんか can make a friendly invitation. に marks a specific time."
+      }
+    ],
+    "notes": [
+      "Use a rising intonation for a friendly invitation."
+    ],
+    "extra": [],
+    "quiz": [
+      {
+        "q": "Which phrase means “That sounds good”?",
+        "options": [
+          "いいですね",
+          "なんじですか",
+          "すみません"
+        ],
+        "answer": 0,
+        "explain": "いいですね means that sounds good."
+      }
+    ]
+  },
+  {
+    "id": "talking-about-hobbies",
+    "number": 11,
+    "title": "Talking About Hobbies",
+    "topic": "Likes and interests",
+    "level": "Absolute beginner",
+    "description": "Talk about things you like.",
+    "objective": "Say what you like and ask about another person’s interests.",
+    "intro": "Mika and Alex compare their interests.",
+    "dialogue": [
+      {
+        "who": "Mika",
+        "ja": "おんがくがすきです。",
+        "romaji": "Ongaku ga suki desu.",
+        "en": "I like music."
+      },
+      {
+        "who": "Alex",
+        "ja": "わたしもすきです！",
+        "romaji": "Watashi mo suki desu!",
+        "en": "I like it too!"
+      },
+      {
+        "who": "Mika",
+        "ja": "アニメがすきですか？",
+        "romaji": "Anime ga suki desu ka?",
+        "en": "Do you like anime?"
+      },
+      {
+        "who": "Alex",
+        "ja": "はい、だいすきです！",
+        "romaji": "Hai, daisuki desu!",
+        "en": "Yes, I love it!"
+      }
+    ],
+    "vocab": [
+      {
+        "ja": "おんがく",
+        "kana": "おんがく",
+        "romaji": "ongaku",
+        "en": "music"
+      },
+      {
+        "ja": "すき",
+        "kana": "すき",
+        "romaji": "suki",
+        "en": "like"
+      },
+      {
+        "ja": "だいすき",
+        "kana": "だいすき",
+        "romaji": "daisuki",
+        "en": "love / really like"
+      },
+      {
+        "ja": "アニメ",
+        "kana": "アニメ",
+        "romaji": "anime",
+        "en": "anime"
+      }
+    ],
+    "grammar": [
+      {
+        "title": "X がすきです",
+        "body": "Use X がすきです to say you like X. Use も instead of が to mean also or too."
+      }
+    ],
+    "notes": [
+      "You can replace アニメ with another hobby or interest."
+    ],
+    "extra": [],
+    "quiz": [
+      {
+        "q": "What does だいすき mean?",
+        "options": [
+          "I love it",
+          "Where is it?",
+          "What time?"
+        ],
+        "answer": 0,
+        "explain": "だいすき means love or really like."
+      }
+    ]
+  },
+  {
+    "id": "asking-for-directions",
+    "number": 12,
+    "title": "Finding Your Way",
+    "topic": "Asking for directions",
+    "level": "Absolute beginner",
+    "description": "Ask where the station is and follow a simple direction.",
+    "objective": "Ask where a place is and understand basic directions.",
+    "intro": "Alex asks Mika how to find the station.",
+    "dialogue": [
+      {
+        "who": "Alex",
+        "ja": "すみません。えきはどこですか？",
+        "romaji": "Sumimasen. Eki wa doko desu ka?",
+        "en": "Excuse me. Where is the station?"
+      },
+      {
+        "who": "Mika",
+        "ja": "まっすぐいってください。",
+        "romaji": "Massugu itte kudasai.",
+        "en": "Please go straight."
+      },
+      {
+        "who": "Mika",
+        "ja": "みぎです。",
+        "romaji": "Migi desu.",
+        "en": "It is on the right."
+      },
+      {
+        "who": "Alex",
+        "ja": "ありがとうございます！",
+        "romaji": "Arigatou gozaimasu!",
+        "en": "Thank you very much!"
+      }
+    ],
+    "vocab": [
+      {
+        "ja": "えき",
+        "kana": "えき",
+        "romaji": "eki",
+        "en": "station"
+      },
+      {
+        "ja": "どこ",
+        "kana": "どこ",
+        "romaji": "doko",
+        "en": "where"
+      },
+      {
+        "ja": "まっすぐ",
+        "kana": "まっすぐ",
+        "romaji": "massugu",
+        "en": "straight ahead"
+      },
+      {
+        "ja": "みぎ",
+        "kana": "みぎ",
+        "romaji": "migi",
+        "en": "right"
+      }
+    ],
+    "grammar": [
+      {
+        "title": "Place + はどこですか",
+        "body": "Use place + はどこですか to ask where a place is. Verb + てください is a polite request or instruction."
+      }
+    ],
+    "notes": [
+      "ひだり (hidari) means left."
+    ],
+    "extra": [],
+    "quiz": [
+      {
+        "q": "What does えき mean?",
+        "options": [
+          "Station",
+          "School",
+          "Restaurant"
+        ],
+        "answer": 0,
+        "explain": "えき means station."
+      }
+    ]
+  }
+];
+
+export const lessons = [...coreLessons, ...bridgeLessons, ...instagramLessons];

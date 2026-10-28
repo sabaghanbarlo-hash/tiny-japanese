@@ -33,7 +33,7 @@
  <a class="logo" href="index.html" aria-label="Tiny Japanese home"><span class="seal" lang="ja" aria-hidden="true">日</span>Tiny Japanese</a>
  <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span><span></span></button>
  <nav id="menu" aria-label="Main">
-  <a href="index.html">Home</a><a href="courses.html">Courses</a><a href="lessons.html" aria-current="page">Free Lessons</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a>
+  <a href="index.html">Home</a><a href="courses.html">Courses</a><a href="lessons.html" aria-current="page">Free Lessons</a><a href="tiny-words.html">Tiny Words</a><a href="resources.html">Resources</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a>
   <a class="btn sm ghost" data-yt href="#" target="_blank" rel="noopener" hidden>YouTube</a>
   <a class="btn sm" data-ig href="#" target="_blank" rel="noopener" hidden>Instagram</a>
  </nav>
@@ -42,42 +42,80 @@
 <section class="wrap page-top">
  <p class="eyebrow">Free, no sign-up</p>
  <h1 class="h1-md">Free Japanese Lessons</h1>
- <p class="lead">Each lesson has a short dialogue with romaji and English, vocabulary, simple grammar, and a quick quiz. Start at Lesson 1 and work through in order, or pick the situation you need.</p>
- <div class="lesson-grid" id="lesson-cards" data-level="2"><article class="card lesson-card">
+ <p class="lead">Each lesson has a short dialogue with romaji and English, vocabulary, simple grammar, and a quick quiz. <span id="lesson-count">9</span> free mini story lessons; choose a topic or open a direct episode link.</p>
+ <div class="lesson-filters" id="lesson-filters" role="group" aria-label="Filter lessons by topic">
+  <button type="button" data-filter="all" aria-pressed="true">All lessons</button><button type="button" data-filter="travel" aria-pressed="false">Travel &amp; everyday</button><button type="button" data-filter="emergency" aria-pressed="false">Emergency phrases</button><button type="button" data-filter="everyday" aria-pressed="false">Introductions &amp; basics</button>
+ </div>
+ <div class="lesson-grid" id="lesson-cards" data-level="2"><article class="card lesson-card" data-category="everyday">
  <p class="num">Lesson 1</p>
  <h2>Meeting for the First Time</h2>
  <p class="topic">Greetings &amp; names</p>
  <p>Say hello, ask someone's name, and tell them yours.</p>
  <ul class="vprev" aria-label="Vocabulary preview"><li><span lang="ja">こんにちは</span> <small>konnichiwa</small></li><li><span lang="ja">お名前</span> <small>onamae</small></li><li><span lang="ja">は</span> <small>wa</small></li></ul>
  <a class="btn" href="learn/meeting-for-the-first-time.html" aria-label="Open Lesson 1: Meeting for the First Time">Open lesson</a>
-</article><article class="card lesson-card">
+</article><article class="card lesson-card" data-category="everyday">
  <p class="num">Lesson 2</p>
  <h2>What's Your Name?</h2>
  <p class="topic">Introductions</p>
  <p>Introduce yourself, ask a yes/no question, and say “me too”.</p>
  <ul class="vprev" aria-label="Vocabulary preview"><li><span lang="ja">はじめまして</span> <small>hajimemashite</small></li><li><span lang="ja">〜さん</span> <small>-san</small></li><li><span lang="ja">学生</span> <small>gakusei</small></li></ul>
  <a class="btn" href="learn/whats-your-name.html" aria-label="Open Lesson 2: What's Your Name?">Open lesson</a>
-</article><article class="card lesson-card">
+</article><article class="card lesson-card" data-category="everyday">
  <p class="num">Lesson 3</p>
  <h2>At the Station</h2>
  <p class="topic">Asking where something is</p>
  <p>Greet someone in the morning and ask where the station is.</p>
  <ul class="vprev" aria-label="Vocabulary preview"><li><span lang="ja">おはようございます</span> <small>ohayou gozaimasu</small></li><li><span lang="ja">駅</span> <small>eki</small></li><li><span lang="ja">どこ</span> <small>doko</small></li></ul>
  <a class="btn" href="learn/at-the-station.html" aria-label="Open Lesson 3: At the Station">Open lesson</a>
-</article><article class="card lesson-card">
+</article><article class="card lesson-card" data-category="everyday">
  <p class="num">Lesson 4</p>
  <h2>At the Café</h2>
  <p class="topic">Ordering a drink</p>
  <p>Politely ask for a coffee, say “me too”, and reply to thanks.</p>
  <ul class="vprev" aria-label="Vocabulary preview"><li><span lang="ja">コーヒー</span> <small>koohii</small></li><li><span lang="ja">を</span> <small>o</small></li><li><span lang="ja">お願いします</span> <small>onegaishimasu</small></li></ul>
  <a class="btn" href="learn/at-the-cafe.html" aria-label="Open Lesson 4: At the Café">Open lesson</a>
+</article><article class="card lesson-card" data-category="travel">
+ <p class="num">Episode 13</p>
+ <h2>Ordering Food</h2>
+ <p class="topic">Travel &amp; everyday Japanese · Restaurants</p>
+ <p>Ask for a menu and politely order a dish in a Japanese restaurant.</p>
+ <ul class="vprev" aria-label="Vocabulary preview"><li><span lang="ja">すみません</span> <small>sumimasen</small></li><li><span lang="ja">メニュー</span> <small>menyuu</small></li><li><span lang="ja">を</span> <small>o</small></li></ul>
+ <a class="btn" href="learn/ordering-food.html" aria-label="Open Episode 13: Ordering Food">Open lesson</a>
+</article><article class="card lesson-card" data-category="travel">
+ <p class="num">Episode 14</p>
+ <h2>At the Bookstore</h2>
+ <p class="topic">Travel &amp; everyday Japanese · Shopping</p>
+ <p>Ask a price, compare two books, and choose what to buy.</p>
+ <ul class="vprev" aria-label="Vocabulary preview"><li><span lang="ja">すみません</span> <small>sumimasen</small></li><li><span lang="ja">この</span> <small>kono</small></li><li><span lang="ja">本</span> <small>hon</small></li></ul>
+ <a class="btn" href="learn/at-the-bookstore.html" aria-label="Open Episode 14: At the Bookstore">Open lesson</a>
+</article><article class="card lesson-card" data-category="travel">
+ <p class="num">Episode 15</p>
+ <h2>We Missed the Train!</h2>
+ <p class="topic">Travel &amp; everyday Japanese · Trains</p>
+ <p>React when you miss a train, ask about the next departure, and suggest coffee.</p>
+ <ul class="vprev" aria-label="Vocabulary preview"><li><span lang="ja">ミカさん</span> <small>Mika-san</small></li><li><span lang="ja">いそいで</span> <small>isoide</small></li><li><span lang="ja">電車</span> <small>densha</small></li></ul>
+ <a class="btn" href="learn/we-missed-the-train.html" aria-label="Open Episode 15: We Missed the Train!">Open lesson</a>
+</article><article class="card lesson-card" data-category="travel">
+ <p class="num">Episode 16</p>
+ <h2>Where Is Mika?</h2>
+ <p class="topic">Travel &amp; everyday Japanese · Asking for directions</p>
+ <p>Ask where someone or a restroom is, describe a nearby place, and apologise for getting lost.</p>
+ <ul class="vprev" aria-label="Vocabulary preview"><li><span lang="ja">あれ？</span> <small>are?</small></li><li><span lang="ja">ミカさん</span> <small>Mika-san</small></li><li><span lang="ja">どこ</span> <small>doko</small></li></ul>
+ <a class="btn" href="learn/where-is-mika.html" aria-label="Open Episode 16: Where Is Mika?">Open lesson</a>
+</article><article class="card lesson-card" data-category="emergency">
+ <p class="num">Episode 17</p>
+ <h2>I'm Allergic To…</h2>
+ <p class="topic">Emergency phrases · Food allergies</p>
+ <p>Tell restaurant staff about an egg allergy and ask whether a dish contains eggs.</p>
+ <ul class="vprev" aria-label="Vocabulary preview"><li><span lang="ja">すみません</span> <small>sumimasen</small></li><li><span lang="ja">卵</span> <small>tamago</small></li><li><span lang="ja">の</span> <small>no</small></li></ul>
+ <a class="btn" href="learn/im-allergic-to.html" aria-label="Open Episode 17: I'm Allergic To…">Open lesson</a>
 </article></div>
 </section>
 </main>
 <footer>
  <div class="wrap foot">
   <div><strong>Tiny Japanese</strong><p>Learn Japanese one tiny step at a time.</p></div>
-  <nav aria-label="Footer"><a href="index.html">Home</a><a href="courses.html">Courses</a><a href="lessons.html">Free Lessons</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a><a data-ig href="#" target="_blank" rel="noopener" hidden>Instagram</a><a data-yt href="#" target="_blank" rel="noopener" hidden>YouTube</a></nav>
+  <nav aria-label="Footer"><a href="index.html">Home</a><a href="courses.html">Courses</a><a href="lessons.html">Free Lessons</a><a href="tiny-words.html">Tiny Words</a><a href="resources.html">Resources</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a><a data-ig href="#" target="_blank" rel="noopener" hidden>Instagram</a><a data-yt href="#" target="_blank" rel="noopener" hidden>YouTube</a></nav>
  </div>
  <p class="copy">© <span id="year">2026</span> Tiny Japanese</p>
 </footer>

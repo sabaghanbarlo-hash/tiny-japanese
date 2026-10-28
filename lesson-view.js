@@ -5,12 +5,13 @@ export const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "
 const staticQuiz = (l) => `<noscript><ol class="plain">${l.quiz.map((q) => `<li>${esc(q.q)}<ul class="plain">${q.options.map((o) => `<li lang="ja">${esc(o)}</li>`).join("")}</ul><details><summary>Show answer</summary><p>Answer: <span lang="ja">${esc(q.options[q.answer])}</span> — ${esc(q.explain)}</p></details></li>`).join("")}</ol></noscript>`;
 
 export function lessonHTML(l, prev, next, href) {
+  const label = (x) => x.episode ? `Episode ${x.episode}` : `Lesson ${x.number}`;
   const vocab = l.vocab.map((v) => `<li><span class="vja" lang="ja">${esc(v.ja)}${v.kana ? ` <small>(${esc(v.kana)})</small>` : ""}</span><span class="vro">${esc(v.romaji)}</span><span class="ven">${esc(v.en)}</span></li>`).join("");
   const extra = (l.extra || []).map((x) => `<section class="block optional" aria-labelledby="ex-h"><h2 id="ex-h">${esc(x.title)}</h2><p class="muted">Optional. These lines are not part of the video dialogue.</p><ul class="dialogue">${x.items.map((d) => `<li><div class="ja" lang="ja">${esc(d.ja)}</div><div class="ro">${esc(d.romaji)}</div><div class="en">${esc(d.en)}</div></li>`).join("")}</ul></section>`).join("");
   return `
 <nav class="crumbs" aria-label="Breadcrumb"><a href="${href({ lessons: true })}">← All lessons</a></nav>
-<header class="lesson-head"><p class="num">Lesson ${l.number} · ${esc(l.topic)}</p><h1 class="h1-md">${esc(l.title)}</h1>
-<p class="lead"><strong>Goal:</strong> ${esc(l.objective)}</p><p class="lead">${esc(l.intro)}</p></header>
+<header class="lesson-head"><p class="num">${label(l)} · ${esc(l.topic)}</p><h1 class="h1-md">${esc(l.title)}</h1>
+<p class="lead"><strong>Goal:</strong> ${esc(l.objective)}</p><p class="lead">${esc(l.intro)}</p>${l.reviewStatus ? `<p class="review-note"><strong>Content status:</strong> ${esc(l.reviewStatus)}</p>` : ""}</header>
 
 <section class="block" aria-labelledby="dlg-h"><h2 id="dlg-h">Dialogue</h2>
 <div class="toggles" role="group" aria-label="Show or hide help"><label><input type="checkbox" id="t-ro" checked> Romaji</label><label><input type="checkbox" id="t-en" checked> English</label></div>
@@ -21,15 +22,15 @@ export function lessonHTML(l, prev, next, href) {
 
 <section class="block" aria-labelledby="gr-h"><h2 id="gr-h">Grammar</h2>${l.grammar.map((g) => `<div class="gitem"><h3>${esc(g.title)}</h3><p>${esc(g.body)}</p></div>`).join("")}</section>
 
-${l.notes && l.notes.length ? `<section class="block" aria-labelledby="nt-h"><h2 id="nt-h">Notes</h2><ul class="notes">${l.notes.map((n) => `<li>${esc(n)}</li>`).join("")}</ul></section>` : ""}
+${l.notes && l.notes.length ? `<section class="block" aria-labelledby="nt-h"><h2 id="nt-h">Notes</h2><ul class="notes">${[...(l.sourceNote ? [l.sourceNote] : []), ...l.notes].map((n) => `<li>${esc(n)}</li>`).join("")}</ul></section>` : ""}
 ${extra}
 
 <section class="block" aria-labelledby="qz-h"><h2 id="qz-h">Quick quiz</h2><p class="muted">Tap an answer to see feedback straight away. Your score is only kept while this page is open.</p><div id="quiz">${staticQuiz(l)}</div></section>
 
 <nav class="lesson-nav" aria-label="Lesson navigation">
- ${prev ? `<a class="btn ghost" href="${href(prev)}">← Lesson ${prev.number}: ${esc(prev.title)}</a>` : "<span></span>"}
+ ${prev ? `<a class="btn ghost" href="${href(prev)}">← ${label(prev)}: ${esc(prev.title)}</a>` : "<span></span>"}
  <a class="btn ghost" href="${href({ lessons: true })}">All lessons</a>
- ${next ? `<a class="btn" href="${href(next)}">Lesson ${next.number}: ${esc(next.title)} →</a>` : "<span></span>"}
+ ${next ? `<a class="btn" href="${href(next)}">${label(next)}: ${esc(next.title)} →</a>` : "<span></span>"}
 </nav>`;
 }
 

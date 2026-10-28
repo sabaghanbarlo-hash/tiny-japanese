@@ -9,11 +9,12 @@ import { esc, lessonHTML } from "./lesson-view.js";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const page = (l) => `learn/${l.id}.html`;
+const label = (l) => l.episode ? `Episode ${l.episode}` : `Lesson ${l.number}`;
 
 // ---- Lesson pages -------------------------------------------------------------------------
 const href = (x) => (x.lessons ? "/lessons.html" : "/" + page(x));
 const head = (l) => {
-  const title = `Lesson ${l.number}: ${l.title} | Tiny Japanese`;
+  const title = `${label(l)}: ${l.title} | Tiny Japanese`;
   const desc = `${l.description} Free beginner Japanese lesson with dialogue, vocabulary, grammar, and a quiz.`;
   return `<!doctype html>
 <html lang="en">
@@ -53,7 +54,7 @@ const body = (l, i) => `
  <a class="logo" href="/index.html" aria-label="Tiny Japanese home"><span class="seal" lang="ja" aria-hidden="true">日</span>Tiny Japanese</a>
  <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span><span></span></button>
  <nav id="menu" aria-label="Main">
-  <a href="/index.html">Home</a><a href="/courses.html">Courses</a><a href="/lessons.html" aria-current="page">Free Lessons</a><a href="/index.html#about">About</a><a href="/index.html#contact">Contact</a>
+  <a href="/index.html">Home</a><a href="/courses.html">Courses</a><a href="/lessons.html" aria-current="page">Free Lessons</a><a href="/tiny-words.html">Tiny Words</a><a href="/resources.html">Resources</a><a href="/index.html#about">About</a><a href="/index.html#contact">Contact</a>
   <a class="btn sm ghost" data-yt href="#" target="_blank" rel="noopener" hidden>YouTube</a>
   <a class="btn sm" data-ig href="#" target="_blank" rel="noopener" hidden>Instagram</a>
  </nav>
@@ -65,7 +66,7 @@ const body = (l, i) => `
 <footer>
  <div class="wrap foot">
   <div><strong>Tiny Japanese</strong><p>Learn Japanese one tiny step at a time.</p></div>
-  <nav aria-label="Footer"><a href="/index.html">Home</a><a href="/courses.html">Courses</a><a href="/lessons.html">Free Lessons</a><a href="/index.html#about">About</a><a href="/index.html#contact">Contact</a><a data-ig href="#" target="_blank" rel="noopener" hidden>Instagram</a><a data-yt href="#" target="_blank" rel="noopener" hidden>YouTube</a></nav>
+  <nav aria-label="Footer"><a href="/index.html">Home</a><a href="/courses.html">Courses</a><a href="/lessons.html">Free Lessons</a><a href="/tiny-words.html">Tiny Words</a><a href="/resources.html">Resources</a><a href="/index.html#about">About</a><a href="/index.html#contact">Contact</a><a data-ig href="#" target="_blank" rel="noopener" hidden>Instagram</a><a data-yt href="#" target="_blank" rel="noopener" hidden>YouTube</a></nav>
  </div>
  <p class="copy">© <span id="year">2026</span> Tiny Japanese</p>
 </footer>
@@ -78,13 +79,13 @@ fs.mkdirSync(path.join(root, "learn"), { recursive: true });
 lessons.forEach((l, i) => fs.writeFileSync(path.join(root, page(l)), head(l) + body(l, i)));
 
 // ---- Lesson cards on the home page and library -----------------------------------------------
-const cards = (h) => lessons.map((l) => `<article class="card lesson-card">
- <p class="num">Lesson ${l.number}</p>
+const cards = (h) => lessons.map((l) => `<article class="card lesson-card" data-category="${l.category || "everyday"}">
+ <p class="num">${label(l)}</p>
  <${h}>${esc(l.title)}</${h}>
  <p class="topic">${esc(l.topic)}</p>
  <p>${esc(l.description)}</p>
  <ul class="vprev" aria-label="Vocabulary preview">${l.vocab.slice(0, 3).map((v) => `<li><span lang="ja">${esc(v.ja)}</span> <small>${esc(v.romaji)}</small></li>`).join("")}</ul>
- <a class="btn" href="${page(l)}" aria-label="Open Lesson ${l.number}: ${esc(l.title)}">Open lesson</a>
+ <a class="btn" href="${page(l)}" aria-label="Open ${label(l)}: ${esc(l.title)}">Open lesson</a>
 </article>`).join("");
 
 for (const [file, h] of [["index.html", "h3"], ["lessons.html", "h2"]]) {
@@ -93,5 +94,10 @@ for (const [file, h] of [["index.html", "h3"], ["lessons.html", "h2"]]) {
   t = t.replace(/(<div class="lesson-grid" id="lesson-cards"[^>]*>)[\s\S]*?(<\/div>)/, `$1${cards(h)}$2`);
   t = t.replace(/lesson\.html\?id=[a-z0-9-]+/g, page(lessons[0])); // "Start Learning" buttons point at Lesson 1
   fs.writeFileSync(p, t);
+}
+for (const file of ["index.html", "lessons.html"]) {
+ const p = path.join(root, file); let t = fs.readFileSync(p, "utf8");
+ t = t.replace(/<span id="lesson-count">\d+<\/span>/g, `<span id="lesson-count">${lessons.length}</span>`);
+ fs.writeFileSync(p, t);
 }
 console.log(`Built ${lessons.length} lesson pages in learn/ and refreshed cards.`);

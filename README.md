@@ -1,9 +1,10 @@
 # Tiny Japanese
 
-Free beginner Japanese lessons. Plain HTML/CSS/JS, no build step, no backend.
+Free beginner Japanese lessons. Static HTML/CSS/JS, no runtime build or backend.
 
-- `index.html` home, `lessons.html` library, `lesson.html?id=<lesson-id>` lesson pages (link to these from Reels).
-- Add a lesson: copy an object in `data/lessons.js` (dialogue, vocab, grammar, quiz), give it the next number and a new id. Cards, navigation and quiz appear automatically.
+- `index.html` home, `lessons.html` library, `learn/<lesson-id>.html` stable lesson pages (link to these from Reels), `tiny-words.html` vocabulary library, and `resources.html` study-resource hub.
+- Add a core lesson in `data/lessons.js`, or an Instagram story lesson in `data/instagram-lessons.js` (dialogue, vocab, grammar, quiz). Give it a unique id and lesson number; set `episode` for Instagram series numbering. Run `node build-lessons.mjs` to refresh cards and static pages. Topic filters use each lesson’s `category` (`everyday`, `travel`, or `emergency`).
+- Tiny Words entries live in `data/words.js`. Only words with a completed record in the video repository publishing log are included. Run `node build-words.mjs` after editing the word data. The source carousel JSON should be checked before adding more words.
 - Instagram URL and contact email: `data/site.js`. Instagram links stay hidden while `instagramUrl` is empty.
 - Styling: `theme.css` (brand), `styles.css` (shared), `lesson.css` (lessons and cards).
 - Production URL: https://tiny-japanese.sabagh1.workers.dev/
@@ -12,7 +13,7 @@ Free beginner Japanese lessons. Plain HTML/CSS/JS, no build step, no backend.
 
 - `courses.html` lists the courses, `courses/<course>/index.html` is a course overview, `courses/<course>/NN-<lesson>.html` are the lessons. All are generated static pages.
 - Content lives in `data/courses.js` (course list) and `data/course-*.js` (lessons). A lesson is a list of blocks (`text`, `kana`, `words`, `points`, `tips`, `dialogue`) plus a quiz. `data/quiz-tools.js` has helpers that build kana and vocabulary quizzes automatically.
-- After editing any of them run `node build-lessons.mjs` and `node build-courses.mjs`, then commit the generated files.
+- After editing course data run `node build-courses.mjs`; after editing lesson data run `node build-lessons.mjs`; after editing Tiny Words data run `node build-words.mjs`. Commit generated static files alongside their source data.
 - Lesson progress ("Mark lesson as complete") is saved in the visitor's own browser only. There are no accounts.
 - **Selling a course:** set `price` and `buyUrl` (a checkout link from Gumroad, Payhip, Lemon Squeezy, etc.) on the course in `data/courses.js`; the course page then shows a Buy button instead of "Free while we launch". This site is static, so lessons cannot be locked behind a login by themselves. To charge for the lessons, either sell a downloadable version (PDF/workbook) through the checkout platform, or move the paid lessons behind a members-only service.
 

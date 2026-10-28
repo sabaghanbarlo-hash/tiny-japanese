@@ -1,6 +1,8 @@
 // One object per published lesson. Dialogue text matches the published Tiny Japanese episodes.
 // To add a lesson: copy an object, give it a new id and the next number. Romaji uses long-vowel doubling (ou, oo).
-export const lessons = [
+import { instagramLessons } from "./instagram-lessons.js";
+
+const coreLessons = [
  {
   id: "meeting-for-the-first-time", number: 1, title: "Meeting for the First Time",
   topic: "Greetings & names", level: "Absolute beginner",
@@ -152,3 +154,5 @@ export const lessons = [
   ]
  }
 ];
+
+export const lessons = [...coreLessons, ...instagramLessons];

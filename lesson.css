@@ -62,3 +62,20 @@
 .lesson-card h2{font-size:1.15rem;margin-bottom:.3rem}
 [hidden]{display:none!important}
 .foot nav{flex-wrap:wrap;gap:4px 20px}
+/* October additions: vocabulary library, review transparency, and topic filters. */
+.review-note{background:#fff5dc;border-left:4px solid #c58b26;border-radius:10px;padding:12px 14px;color:#5a4524;font-size:.94rem;margin-top:1rem}
+.lesson-filters{display:flex;flex-wrap:wrap;gap:8px;margin:1.2rem 0}
+.lesson-filters button{min-height:44px;padding:8px 14px;border:1px solid #b8475c66;border-radius:99px;background:#fff;color:var(--ink);font:700 .95rem var(--f);cursor:pointer}
+.lesson-filters button[aria-pressed="true"]{background:var(--rose);color:#fff;border-color:var(--rose)}
+.word-grid{display:grid;gap:20px;margin-top:1.5rem}
+.word-card{padding:clamp(16px,3vw,24px);min-width:0}
+.word-top{display:flex;gap:16px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+.word-top h2{font-size:clamp(1.8rem,6vw,2.5rem);margin:.1rem 0}
+.word-reading{color:var(--soft);margin:0}.word-meaning{background:var(--sakura);border-radius:99px;padding:6px 14px;font-weight:800;color:#5a2330;margin-top:1.6rem}
+.word-example,.word-conversation{margin-top:1.2rem;padding-top:1rem;border-top:1px solid #00000012}
+.word-example h3,.word-conversation h3{font-size:1.1rem;margin-bottom:.4rem}
+.word-ja{font-size:1.35rem;font-weight:800;line-height:1.6;overflow-wrap:anywhere}
+.word-quiz{border:0;background:#fff8f0;border-radius:14px;padding:14px;margin:1.2rem 0 0;min-inline-size:0}
+.word-quiz legend{font-weight:800;padding:0 0 8px}.word-opts{display:grid;gap:8px}.word-feedback{min-height:1.4em;margin:.8rem 0 0}
+.word-retry{margin-top:8px}
+@media(min-width:760px){.word-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.word-card:first-child{grid-column:span 2}}

@@ -7,13 +7,13 @@ const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&l
 const list = $("#lesson-cards");
 if (list) {
   const h = list.dataset.level === "2" ? "h2" : "h3";
-  list.innerHTML = lessons.map((l) => `<article class="card lesson-card">
- <p class="num">Lesson ${l.number}</p>
+  list.innerHTML = lessons.map((l) => `<article class="card lesson-card" data-category="${l.category || "everyday"}">
+ <p class="num">${l.episode ? `Episode ${l.episode}` : `Lesson ${l.number}`}</p>
  <${h}>${esc(l.title)}</${h}>
  <p class="topic">${esc(l.topic)}</p>
  <p>${esc(l.description)}</p>
  <ul class="vprev" aria-label="Vocabulary preview">${l.vocab.slice(0, 3).map((v) => `<li><span lang="ja">${esc(v.ja)}</span> <small>${esc(v.romaji)}</small></li>`).join("")}</ul>
- <a class="btn" href="learn/${encodeURIComponent(l.id)}.html" aria-label="Open Lesson ${l.number}: ${esc(l.title)}">Open lesson</a>
+ <a class="btn" href="learn/${encodeURIComponent(l.id)}.html" aria-label="Open ${l.episode ? `Episode ${l.episode}` : `Lesson ${l.number}`}: ${esc(l.title)}">Open lesson</a>
 </article>`).join("");
 }
 
@@ -37,3 +37,18 @@ if (items.length && "IntersectionObserver" in window) {
   const io = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && (e.target.classList.add("in"), io.unobserve(e.target))), { threshold: 0.12 });
   items.forEach((el) => io.observe(el));
 } else items.forEach((el) => el.classList.add("in"));
+
+
+// Optional lesson-library category filter; works from links such as lessons.html?category=travel.
+const filterBar = $("#lesson-filters");
+if (list && filterBar) {
+  const buttons = [...filterBar.querySelectorAll("[data-filter]")];
+  const applyFilter = (category) => {
+    buttons.forEach((b) => { const active = b.dataset.filter === category; b.setAttribute("aria-pressed", String(active)); });
+    list.querySelectorAll(".lesson-card").forEach((card) => { card.hidden = category !== "all" && card.dataset.category !== category; });
+  };
+  const requested = new URLSearchParams(location.search).get("category");
+  const valid = buttons.some((b) => b.dataset.filter === requested) ? requested : "all";
+  buttons.forEach((b) => b.addEventListener("click", () => applyFilter(b.dataset.filter)));
+  applyFilter(valid);
+}

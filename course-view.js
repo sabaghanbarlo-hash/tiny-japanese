@@ -12,8 +12,10 @@ export const lessonPath = (c, l) => `/courses/${c.id}/${String(l.number).padStar
 export const coursePath = (c) => `/courses/${c.id}/index.html`;
 // Lesson videos are made by video-tools/make-videos.mjs and live in /videos/<course>/<NN-lesson>.mp4 (+ .jpg poster).
 const vbase = (c, l) => `/videos/${c.id}/${String(l.number).padStart(2, "0")}-${l.id}`;
-export const videoPath = (c, l) => `${vbase(c, l)}.mp4`;
-export const posterPath = (c, l) => `${vbase(c, l)}.jpg`;
+// Bump ASSET_V whenever the videos are re-rendered, so browsers and CDNs fetch the new files instead of an older cached copy.
+const ASSET_V = "2";
+export const videoPath = (c, l) => `${vbase(c, l)}.mp4?v=${ASSET_V}`;
+export const posterPath = (c, l) => `${vbase(c, l)}.jpg?v=${ASSET_V}`;
 
 // "20 min" -> 20
 const mins = (t) => parseInt(String(t || "0"), 10) || 0;

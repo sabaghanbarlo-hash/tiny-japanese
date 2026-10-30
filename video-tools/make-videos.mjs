@@ -2,7 +2,7 @@
 //   node video-tools/make-videos.mjs                  all courses
 //   node video-tools/make-videos.mjs katakana-starter  one course
 //   node video-tools/make-videos.mjs hiragana-starter 02-k-row   one lesson (match on the file-name part)
-// Needs: Node, Playwright (chromium), ffmpeg, a Japanese font (Noto Sans CJK JP), and Python with pyopenjtalk for the narration (see tts.py). Output: videos/<course>/<NN-lesson>.mp4 and .jpg poster.
+// Needs: Node, Playwright (chromium), ffmpeg, a Japanese font (Noto Sans CJK JP), and the VOICEVOX narration voices (run video-tools/setup-tts.sh once; see tts.py). Output: videos/<course>/<NN-lesson>.mp4 and .jpg poster.
 // Kana stroke order comes from KanjiVG (c) Ulrich Apel, CC BY-SA 3.0, http://kanjivg.tagaini.net (see strokes.json, build-strokes.py).
 import fs from "node:fs";
 import os from "node:os";
@@ -174,7 +174,7 @@ for (const c of courses) {
     const scenes = lessonScenes(c, l);
     // Narration: make the clips, then stretch each scene so its clip fits.
     const jobs = new Map();
-    for (const sc of scenes) if (sc.say) { const key = crypto.createHash("sha1").update(JSON.stringify(sc.say)).digest("hex").slice(0, 16); sc.key = key; jobs.set(key, { key, ...sc.say }); }
+    for (const sc of scenes) if (sc.say) { const key = crypto.createHash("sha1").update("vv1" + JSON.stringify(sc.say)).digest("hex").slice(0, 16); sc.key = key; jobs.set(key, { key, ...sc.say }); }
     const ttsDir = path.join(os.tmpdir(), "tj-tts");
     const lens = JSON.parse(execFileSync("python3", [path.join(here, "tts.py"), ttsDir], { input: JSON.stringify([...jobs.values()]), maxBuffer: 1 << 26 }).toString());
     const events = []; let clock = 0;

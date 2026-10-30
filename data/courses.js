@@ -10,7 +10,7 @@ export const courses = [
   {
     id: "hiragana-starter",
     pdf: "/downloads/hiragana-starter-workbook.pdf",
-    videoCredit: "Stroke order animation uses KanjiVG data (CC BY-SA 3.0, kanjivg.tagaini.net). Voices: Open JTalk with the Tohoku-F01 (Tohoku University, CC BY 4.0) and Mei (Nagoya Institute of Technology, CC BY 3.0) voices.",
+    videoCredit: "Stroke order animation uses KanjiVG data (CC BY-SA 3.0, kanjivg.tagaini.net). Voices: VOICEVOX:春日部つむぎ, VOICEVOX:玄野武宏.",
     title: "Hiragana Starter",
     tagline: "Read every hiragana character in 11 short lessons.",
     level: "Absolute beginner",
@@ -29,7 +29,7 @@ export const courses = [
   {
     id: "katakana-starter",
     pdf: "/downloads/katakana-starter-workbook.pdf",
-    videoCredit: "Stroke order animation uses KanjiVG data (CC BY-SA 3.0, kanjivg.tagaini.net). Voices: Open JTalk with the Tohoku-F01 (Tohoku University, CC BY 4.0) and Mei (Nagoya Institute of Technology, CC BY 3.0) voices.",
+    videoCredit: "Stroke order animation uses KanjiVG data (CC BY-SA 3.0, kanjivg.tagaini.net). Voices: VOICEVOX:春日部つむぎ, VOICEVOX:玄野武宏.",
     title: "Katakana Starter",
     tagline: "Read every katakana character in 11 short lessons.",
     level: "Beginner",
@@ -48,7 +48,7 @@ export const courses = [
   {
     id: "first-conversations",
     pdf: "/downloads/first-conversations-workbook.pdf",
-    videoCredit: "Voices: Open JTalk with the Tohoku-F01 (Tohoku University, CC BY 4.0) and Mei (Nagoya Institute of Technology, CC BY 3.0) voices.",
+    videoCredit: "Voices: VOICEVOX:春日部つむぎ, VOICEVOX:玄野武宏.",
     title: "First Conversations",
     tagline: "Ten everyday situations, from greetings to asking for help.",
     level: "Beginner",

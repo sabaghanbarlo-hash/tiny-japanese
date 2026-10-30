@@ -1,6 +1,6 @@
 // Makes the "Hear it" audio clips used on the course pages.
 //   node video-tools/make-audio.mjs        ->  audio/<id>.mp3 and data/audio-map.js
-// Same voices as the lesson videos (see tts.py and voices/README.md). Needs Python with pyopenjtalk, and ffmpeg.
+// Same voices as the lesson videos (VOICEVOX, see tts.py; run setup-tts.sh once). Needs Python and ffmpeg.
 // Run this BEFORE `node build-courses.mjs`, because the course pages only show a button for clips listed in data/audio-map.js.
 import fs from "node:fs";
 import os from "node:os";
@@ -24,7 +24,7 @@ for (const c of courses) for (const l of c.lessons) for (const b of l.blocks) {
 }
 
 const map = {}, jobs = [];
-for (const [k, v] of clips) { const id = crypto.createHash("sha1").update(k).digest("hex").slice(0, 12); map[k] = id; jobs.push({ key: id, ...v }); }
+for (const [k, v] of clips) { const id = crypto.createHash("sha1").update(k + "|vv1").digest("hex").slice(0, 12); map[k] = id; jobs.push({ key: id, ...v }); }
 const tmp = path.join(os.tmpdir(), "tj-audio-wav");
 execFileSync("python3", [path.join(here, "tts.py"), tmp], { input: JSON.stringify(jobs), maxBuffer: 1 << 26, stdio: ["pipe", "pipe", "inherit"] });
 const out = path.join(root, "audio");

@@ -13,7 +13,7 @@ export const coursePath = (c) => `/courses/${c.id}/index.html`;
 // Lesson videos are made by video-tools/make-videos.mjs and live in /videos/<course>/<NN-lesson>.mp4 (+ .jpg poster).
 const vbase = (c, l) => `/videos/${c.id}/${String(l.number).padStart(2, "0")}-${l.id}`;
 // Bump ASSET_V whenever the videos are re-rendered, so browsers and CDNs fetch the new files instead of an older cached copy.
-const ASSET_V = "2";
+const ASSET_V = "3";
 export const videoPath = (c, l) => `${vbase(c, l)}.mp4?v=${ASSET_V}`;
 export const posterPath = (c, l) => `${vbase(c, l)}.jpg?v=${ASSET_V}`;
 

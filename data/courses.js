@@ -1,7 +1,7 @@
 // All courses. To add a course: write its lessons in a data/course-*.js file, then add an entry here and run `node build-courses.mjs`.
 //
-// Selling later: set `price` (e.g. "$19") and `buyUrl` (a checkout link from Gumroad, Payhip, Lemon Squeezy, Ko-fi, etc.).
-// While `buyUrl` is empty the course shows "Free while we launch" and no buy button. See README for the full note on locking lessons.
+// Premium courses: `premium: true` + `price`. Lessons 1-3 (PREMIUM.freeLessons in data/premium-config.js) are free; the rest are stored on the server and need an access code.
+// Payment goes through the link in data/premium-config.js; add `payUrl` to a course if it needs its own link (e.g. a fixed-amount link).
 import { hiraganaLessons } from "./course-hiragana.js";
 import { katakanaLessons } from "./course-katakana.js";
 import { conversationLessons } from "./course-conversations.js";
@@ -9,7 +9,6 @@ import { conversationLessons } from "./course-conversations.js";
 export const courses = [
   {
     id: "hiragana-starter",
-    pdf: "/downloads/hiragana-starter-workbook.pdf",
     videoCredit: "Stroke order animation uses KanjiVG data (CC BY-SA 3.0, kanjivg.tagaini.net). Voices: VOICEVOX:春日部つむぎ, VOICEVOX:玄野武宏.",
     title: "Hiragana Starter",
     tagline: "Read every hiragana character in 11 short lessons.",
@@ -23,12 +22,11 @@ export const courses = [
       "Read real words, place names and full sentences in hiragana"
     ],
     audience: "Complete beginners. No Japanese needed.",
-    price: "", buyUrl: "",
+    premium: true, price: "$9", buyUrl: "",
     lessons: hiraganaLessons
   },
   {
     id: "katakana-starter",
-    pdf: "/downloads/katakana-starter-workbook.pdf",
     videoCredit: "Stroke order animation uses KanjiVG data (CC BY-SA 3.0, kanjivg.tagaini.net). Voices: VOICEVOX:春日部つむぎ, VOICEVOX:玄野武宏.",
     title: "Katakana Starter",
     tagline: "Read every katakana character in 11 short lessons.",
@@ -42,12 +40,11 @@ export const courses = [
       "Read menus, country names, places and your own name in katakana"
     ],
     audience: "Learners who can read hiragana (take Hiragana Starter first if not).",
-    price: "", buyUrl: "",
+    premium: true, price: "$9", buyUrl: "",
     lessons: katakanaLessons
   },
   {
     id: "first-conversations",
-    pdf: "/downloads/first-conversations-workbook.pdf",
     videoCredit: "Voices: VOICEVOX:春日部つむぎ, VOICEVOX:玄野武宏.",
     title: "First Conversations",
     tagline: "Ten everyday situations, from greetings to asking for help.",
@@ -62,7 +59,7 @@ export const courses = [
       "Say when you don't understand and ask for help"
     ],
     audience: "Beginners who can read hiragana (take Hiragana Starter first if not).",
-    price: "", buyUrl: "",
+    premium: true, price: "$12", buyUrl: "",
     lessons: conversationLessons
   }
 ];

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Premium admin</title>
+<style>
+body{font:16px/1.5 system-ui,sans-serif;margin:0;background:#faf6f0;color:#2b2623}
+main{max-width:860px;margin:0 auto;padding:1rem}
+h1{font-size:1.5rem}h2{font-size:1.15rem;margin-top:2rem}
+.card{background:#fff;border:1px solid #e3d8cb;border-radius:12px;padding:.9rem 1rem;margin:.6rem 0}
+button,input,select{font:inherit;padding:.5rem .8rem;border-radius:8px;border:1.5px solid #c9bbab;background:#fff}
+button{cursor:pointer;background:#b8475c;color:#fff;border-color:#b8475c;font-weight:700}
+button.ghost{background:#fff;color:#2b2623;border-color:#c9bbab}
+.row{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+.muted{color:#6d625a;font-size:.9rem}
+.code{font:700 1.2rem ui-monospace,monospace;letter-spacing:.06em;background:#fff3d6;padding:.3rem .6rem;border-radius:8px;display:inline-block}
+.tag{font-size:.75rem;font-weight:800;padding:.1rem .5rem;border-radius:99px;background:#eee}
+.tag.pending{background:#fff0c2}.tag.approved{background:#d9f0e0}.tag.rejected,.tag.revoked{background:#f6d6d6}
+label{display:inline-flex;gap:.3rem;align-items:center;margin-right:.7rem}
+textarea{width:100%;min-height:7rem;font:inherit;padding:.5rem;border-radius:8px;border:1.5px solid #c9bbab;box-sizing:border-box}
+</style></head><body><main>
+<h1>Premium courses admin</h1>
+<div id="login" class="card"><div class="row"><input id="secret" type="password" placeholder="Admin secret" autocomplete="current-password"><button id="go">Sign in</button></div><p id="lmsg" class="muted"></p></div>
+<div id="app" hidden>
+ <p class="row"><button class="ghost" id="refresh">Refresh</button><button class="ghost" id="out">Sign out</button></p>
+ <h2>Payment requests</h2><div id="reqs"></div>
+ <h2>Make a code by hand</h2>
+ <div class="card"><div class="row"><select id="msite"></select><input id="mnote" placeholder="Note (buyer email or name)" style="flex:1 1 14rem"></div><p id="mcourses"></p><button id="mmake">Make code</button><div id="mout"></div></div>
+ <h2>All codes</h2><div id="codes"></div>
+</div>
+<script>
+const API="https://pwenjqeclxxpfryxygzb.supabase.co/functions/v1/premium";
+const SITES={"tiny-japanese":{name:"Tiny Japanese",url:"https://tiny-japanese.sabagh1.workers.dev",courses:{"hiragana-starter":"Hiragana Starter","katakana-starter":"Katakana Starter","first-conversations":"First Conversations"},path:c=>"/courses/"+c+"/index.html"},
+"tiny-french":{name:"Tiny French",url:"https://sabaghanbarlo-hash.github.io/tiny-french",courses:{"first-conversations":"First Conversations","french-sounds-starter":"French Sounds Starter","everyday-french":"Everyday French"},path:c=>"/courses/"+c+"/"}};
+const $=s=>document.querySelector(s);
+const el=(t,props={},...kids)=>{const e=document.createElement(t);Object.assign(e,props);kids.flat().forEach(k=>e.append(k));return e};
+let secret=sessionStorage.getItem("adm")||"";
+const api=async b=>{const r=await fetch(API,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({secret,...b})});const j=await r.json().catch(()=>({}));return {status:r.status,...j}};
+const cname=(site,c)=>SITES[site]?.courses[c]||c;
+function message(site,courses,code,name){
+  const s=SITES[site];const list=courses.map(c=>cname(site,c)).join(" and ");
+  return `Hi${name?" "+name:""},\n\nThank you for your payment! Your access code for ${list} on ${s.name} is:\n\n${code}\n\nHow to use it: open ${s.url}${s.path(courses[0])} , type the code in the "Unlock" box and press Unlock. Everything opens right away, and your browser remembers it. You can use the code on up to 3 devices.\n\nHappy learning!`;
+}
+function showCode(box,site,courses,code,name,email){
+  const text=message(site,courses,code,name);const ta=el("textarea",{value:text,readOnly:true});
+  const mail="mailto:"+encodeURIComponent(email||"")+"?subject="+encodeURIComponent(SITES[site].name+" access code")+"&body="+encodeURIComponent(text);
+  box.replaceChildren(el("p",{},el("span",{className:"code",textContent:code})),ta,el("p",{className:"row"},
+    el("button",{textContent:"Copy message",onclick:async()=>{try{await navigator.clipboard.writeText(text)}catch{ta.select();document.execCommand("copy")}}}),
+    el("a",{href:mail,textContent:"Open in email app"})),el("p",{className:"muted",textContent:"Save this code now: it can't be shown again (only the last 4 characters are kept)."}));
+}
+async function load(){
+  const r=await api({action:"admin_overview"});
+  if(!r.ok){$("#lmsg").textContent=r.status===429?"Too many tries, wait a few minutes.":"Wrong secret.";sessionStorage.removeItem("adm");$("#login").hidden=false;$("#app").hidden=true;return}
+  $("#login").hidden=true;$("#app").hidden=false;
+  const reqs=$("#reqs");reqs.replaceChildren();
+  if(!r.requests.length)reqs.append(el("p",{className:"muted",textContent:"No requests yet."}));
+  for(const q of r.requests){
+    const out=el("div");
+    const card=el("div",{className:"card"},el("p",{},el("strong",{textContent:`${SITES[q.site]?.name||q.site}: ${q.courses.map(c=>cname(q.site,c)).join(", ")}`})," ",el("span",{className:"tag "+q.status,textContent:q.status})),
+      el("p",{textContent:`${q.name||"(no name)"} · ${q.email}`}),el("p",{className:"muted",textContent:`Payment ref: ${q.reference||"(none)"} · ${new Date(q.created_at).toLocaleString()}`}),out);
+    if(q.status==="pending"){card.append(el("div",{className:"row"},
+      el("button",{textContent:"Payment received: make code",onclick:async()=>{const x=await api({action:"admin_create_code",site:q.site,courses:q.courses,note:q.email,request_id:q.id});if(x.ok){showCode(out,q.site,q.courses,x.code,q.name,q.email)}else out.textContent="Error"}}),
+      el("button",{className:"ghost",textContent:"Reject",onclick:async()=>{await api({action:"admin_reject",request_id:q.id});load()}})))}
+    reqs.append(card);
+  }
+  const cl=$("#codes");cl.replaceChildren();
+  for(const c of r.codes){cl.append(el("div",{className:"card row"},el("span",{className:"code",textContent:"…"+c.hint}),
+    el("span",{textContent:`${SITES[c.site]?.name||c.site}: ${c.courses.map(x=>cname(c.site,x)).join(", ")}`}),el("span",{className:"muted",textContent:`${c.note||""} · ${c.devices}/${c.max_devices} devices`}),
+    el("span",{className:"tag "+(c.revoked?"revoked":"approved"),textContent:c.revoked?"revoked":"active"}),
+    el("button",{className:"ghost",textContent:c.revoked?"Restore":"Revoke",onclick:async()=>{await api({action:"admin_revoke",code_id:c.id,revoked:!c.revoked});load()}})))}
+}
+function drawManual(){
+  const site=$("#msite").value;const box=$("#mcourses");box.replaceChildren();
+  for(const [id,name] of Object.entries(SITES[site].courses))box.append(el("label",{},el("input",{type:"checkbox",value:id}),name));
+}
+for(const [k,v] of Object.entries(SITES))$("#msite").append(el("option",{value:k,textContent:v.name}));
+$("#msite").onchange=drawManual;drawManual();
+$("#mmake").onclick=async()=>{const site=$("#msite").value;const courses=[...$("#mcourses").querySelectorAll("input:checked")].map(i=>i.value);if(!courses.length){$("#mout").textContent="Tick at least one course.";return}
+  const x=await api({action:"admin_create_code",site,courses,note:$("#mnote").value});if(x.ok){showCode($("#mout"),site,courses,x.code,"","");load()}else $("#mout").textContent="Error";};
+$("#go").onclick=()=>{secret=$("#secret").value.trim();sessionStorage.setItem("adm",secret);load()};
+$("#secret").addEventListener("keydown",e=>{if(e.key==="Enter")$("#go").click()});
+$("#refresh").onclick=load;$("#out").onclick=()=>{sessionStorage.removeItem("adm");location.reload()};
+if(secret)load();
+</script></main></body></html>

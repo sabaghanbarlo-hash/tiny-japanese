@@ -45,3 +45,6 @@
 .kc-btn:has(.kj):active,.kc-btn[data-audio].playing{background:var(--sakura)}
 .dialogue .ja .hear{width:30px;height:30px}
 @media(prefers-reduced-motion:reduce){.hear{transition:none}}
+
+/* Premium (see premium.css) */
+.price-box .pm-box{margin-top:.75rem}

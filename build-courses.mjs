@@ -25,6 +25,7 @@ const head = ({ title, desc, type = "article" }) => `<!doctype html>
 <link rel="stylesheet" href="/theme.css">
 <link rel="stylesheet" href="/lesson.css">
 <link rel="stylesheet" href="/course.css">
+<link rel="stylesheet" href="/premium.css">
 <script>document.documentElement.classList.add('js')</script>
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">

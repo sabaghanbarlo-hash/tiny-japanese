@@ -25,3 +25,19 @@ Free beginner Japanese lessons. Static HTML/CSS/JS, no runtime build or backend.
 - **Selling:** the workbooks in `downloads/` are public files. When you start charging, move them out of the repo and deliver them through the checkout platform (Gumroad, Payhip, etc.) instead, and remove the `pdf` line for that course in `data/courses.js`.
 - Narration is made offline by `video-tools/tts.py` with VOICEVOX (neural voices: Mika = 春日部つむぎ, Alex = 玄野武宏). Their terms require a credit wherever the audio is published: "VOICEVOX:春日部つむぎ, VOICEVOX:玄野武宏" (the `videoCredit` line of each course). Re-rendering videos: bump `ASSET_V` in `course-view.js` so browsers fetch the new files.
 - **"Hear it" buttons:** kana charts, vocabulary and dialogue lines have tap-to-hear audio (`audio/*.mp3`, listed in `data/audio-map.js`). After changing any lesson text run, in this order: `node video-tools/make-audio.mjs`, `node build-courses.mjs`, then commit (including `audio/` and `data/audio-map.js`). Same voices and credits as the videos (the clip file names include the voice engine tag, so they change whenever the voices change).
+
+## Premium courses (selling the courses)
+
+Each course has free lessons (the first 3, `freeLessons` in `data/premium-config.js`) and premium lessons. A premium lesson's text, quiz, video and the PDF workbook are **not in this repo**: they live on the server (Supabase project `tiny-courses`, function `premium`, private storage bucket) and are sent only after a valid access code is checked. The public pages for premium lessons are locked shells (title and goal only).
+
+**How a sale works** (the payment link has no webhook, so this step is manual):
+1. The visitor presses "Buy this course" and pays through the link in `data/premium-config.js`.
+2. They send their email and payment reference with the form under "I've paid".
+3. Open `/admin.html`, sign in with the admin secret, check the payment arrived, press "Payment received: make code". Copy the ready-made message and send it to the buyer.
+4. The buyer enters the code, and the course unlocks on that device (a code works on up to 3 devices; you can revoke it in the admin page).
+
+**Prices** are in `data/courses.js` (`price`). If your payment link has a fixed amount, give each course its own link with `payUrl`.
+
+**Adding or changing premium lessons.** The full lesson source is kept in the private repo `tiny-courses-source` (and in this repo's git history). To publish a change: edit the full source, run `node tools/split-premium.mjs <fullDataDir> data 3` to refresh the public stubs, run `node build-courses.mjs`, and upload the changed lessons with `tools/export-premium.mjs` (needs the admin secret, see the private repo). `video-tools/make-pdfs.mjs` and `make-videos.mjs` need the full source data, so run them from the private repo.
+
+**Honest limits.** The premium lessons and files are gone from the live site and the repo, but this repo is public, so older commits still contain them. Anyone who shares a code can give access to others (limited to 3 devices per code). This is a good fit for a small shop; for large sales use a payment provider that sends automatic confirmations.

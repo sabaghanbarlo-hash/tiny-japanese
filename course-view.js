@@ -1,6 +1,8 @@
 // Course rendering. Used by build-courses.mjs (static pages in /courses/) and course.js (adds interactivity in the browser).
 import { esc } from "./lesson-view.js";
 import { audioMap } from "./data/audio-map.js";
+import { PREMIUM } from "./data/premium-config.js";
+import { lockPanelHTML } from "./premium-core.js";
 
 // "Hear it" clips (made by video-tools/make-audio.mjs). A button only appears when its clip exists.
 const kata = (t) => [...t].map((c) => (c >= "\u3041" && c <= "\u3096" ? String.fromCharCode(c.charCodeAt(0) + 0x60) : c)).join("");
@@ -49,30 +51,44 @@ function blockHTML(b, i) {
 
 const staticQuiz = (q) => `<noscript><ol class="plain">${q.map((x) => `<li>${esc(x.q)}<ul class="plain">${x.options.map((o) => `<li lang="ja">${esc(o)}</li>`).join("")}</ul><details><summary>Show answer</summary><p>Answer: <span lang="ja">${esc(x.options[x.answer])}</span>. ${esc(x.explain)}</p></details></li>`).join("")}</ol></noscript>`;
 
-export function lessonHTML(c, l, prev, next) {
+// The lesson content (video, text, quiz). For premium lessons this is exported once and stored on the server; the browser receives it only after a valid code.
+export function lessonBody(c, l, opts = {}) {
   const hasDialogue = l.blocks.some((b) => b.type === "dialogue");
-  const n = c.lessons.length;
+  const video = opts.premium
+    ? `<video controls preload="none" playsinline data-premium-video aria-label="Video for lesson ${l.number}: ${esc(l.title)}">Your browser can't play this video.</video>`
+    : `<video controls preload="none" playsinline poster="${posterPath(c, l)}" aria-label="Video for lesson ${l.number}: ${esc(l.title)}"><source src="${videoPath(c, l)}" type="video/mp4">Your browser can't play this video.</video>`;
   return `
-<nav class="crumbs" aria-label="Breadcrumb"><a href="${coursePath(c)}">← ${esc(c.title)}</a></nav>
-<header class="lesson-head"><p class="num">Lesson ${l.number} of ${n} · ${esc(l.time || "")}</p><h1 class="h1-md">${esc(l.title)}</h1>
-<p class="lead"><strong>Goal:</strong> ${esc(l.objective)}</p></header>
 <section class="block video-block" aria-labelledby="vid-h"><h2 id="vid-h">Watch the lesson</h2>
-<video controls preload="none" playsinline poster="${posterPath(c, l)}" aria-label="Video for lesson ${l.number}: ${esc(l.title)}"><source src="${videoPath(c, l)}" type="video/mp4">Your browser can't play this video.</video>
+${video}
 <p class="muted">Turn your sound on: listen to each sound, then say it out loud yourself. Tap any character or speaker button on this page to hear it again.${c.videoCredit ? ` ${esc(c.videoCredit)}` : ""}</p></section>
 ${hasDialogue ? `<div class="toggles" role="group" aria-label="Show or hide help"><label><input type="checkbox" id="t-ro" checked> Romaji</label><label><input type="checkbox" id="t-en" checked> English</label></div>` : ""}
 ${l.blocks.map(blockHTML).join("\n")}
 <section class="block" aria-labelledby="qz-h"><h2 id="qz-h">Quick quiz</h2><p class="muted">Tap an answer to see feedback straight away. Your score is only kept while this page is open.</p><div id="quiz">${staticQuiz(l.quiz)}</div></section>
-<section class="block done-box" aria-label="Finish this lesson"><button type="button" class="btn ghost" id="complete" aria-pressed="false" hidden>Mark lesson as complete</button></section>
+<section class="block done-box" aria-label="Finish this lesson"><button type="button" class="btn ghost" id="complete" aria-pressed="false" hidden>Mark lesson as complete</button></section>`;
+}
+
+export function lessonHTML(c, l, prev, next) {
+  const n = c.lessons.length;
+  const head = `
+<nav class="crumbs" aria-label="Breadcrumb"><a href="${coursePath(c)}">← ${esc(c.title)}</a></nav>
+<header class="lesson-head"><p class="num">Lesson ${l.number} of ${n} · ${esc(l.time || "")}${l.premium ? '<span class="pm-lock-tag">Premium</span>' : ""}</p><h1 class="h1-md">${esc(l.title)}</h1>
+<p class="lead"><strong>Goal:</strong> ${esc(l.objective)}</p></header>`;
+  const nav = `
 <nav class="lesson-nav" aria-label="Lesson navigation">
  ${prev ? `<a class="btn ghost" href="${lessonPath(c, prev)}">← ${prev.number}. ${esc(prev.title)}</a>` : "<span></span>"}
  <a class="btn ghost" href="${coursePath(c)}">Course overview</a>
  ${next ? `<a class="btn" href="${lessonPath(c, next)}">${next.number}. ${esc(next.title)} →</a>` : `<a class="btn" href="/courses.html">All courses →</a>`}
 </nav>`;
+  const body = l.premium
+    ? `<div id="premium-slot" data-premium-lesson>${lockPanelHTML({ course: c.id, courseTitle: c.title, price: c.price, payUrl: c.payUrl || PREMIUM.payUrl, site: PREMIUM.site, heading: "This lesson is part of the full course", intro: `Lessons 1 to ${PREMIUM.freeLessons} are free. Unlock the rest of ${c.title} to watch this lesson, practise the quiz and get the PDF workbook.` })}</div>`
+    : lessonBody(c, l);
+  return head + body + nav;
 }
 
 export function priceBox(c, SITE) {
+  if (c.premium) return `<div class="price-box"><p class="tag now">Free preview: lessons 1 to ${PREMIUM.freeLessons}</p><div data-pm-panel>${lockPanelHTML({ course: c.id, courseTitle: c.title, price: c.price, payUrl: c.payUrl || PREMIUM.payUrl, site: PREMIUM.site, heading: "Unlock the full course", intro: `The first ${PREMIUM.freeLessons} lessons are free to try. The full course adds ${c.lessons.length - PREMIUM.freeLessons} more lessons with videos, quizzes and the PDF workbook.` })}</div><p class="pm-unlocked" data-pm-unlocked hidden><span class="pm-unlocked-tag">✓ Premium unlocked</span> All lessons, videos and the workbook are open on this device.</p></div>`;
   if (c.buyUrl) return `<div class="price-box"><p class="price">${esc(c.price || "")}</p><a class="btn" href="${esc(c.buyUrl)}" rel="noopener">Buy this course</a></div>`;
-  return `<div class="price-box"><p class="tag now">Free while we launch</p><p class="muted">Everything in this course is open to read right now, no account needed. Want to hear about new courses and extras? <a href="mailto:${esc(SITE.email)}?subject=${encodeURIComponent("Tiny Japanese courses")}">Email us</a>.</p></div>`;
+  return `<div class="price-box"><p class="tag now">Free while we launch</p><p class="muted">Everything in this course is open to read right now, no account needed.</p></div>`;
 }
 
 export function overviewHTML(c, SITE) {
@@ -83,11 +99,11 @@ export function overviewHTML(c, SITE) {
 <ul class="meta"><li>${c.lessons.length} lessons</li><li>${hoursLabel(c)}</li><li>${esc(c.topic)}</li></ul>
 <p class="lead">${esc(c.description)}</p>
 ${priceBox(c, SITE)}
-<p class="cta-row"><a class="btn" id="start-btn" href="${lessonPath(c, c.lessons[0])}">Start lesson 1</a>${c.pdf ? ` <a class="btn ghost" href="${esc(c.pdf)}" download>Download the workbook (PDF)</a>` : ""}</p>
+<p class="cta-row"><a class="btn" id="start-btn" href="${lessonPath(c, c.lessons[0])}">Start lesson 1</a>${c.pdf ? ` <a class="btn ghost" href="${esc(c.pdf)}" download>Download the workbook (PDF)</a>` : ""}${c.premium ? ` <a class="btn ghost" id="pdf-btn" href="#" download hidden>Download the workbook (PDF)</a>` : ""}</p>
 <p class="progress" id="progress" role="status" hidden></p></header>
 <section class="block" aria-labelledby="out-h"><h2 id="out-h">What you'll learn</h2><ul class="notes">${c.outcomes.map((o) => `<li>${esc(o)}</li>`).join("")}</ul><p class="muted"><strong>Who it's for:</strong> ${esc(c.audience)}</p></section>
 <section class="block" aria-labelledby="syl-h"><h2 id="syl-h">Lessons</h2>
-<ol class="syllabus">${c.lessons.map((l) => `<li data-lesson-id="${esc(l.id)}"><a href="${lessonPath(c, l)}"><span class="sn">${l.number}</span><span class="st"><strong>${esc(l.title)}</strong><small>${esc(l.summary)}</small></span><span class="sd" aria-hidden="true"></span></a></li>`).join("")}</ol></section>`;
+<ol class="syllabus">${c.lessons.map((l) => `<li data-lesson-id="${esc(l.id)}"${l.premium ? ' class="is-premium-lesson"' : ""}><a href="${lessonPath(c, l)}"><span class="sn">${l.number}</span><span class="st"><strong>${esc(l.title)}${l.premium ? '<span class="pm-lock-tag">Premium</span>' : ""}</strong><small>${esc(l.summary)}</small></span><span class="sd" aria-hidden="true"></span></a></li>`).join("")}</ol></section>`;
 }
 
 export function courseCard(c, h = "h2") {
@@ -97,7 +113,7 @@ export function courseCard(c, h = "h2") {
  <p class="topic">${esc(c.topic)}</p>
  <p>${esc(c.tagline)}</p>
  <ul class="vprev" aria-label="Course highlights">${c.outcomes.slice(0, 2).map((o) => `<li>${esc(o)}</li>`).join("")}</ul>
- <p class="muted">${c.buyUrl ? esc(c.price) : "Free while we launch"} · ${hoursLabel(c)}</p>
+ <p class="muted">${c.premium ? `First ${PREMIUM.freeLessons} lessons free · ${esc(c.price)} for the full course` : c.buyUrl ? esc(c.price) : "Free while we launch"} · ${hoursLabel(c)}</p>
  <a class="btn" href="${coursePath(c)}" aria-label="View course: ${esc(c.title)}">View course</a>
 </article>`;
 }

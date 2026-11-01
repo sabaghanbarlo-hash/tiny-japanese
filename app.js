@@ -1,5 +1,6 @@
 import { lessons } from "./data/lessons.js";
 import { SITE } from "./data/site.js";
+import "./auth.js";
 const $ = (s, r = document) => r.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 

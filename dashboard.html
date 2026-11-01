@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Dashboard | Tiny Japanese + Tiny French</title>
+<style>
+:root{--bg:#f6f4f5;--card:#fff;--ink:#241f22;--mute:#6d646a;--line:#e6dfe2;--jp:#c2415c;--fr:#2b5fb0;--ok:#25663f;--no:#b3261e}
+@media (prefers-color-scheme:dark){:root{--bg:#161315;--card:#211c1f;--ink:#f3eef0;--mute:#a79ca2;--line:#352e32;--jp:#ef7a92;--fr:#7aa7ee;--ok:#74d09a;--no:#ff8b82}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding:max(16px,env(safe-area-inset-top)) 16px 48px}
+main{max-width:860px;margin:0 auto}
+h1{font-size:1.4rem;margin:8px 0 2px}h2{font-size:1.1rem;margin:28px 0 10px}
+.sub{color:var(--mute);font-size:.9rem;margin:0 0 14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.stat b{display:block;font-size:1.7rem;line-height:1.15}.stat span{color:var(--mute);font-size:.85rem}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.chips button,.btn{font:inherit;font-weight:600;min-height:44px;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.chips button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+input{font:inherit;width:100%;min-height:48px;padding:10px 14px;border:2px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink)}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--mute);font-weight:600;font-size:.8rem}tr:last-child td{border-bottom:0}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+.legend{font-size:.85rem;color:var(--mute);margin-top:6px}.legend span{margin-right:14px}
+.msg{min-height:1.4em;font-weight:700;color:var(--no)}.empty{color:var(--mute);padding:14px}
+svg{width:100%;height:auto;display:block}
+.row{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<main>
+<h1>Dashboard</h1>
+<p class="sub">Tiny Japanese + Tiny French. Private: needs your admin secret.</p>
+
+<section id="login" class="card">
+  <form id="loginform">
+    <label for="secret" style="font-weight:700">Admin secret</label>
+    <input id="secret" type="password" autocomplete="current-password" required style="margin-top:6px">
+    <button class="btn primary" type="submit" style="width:100%;margin-top:12px">Open dashboard</button>
+    <p class="msg" id="loginmsg" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
+<div id="app" hidden>
+  <div class="row"><div class="chips" id="sitechips" role="group" aria-label="Show">
+    <button type="button" data-site="all" aria-pressed="true">Both sites</button>
+    <button type="button" data-site="tiny-japanese" aria-pressed="false">Japanese</button>
+    <button type="button" data-site="tiny-french" aria-pressed="false">French</button></div>
+    <div class="chips"><button type="button" id="refresh">Refresh</button><button type="button" id="logout">Lock</button></div></div>
+  <p class="sub" id="updated"></p>
+
+  <h2>Visits</h2>
+  <div class="grid" id="viewstats"></div>
+  <div class="card" style="margin-top:10px"><div id="chart"></div><div class="legend" id="legend"></div></div>
+
+  <h2>Sign-ups</h2>
+  <div class="grid" id="accstats"></div>
+  <div class="row" style="margin-top:12px"><span class="sub" style="margin:0" id="acccount"></span><button class="btn" type="button" id="csv">Download emails (CSV)</button></div>
+  <div class="tablewrap" style="margin-top:8px"><table id="acctable"></table></div>
+
+  <h2>Course sales</h2>
+  <div class="grid" id="salestats"></div>
+  <div class="tablewrap" style="margin-top:10px"><table id="reqtable"></table></div>
+
+  <h2>Most visited pages</h2>
+  <div class="tablewrap"><table id="pagetable"></table></div>
+  <h2>Where visitors come from</h2>
+  <div class="tablewrap"><table id="reftable"></table></div>
+  <p class="sub" style="margin-top:18px">Visits are anonymous page views (no cookies, no IP addresses stored; days are in UTC; bots are filtered out). "Sessions" counts a visitor's first page in a browser tab. Sales are the purchase requests and access codes from the admin page; money received is in your payment dashboard.</p>
+</div>
+</main>
+<script>
+const API = "https://pwenjqeclxxpfryxygzb.supabase.co/functions/v1/dashboard";
+const NAMES = { "tiny-japanese": "Japanese", "tiny-french": "French" };
+const COLORS = { "tiny-japanese": "var(--jp)", "tiny-french": "var(--fr)" };
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const nf = (n) => Number(n || 0).toLocaleString();
+let DATA = null, SITE = "all";
+const keep = (s) => SITE === "all" || s === SITE;
+const fmtDate = (iso) => iso ? new Date(iso).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" }) : "";
+const statBox = (n, label) => `<div class="card stat"><b>${nf(n)}</b><span>${esc(label)}</span></div>`;
+const table = (el, head, rows, empty) => { el.innerHTML = rows.length ? `<thead><tr>${head.map((h) => `<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody>` : `<tbody><tr><td class="empty">${esc(empty)}</td></tr></tbody>`; };
+const siteTag = (s) => s ? `<span class="dot" style="background:${COLORS[s] || "var(--mute)"}"></span>${esc(NAMES[s] || s)}` : "Unknown";
+
+async function load(secret) {
+  let res;
+  try { res = await fetch(API, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "stats", secret }) }); }
+  catch { throw new Error("Couldn't reach the server. Check your connection."); }
+  const j = await res.json().catch(() => ({}));
+  if (!res.ok || !j.ok) throw new Error(j.error || "Something went wrong.");
+  return j;
+}
+
+function render() {
+  const d = DATA; if (!d) return;
+  $("#updated").textContent = "Updated " + new Date(d.generated_at).toLocaleString();
+  // ---- visits
+  const today = new Date().toISOString().slice(0, 10);
+  const days = [...Array(30)].map((_, i) => new Date(Date.now() - (29 - i) * 864e5).toISOString().slice(0, 10));
+  const per = {}; days.forEach((x) => (per[x] = { "tiny-japanese": 0, "tiny-french": 0, s: 0 }));
+  for (const r of d.views.daily) if (per[r.day] && keep(r.site)) { per[r.day][r.site] += r.views; per[r.day].s += r.sessions; }
+  const tot = (n, k) => days.slice(-n).reduce((a, x) => a + (k ? per[x].s : per[x]["tiny-japanese"] + per[x]["tiny-french"]), 0);
+  $("#viewstats").innerHTML = statBox(tot(1), "Page views today") + statBox(tot(7), "Page views, 7 days") + statBox(tot(30), "Page views, 30 days") + statBox(tot(7, 1), "Sessions, 7 days") + statBox(tot(30, 1), "Sessions, 30 days");
+  const max = Math.max(1, ...days.map((x) => per[x]["tiny-japanese"] + per[x]["tiny-french"]));
+  const bw = 600 / 30;
+  $("#chart").innerHTML = `<svg viewBox="0 0 600 170" role="img" aria-label="Page views per day, last 30 days">` +
+    `<text x="0" y="12" font-size="11" fill="currentColor" opacity=".6">${nf(max)}</text><line x1="0" x2="600" y1="150" y2="150" stroke="currentColor" opacity=".25"/>` +
+    days.map((x, i) => { let y = 150, out = ""; for (const s of ["tiny-japanese", "tiny-french"]) { const h = (per[x][s] / max) * 130; if (h > 0) { y -= h; out += `<rect x="${i * bw + 2}" y="${y}" width="${bw - 4}" height="${h}" rx="2" fill="${COLORS[s]}"><title>${x}: ${per[x][s]} ${NAMES[s]}</title></rect>`; } } return out; }).join("") +
+    `<text x="0" y="166" font-size="11" fill="currentColor" opacity=".6">${days[0].slice(5)}</text><text x="600" y="166" font-size="11" text-anchor="end" fill="currentColor" opacity=".6">${today.slice(5)}</text></svg>`;
+  $("#legend").innerHTML = `<span><i class="dot" style="background:var(--jp)"></i>Japanese</span><span><i class="dot" style="background:var(--fr)"></i>French</span>`;
+  // ---- accounts
+  const accs = d.accounts.list.filter((a) => SITE === "all" || a.site === SITE);
+  const ago = (n) => new Date(Date.now() - n * 864e5).toISOString();
+  $("#accstats").innerHTML = statBox(accs.length, "Accounts") + statBox(accs.filter((a) => a.created_at >= ago(7)).length, "New, 7 days") + statBox(accs.filter((a) => a.created_at >= ago(30)).length, "New, 30 days");
+  $("#acccount").textContent = SITE === "all" ? "Accounts are shared by both sites." : "Only accounts created on this site (older ones have no site).";
+  table($("#acctable"), ["Email", "Site", "Joined", "Last login"], accs.slice(0, 200).map((a) => [esc(a.email), siteTag(a.site), esc(fmtDate(a.created_at)), esc(fmtDate(a.last_sign_in_at))]), "No sign-ups yet.");
+  // ---- sales
+  const reqs = d.purchases.requests.filter((r) => keep(r.site)), codes = d.purchases.codes.filter((c) => keep(c.site));
+  const live = codes.filter((c) => !c.revoked);
+  const byStatus = {}; reqs.forEach((r) => (byStatus[r.status] = (byStatus[r.status] || 0) + 1));
+  $("#salestats").innerHTML = statBox(reqs.length, "Purchase requests") + statBox(live.length, "Access codes issued") + statBox(live.filter((c) => c.devices > 0).length, "Codes in use") + statBox(new Set(reqs.filter((r) => r.code_id).map((r) => (r.email || "").toLowerCase())).size, "Buyers with a code") +
+    Object.entries(byStatus).map(([k, v]) => statBox(v, "Requests: " + k)).join("");
+  table($("#reqtable"), ["Date", "Site", "Buyer", "Course(s)", "Status"], reqs.slice(0, 200).map((r) => [esc(fmtDate(r.created_at)), siteTag(r.site), esc((r.name ? r.name + " · " : "") + (r.email || "")), esc((r.courses || []).join(", ")), esc(r.status)]), "No purchase requests yet.");
+  // ---- pages & referrers
+  table($("#pagetable"), ["Site", "Page", "Views, 30 days"], d.views.pages.filter((p) => keep(p.site)).map((p) => [siteTag(p.site), esc(p.path), nf(p.views)]), "No visits recorded yet.");
+  table($("#reftable"), ["Site", "From", "Views, 30 days"], d.views.referrers.filter((p) => keep(p.site)).map((p) => [siteTag(p.site), esc(p.referrer), nf(p.views)]), "No outside referrals yet.");
+}
+
+function csv() {
+  const safe = (v) => { v = String(v ?? ""); if (/^[=+\-@]/.test(v)) v = "'" + v; return '"' + v.replace(/"/g, '""') + '"'; };
+  const rows = [["email", "site", "joined", "last_login"], ...DATA.accounts.list.filter((a) => SITE === "all" || a.site === SITE).map((a) => [a.email, a.site || "", a.created_at, a.last_sign_in_at || ""])];
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([rows.map((r) => r.map(safe).join(",")).join("\n")], { type: "text/csv" }));
+  a.download = "tiny-accounts.csv"; document.body.appendChild(a); a.click(); a.remove();
+}
+
+async function openDash(secret) {
+  const btn = $("#loginform button"); btn.disabled = true; $("#loginmsg").textContent = "";
+  try { DATA = await load(secret); try { sessionStorage.setItem("tiny:dash", secret); } catch {} $("#login").hidden = true; $("#app").hidden = false; render(); }
+  catch (e) { $("#loginmsg").textContent = e.message; try { sessionStorage.removeItem("tiny:dash"); } catch {} }
+  finally { btn.disabled = false; }
+}
+$("#loginform").addEventListener("submit", (e) => { e.preventDefault(); openDash($("#secret").value); });
+$("#sitechips").addEventListener("click", (e) => { const b = e.target.closest("button[data-site]"); if (!b) return; SITE = b.dataset.site; document.querySelectorAll("#sitechips button").forEach((x) => x.setAttribute("aria-pressed", String(x === b))); render(); });
+$("#refresh").addEventListener("click", async () => { try { DATA = await load(sessionStorage.getItem("tiny:dash") || ""); render(); } catch (e) { alert(e.message); } });
+$("#logout").addEventListener("click", () => { try { sessionStorage.removeItem("tiny:dash"); } catch {} location.reload(); });
+$("#csv").addEventListener("click", csv);
+try { const s = sessionStorage.getItem("tiny:dash"); if (s) openDash(s); } catch {}
+</script>
+</body>
+</html>

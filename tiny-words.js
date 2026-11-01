@@ -1,3 +1,4 @@
+import "./auth.js";
 // Small, dependency-free quiz interactions for Tiny Words.
 document.addEventListener("click", (event) => {
   const button = event.target.closest(".word-opts button[data-option], .word-retry");

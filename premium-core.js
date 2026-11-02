@@ -10,7 +10,7 @@ export function lockPanelHTML({ course, courseTitle, price, payUrl, site, headin
  <h2 id="pm-h-${escH(course)}">${escH(heading)}</h2>
  ${intro ? `<p>${escH(intro)}</p>` : ""}
  <p class="pm-price"><strong>${escH(price)}</strong> · one-time payment for <em>${escH(courseTitle)}</em>, no subscription</p>
- <p class="pm-actions"><a class="btn" href="${escH(payUrl)}" target="_blank" rel="noopener">Buy this course (${escH(price)})</a></p>
+ <p class="pm-actions"><a class="btn" href="${escH(payUrl)}" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Buy this course (${escH(price)})</a></p>
  <form class="pm-form" data-unlock>
   <label for="pm-code-${escH(course)}">Already have an access code?</label>
   <div class="pm-row"><input id="pm-code-${escH(course)}" name="code" type="text" placeholder="${prefix}-XXXX-XXXX-XXXX" autocomplete="off" autocapitalize="characters" spellcheck="false" required><button class="btn" type="submit">Unlock</button></div>
@@ -77,6 +77,8 @@ export function createPremium(cfg) {
   function wireLock(root, { onUnlock, courseTitle } = {}) {
     root.querySelectorAll("[data-pm]").forEach((box) => {
       const course = box.dataset.course;
+      // Payment page must not receive this site as referrer (it blocked visitors coming from here).
+      box.querySelectorAll("a[href]").forEach((a) => { a.referrerPolicy = "no-referrer"; a.rel = "noopener noreferrer"; });
       const uf = box.querySelector("form[data-unlock]"), rf = box.querySelector("form[data-request]");
       if (uf) uf.addEventListener("submit", async (e) => {
         e.preventDefault();

@@ -58,9 +58,9 @@ export function lessonBody(c, l, opts = {}) {
     ? `<video controls preload="none" playsinline data-premium-video aria-label="Video for lesson ${l.number}: ${esc(l.title)}">Your browser can't play this video.</video>`
     : `<video controls preload="none" playsinline poster="${posterPath(c, l)}" aria-label="Video for lesson ${l.number}: ${esc(l.title)}"><source src="${videoPath(c, l)}" type="video/mp4">Your browser can't play this video.</video>`;
   return `
-<section class="block video-block" aria-labelledby="vid-h"><h2 id="vid-h">Watch the lesson</h2>
+${c.noVideo ? "" : `<section class="block video-block" aria-labelledby="vid-h"><h2 id="vid-h">Watch the lesson</h2>
 ${video}
-<p class="muted">Turn your sound on: listen to each sound, then say it out loud yourself. Tap any character or speaker button on this page to hear it again.${c.videoCredit ? ` ${esc(c.videoCredit)}` : ""}</p></section>
+<p class="muted">Turn your sound on: listen to each sound, then say it out loud yourself. Tap any character or speaker button on this page to hear it again.${c.videoCredit ? ` ${esc(c.videoCredit)}` : ""}</p></section>`}
 ${hasDialogue ? `<div class="toggles" role="group" aria-label="Show or hide help"><label><input type="checkbox" id="t-ro" checked> Romaji</label><label><input type="checkbox" id="t-en" checked> English</label></div>` : ""}
 ${l.blocks.map(blockHTML).join("\n")}
 <section class="block" aria-labelledby="qz-h"><h2 id="qz-h">Quick quiz</h2><p class="muted">Tap an answer to see feedback straight away. Your score is only kept while this page is open.</p><div id="quiz">${staticQuiz(l.quiz)}</div></section>
@@ -80,13 +80,13 @@ export function lessonHTML(c, l, prev, next) {
  ${next ? `<a class="btn" href="${lessonPath(c, next)}">${next.number}. ${esc(next.title)} →</a>` : `<a class="btn" href="/courses.html">All courses →</a>`}
 </nav>`;
   const body = l.premium
-    ? `<div id="premium-slot" data-premium-lesson>${lockPanelHTML({ course: c.id, courseTitle: c.title, price: c.price, payUrl: c.payUrl || PREMIUM.payUrl, site: PREMIUM.site, heading: "This lesson is part of the full course", intro: `Lessons 1 to ${PREMIUM.freeLessons} are free. Unlock the rest of ${c.title} to watch this lesson, practise the quiz and get the PDF workbook.` })}</div>`
+    ? `<div id="premium-slot" data-premium-lesson>${lockPanelHTML({ course: c.id, courseTitle: c.title, price: c.price, payUrl: c.payUrl || PREMIUM.payUrl, site: PREMIUM.site, heading: "This lesson is part of the full course", intro: `Lessons 1 to ${PREMIUM.freeLessons} are free. Unlock the rest of ${c.title} ${c.noVideo ? "to read this lesson and practise the quiz." : "to watch this lesson, practise the quiz and get the PDF workbook."}` })}</div>`
     : lessonBody(c, l);
   return head + body + nav;
 }
 
 export function priceBox(c, SITE) {
-  if (c.premium) return `<div class="price-box"><p class="tag now">Free preview: lessons 1 to ${PREMIUM.freeLessons}</p><div data-pm-panel>${lockPanelHTML({ course: c.id, courseTitle: c.title, price: c.price, payUrl: c.payUrl || PREMIUM.payUrl, site: PREMIUM.site, heading: "Unlock the full course", intro: `The first ${PREMIUM.freeLessons} lessons are free to try. The full course adds ${c.lessons.length - PREMIUM.freeLessons} more lessons with videos, quizzes and the PDF workbook.` })}</div><p class="pm-unlocked" data-pm-unlocked hidden><span class="pm-unlocked-tag">✓ Premium unlocked</span> All lessons, videos and the workbook are open on this device.</p></div>`;
+  if (c.premium) return `<div class="price-box"><p class="tag now">Free preview: lessons 1 to ${PREMIUM.freeLessons}</p><div data-pm-panel>${lockPanelHTML({ course: c.id, courseTitle: c.title, price: c.price, payUrl: c.payUrl || PREMIUM.payUrl, site: PREMIUM.site, heading: "Unlock the full course", intro: `The first ${PREMIUM.freeLessons} lessons are free to try. The full course adds ${c.lessons.length - PREMIUM.freeLessons} more lessons with ${c.noVideo ? "full notes, dialogues and quizzes" : "videos, quizzes and the PDF workbook"}.` })}</div><p class="pm-unlocked" data-pm-unlocked hidden><span class="pm-unlocked-tag">✓ Premium unlocked</span> ${c.noVideo ? "All lessons are open on this device." : "All lessons, videos and the workbook are open on this device."}</p></div>`;
   if (c.buyUrl) return `<div class="price-box"><p class="price">${esc(c.price || "")}</p><a class="btn" href="${esc(c.buyUrl)}" rel="noopener">Buy this course</a></div>`;
   return `<div class="price-box"><p class="tag now">Free while we launch</p><p class="muted">Everything in this course is open to read right now, no account needed.</p></div>`;
 }

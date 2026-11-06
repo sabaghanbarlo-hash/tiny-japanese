@@ -5,6 +5,8 @@
 import { hiraganaLessons } from "./course-hiragana.js";
 import { katakanaLessons } from "./course-katakana.js";
 import { conversationLessons } from "./course-conversations.js";
+import { grammarLessons } from "./course-grammar.js";
+import { kanjiLessons } from "./course-kanji.js";
 
 export const courses = [
   {
@@ -61,5 +63,42 @@ export const courses = [
     audience: "Beginners who can read hiragana (take Hiragana Starter first if not).",
     premium: true, price: "$12", buyUrl: "",
     lessons: conversationLessons
+  },
+  {
+    id: "grammar-starter",
+    title: "Grammar Starter",
+    tagline: "Build real Japanese sentences in 9 short lessons.",
+    level: "Beginner",
+    topic: "Grammar",
+    description: "The core patterns of Japanese, one step at a time: です and は, pointing words, the particles の, も, と, を, に, で and へ, polite verbs, い- and な-adjectives, the past tense, and asking for what you want. Every lesson has a dialogue with Mika and Alex, vocabulary, grammar notes and a quiz.",
+    outcomes: [
+      "Make and understand simple “A is B” sentences with は and です",
+      "Use the particles の, も, と, を, に, で and へ correctly",
+      "Say what you do and did with polite ます and ました verbs",
+      "Describe things with い- and な-adjectives, in the present and the past",
+      "Say what you want and ask for things politely"
+    ],
+    audience: "Beginners who can read hiragana (take Hiragana Starter first if not).",
+    noVideo: true,
+    premium: true, price: "$12", buyUrl: "",
+    lessons: grammarLessons
+  },
+  {
+    id: "kanji-starter",
+    title: "Kanji Starter",
+    tagline: "Read your first 64 kanji through real words, signs and prices.",
+    level: "Beginner",
+    topic: "Reading & writing",
+    description: "Eight lessons that teach 64 of the most useful beginner kanji in groups: numbers, money, days of the week, people, nature, size and position, everyday verbs, and time and places. Each lesson shows readings, real words, a short dialogue and a quiz.",
+    outcomes: [
+      "Read the kanji for numbers, prices, years and the days of the week",
+      "Read people, school and nature words such as 先生, 学生, 山 and 天気",
+      "Read signs like 出口, 入口, 右 and 左 and polite verbs like 食べます and 行きます",
+      "Read clock times such as 午後三時十五分"
+    ],
+    audience: "Learners who can read hiragana and katakana (take Hiragana Starter first if not).",
+    noVideo: true,
+    premium: true, price: "$9", buyUrl: "",
+    lessons: kanjiLessons
   }
 ];

@@ -7,6 +7,7 @@ import { katakanaLessons } from "./course-katakana.js";
 import { conversationLessons } from "./course-conversations.js";
 import { grammarLessons } from "./course-grammar.js";
 import { kanjiLessons } from "./course-kanji.js";
+import { travelLessons } from "./course-travel.js";
 
 export const courses = [
   {
@@ -100,5 +101,24 @@ export const courses = [
     noVideo: true,
     premium: true, price: "$9", buyUrl: "",
     lessons: kanjiLessons
+  },
+  {
+    id: "travel-japanese",
+    title: "Travel Japanese",
+    tagline: "Eight situations every visitor to Japan meets, from the station to the clinic.",
+    level: "Beginner",
+    topic: "Speaking & listening",
+    description: "Eight practical dialogues for travellers: stations and tickets, taxis, hotel check-in, convenience stores, restaurants, tax-free shopping, asking the way and health emergencies. Mika and Alex act out each situation, with vocabulary, grammar notes, culture tips and a quiz.",
+    outcomes: [
+      "Buy tickets, ask about platforms and take a taxi",
+      "Check in to a hotel and ask about breakfast and Wi-Fi",
+      "Handle a convenience store checkout and order in a restaurant",
+      "Shop tax-free, ask for sizes and ask for directions",
+      "Ask for help and describe simple health problems"
+    ],
+    audience: "Beginners who can read hiragana and have finished First Conversations (or know the basics).",
+    noVideo: true,
+    premium: true, price: "$12", buyUrl: "",
+    lessons: travelLessons
   }
 ];

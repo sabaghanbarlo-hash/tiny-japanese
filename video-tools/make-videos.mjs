@@ -166,6 +166,7 @@ let made = 0;
 for (const c of courses) {
   if (onlyCourse && c.id !== onlyCourse) continue;
   for (const l of c.lessons) {
+    if (!l.blocks) continue; // locked premium lesson stub
     const name = `${pad(l.number)}-${l.id}`;
     if (onlyLesson && !name.includes(onlyLesson)) continue;
     const outDir = path.join(root, "videos", c.id);

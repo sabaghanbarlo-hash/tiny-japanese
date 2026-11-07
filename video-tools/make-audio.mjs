@@ -17,7 +17,7 @@ const kata = (t) => [...t].map((c) => (c >= "ぁ" && c <= "ゖ" ? String.fromCha
 // Must match the lookups in course-view.js: key = `${voice}|${speed}|${text}`.
 const clips = new Map();
 const want = (text, voice, speed) => { if (text) clips.set(`${voice}|${speed}|${text}`, { text, voice, speed }); };
-for (const c of courses) for (const l of c.lessons) for (const b of l.blocks) {
+for (const c of courses) for (const l of c.lessons) for (const b of l.blocks || []) {  // locked premium lessons are stubs without blocks
   if (b.type === "kana") b.items.filter((i) => i.k).forEach((i) => want(kata(i.k), "mika", 0.8));
   if (b.type === "words") b.items.forEach((w) => want(w.ja, "mika", 0.85));
   if (b.type === "dialogue") b.lines.forEach((d) => want(d.ja.replace(/[「」]/g, ""), d.who === "Alex" ? "alex" : "mika", 0.9));

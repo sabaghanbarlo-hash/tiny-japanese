@@ -215,7 +215,12 @@ export const grammarLessons = [
     "answer": 0,
     "explain": "そう ですか is a very common reaction while listening."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/gs-01-desu-and-wa.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/gs-01-desu-and-wa.thumbnail.png",
+   "note": "Animated lesson video with Mika and Alex: story, vocabulary, grammar and a quiz."
+  }
  },
  {
   "id": "this-that-where",
@@ -437,7 +442,12 @@ export const grammarLessons = [
     "answer": 2,
     "explain": "よこ means next to or beside."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/gs-02-this-that-where.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/gs-02-this-that-where.thumbnail.png",
+   "note": "Animated lesson video with Mika and Alex: story, vocabulary, grammar and a quiz."
+  }
  },
  {
   "id": "no-mo-to",
@@ -653,7 +663,12 @@ export const grammarLessons = [
     "answer": 0,
     "explain": "と joins two nouns."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/gs-03-no-mo-to.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/gs-03-no-mo-to.thumbnail.png",
+   "note": "Animated lesson video with Mika and Alex: story, vocabulary, grammar and a quiz."
+  }
  },
  {
   "id": "verbs-masu",

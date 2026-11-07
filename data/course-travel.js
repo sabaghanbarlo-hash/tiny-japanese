@@ -217,7 +217,12 @@ export const travelLessons = [
     "answer": 0,
     "explain": "しんかんせん is Japan's high-speed train."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tj-01-at-the-station.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tj-01-at-the-station.thumbnail.png",
+   "note": "Animated lesson video with Mika and Alex: story, vocabulary, grammar and a quiz."
+  }
  },
  {
   "id": "taking-a-taxi",
@@ -429,7 +434,12 @@ export const travelLessons = [
     "answer": 2,
     "explain": "じゅうしょ = address."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tj-02-taking-a-taxi.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tj-02-taking-a-taxi.thumbnail.png",
+   "note": "Animated lesson video with Mika and Alex: story, vocabulary, grammar and a quiz."
+  }
  },
  {
   "id": "hotel-check-in",
@@ -657,7 +667,12 @@ export const travelLessons = [
     "answer": 0,
     "explain": "〜かい counts floors."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tj-03-hotel-check-in.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tj-03-hotel-check-in.thumbnail.png",
+   "note": "Animated lesson video with Mika and Alex: story, vocabulary, grammar and a quiz."
+  }
  },
  {
   "id": "convenience-store",

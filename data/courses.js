@@ -8,6 +8,7 @@ import { conversationLessons } from "./course-conversations.js";
 import { grammarLessons } from "./course-grammar.js";
 import { kanjiLessons } from "./course-kanji.js";
 import { travelLessons } from "./course-travel.js";
+import { tiny1000Lessons } from "./course-tiny1000.js";
 
 export const courses = [
   {
@@ -120,5 +121,25 @@ export const courses = [
     noVideo: true,
     premium: true, price: "$12", buyUrl: "",
     lessons: travelLessons
+  },
+  {
+    id: "tiny-1000",
+    title: "Tiny 1000",
+    tagline: "The 1,000 most useful Japanese words, 10 per lesson, with spaced review built in.",
+    level: "Beginner",
+    topic: "Vocabulary",
+    description: "A complete vocabulary course in 100 short lessons. Every lesson teaches 10 high-frequency words around one theme, inside a short dialogue with Mika and Alex, with an example sentence for every word, a grammar note and a quiz that also reviews words from earlier lessons (1, 3 and 7 lessons back) so they stick. A printable workbook with self-tests comes with every 100 words.",
+    outcomes: [
+      "Recognize, say and use the 1,000 most useful everyday Japanese words",
+      "See every word inside a natural example sentence, never in isolation",
+      "Review earlier words automatically with spaced-repetition quizzes",
+      "Be ready for everyday Tiny Conversations built from the words you know"
+    ],
+    audience: "Beginners. Start with Hiragana Starter if you cannot read kana yet.",
+    noVideo: true,
+    freeLessons: 10,
+    pdf: "/assets/pdf/tiny1000-tier-01.pdf",
+    premium: true, price: "$19", buyUrl: "",
+    lessons: tiny1000Lessons
   }
 ];

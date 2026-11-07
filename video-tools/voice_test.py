@@ -16,10 +16,10 @@ TESTS = [("ga", "ガ"), ("gi", "ギ"), ("gu", "グ"), ("ge", "ゲ"), ("go", "ゴ
 
 
 def mp3(x, path):
-    wav = path[:-4] + ".wav"
-    T.write_wav(wav, x)
-    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", wav, "-ac", "1", "-c:a", "libmp3lame", "-q:a", "3", path], check=True)
-    os.remove(wav)
+    tmp = path[:-4] + ".tmp.wav"  # never the same name as ref.wav
+    T.write_wav(tmp, x)
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", tmp, "-ac", "1", "-c:a", "libmp3lame", "-q:a", "3", path], check=True)
+    os.remove(tmp)
 
 
 report = []

@@ -80,13 +80,13 @@ export function lessonHTML(c, l, prev, next) {
  ${next ? `<a class="btn" href="${lessonPath(c, next)}">${next.number}. ${esc(next.title)} →</a>` : `<a class="btn" href="/courses.html">All courses →</a>`}
 </nav>`;
   const body = l.premium
-    ? `<div id="premium-slot" data-premium-lesson>${lockPanelHTML({ course: c.id, courseTitle: c.title, price: c.price, payUrl: c.payUrl || PREMIUM.payUrl, site: PREMIUM.site, heading: "This lesson is part of the full course", intro: `Lessons 1 to ${PREMIUM.freeLessons} are free. Unlock the rest of ${c.title} ${c.noVideo ? "to read this lesson and practise the quiz." : "to watch this lesson, practise the quiz and get the PDF workbook."}` })}</div>`
+    ? `<div id="premium-slot" data-premium-lesson>${lockPanelHTML({ course: c.id, courseTitle: c.title, price: c.price, payUrl: c.payUrl || PREMIUM.payUrl, site: PREMIUM.site, heading: "This lesson is part of the full course", intro: `Lessons 1 to ${(c.freeLessons ?? PREMIUM.freeLessons)} are free. Unlock the rest of ${c.title} ${c.noVideo ? "to read this lesson and practise the quiz." : "to watch this lesson, practise the quiz and get the PDF workbook."}` })}</div>`
     : lessonBody(c, l);
   return head + body + nav;
 }
 
 export function priceBox(c, SITE) {
-  if (c.premium) return `<div class="price-box"><p class="tag now">Free preview: lessons 1 to ${PREMIUM.freeLessons}</p><div data-pm-panel>${lockPanelHTML({ course: c.id, courseTitle: c.title, price: c.price, payUrl: c.payUrl || PREMIUM.payUrl, site: PREMIUM.site, heading: "Unlock the full course", intro: `The first ${PREMIUM.freeLessons} lessons are free to try. The full course adds ${c.lessons.length - PREMIUM.freeLessons} more lessons with ${c.noVideo ? "full notes, dialogues and quizzes" : "videos, quizzes and the PDF workbook"}.` })}</div><p class="pm-unlocked" data-pm-unlocked hidden><span class="pm-unlocked-tag">✓ Premium unlocked</span> ${c.noVideo ? "All lessons are open on this device." : "All lessons, videos and the workbook are open on this device."}</p></div>`;
+  if (c.premium) return `<div class="price-box"><p class="tag now">Free preview: lessons 1 to ${(c.freeLessons ?? PREMIUM.freeLessons)}</p><div data-pm-panel>${lockPanelHTML({ course: c.id, courseTitle: c.title, price: c.price, payUrl: c.payUrl || PREMIUM.payUrl, site: PREMIUM.site, heading: "Unlock the full course", intro: `The first ${(c.freeLessons ?? PREMIUM.freeLessons)} lessons are free to try. The full course adds ${c.lessons.length - (c.freeLessons ?? PREMIUM.freeLessons)} more lessons with ${c.noVideo ? "full notes, dialogues and quizzes" : "videos, quizzes and the PDF workbook"}.` })}</div><p class="pm-unlocked" data-pm-unlocked hidden><span class="pm-unlocked-tag">✓ Premium unlocked</span> ${c.noVideo ? "All lessons are open on this device." : "All lessons, videos and the workbook are open on this device."}</p></div>`;
   if (c.buyUrl) return `<div class="price-box"><p class="price">${esc(c.price || "")}</p><a class="btn" href="${esc(c.buyUrl)}" rel="noopener">Buy this course</a></div>`;
   return `<div class="price-box"><p class="tag now">Free while we launch</p><p class="muted">Everything in this course is open to read right now, no account needed.</p></div>`;
 }
@@ -113,7 +113,7 @@ export function courseCard(c, h = "h2") {
  <p class="topic">${esc(c.topic)}</p>
  <p>${esc(c.tagline)}</p>
  <ul class="vprev" aria-label="Course highlights">${c.outcomes.slice(0, 2).map((o) => `<li>${esc(o)}</li>`).join("")}</ul>
- <p class="muted">${c.premium ? `First ${PREMIUM.freeLessons} lessons free · ${esc(c.price)} for the full course` : c.buyUrl ? esc(c.price) : "Free while we launch"} · ${hoursLabel(c)}</p>
+ <p class="muted">${c.premium ? `First ${(c.freeLessons ?? PREMIUM.freeLessons)} lessons free · ${esc(c.price)} for the full course` : c.buyUrl ? esc(c.price) : "Free while we launch"} · ${hoursLabel(c)}</p>
  <a class="btn" href="${coursePath(c)}" aria-label="View course: ${esc(c.title)}">View course</a>
 </article>`;
 }

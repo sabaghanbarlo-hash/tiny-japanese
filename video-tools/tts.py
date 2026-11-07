@@ -8,6 +8,8 @@ import edge_tts
 
 VOICES = {"mika": "ja-JP-NanamiNeural", "alex": "ja-JP-KeitaNeural"}
 KANA = re.compile(r"^[\u3041-\u3096\u30a1-\u30fa\u30fc]{1,2}$")
+sys.stdin.reconfigure(encoding="utf-8")  # the CI runner defaults to ASCII
+sys.stdout.reconfigure(encoding="utf-8")
 outdir = sys.argv[1]
 os.makedirs(outdir, exist_ok=True)
 jobs = json.load(sys.stdin)

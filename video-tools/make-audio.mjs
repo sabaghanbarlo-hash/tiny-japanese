@@ -1,6 +1,6 @@
 // Makes the "Hear it" audio clips used on the course pages.
 //   node video-tools/make-audio.mjs        ->  audio/<id>.mp3 and data/audio-map.js
-// Same voices as the lesson videos (VOICEVOX, see tts.py; run setup-tts.sh once). Needs Python and ffmpeg.
+// Same voices as the Mika and Alex videos (edge-tts, see tts.py; pip install edge-tts numpy). Needs Python, internet and ffmpeg.
 // Run this BEFORE `node build-courses.mjs`, because the course pages only show a button for clips listed in data/audio-map.js.
 import fs from "node:fs";
 import os from "node:os";
@@ -17,14 +17,14 @@ const kata = (t) => [...t].map((c) => (c >= "ぁ" && c <= "ゖ" ? String.fromCha
 // Must match the lookups in course-view.js: key = `${voice}|${speed}|${text}`.
 const clips = new Map();
 const want = (text, voice, speed) => { if (text) clips.set(`${voice}|${speed}|${text}`, { text, voice, speed }); };
-for (const c of courses) for (const l of c.lessons) for (const b of l.blocks) {
+for (const c of courses) for (const l of c.lessons) for (const b of l.blocks || []) {  // locked premium lessons are stubs without blocks
   if (b.type === "kana") b.items.filter((i) => i.k).forEach((i) => want(kata(i.k), "mika", 0.8));
   if (b.type === "words") b.items.forEach((w) => want(w.ja, "mika", 0.85));
   if (b.type === "dialogue") b.lines.forEach((d) => want(d.ja.replace(/[「」]/g, ""), d.who === "Alex" ? "alex" : "mika", 0.9));
 }
 
 const map = {}, jobs = [];
-for (const [k, v] of clips) { const id = crypto.createHash("sha1").update(k + "|vv1").digest("hex").slice(0, 12); map[k] = id; jobs.push({ key: id, ...v }); }
+for (const [k, v] of clips) { const id = crypto.createHash("sha1").update(k + "|ev1").digest("hex").slice(0, 12); map[k] = id; jobs.push({ key: id, ...v }); }
 const tmp = path.join(os.tmpdir(), "tj-audio-wav");
 execFileSync("python3", [path.join(here, "tts.py"), tmp], { input: JSON.stringify(jobs), maxBuffer: 1 << 26, stdio: ["pipe", "pipe", "inherit"] });
 const out = path.join(root, "audio");

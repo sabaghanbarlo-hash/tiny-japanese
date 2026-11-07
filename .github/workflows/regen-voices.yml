@@ -1,0 +1,42 @@
+name: Regenerate voices
+# Runs on every push to the edge-voices branch that changes .regen-trigger. Rebuilds the Hear-it audio and the
+# hiragana/katakana lesson videos with the Mika/Alex voices and commits them back to the branch. Never deploys.
+on:
+  push:
+    branches: [edge-voices]
+    paths: [".regen-trigger"]
+permissions:
+  contents: write
+concurrency:
+  group: regen-voices
+  cancel-in-progress: true
+jobs:
+  regen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: edge-voices
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: pip install edge-tts numpy
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-noto-cjk
+      - run: npm i --no-save playwright && npx playwright install --with-deps chromium
+      - name: Hear-it audio
+        run: node video-tools/make-audio.mjs
+      - name: Rebuild course pages
+        run: node build-courses.mjs
+      - name: Lesson videos (hiragana + katakana)
+        run: |
+          node video-tools/make-videos.mjs hiragana-starter
+          node video-tools/make-videos.mjs katakana-starter
+      - name: Commit results
+        run: |
+          rm -rf node_modules package.json package-lock.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A audio data videos courses
+          git commit -m "Regenerate voices with Mika/Alex neural voices" || exit 0
+          git push origin HEAD:edge-voices

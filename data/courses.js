@@ -12,7 +12,7 @@ import { travelLessons } from "./course-travel.js";
 export const courses = [
   {
     id: "hiragana-starter",
-    videoCredit: "Stroke order animation uses KanjiVG data (CC BY-SA 3.0, kanjivg.tagaini.net). Voices: VOICEVOX:春日部つむぎ, VOICEVOX:玄野武宏.",
+    videoCredit: "Stroke order animation uses KanjiVG data (CC BY-SA 3.0, kanjivg.tagaini.net). Voices: Mika and Alex (neural text-to-speech).",
     title: "Hiragana Starter",
     tagline: "Read every hiragana character in 11 short lessons.",
     level: "Absolute beginner",
@@ -30,7 +30,7 @@ export const courses = [
   },
   {
     id: "katakana-starter",
-    videoCredit: "Stroke order animation uses KanjiVG data (CC BY-SA 3.0, kanjivg.tagaini.net). Voices: VOICEVOX:春日部つむぎ, VOICEVOX:玄野武宏.",
+    videoCredit: "Stroke order animation uses KanjiVG data (CC BY-SA 3.0, kanjivg.tagaini.net). Voices: Mika and Alex (neural text-to-speech).",
     title: "Katakana Starter",
     tagline: "Read every katakana character in 11 short lessons.",
     level: "Beginner",
@@ -48,7 +48,7 @@ export const courses = [
   },
   {
     id: "first-conversations",
-    videoCredit: "Voices: VOICEVOX:春日部つむぎ, VOICEVOX:玄野武宏.",
+    videoCredit: "Voices: Mika and Alex (neural text-to-speech).",
     title: "First Conversations",
     tagline: "Ten everyday situations, from greetings to asking for help.",
     level: "Beginner",

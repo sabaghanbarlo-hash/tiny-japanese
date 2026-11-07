@@ -246,7 +246,12 @@ export const kanjiLessons = [
     "answer": 1,
     "explain": "八 is hachi, eight."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/ks-01-numbers-1-10.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/ks-01-numbers-1-10.thumbnail.png",
+   "note": "Animated lesson video with Mika and Alex: story, vocabulary, grammar and a quiz."
+  }
  },
  {
   "id": "big-numbers-money",
@@ -475,7 +480,12 @@ export const kanjiLessons = [
     "answer": 2,
     "explain": "年 = ねん = year."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/ks-02-big-numbers-money.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/ks-02-big-numbers-money.thumbnail.png",
+   "note": "Animated lesson video with Mika and Alex: story, vocabulary, grammar and a quiz."
+  }
  },
  {
   "id": "days-of-the-week",
@@ -720,7 +730,12 @@ export const kanjiLessons = [
     "answer": 2,
     "explain": "金 can mean gold or money; お金 is money."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/ks-03-days-of-the-week.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/ks-03-days-of-the-week.thumbnail.png",
+   "note": "Animated lesson video with Mika and Alex: story, vocabulary, grammar and a quiz."
+  }
  },
  {
   "id": "people-and-school",

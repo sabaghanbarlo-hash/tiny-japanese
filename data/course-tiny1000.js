@@ -231,7 +231,12 @@ export const tiny1000Lessons = [
     "answer": 1,
     "explain": "いいえ = no."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/t1-001-first-10-words.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/t1-001-first-10-words.thumbnail.png",
+   "note": "Animated lesson video with Mika and Alex: story, vocabulary, grammar and a quiz."
+  }
  },
  {
   "id": "question-words-and-polite-phrases",
@@ -473,7 +478,12 @@ export const tiny1000Lessons = [
     "answer": 2,
     "explain": "それ means that."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/t1-002.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/t1-002.thumbnail.png",
+   "note": "Animated lesson video with Mika and Alex: story, vocabulary, grammar and a quiz."
+  }
  },
  {
   "id": "first-everyday-verbs",
@@ -715,7 +725,12 @@ export const tiny1000Lessons = [
     "answer": 1,
     "explain": "いつ means when."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/t1-003.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/t1-003.thumbnail.png",
+   "note": "Animated lesson video with Mika and Alex: story, vocabulary, grammar and a quiz."
+  }
  },
  {
   "id": "time-words",
@@ -967,7 +982,12 @@ export const tiny1000Lessons = [
     "answer": 1,
     "explain": "ある means to be (things)."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/t1-004.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/t1-004.thumbnail.png",
+   "note": "Animated lesson video with Mika and Alex: story, vocabulary, grammar and a quiz."
+  }
  },
  {
   "id": "people",
@@ -1219,7 +1239,12 @@ export const tiny1000Lessons = [
     "answer": 1,
     "explain": "この means this (+noun)."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/t1-005.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/t1-005.thumbnail.png",
+   "note": "Animated lesson video with Mika and Alex: story, vocabulary, grammar and a quiz."
+  }
  },
  {
   "id": "first-adjectives",
@@ -1471,7 +1496,12 @@ export const tiny1000Lessons = [
     "answer": 0,
     "explain": "見る (みる) means to see, to watch."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/t1-006.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/t1-006.thumbnail.png",
+   "note": "Animated lesson video with Mika and Alex: story, vocabulary, grammar and a quiz."
+  }
  },
  {
   "id": "places-and-things",
@@ -1723,7 +1753,12 @@ export const tiny1000Lessons = [
     "answer": 1,
     "explain": "朝 (あさ) means morning."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/t1-007.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/t1-007.thumbnail.png",
+   "note": "Animated lesson video with Mika and Alex: story, vocabulary, grammar and a quiz."
+  }
  },
  {
   "id": "everyday-verbs-2",
@@ -1985,7 +2020,12 @@ export const tiny1000Lessons = [
     "answer": 2,
     "explain": "これ means this."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/t1-008.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/t1-008.thumbnail.png",
+   "note": "Animated lesson video with Mika and Alex: story, vocabulary, grammar and a quiz."
+  }
  },
  {
   "id": "numbers-one-to-ten",
@@ -2247,7 +2287,12 @@ export const tiny1000Lessons = [
     "answer": 1,
     "explain": "そこ means there."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/t1-009.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/t1-009.thumbnail.png",
+   "note": "Animated lesson video with Mika and Alex: story, vocabulary, grammar and a quiz."
+  }
  },
  {
   "id": "connectors-and-degree-words",
@@ -2509,7 +2554,12 @@ export const tiny1000Lessons = [
     "answer": 2,
     "explain": "知る (しる) means to know."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/t1-010.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/t1-010.thumbnail.png",
+   "note": "Animated lesson video with Mika and Alex: story, vocabulary, grammar and a quiz."
+  }
  },
  {
   "id": "family-and-relatives",

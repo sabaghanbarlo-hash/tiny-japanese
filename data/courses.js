@@ -9,6 +9,7 @@ import { grammarLessons } from "./course-grammar.js";
 import { kanjiLessons } from "./course-kanji.js";
 import { travelLessons } from "./course-travel.js";
 import { tiny1000Lessons } from "./course-tiny1000.js";
+import { tinyConversationsLessons } from "./course-tiny-conversations.js";
 
 export const courses = [
   {
@@ -141,5 +142,24 @@ export const courses = [
     pdf: "/assets/pdf/tiny1000-tier-01.pdf",
     premium: true, price: "$19", buyUrl: "",
     lessons: tiny1000Lessons
+  },
+  {
+    id: "tiny-conversations",
+    title: "Tiny Conversations",
+    tagline: "100 everyday Japanese conversations, built only from the 1,000 words you already know.",
+    level: "Beginner",
+    topic: "Conversation",
+    description: "The second half of the Tiny 1000 method. After you learn the 1,000 most useful words, put them to work in 100 short everyday conversations with Mika and Alex: meeting people, getting around town, eating out, shopping, travel, home, work, health, free time and small talk. Every conversation uses only words from Tiny 1000, with useful patterns, a real-life tip and a quick comprehension quiz.",
+    outcomes: [
+      "Follow and take part in 100 everyday situations in Japanese",
+      "Reuse the same 1,000 words in new combinations until they feel natural",
+      "Learn the sentence patterns Japanese speakers actually use",
+      "Get comfortable reading and saying full conversations out loud"
+    ],
+    audience: "Learners who have finished Tiny 1000, or know most of its 1,000 words.",
+    noVideo: true,
+    freeLessons: 10,
+    premium: true, price: "$19", buyUrl: "",
+    lessons: tinyConversationsLessons
   }
 ];

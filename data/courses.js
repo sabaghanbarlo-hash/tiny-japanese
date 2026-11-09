@@ -101,7 +101,7 @@ export const courses = [
       "Give reasons and advice, and say what you must do"
     ],
     audience: "Beginners who can read hiragana (take Hiragana Starter first if not) and are studying Genki I or want to follow the same path.",
-    noVideo: true,
+    videoCredit: "Voices: Mika and Alex (neural text-to-speech).",
     lessons: genki1Lessons
   },
   {

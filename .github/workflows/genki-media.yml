@@ -1,0 +1,63 @@
+name: Genki course media
+
+# Makes the narration audio and lesson videos for the "Genki I Companion" course (genki-1),
+# rebuilds the course pages, and commits the result to this branch.
+# It starts when this file is pushed to the genki-course branch. Nothing is deployed from here.
+on:
+  push:
+    branches: [genki-course]
+    paths: [".github/workflows/genki-media.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  media:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-noto-cjk
+          pip install edge-tts numpy
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Show videos on the Genki course pages
+        run: |
+          python3 - <<'PY'
+          p = "data/courses.js"
+          s = open(p, encoding="utf-8").read()
+          old = '    noVideo: true,\n    lessons: genki1Lessons'
+          new = '    videoCredit: "Voices: Mika and Alex (neural text-to-speech).",\n    lessons: genki1Lessons'
+          assert s.count(old) == 1, "genki-1 entry not found"
+          open(p, "w", encoding="utf-8").write(s.replace(old, new))
+          PY
+
+      - name: Make the "Hear it" audio (Genki course only)
+        run: node video-tools/make-audio.mjs genki-1
+
+      - name: Make the lesson videos
+        run: node video-tools/make-videos.mjs genki-1
+
+      - name: Rebuild the course pages
+        run: node build-courses.mjs
+
+      - name: Commit the results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audio videos data courses courses.html index.html
+          git commit -m "Add narration audio and lesson videos for Genki I Companion" || echo "Nothing to commit"
+          git push

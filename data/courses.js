@@ -102,6 +102,7 @@ export const courses = [
     ],
     audience: "Beginners who can read hiragana (take Hiragana Starter first if not) and are studying Genki I or want to follow the same path.",
     videoCredit: "Voices: Mika and Alex (neural text-to-speech).",
+    pdf: "/downloads/genki-1-workbook.pdf",
     lessons: genki1Lessons
   },
   {

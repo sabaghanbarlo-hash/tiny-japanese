@@ -1,0 +1,45 @@
+name: Genki particles media
+
+# Makes the audio and videos for the pilot course (genki-1-particles) and commits them to this branch. Nothing is deployed from here.
+on:
+  push:
+    branches: [genki-particles]
+    paths: [".github/workflows/genki-particles-media.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  media:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-noto-cjk
+          pip install edge-tts numpy
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Check the lesson file loads
+        run: node -e "import('./data/courses.js').then(m=>console.log('ok'))"
+      - name: Make the audio (this course only)
+        run: node video-tools/make-audio.mjs genki-1-particles
+      - name: Make the videos
+        run: node video-tools/make-videos.mjs genki-1-particles
+      - name: Rebuild the course pages
+        run: node build-courses.mjs
+      - name: Commit the results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audio videos data courses courses.html index.html
+          git commit -m "Add audio and videos for the Genki particles pilot" || echo "Nothing to commit"
+          git push

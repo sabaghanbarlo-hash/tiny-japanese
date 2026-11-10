@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 import { courses } from "./data/courses.js";
 import { SITE } from "./data/site.js";
 import { esc } from "./lesson-view.js";
+import { catalogPage } from "./catalog-view.js";
 import { lessonHTML, overviewHTML, courseCard, lessonPath, coursePath } from "./course-view.js";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
@@ -86,16 +87,8 @@ for (const c of courses) {
   });
 }
 
-// ---- Course catalog ------------------------------------------------------------------------------
-write("courses.html", shell(
-  { title: "Japanese Courses for Beginners | Tiny Japanese", desc: "Step-by-step beginner Japanese courses: learn to read hiragana and katakana, and hold your first real conversations. Short lessons with vocabulary, grammar and quizzes.", type: "website" },
-  `<section class="wrap page-top">
- <p class="eyebrow">Step by step</p>
- <h1 class="h1-md">Japanese Courses</h1>
- <p class="lead">Free lessons are great for dipping in. Courses take you through a topic from start to finish, in order, with a clear goal at the end of each one. Pick the one that matches where you are.</p>
- <div class="lesson-grid" id="course-cards">${courses.map((c) => courseCard(c, "h2")).join("")}</div>
- <p class="more">Prefer to start with a single short conversation? <a href="/lessons.html"><strong>Try the free lessons</strong></a>.</p>
-</section>`));
+// ---- Course catalog (page: catalog-view.js, look: catalog.css, per-card settings: data/catalog.js) ----------
+write("courses.html", catalogPage(courses, SITE));
 
 // ---- Course cards on the home page ---------------------------------------------------------------
 const homePath = path.join(root, "index.html");

@@ -32,8 +32,10 @@ jobs:
         run: node -e "import('./data/courses.js').then(m=>console.log('ok'))"
       - name: Make the audio (this course only)
         run: node video-tools/make-audio.mjs genki-1-particles
-      - name: Make the videos
-        run: node video-tools/make-videos.mjs genki-1-particles
+      - name: Make the videos (the two deep lessons)
+        run: |
+          node video-tools/make-videos.mjs genki-1-particles particle-wa
+          node video-tools/make-videos.mjs genki-1-particles particle-ni
       - name: Rebuild the course pages
         run: node build-courses.mjs
       - name: Commit the results

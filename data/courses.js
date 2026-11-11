@@ -8,6 +8,7 @@ import { conversationLessons } from "./course-conversations.js";
 import { grammarLessons } from "./course-grammar.js";
 import { genki1Lessons } from "./course-genki1.js";
 import { particles as genki1ParticleLessons } from "./genki1-particles.js";
+import { genki1Grammar } from "./genki1-deep.js";
 import { kanjiLessons } from "./course-kanji.js";
 import { travelLessons } from "./course-travel.js";
 import { tiny1000Lessons } from "./course-tiny1000.js";
@@ -105,6 +106,22 @@ export const courses = [
     videoCredit: "Voices: Mika and Alex (neural text-to-speech).",
     pdf: "/downloads/genki-1-workbook.pdf",
     lessons: genki1Lessons
+  },
+  {
+    id: "genki-1-grammar",
+    title: "Genki I Grammar, Point by Point",
+    tagline: "Every Genki I grammar point gets its own lesson: a deep explanation, examples, common mistakes and a story.",
+    level: "Beginner",
+    topic: "Textbook companion",
+    description: "An independent study companion for the Genki I textbook, not affiliated with its publisher. Each lesson teaches one grammar point from start to finish: what it does, how it works, examples, the mistakes beginners make, a short story with Mika and Alex, vocabulary and a quiz. New chapters are added as they are finished, in the same order as the book.",
+    outcomes: [
+      "Understand each basic grammar point on its own, not just memorise it",
+      "Make polite sentences with は, です, か, の, も and the negative",
+      "Point at things, ask questions and sound natural with ね and よ"
+    ],
+    audience: "Complete beginners who can read hiragana and want every grammar point explained in depth.",
+    videoCredit: "Voices: Mika and Alex (neural text-to-speech); teacher narration: neural text-to-speech.",
+    lessons: genki1Grammar
   },
   {
     id: "genki-1-particles",

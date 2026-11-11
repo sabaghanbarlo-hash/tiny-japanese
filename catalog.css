@@ -1,0 +1,150 @@
+/* Courses page (courses.html): cute sakura look. Every rule is scoped to body.catalog, so no other page changes.
+   Generated page markup: catalog-view.js. Pictures: assets/courses/ (hero.webp, cta.webp and one <course id>.webp per card). */
+
+body.catalog{
+  --u:calc(min(100vw,1900px)/1672);
+  --ink:#2b1347;--ink2:#45305f;--pink:#ec4b8b;--pink-d:#d93a7c;--blush:#fdf1f7;--lav:#8f74e2;--lav-d:#7a5fd3;
+  --kal:"Kalam","Segoe Script","Bradley Hand",cursive;
+  margin:0;color:var(--ink2);font:400 1rem/1.45 "Nunito","Noto Sans JP",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;
+  background:radial-gradient(60% 30% at 0 40%,#fde1ed99,transparent),radial-gradient(50% 30% at 100% 70%,#e7e1fa99,transparent),var(--blush);
+}
+
+/* ---------- top bar ---------- */
+.catalog .nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:72px;padding:8px clamp(16px,2.4vw,40px);
+  background:linear-gradient(#fffbfd,#fff3f8);border-bottom:1px solid #f7d9e5;box-shadow:0 6px 18px #d93a7c12;backdrop-filter:none}
+.catalog .logo{display:flex;align-items:center;gap:12px;color:var(--ink);text-decoration:none;font:700 clamp(1.6rem,2vw,2rem)/1 var(--kal);white-space:nowrap}
+.catalog .logo svg{width:48px;height:48px;flex:none}
+.catalog .logo b{position:relative;font-weight:700}
+.catalog .logo b::after{content:"";position:absolute;left:18%;right:8%;bottom:-8px;height:8px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 8'%3E%3Cpath d='M2 5.5C14 1.5 40 1 58 3.5' fill='none' stroke='%23ee5a97' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.catalog .nav nav{display:flex;align-items:center;gap:clamp(2px,.5vw,10px);font:600 clamp(.9rem,1.12vw,1.15rem)/1 "Nunito",sans-serif}
+.catalog .nav nav a:not(.btn){position:relative;padding:12px clamp(10px,1.1vw,18px);border-radius:999px;color:var(--ink);text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}
+.catalog .nav nav a:not(.btn):hover{background:#fde6ef;color:var(--pink-d)}
+.catalog .nav nav a[aria-current=page]{background:#fbd3e2;color:var(--ink)}
+.catalog .nav nav a[aria-current=page]::after{content:"";position:absolute;left:22%;right:22%;bottom:5px;height:6px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 8'%3E%3Cpath d='M2 5.5C14 1.5 40 1 58 3.5' fill='none' stroke='%23ee5a97' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.catalog .nav .btn{min-height:46px;padding:0 clamp(14px,1.3vw,22px);gap:8px;border-radius:999px;font:700 clamp(.9rem,1.05vw,1.05rem)/1 "Nunito",sans-serif;white-space:nowrap;transition:transform .2s,box-shadow .2s}
+.catalog .nav .btn[data-yt]{background:#fff;color:var(--ink);border:2px solid #b9a5ec}
+.catalog .nav .btn[data-yt]:hover{background:#f6f1ff;box-shadow:0 8px 18px #8f74e233}
+.catalog .nav .btn[data-yt] .yt{width:24px;height:24px;flex:none}
+.catalog .nav .btn[data-ig]{background:linear-gradient(#f0568f,#e03a7c);border:0;color:#fff;box-shadow:0 6px 14px #e03a7c40}
+.catalog .nav .btn[data-ig]:hover{box-shadow:0 10px 20px #e03a7c55}
+.catalog .nav .auth-link{display:inline-flex;align-items:center;gap:8px;font-size:0;padding:10px 8px;color:var(--ink);text-decoration:none}
+.catalog .nav .auth-link::before{content:"My";font:700 clamp(.95rem,1.1vw,1.1rem)/1 "Nunito",sans-serif}
+.catalog .nav .auth-link::after{content:"";width:24px;height:24px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232b1347' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='12' cy='8' r='4.2'/%3E%3Cpath d='M4.5 20.5c.8-4 3.8-6 7.5-6s6.7 2 7.5 6'/%3E%3C/svg%3E") center/contain no-repeat}
+.catalog .burger{display:none}
+.catalog .burger span{background:var(--ink)}
+
+/* ---------- hero ---------- */
+.catalog .ch{position:relative;max-width:1900px;margin:0 auto;overflow:hidden;min-height:clamp(440px,112vw,540px);
+  background:url("/assets/courses/hero.webp") 67% bottom/auto 56% no-repeat,linear-gradient(180deg,#8dadf3 0,#8dadf3 30%,#b9c5f4 70%,#f2d3e6 100%)}
+.catalog .ch::after{content:"";position:absolute;left:0;right:0;bottom:0;height:16px;background:linear-gradient(transparent,var(--blush));pointer-events:none}
+.catalog .ch-copy{position:relative;z-index:1;padding:26px clamp(18px,5vw,44px) 0}
+.catalog .ch-title{margin:0;color:var(--ink);font:700 clamp(2.3rem,10.4vw,4.4rem)/1.05 var(--kal);letter-spacing:0;transform:rotate(-3.5deg);transform-origin:0 100%;text-shadow:0 2px 0 #ffffff55}
+.catalog .ch-title span{display:block}
+.catalog .ch-l2{padding-left:.9em}
+.catalog .ch-title em{position:relative;font-style:normal;color:var(--pink)}
+.catalog .ch-title em::after{content:"";position:absolute;left:-4%;right:-4%;bottom:-.12em;height:.2em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 8'%3E%3Cpath d='M2 5.5C14 1.5 40 1 58 3.5' fill='none' stroke='%23ee5a97' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.catalog .ch-sub{margin:1.1rem 0 0;max-width:32ch;color:#35224f;font:700 clamp(.98rem,3.7vw,1.25rem)/1.5 "Nunito",sans-serif}
+.catalog .ch-sub br{display:none}
+.catalog .ch-heart{display:inline-block;width:1.4em;height:1.4em;vertical-align:-.3em;margin-left:.3em;color:#a3345f}
+.catalog .ch-bubble{display:none}
+
+/* ---------- cards ---------- */
+.catalog .cc-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr;gap:22px;width:min(1612px,100% - 32px);margin:-6px auto 0}
+.catalog .cc{position:relative;display:flex;flex-direction:column;border-radius:34px;background:#fde8f1;border:3px solid #fff;box-shadow:0 0 0 2px #f8c3d7,0 18px 36px #d93a7c24;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.catalog .cc:hover{transform:translateY(-5px);box-shadow:0 0 0 2px #f4a9c7,0 24px 44px #d93a7c33}
+.catalog .cc-art{position:relative;display:block;overflow:hidden;background:linear-gradient(135deg,#ffe0ec,#e1e4fb 60%,#f9cfe0);text-decoration:none}
+.catalog .cc-a .cc-art{aspect-ratio:1.6}
+.catalog .cc-b .cc-art{aspect-ratio:1.42}
+.catalog .cc-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+.catalog .cc-glyph{position:absolute;inset:0;display:grid;place-items:center;font:900 clamp(4.4rem,9vw,6.6rem)/1 "Noto Serif JP","Noto Sans JP",serif;color:#ffffffd9;text-shadow:0 6px 24px #d93a7c55}
+.catalog .cc-pill{position:absolute;left:5.5%;top:12px;z-index:2;max-width:90%;padding:7px 16px;border-radius:999px;font:700 clamp(.82rem,.95vw,.98rem)/1.2 "Nunito",sans-serif;white-space:nowrap;
+  background:#ffffffb8;color:var(--ink);box-shadow:0 4px 14px #2b134722;backdrop-filter:blur(6px)}
+.catalog .cc-pill.hot{background:linear-gradient(#ff7fb3,#f1569b);color:#fff;box-shadow:0 6px 14px #f1569b55}
+.catalog .cc-body{position:relative;z-index:1;display:flex;flex:1;flex-direction:column;padding:18px 20px 10px;background:linear-gradient(#fff,#fff1f7)}
+.catalog .cc-body::before,.catalog .cc-body::after{content:"";position:absolute;bottom:6px;z-index:-1;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-32 -32 64 64'%3E%3Cg fill='%23f7a3c3'%3E%3Cpath d='M0-4C-9-12-9-26 0-29 9-26 9-12 0-4z'/%3E%3Cpath d='M0-4C-9-12-9-26 0-29 9-26 9-12 0-4z' transform='rotate(72)'/%3E%3Cpath d='M0-4C-9-12-9-26 0-29 9-26 9-12 0-4z' transform='rotate(144)'/%3E%3Cpath d='M0-4C-9-12-9-26 0-29 9-26 9-12 0-4z' transform='rotate(216)'/%3E%3Cpath d='M0-4C-9-12-9-26 0-29 9-26 9-12 0-4z' transform='rotate(288)'/%3E%3C/g%3E%3Ccircle r='5' fill='%23fff0f6'/%3E%3C/svg%3E") center/contain no-repeat;opacity:.75}
+.catalog .cc-body::before{left:14px;width:44px;height:44px}
+.catalog .cc-body::after{right:16px;width:58px;height:58px;bottom:14px}
+.catalog .cc-meta{display:none;margin:0 0 6px;color:var(--ink);font:800 clamp(.9rem,1vw,1.02rem)/1.2 "Nunito",sans-serif}
+.catalog .cc-title{margin:0;color:var(--ink);font:700 clamp(1.5rem,2.1vw,1.95rem)/1.12 var(--kal);letter-spacing:0}
+.catalog .cc-chip{align-self:flex-start;margin:3px 0 0;padding:8px 22px;border-radius:999px;background:#fbd3e4;color:#7d1a4e;font:800 clamp(.85rem,.95vw,.98rem)/1.2 "Nunito",sans-serif}
+.catalog .chip-lav .cc-chip{background:#dfe3fb;color:#34318a}
+.catalog .cc-desc{margin:10px 0 0;color:var(--ink);font:600 clamp(.98rem,1.1vw,1.08rem)/1.3 "Nunito",sans-serif}
+.catalog .cc-list{list-style:none;margin:11px 0 13px;padding:0;display:grid;gap:6px;color:#46316a;font:600 clamp(.9rem,.98vw,1rem)/1.38 "Nunito",sans-serif}
+.catalog .cc-list li{position:relative;padding-left:32px;text-align:left}
+.catalog .cc-list li::before{content:"";position:absolute;left:0;top:.1em;width:21px;height:21px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23f4679f'/%3E%3Cpath d='M7 12.5l3.3 3.3L17 9' fill='none' stroke='%23fff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.catalog .cc-list b{font-weight:900;color:var(--ink)}
+.catalog .cc-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;align-self:center;margin-top:auto;min-width:min(100%,196px);height:50px;padding:0 28px;border-radius:999px;border:0;
+  background:linear-gradient(#f4609f,#e03a7d);color:#fff;font:700 1.08rem/1 "Nunito",sans-serif;text-decoration:none;box-shadow:0 10px 20px #e03a7d40;transition:transform .2s,box-shadow .2s,filter .2s}
+.catalog .cc-btn.lav{background:linear-gradient(#9d84ea,#7b60d4);box-shadow:0 10px 20px #7b60d44d}
+.catalog .cc-btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.catalog .cc-btn:focus-visible,.catalog .nav a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.catalog .cc-btn .arr{width:19px;height:19px;flex:none}
+
+/* variant a: centred text, pill on the picture */
+.catalog .cc-a .cc-body{margin-top:-8px;padding-top:22px;border-radius:32px 32px 0 0;text-align:center;align-items:center}
+.catalog .cc-a .cc-chip{align-self:center}
+.catalog .cc-a .cc-list{width:100%}
+
+/* variant b: left text, sheet floating over the picture */
+.catalog .cc-b .cc-pill{display:none}
+.catalog .cc-b .cc-meta{display:block}
+.catalog .cc-b .cc-body{margin:-34px 6px 6px;border-radius:30px;padding:18px 18px 24px;box-shadow:0 8px 24px #d93a7c1c}
+.catalog .cc-b .cc-body::before,.catalog .cc-b .cc-body::after{opacity:.5}
+
+/* first conversations: little ramen and onigiri beside the button */
+.catalog .cc-x{position:absolute;bottom:6px;width:23%;max-width:84px;height:auto;mix-blend-mode:multiply;pointer-events:none}
+.catalog .cc-x1{left:8px}.catalog .cc-x2{right:8px}
+.catalog .cc-body:has(.cc-x)::before,.catalog .cc-body:has(.cc-x)::after{display:none}
+
+/* ---------- closing banner ---------- */
+.catalog .cta{--cw:min(1612px,100vw - 32px);--cu:calc(var(--cw)/1312);position:relative;display:flex;align-items:flex-start;width:var(--cw);min-height:420px;margin:34px auto 56px;overflow:hidden;border-radius:38px;
+  background:url("/assets/courses/cta.webp") right bottom/auto 62% no-repeat,linear-gradient(110deg,#ffe0ec,#f0e2f6 55%,#f9c8dc);box-shadow:0 18px 40px #d93a7c1f}
+.catalog .cta-copy{position:relative;z-index:1;padding:30px clamp(20px,5vw,44px) 28px}
+.catalog .cta h2{margin:0;color:var(--ink);font:700 clamp(2rem,9vw,3.4rem)/1.05 var(--kal);transform:rotate(-5deg);transform-origin:0 100%}
+.catalog .cta h2 span{display:block}
+.catalog .cta .c2{padding-left:.15em}
+.catalog .cta h2 em{font-style:normal;background:linear-gradient(90deg,#f4468b,#f98ab4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.catalog .cta p{margin:1.1rem 0 1.3rem;max-width:30ch;color:#2a1844;font:800 clamp(.98rem,3.7vw,1.15rem)/1.45 "Nunito",sans-serif;transform:rotate(-3deg);transform-origin:0 100%}
+.catalog .cc-btn.big{height:60px;min-width:0;padding:0 34px;font-size:1.2rem}
+
+/* ---------- wide screens: hero art fills the whole band ---------- */
+@media(min-width:620px){
+  .catalog .cc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(min-width:1100px){
+  .catalog .ch{aspect-ratio:1672/296;min-height:0;background:url("/assets/courses/hero.webp") center/cover no-repeat,linear-gradient(180deg,#8dadf3 0,#c5c6f3 60%,#f4d3e6 100%)}
+  .catalog .ch::after{height:calc(var(--u)*14)}
+  .catalog .ch-copy{position:absolute;inset:0;padding:0}
+  .catalog .ch-title{position:absolute;left:calc(var(--u)*138);top:calc(var(--u)*50);width:calc(var(--u)*620);font-size:calc(var(--u)*80);line-height:.94;text-align:center;transform:rotate(-4deg);transform-origin:50% 50%;white-space:nowrap}
+  .catalog .ch-l2{padding-left:0}
+  .catalog .ch-sub{position:absolute;left:calc(var(--u)*150);top:calc(var(--u)*204);width:calc(var(--u)*500);max-width:none;margin:0;text-align:center;font-size:calc(var(--u)*21)}
+  .catalog .ch-sub br{display:inline}
+  .catalog .ch-bubble{position:absolute;left:calc(var(--u)*1262);top:calc(var(--u)*30);width:calc(var(--u)*232);height:calc(var(--u)*136);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:calc(var(--u)*3);text-align:center;transform:rotate(-4deg)}
+  .catalog .b-ja{font:700 calc(var(--u)*33)/1.1 "Noto Sans JP",sans-serif;color:#33204f}
+  .catalog .b-ro{font:600 calc(var(--u)*21)/1.1 "Nunito",sans-serif;color:#7a5aa6}
+  .catalog .b-en{font:700 calc(var(--u)*19)/1.2 "Nunito",sans-serif;color:var(--ink)}
+  .catalog .b-en i{font-style:normal;color:#f0508f}
+  .catalog .cc-grid{grid-template-columns:repeat(4,minmax(0,1fr));width:min(1612px,100% - 64px);margin-top:calc(var(--u)*5)}
+  .catalog .cta{min-height:0;aspect-ratio:1312/348;align-items:stretch;background:url("/assets/courses/cta.webp") center/cover no-repeat,linear-gradient(110deg,#ffe0ec,#f0e2f6 55%,#f9c8dc)}
+  .catalog .cta-copy{position:absolute;inset:0;padding:0}
+  .catalog .cta h2{position:absolute;left:calc(var(--cu)*48);top:calc(var(--cu)*40);width:calc(var(--cu)*580);font-size:calc(var(--cu)*52);line-height:1.02;white-space:nowrap}
+  .catalog .cta .c1{padding-left:calc(var(--cu)*66)}
+  .catalog .cta p{position:absolute;left:calc(var(--cu)*96);top:calc(var(--cu)*180);width:calc(var(--cu)*520);max-width:none;margin:0;font-size:calc(var(--cu)*17)}
+  .catalog .cta .cc-btn.big{position:absolute;left:calc(var(--cu)*214);top:calc(var(--cu)*228);height:calc(var(--cu)*60);padding:0 calc(var(--cu)*30);font-size:calc(var(--cu)*20)}
+}
+@media(min-width:1500px){.catalog .cc-grid{gap:24px}}
+
+/* ---------- smaller screens: menu button ---------- */
+@media(max-width:1179px){
+  .catalog .burger{display:block;flex:none}
+  .catalog .nav nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:2px;padding:10px 18px 18px;background:#fff8fb;border-bottom:1px solid #f7d9e5;box-shadow:0 16px 26px #d93a7c1f;font-size:1.05rem}
+  .catalog .nav nav.open{display:flex}
+  .catalog .nav nav a:not(.btn){padding:13px 16px}
+  .catalog .nav nav a[aria-current=page]::after{left:16px;right:auto;width:60px}
+  .catalog .nav nav .btn{justify-content:center;margin-top:6px}
+  .catalog .nav .auth-link{padding:13px 16px}
+}
+@media(max-width:480px){.catalog .logo svg{width:40px;height:40px}.catalog .cc-body{padding:18px 16px 22px}}
+@media(prefers-reduced-motion:reduce){.catalog .cc,.catalog .cc-btn,.catalog .nav a{transition:none}.catalog .cc:hover{transform:none}}
+
+.catalog .foot nav{flex-wrap:wrap;gap:8px 18px}

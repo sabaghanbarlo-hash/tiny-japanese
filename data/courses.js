@@ -108,7 +108,7 @@ export const courses = [
   },
   {
     id: "genki-1-particles",
-    title: "Genki I Particles (pilot)",
+    title: "Genki I Particles",
     tagline: "One short video for each Japanese particle: は, か, の, も, を, に, で, へ, と and が.",
     level: "Beginner",
     topic: "Textbook companion",

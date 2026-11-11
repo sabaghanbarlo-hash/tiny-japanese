@@ -140,7 +140,12 @@ export const tinyConversationsLessons = [
     "answer": 0,
     "explain": "Alex says はい、とても好きです, meaning yes, very much."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tc-001.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tc-001.thumbnail.png",
+   "note": "Animated conversation video with Mika and Alex."
+  }
  },
  {
   "id": "at-the-language-exchange",
@@ -276,7 +281,12 @@ export const tinyConversationsLessons = [
     "answer": 1,
     "explain": "Mika invites Alex to speak both languages together."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tc-002.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tc-002.thumbnail.png",
+   "note": "Animated conversation video with Mika and Alex."
+  }
  },
  {
   "id": "where-are-you-from",
@@ -428,7 +438,12 @@ export const tinyConversationsLessons = [
     "answer": 1,
     "explain": "Mika says she is going to Kyoto tomorrow, and Alex says he is too."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tc-003.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tc-003.thumbnail.png",
+   "note": "Animated conversation video with Mika and Alex."
+  }
  },
  {
   "id": "names-and-countries",
@@ -576,7 +591,12 @@ export const tinyConversationsLessons = [
     "answer": 0,
     "explain": "Mika says 「はい、とても 楽しいです」, meaning yes, it is very fun."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tc-004.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tc-004.thumbnail.png",
+   "note": "Animated conversation video with Mika and Alex."
+  }
  },
  {
   "id": "a-new-neighbor",
@@ -722,7 +742,12 @@ export const tinyConversationsLessons = [
     "answer": 0,
     "explain": "Mika says to go straight from here."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tc-005.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tc-005.thumbnail.png",
+   "note": "Animated conversation video with Mika and Alex."
+  }
  },
  {
   "id": "meeting-a-friend-s-friend",
@@ -874,7 +899,12 @@ export const tinyConversationsLessons = [
     "answer": 0,
     "explain": "Mika says 一緒に 飲みましょう, meaning “Let's have a drink together.”"
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tc-006.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tc-006.thumbnail.png",
+   "note": "Animated conversation video with Mika and Alex."
+  }
  },
  {
   "id": "what-do-you-do",
@@ -1026,7 +1056,12 @@ export const tinyConversationsLessons = [
     "answer": 2,
     "explain": "She says it is very fun."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tc-007.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tc-007.thumbnail.png",
+   "note": "Animated conversation video with Mika and Alex."
+  }
  },
  {
   "id": "when-did-you-get-here",
@@ -1174,7 +1209,12 @@ export const tinyConversationsLessons = [
     "answer": 1,
     "explain": "Mika asks 「一緒に 散歩しませんか」, inviting Alex to take a walk together."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tc-008.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tc-008.thumbnail.png",
+   "note": "Animated conversation video with Mika and Alex."
+  }
  },
  {
   "id": "a-shared-hobby",
@@ -1314,7 +1354,12 @@ export const tinyConversationsLessons = [
     "answer": 0,
     "explain": "Mika asks Alex if they would like to sing together."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tc-009.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tc-009.thumbnail.png",
+   "note": "Animated conversation video with Mika and Alex."
+  }
  },
  {
   "id": "see-you-again",
@@ -1450,7 +1495,12 @@ export const tinyConversationsLessons = [
     "answer": 0,
     "explain": "Alex says 来週 は 大丈夫 です, meaning next week works."
    }
-  ]
+  ],
+  "video": {
+   "src": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tc-010.mp4",
+   "poster": "https://sabaghanbarlo-hash.github.io/tiny-japanese-youtube/videos/tc-010.thumbnail.png",
+   "note": "Animated conversation video with Mika and Alex."
+  }
  },
  {
   "id": "finding-the-station",

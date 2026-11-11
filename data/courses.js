@@ -7,6 +7,7 @@ import { katakanaLessons } from "./course-katakana.js";
 import { conversationLessons } from "./course-conversations.js";
 import { grammarLessons } from "./course-grammar.js";
 import { genki1Lessons } from "./course-genki1.js";
+import { particles as genki1ParticleLessons } from "./genki1-particles.js";
 import { kanjiLessons } from "./course-kanji.js";
 import { travelLessons } from "./course-travel.js";
 import { tiny1000Lessons } from "./course-tiny1000.js";
@@ -104,6 +105,22 @@ export const courses = [
     videoCredit: "Voices: Mika and Alex (neural text-to-speech).",
     pdf: "/downloads/genki-1-workbook.pdf",
     lessons: genki1Lessons
+  },
+  {
+    id: "genki-1-particles",
+    title: "Genki I Particles",
+    tagline: "One short video for each Japanese particle: は, か, の, も, を, に, で, へ, と and が.",
+    level: "Beginner",
+    topic: "Textbook companion",
+    description: "A pilot for a one-concept-per-lesson way of learning Genki I grammar. Each lesson takes one particle, explains it from the start, shows examples, then puts it in a short story with Mika and Alex. An independent companion, not affiliated with the Genki publisher.",
+    outcomes: [
+      "Know what each basic particle does and how it is read",
+      "Choose between は and が, に and で, に and へ",
+      "Build simple sentences about who, what, where and when"
+    ],
+    audience: "Beginners who can read hiragana and want each grammar point explained on its own.",
+    videoCredit: "Voices: Mika and Alex (neural text-to-speech).",
+    lessons: genki1ParticleLessons
   },
   {
     id: "kanji-starter",

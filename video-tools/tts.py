@@ -6,7 +6,7 @@ import sys, os, json, wave, asyncio, subprocess, re
 import numpy as np
 import edge_tts
 
-VOICES = {"mika": "ja-JP-NanamiNeural", "alex": "ja-JP-KeitaNeural"}
+VOICES = {"mika": "ja-JP-NanamiNeural", "alex": "ja-JP-KeitaNeural", "teacher": "en-US-AriaNeural"}
 KANA = re.compile(r"^[\u3041-\u3096\u30a1-\u30fa\u30fc]{1,2}$")
 outdir = sys.argv[1]
 os.makedirs(outdir, exist_ok=True)

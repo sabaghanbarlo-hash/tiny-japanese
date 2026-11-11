@@ -1,0 +1,38 @@
+name: Genki particles merge main
+
+# One-off: brings the latest main into the genki-particles branch, rebuilds the generated pages, and pushes. Nothing is deployed from here.
+on:
+  push:
+    branches: [genki-particles]
+    paths: [".github/workflows/genki-particles-merge.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Merge main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git merge origin/main --no-commit --no-ff || true
+          git checkout --theirs courses.html || true
+          git status --short | grep '^UU\|^AA' || echo "no other conflicts"
+      - name: Drop the pilot label from the course title
+        run: sed -i 's/Genki I Particles (pilot)/Genki I Particles/' data/courses.js
+      - name: Rebuild the generated pages
+        run: node build-courses.mjs
+      - name: Commit and push
+        run: |
+          git add -A
+          git commit -m "Merge main into genki-particles and rebuild pages" -m "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>" -m "Claude-Session: https://claude.ai/code/session_014EjoYbw5ddSSeKMRSp8i3L"
+          git push

@@ -52,6 +52,10 @@ body{background:#fbf6ee;color:#2d2a2e;font-family:"Noto Sans CJK JP","Noto Sans 
 .ro{font-size:42px;font-weight:700;color:#b8475c;margin-top:22px;max-width:1080px;line-height:1.3}
 .en{font-size:44px;font-weight:600;color:#4a4249;margin-top:18px;max-width:1080px;line-height:1.3}
 .hide{visibility:hidden}
+.keyl{font-size:54px;font-weight:800;line-height:1.25;max-width:1060px;margin-bottom:30px}
+.txs{display:flex;flex-direction:column;gap:12px;font-size:48px;font-weight:700;max-width:1080px}
+.badx{color:#9a3b3b}
+.mk{background:#f7dfe3;color:#8a2f43;border-radius:12px;padding:0 10px}
 </style><div id="root"></div><div id="bar"></div>
 <script>
 const NS="http://www.w3.org/2000/svg";
@@ -80,6 +84,7 @@ function charSVG(d,p){
   });
   return g+'</svg>';
 }
+function mark(ja,hl){var t=esc(ja);if(!hl)return t;var h=esc(hl);return t.split(h).join('<span class="mk">'+h+'</span>');}
 window.draw=function(s){
   bar(s); const r=document.getElementById("root");
   if(s.type==="title"){
@@ -90,6 +95,13 @@ window.draw=function(s){
     r.innerHTML='<div class="stage"><div class="card">'+charSVG(s.d,s.p)+'</div><div class="side"><span class="chip">'+esc(s.label||"")+'</span><div class="romaji">'+esc(s.romaji)+'</div><div class="print">'+esc(s.ch)+'</div><div class="note">'+esc(note)+'</div></div></div>';
   } else if(s.type==="card"){
     r.innerHTML='<div class="center"><div class="eyebrow">'+esc(s.label||"")+'</div><div class="ja" style="font-size:'+(s.ja.length>6?110:170)+'px">'+esc(s.ja)+'</div><div class="ro">'+esc(s.romaji)+'</div><div class="en'+(s.stage<2?" hide":"")+'">'+esc(s.en||"")+'</div></div>';
+  } else if(s.type==="teach"){
+    var lis=(s.exs||[]).map(function(e){return '<div class="'+(e.bad?'badx':'')+'">'+(e.bad?'✗ ':'')+mark(e.ja,e.hl)+'</div>';}).join("");
+    r.innerHTML='<div class="center"><div class="eyebrow">'+esc(s.head)+'</div><div class="keyl">'+esc(s.key)+'</div><div class="txs">'+lis+'</div></div>';
+  } else if(s.type==="tex"){
+    r.innerHTML='<div class="center"><div class="eyebrow">'+esc(s.head)+'</div><div class="ja'+(s.bad?' badx':'')+'">'+(s.bad?'✗ ':'')+mark(s.ja,s.hl)+'</div><div class="ro'+(s.stage<2?' hide':'')+'">'+esc(s.romaji)+'</div><div class="en'+(s.stage<3?' hide':'')+'">'+esc(s.en)+'</div></div>';
+  } else if(s.type==="try"){
+    r.innerHTML='<div class="center"><div class="eyebrow">Try it yourself</div><div class="keyl">'+esc(s.q)+'</div><div class="'+(s.stage<2?'hide':'')+'"><div class="ja" style="font-size:80px">'+mark(s.ja||"",s.hl)+'</div><div class="ro">'+esc(s.romaji||"")+'</div><div class="en">'+esc(s.en||"")+'</div></div></div>';
   } else if(s.type==="phrase"){
     r.innerHTML='<div class="center"><div class="eyebrow">'+esc(s.label||"")+'</div><div style="margin-bottom:22px"><span class="chip'+(s.who==="Alex"?" green":"")+'">'+esc(s.who)+'</span></div><div class="ja">'+esc(s.ja)+'</div><div class="ro'+(s.stage<2?" hide":"")+'">'+esc(s.romaji)+'</div><div class="en'+(s.stage<3?" hide":"")+'">'+esc(s.en)+'</div></div>';
   }
@@ -107,7 +119,10 @@ function lessonScenes(c, l) {
   const f = (done) => ({ footer, done });
   const add = (s, dur, sp) => scenes.push({ s, dur, say: sp });
 
-  add({ type: "title", eyebrow: `${c.title} · Lesson ${l.number} of ${n}`, title: l.title, sub: l.summary, ...f(0) }, 3.2);
+  const spk = (s) => s.replace(/\{([^|}]+)\|([^}]+)\}/g, "$2"), dsp = (s) => s.replace(/\{([^|}]+)\|([^}]+)\}/g, "$1");
+  const tsay = (text) => say(text, "teacher", 0.95);
+  const teachB = l.blocks.find((x) => x.type === "teach");
+  add({ type: "title", eyebrow: `${c.title} · Lesson ${l.number} of ${n}`, title: l.title, sub: l.summary, ...f(0) }, 3.2, teachB ? tsay(l.objective || l.summary) : undefined);
 
   const charBlocks = l.blocks.filter((b) => b.type === "kana" && !isMulti(b) && singles(b).length);
   const total = charBlocks.reduce((a, b) => a + singles(b).length, 0);
@@ -134,6 +149,24 @@ function lessonScenes(c, l) {
     });
   }
 
+  if (teachB) {
+    const steps = teachB.steps;
+    steps.forEach((st, si) => {
+      const g = { footer, done: 0.7 * (si + 1) / steps.length };
+      add({ type: "teach", head: st.head, key: dsp(st.key || ""), exs: (st.show || []).slice(0, 4).map((e) => ({ ja: e.ja, hl: e.hl, bad: !!e.bad })), ...g }, 3, tsay([].concat(st.say).map(spk).join(" ")));
+      for (const e of st.show || []) {
+        const base = { type: "tex", head: st.head, ja: e.ja, hl: e.hl, romaji: e.ro, en: e.en, bad: !!e.bad, ...g };
+        if (e.bad) add({ ...base, stage: 3 }, 3.4);
+        else { const mk = say(e.ja, "mika", 0.85); add({ ...base, stage: 1 }, 1.6, mk); add({ ...base, stage: 2 }, 1.8, mk); add({ ...base, stage: 3 }, 2.6); }
+      }
+      if (st.try) {
+        const t = st.try;
+        add({ type: "try", q: dsp(t.q), stage: 1, ...g }, 6.5, tsay("Try it yourself. " + spk(t.q)));
+        add({ type: "try", q: dsp(t.q), ja: t.ja, hl: t.hl, romaji: t.ro, en: t.en, stage: 2, ...g }, 3.5, say(t.ja, "mika", 0.85));
+      }
+    });
+  }
+
   const wordCap = charBlocks.length ? 6 : 12;
   for (const b of l.blocks.filter((x) => x.type === "words")) {
     b.items.slice(0, wordCap).forEach((w, i, arr) => {
@@ -151,6 +184,11 @@ function lessonScenes(c, l) {
     add({ ...base, stage: 2 }, 1.8, sp);
     add({ ...base, stage: 3 }, 2.6);
   });
+
+  if (teachB) {
+    const tips = l.blocks.filter((x) => x.type === "tips").flatMap((x) => x.items);
+    tips.forEach((t, i) => add({ type: "teach", head: "Remember", key: t, exs: [], footer, done: 0.9 + 0.1 * (i + 1) / tips.length }, 3, tsay(t)));
+  }
 
   add({ type: "title", eyebrow: "Well done!", title: "Now try the quiz", sub: "Scroll down on this lesson page to test yourself, then mark the lesson complete.", ...f(1) }, 2.6);
   return scenes;

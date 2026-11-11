@@ -22,6 +22,7 @@ const want = (text, voice, speed) => { if (text) clips.set(`${voice}|${speed}|${
 for (const c of courses) if (!only || c.id === only) for (const l of c.lessons) for (const b of l.blocks || []) {  // locked premium lessons are stubs without blocks
   if (b.type === "kana") b.items.filter((i) => i.k).forEach((i) => want(kata(i.k), "mika", 0.8));
   if (b.type === "words") b.items.forEach((w) => want(w.ja, "mika", 0.85));
+  if (b.type === "teach") b.steps.forEach((st) => { (st.show || []).filter((e) => !e.bad).forEach((e) => want(e.ja, "mika", 0.85)); if (st.try) want(st.try.ja, "mika", 0.85); });
   if (b.type === "dialogue") b.lines.forEach((d) => want(d.ja.replace(/[「」]/g, ""), d.who === "Alex" ? "alex" : "mika", 0.9));
 }
 

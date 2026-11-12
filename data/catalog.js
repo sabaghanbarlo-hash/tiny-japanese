@@ -14,6 +14,7 @@ export const catalog = {
     bullets: ["Greet people, introduce yourself", "Keep a short conversation going", "Order food, shop and ask for help"] },
   "grammar-starter": { variant: "a", pill: "soft", chip: "lav", btn: "lav", glyph: "文",
     bullets: ["Make and understand simple “A is B”", "Use particles の, も, と, を, に, で and へ correctly"] },
+  "genki-1-grammar": { variant: "b", chip: "lav", btn: "pink", glyph: "文法" },
   "genki-1": { variant: "b", chip: "lav", btn: "pink", glyph: "元気" },
   "kanji-starter": { variant: "b", chip: "lav", btn: "pink", glyph: "日本",
     bullets: ["Read the kanji for numbers, prices, years and the days of the week", "Read people, school and nature words such as <b>先生</b>, <b>学生</b>, <b>山</b> and <b>天気</b>"] },

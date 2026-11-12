@@ -1,0 +1,50 @@
+name: Genki grammar media
+
+# Makes the audio and the two new videos for the Genki I Grammar course, removes the old separate Genki course pages,
+# rebuilds the pages and commits to this branch. Starts when this file is pushed to the genki-grammar branch. Nothing is deployed from here.
+on:
+  push:
+    branches: [genki-grammar]
+    paths: [".github/workflows/genki-grammar-media.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  media:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-noto-cjk
+          pip install edge-tts numpy
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Check the course loads
+        run: node -e "import('./data/courses.js').then(m=>console.log(m.courses.map(c=>c.id).join(',')))"
+      - name: Make the audio (this course only)
+        run: node video-tools/make-audio.mjs genki-1-grammar
+      - name: Make the two new videos
+        run: |
+          node video-tools/make-videos.mjs genki-1-grammar particle-to
+          node video-tools/make-videos.mjs genki-1-grammar particle-ga
+      - name: Remove the old separate Genki course pages
+        run: git rm -r -q --ignore-unmatch courses/genki-1 courses/genki-1-particles videos/genki-1-particles
+      - name: Rebuild the course pages
+        run: node build-courses.mjs
+      - name: Commit the results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A audio videos data courses courses.html index.html
+          git commit -m "One Genki course: add と and が, remove the separate Genki courses from the site" -m "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>" -m "Claude-Session: https://claude.ai/code/session_014EjoYbw5ddSSeKMRSp8i3L" || echo "Nothing to commit"
+          git push

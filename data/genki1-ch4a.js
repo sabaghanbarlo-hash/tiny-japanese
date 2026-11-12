@@ -236,7 +236,7 @@ export const pastNoun = lesson({
     W("てんき", "tenki", "weather")
   ],
   tips: [
-    "です → でした. じゃ ありません → じゃ ありませんでした.",
+    "To go into the past, change desu to deshita. For the negative, change ja arimasen to ja arimasen deshita.",
     "でした does not change for the person.",
     "きのう, せんしゅう and さくねん do not need に."
   ],

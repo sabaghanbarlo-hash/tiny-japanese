@@ -1,6 +1,6 @@
 name: Genki grammar chapter 4 media
 
-# Makes the audio and videos for the chapter 4 lessons, removes the stale old-numbered と and が files, rebuilds the pages and commits to this branch. Nothing is deployed from here.
+# (Second run after fixing two recap lines.) Makes the audio and videos for the chapter 4 lessons, removes the stale old-numbered と and が files, rebuilds the pages and commits to this branch. Nothing is deployed from here.
 on:
   push:
     branches: [genki-grammar-4]

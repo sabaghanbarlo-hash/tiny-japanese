@@ -86,7 +86,7 @@ export const pastVerb = lesson({
     W("えらい", "erai", "admirable, great")
   ],
   tips: [
-    "ます → ました. ません → ませんでした.",
+    "To go into the past, change masu to mashita. For the negative, change masen to masen deshita.",
     "Every verb follows the same rule, including します and きます.",
     "きのう and けさ need no に; days of the week do."
   ],

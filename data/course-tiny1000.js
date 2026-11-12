@@ -24,49 +24,225 @@ export const tiny1000Lessons = [
       "who": "Mika",
       "ja": "これは なん ですか。",
       "romaji": "Kore wa nan desu ka.",
-      "en": "What is this?"
+      "en": "What is this?",
+      "words": [
+       [
+        "これ",
+        "kore",
+        "this"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "なん",
+        "nan",
+        "what"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "それは わたしの です。",
       "romaji": "Sore wa watashi no desu.",
-      "en": "That is mine."
+      "en": "That is mine.",
+      "words": [
+       [
+        "それ",
+        "sore",
+        "that"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "わたし",
+        "watashi",
+        "I / me"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "あなたは?",
       "romaji": "Anata wa?",
-      "en": "And you?"
+      "en": "And you?",
+      "words": [
+       [
+        "あなた",
+        "anata",
+        "you"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "わたしは アレックス です。",
       "romaji": "Watashi wa Arekkusu desu.",
-      "en": "I'm Alex."
+      "en": "I'm Alex.",
+      "words": [
+       [
+        "わたし",
+        "watashi",
+        "I / me"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "アレックス",
+        "Arekkusu",
+        "Alex"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "ひとが いますか。",
       "romaji": "Hito ga imasu ka.",
-      "en": "Is anyone there?"
+      "en": "Is anyone there?",
+      "words": [
+       [
+        "ひと",
+        "hito",
+        "person"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "い",
+        "i",
+        "exist (stem of いる iru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、います。",
       "romaji": "Hai, imasu.",
-      "en": "Yes, there is."
+      "en": "Yes, there is.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "い",
+        "i",
+        "exist (stem of いる iru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "これは ありますか。",
       "romaji": "Kore wa arimasu ka.",
-      "en": "Do you have this?"
+      "en": "Do you have this?",
+      "words": [
+       [
+        "これ",
+        "kore",
+        "this"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "あり",
+        "ari",
+        "exist (stem of ある aru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "いいえ、ありません。",
       "romaji": "Iie, arimasen.",
-      "en": "No, I don't."
+      "en": "No, I don't.",
+      "words": [
+       [
+        "いいえ",
+        "iie",
+        "no"
+       ],
+       [
+        "あり",
+        "ari",
+        "exist (stem of ある aru)"
+       ],
+       [
+        "ません",
+        "masen",
+        "polite negative ending"
+       ]
+      ]
      }
     ]
    },
@@ -142,43 +318,268 @@ export const tiny1000Lessons = [
     "items": [
      {
       "title": "私",
-      "body": "私は学生です。 (Watashi wa gakusei desu.) I am a student."
+      "body": "私は学生です。 (Watashi wa gakusei desu.) I am a student.",
+      "words": [
+       [
+        "私",
+        "watashi",
+        "I / me"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "学生",
+        "gakusei",
+        "student"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "title": "あなた",
-      "body": "あなたは先生ですか。 (Anata wa sensei desu ka.) Are you a teacher?"
+      "body": "あなたは先生ですか。 (Anata wa sensei desu ka.) Are you a teacher?",
+      "words": [
+       [
+        "あなた",
+        "anata",
+        "you"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "先生",
+        "sensei",
+        "teacher"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "title": "これ",
-      "body": "これは本です。 (Kore wa hon desu.) This is a book."
+      "body": "これは本です。 (Kore wa hon desu.) This is a book.",
+      "words": [
+       [
+        "これ",
+        "kore",
+        "this"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "本",
+        "hon",
+        "book"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "title": "それ",
-      "body": "それは私のです。 (Sore wa watashi no desu.) That is mine."
+      "body": "それは私のです。 (Sore wa watashi no desu.) That is mine.",
+      "words": [
+       [
+        "それ",
+        "sore",
+        "that"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "私",
+        "watashi",
+        "I / me"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "title": "何",
-      "body": "これは何ですか。 (Kore wa nan desu ka.) What is this?"
+      "body": "これは何ですか。 (Kore wa nan desu ka.) What is this?",
+      "words": [
+       [
+        "これ",
+        "kore",
+        "this"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "何",
+        "nan",
+        "what"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "title": "人",
-      "body": "人がいます。 (Hito ga imasu.) There is a person."
+      "body": "人がいます。 (Hito ga imasu.) There is a person.",
+      "words": [
+       [
+        "人",
+        "hito",
+        "person"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "い",
+        "i",
+        "exist (stem of いる iru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "はい",
-      "body": "はい、そうです。 (Hai, sou desu.) Yes, that's right."
+      "body": "はい、そうです。 (Hai, sou desu.) Yes, that's right.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "そう",
+        "sou",
+        "so / that way"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "title": "いいえ",
-      "body": "いいえ、違います。 (Iie, chigaimasu.) No, that's not right."
+      "body": "いいえ、違います。 (Iie, chigaimasu.) No, that's not right.",
+      "words": [
+       [
+        "いいえ",
+        "iie",
+        "no"
+       ],
+       [
+        "違い",
+        "chigai",
+        "be different (stem of 違う chigau)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "いる",
-      "body": "犬がいます。 (Inu ga imasu.) There is a dog."
+      "body": "犬がいます。 (Inu ga imasu.) There is a dog.",
+      "words": [
+       [
+        "犬",
+        "inu",
+        "dog"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "い",
+        "i",
+        "exist (stem of いる iru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "ある",
-      "body": "本があります。 (Hon ga arimasu.) There is a book."
+      "body": "本があります。 (Hon ga arimasu.) There is a book.",
+      "words": [
+       [
+        "本",
+        "hon",
+        "book"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "あり",
+        "ari",
+        "exist (stem of ある aru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      }
     ]
    },
@@ -261,49 +662,305 @@ export const tiny1000Lessons = [
       "who": "Mika",
       "ja": "すみません、この 人 は 誰 ですか。",
       "romaji": "Sumimasen, kono hito wa dare desu ka.",
-      "en": "Excuse me, who is this person?"
+      "en": "Excuse me, who is this person?",
+      "words": [
+       [
+        "すみません",
+        "sumimasen",
+        "excuse me"
+       ],
+       [
+        "この",
+        "kono",
+        "this"
+       ],
+       [
+        "人",
+        "hito",
+        "person"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "誰",
+        "dare",
+        "who"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "その 人 は 新しい 先生 です。",
       "romaji": "Sono hito wa atarashii sensei desu.",
-      "en": "That person is a new teacher."
+      "en": "That person is a new teacher.",
+      "words": [
+       [
+        "その",
+        "sono",
+        "that"
+       ],
+       [
+        "人",
+        "hito",
+        "person"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "新しい",
+        "atarashii",
+        "new"
+       ],
+       [
+        "先生",
+        "sensei",
+        "teacher"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "先生 は どこ に いますか。",
       "romaji": "Sensei wa doko ni imasu ka.",
-      "en": "Where is the teacher?"
+      "en": "Where is the teacher?",
+      "words": [
+       [
+        "先生",
+        "sensei",
+        "teacher"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "どこ",
+        "doko",
+        "where"
+       ],
+       [
+        "に",
+        "ni",
+        "location marker"
+       ],
+       [
+        "い",
+        "i",
+        "be (stem of いる iru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "先生 は そこ に います。",
       "romaji": "Sensei wa soko ni imasu.",
-      "en": "The teacher is there."
+      "en": "The teacher is there.",
+      "words": [
+       [
+        "先生",
+        "sensei",
+        "teacher"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "そこ",
+        "soko",
+        "there"
+       ],
+       [
+        "に",
+        "ni",
+        "location marker"
+       ],
+       [
+        "い",
+        "i",
+        "be (stem of いる iru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "いつ 授業 が 始まりますか。",
       "romaji": "Itsu jugyou ga hajimarimasu ka.",
-      "en": "When does class start?"
+      "en": "When does class start?",
+      "words": [
+       [
+        "いつ",
+        "itsu",
+        "when"
+       ],
+       [
+        "授業",
+        "jugyou",
+        "class"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "始まり",
+        "hajimari",
+        "begin (stem of 始まる hajimaru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "９時 に 始まります。ここ で 待ちます。",
       "romaji": "Kuji ni hajimarimasu. Koko de machimasu.",
-      "en": "It starts at nine. We’ll wait here."
+      "en": "It starts at nine. We’ll wait here.",
+      "words": [
+       [
+        "９",
+        "kyuu",
+        "nine"
+       ],
+       [
+        "時",
+        "ji",
+        "o'clock"
+       ],
+       [
+        "に",
+        "ni",
+        "time marker"
+       ],
+       [
+        "始まり",
+        "hajimari",
+        "begin (stem of 始まる hajimaru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "ここ",
+        "koko",
+        "here"
+       ],
+       [
+        "で",
+        "de",
+        "action location marker"
+       ],
+       [
+        "待ち",
+        "machi",
+        "wait (stem of 待つ matsu)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "ありがとう ございます。",
       "romaji": "Arigatou gozaimasu.",
-      "en": "Thank you."
+      "en": "Thank you.",
+      "words": [
+       [
+        "ありがとう",
+        "arigatou",
+        "thank you"
+       ],
+       [
+        "ござい",
+        "gozai",
+        "be (polite stem of ござる gozaru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "どういたしまして。",
       "romaji": "Dou itashimashite.",
-      "en": "You’re welcome."
+      "en": "You’re welcome.",
+      "words": [
+       [
+        "どう",
+        "dou",
+        "how"
+       ],
+       [
+        "いたし",
+        "itashi",
+        "do (humble stem of いたす itasu)"
+       ],
+       [
+        "まし",
+        "mashi",
+        "polite auxiliary stem"
+       ],
+       [
+        "て",
+        "te",
+        "connecting form"
+       ]
+      ]
      }
     ]
    },
@@ -379,43 +1036,283 @@ export const tiny1000Lessons = [
     "items": [
      {
       "title": "ここ",
-      "body": "ここにいます。 (Koko ni imasu.) I'm here."
+      "body": "ここにいます。 (Koko ni imasu.) I'm here.",
+      "words": [
+       [
+        "ここ",
+        "koko",
+        "here"
+       ],
+       [
+        "に",
+        "ni",
+        "location marker"
+       ],
+       [
+        "い",
+        "i",
+        "be (stem of いる iru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "そこ",
-      "body": "そこにあります。 (Soko ni arimasu.) It's there."
+      "body": "そこにあります。 (Soko ni arimasu.) It's there.",
+      "words": [
+       [
+        "そこ",
+        "soko",
+        "there"
+       ],
+       [
+        "に",
+        "ni",
+        "location marker"
+       ],
+       [
+        "あり",
+        "ari",
+        "exist (stem of ある aru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "どこ",
-      "body": "駅はどこですか。 (Eki wa doko desu ka.) Where is the station?"
+      "body": "駅はどこですか。 (Eki wa doko desu ka.) Where is the station?",
+      "words": [
+       [
+        "駅",
+        "eki",
+        "station"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "どこ",
+        "doko",
+        "where"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "title": "誰",
-      "body": "あの人は誰ですか。 (Ano hito wa dare desu ka.) Who is that person?"
+      "body": "あの人は誰ですか。 (Ano hito wa dare desu ka.) Who is that person?",
+      "words": [
+       [
+        "あの",
+        "ano",
+        "that over there"
+       ],
+       [
+        "人",
+        "hito",
+        "person"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "誰",
+        "dare",
+        "who"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "title": "いつ",
-      "body": "いつですか。 (Itsu desu ka.) When is it?"
+      "body": "いつですか。 (Itsu desu ka.) When is it?",
+      "words": [
+       [
+        "いつ",
+        "itsu",
+        "when"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "title": "どう",
-      "body": "どうですか。 (Dou desu ka.) How is it?"
+      "body": "どうですか。 (Dou desu ka.) How is it?",
+      "words": [
+       [
+        "どう",
+        "dou",
+        "how"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "title": "この",
-      "body": "この本はいいです。 (Kono hon wa ii desu.) This book is good."
+      "body": "この本はいいです。 (Kono hon wa ii desu.) This book is good.",
+      "words": [
+       [
+        "この",
+        "kono",
+        "this"
+       ],
+       [
+        "本",
+        "hon",
+        "book"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "いい",
+        "ii",
+        "good"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "title": "その",
-      "body": "その人は誰ですか。 (Sono hito wa dare desu ka.) Who is that person?"
+      "body": "その人は誰ですか。 (Sono hito wa dare desu ka.) Who is that person?",
+      "words": [
+       [
+        "その",
+        "sono",
+        "that"
+       ],
+       [
+        "人",
+        "hito",
+        "person"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "誰",
+        "dare",
+        "who"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "title": "ありがとう",
-      "body": "どうもありがとう。 (Doumo arigatou.) Thank you very much."
+      "body": "どうもありがとう。 (Doumo arigatou.) Thank you very much.",
+      "words": [
+       [
+        "どうも",
+        "doumo",
+        "very; thanks"
+       ],
+       [
+        "ありがとう",
+        "arigatou",
+        "thank you"
+       ]
+      ]
      },
      {
       "title": "すみません",
-      "body": "すみません、トイレはどこですか。 (Sumimasen, toire wa doko desu ka.) Excuse me, where is the toilet?"
+      "body": "すみません、トイレはどこですか。 (Sumimasen, toire wa doko desu ka.) Excuse me, where is the toilet?",
+      "words": [
+       [
+        "すみません",
+        "sumimasen",
+        "excuse me"
+       ],
+       [
+        "トイレ",
+        "toire",
+        "toilet"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "どこ",
+        "doko",
+        "where"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      }
     ]
    },
@@ -508,49 +1405,430 @@ export const tiny1000Lessons = [
       "who": "Mika",
       "ja": "アレックスさん、毎日 なにを しますか。",
       "romaji": "Arekkusu-san, mainichi nani o shimasu ka.",
-      "en": "Alex, what do you do every day?"
+      "en": "Alex, what do you do every day?",
+      "words": [
+       [
+        "アレックス",
+        "Arekkusu",
+        "Alex"
+       ],
+       [
+        "さん",
+        "san",
+        "polite name suffix"
+       ],
+       [
+        "毎日",
+        "mainichi",
+        "every day"
+       ],
+       [
+        "なに",
+        "nani",
+        "what"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "し",
+        "shi",
+        "do (stem of する)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "朝は パンを 食べて、水を 飲みます。",
       "romaji": "Asa wa pan o tabete, mizu o nomimasu.",
-      "en": "In the morning, I eat bread and drink water."
+      "en": "In the morning, I eat bread and drink water.",
+      "words": [
+       [
+        "朝",
+        "asa",
+        "morning"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "パン",
+        "pan",
+        "bread"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "食べ",
+        "tabe",
+        "eat (stem of 食べる)"
+       ],
+       [
+        "て",
+        "te",
+        "te-form ending"
+       ],
+       [
+        "水",
+        "mizu",
+        "water"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "飲み",
+        "nomi",
+        "drink (stem of 飲む)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "今日、学校へ 行きますか。",
       "romaji": "Kyō, gakkō e ikimasu ka.",
-      "en": "Are you going to school today?"
+      "en": "Are you going to school today?",
+      "words": [
+       [
+        "今日",
+        "kyou",
+        "today"
+       ],
+       [
+        "学校",
+        "gakkou",
+        "school"
+       ],
+       [
+        "へ",
+        "e",
+        "direction marker"
+       ],
+       [
+        "行き",
+        "iki",
+        "go (stem of 行く)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい。学校へ 行きます。ミカさんも 来ますか。",
       "romaji": "Hai. Gakkō e ikimasu. Mika-san mo kimasu ka.",
-      "en": "Yes. I’m going to school. Are you coming too, Mika?"
+      "en": "Yes. I’m going to school. Are you coming too, Mika?",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "学校",
+        "gakkou",
+        "school"
+       ],
+       [
+        "へ",
+        "e",
+        "direction marker"
+       ],
+       [
+        "行き",
+        "iki",
+        "go (stem of 行く)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "ミカ",
+        "Mika",
+        "Mika"
+       ],
+       [
+        "さん",
+        "san",
+        "polite name suffix"
+       ],
+       [
+        "も",
+        "mo",
+        "also marker"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "はい。いっしょに 映画を 見ますか。",
       "romaji": "Hai. Issho ni eiga o mimasu ka.",
-      "en": "Yes. Shall we watch a movie together?"
+      "en": "Yes. Shall we watch a movie together?",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "いっしょ",
+        "issho",
+        "together"
+       ],
+       [
+        "に",
+        "ni",
+        "adverb-forming particle"
+       ],
+       [
+        "映画",
+        "eiga",
+        "movie"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "見",
+        "mi",
+        "see (stem of 見る)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "いいですね。「movie」は 日本語で なんと 言いますか。",
       "romaji": "Ii desu ne. “Movie” wa Nihongo de nan to iimasu ka.",
-      "en": "Sounds good. How do you say “movie” in Japanese?"
+      "en": "Sounds good. How do you say “movie” in Japanese?",
+      "words": [
+       [
+        "いい",
+        "ii",
+        "good"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "ね",
+        "ne",
+        "agreement-seeking particle"
+       ],
+       [
+        "movie",
+        "movie",
+        "movie"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "日本語",
+        "nihongo",
+        "Japanese language"
+       ],
+       [
+        "で",
+        "de",
+        "language or means marker"
+       ],
+       [
+        "なん",
+        "nan",
+        "what"
+       ],
+       [
+        "と",
+        "to",
+        "quotative particle"
+       ],
+       [
+        "言い",
+        "ii",
+        "say (stem of 言う)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "「映画」と 言います。おもしろいと 思います。",
       "romaji": "“Eiga” to iimasu. Omoshiroi to omoimasu.",
-      "en": "We say “eiga.” I think it’s interesting."
+      "en": "We say “eiga.” I think it’s interesting.",
+      "words": [
+       [
+        "映画",
+        "eiga",
+        "movie"
+       ],
+       [
+        "と",
+        "to",
+        "quotative particle"
+       ],
+       [
+        "言い",
+        "ii",
+        "say (stem of 言う)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "おもしろい",
+        "omoshiroi",
+        "interesting"
+       ],
+       [
+        "と",
+        "to",
+        "quotative particle"
+       ],
+       [
+        "思い",
+        "omoi",
+        "think (stem of 思う)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、分かりました。日本の 映画を 知っています。",
       "romaji": "Hai, wakarimashita. Nihon no eiga o shitte imasu.",
-      "en": "Yes, I understand. I know Japanese movies."
+      "en": "Yes, I understand. I know Japanese movies.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "分かり",
+        "wakari",
+        "understand (stem of 分かる)"
+       ],
+       [
+        "ました",
+        "mashita",
+        "polite past ending"
+       ],
+       [
+        "日本",
+        "nihon",
+        "Japan"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "映画",
+        "eiga",
+        "movie"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "知って",
+        "shitte",
+        "know (te-form)"
+       ],
+       [
+        "い",
+        "i",
+        "be (stem of いる)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      }
     ]
    },
@@ -626,43 +1904,253 @@ export const tiny1000Lessons = [
     "items": [
      {
       "title": "する",
-      "body": "勉強をします。 (Benkyou o shimasu.) I study."
+      "body": "勉強をします。 (Benkyou o shimasu.) I study.",
+      "words": [
+       [
+        "勉強",
+        "benkyou",
+        "study"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "し",
+        "shi",
+        "do (stem of する)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "行く",
-      "body": "学校に行きます。 (Gakkou ni ikimasu.) I go to school."
+      "body": "学校に行きます。 (Gakkou ni ikimasu.) I go to school.",
+      "words": [
+       [
+        "学校",
+        "gakkou",
+        "school"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "行き",
+        "iki",
+        "go (stem of 行く)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "来る",
-      "body": "友達が来ます。 (Tomodachi ga kimasu.) My friend is coming."
+      "body": "友達が来ます。 (Tomodachi ga kimasu.) My friend is coming.",
+      "words": [
+       [
+        "友達",
+        "tomodachi",
+        "friend"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "見る",
-      "body": "映画を見ます。 (Eiga o mimasu.) I watch a movie."
+      "body": "映画を見ます。 (Eiga o mimasu.) I watch a movie.",
+      "words": [
+       [
+        "映画",
+        "eiga",
+        "movie"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "見",
+        "mi",
+        "see (stem of 見る)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "食べる",
-      "body": "ご飯を食べます。 (Gohan o tabemasu.) I eat a meal."
+      "body": "ご飯を食べます。 (Gohan o tabemasu.) I eat a meal.",
+      "words": [
+       [
+        "ご飯",
+        "gohan",
+        "rice / meal"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "食べ",
+        "tabe",
+        "eat (stem of 食べる)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "飲む",
-      "body": "水を飲みます。 (Mizu o nomimasu.) I drink water."
+      "body": "水を飲みます。 (Mizu o nomimasu.) I drink water.",
+      "words": [
+       [
+        "水",
+        "mizu",
+        "water"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "飲み",
+        "nomi",
+        "drink (stem of 飲む)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "言う",
-      "body": "何と言いますか。 (Nan to iimasu ka.) What do you say?"
+      "body": "何と言いますか。 (Nan to iimasu ka.) What do you say?",
+      "words": [
+       [
+        "何",
+        "nani",
+        "what"
+       ],
+       [
+        "と",
+        "to",
+        "quotative particle"
+       ],
+       [
+        "言い",
+        "ii",
+        "say (stem of 言う)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "title": "思う",
-      "body": "いいと思います。 (Ii to omoimasu.) I think it's good."
+      "body": "いいと思います。 (Ii to omoimasu.) I think it's good.",
+      "words": [
+       [
+        "いい",
+        "ii",
+        "good"
+       ],
+       [
+        "と",
+        "to",
+        "quotative particle"
+       ],
+       [
+        "思い",
+        "omoi",
+        "think (stem of 思う)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "知る",
-      "body": "知っています。 (Shitte imasu.) I know."
+      "body": "知っています。 (Shitte imasu.) I know.",
+      "words": [
+       [
+        "知って",
+        "shitte",
+        "know (te-form)"
+       ],
+       [
+        "い",
+        "i",
+        "be (stem of いる)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "分かる",
-      "body": "分かります。 (Wakarimasu.) I understand."
+      "body": "分かります。 (Wakarimasu.) I understand.",
+      "words": [
+       [
+        "分かり",
+        "wakari",
+        "understand (stem of 分かる)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      }
     ]
    },
@@ -755,49 +2243,335 @@ export const tiny1000Lessons = [
       "who": "Mika",
       "ja": "今日 は 何曜日 ですか。",
       "romaji": "Kyou wa nan'youbi desu ka.",
-      "en": "What day is it today?"
+      "en": "What day is it today?",
+      "words": [
+       [
+        "今日",
+        "kyou",
+        "today"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "何",
+        "nan",
+        "what"
+       ],
+       [
+        "曜日",
+        "youbi",
+        "day of week"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "今日 は 月曜日 です。昨日 は 日曜日 でした。",
       "romaji": "Kyou wa getsuyoubi desu. Kinou wa nichiyoubi deshita.",
-      "en": "Today is Monday. Yesterday was Sunday."
+      "en": "Today is Monday. Yesterday was Sunday.",
+      "words": [
+       [
+        "今日",
+        "kyou",
+        "today"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "月曜日",
+        "getsuyoubi",
+        "Monday"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "昨日",
+        "kinou",
+        "yesterday"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "日曜日",
+        "nichiyoubi",
+        "Sunday"
+       ],
+       [
+        "でした",
+        "deshita",
+        "was (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "明日 は 何を しますか。",
       "romaji": "Ashita wa nani o shimasu ka.",
-      "en": "What will you do tomorrow?"
+      "en": "What will you do tomorrow?",
+      "words": [
+       [
+        "明日",
+        "ashita",
+        "tomorrow"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "何",
+        "nani",
+        "what"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "し",
+        "shi",
+        "do (stem of する suru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "明日 は 朝 に 勉強します。毎日 勉強します。",
       "romaji": "Ashita wa asa ni benkyou shimasu. Mainichi benkyou shimasu.",
-      "en": "Tomorrow, I’ll study in the morning. I study every day."
+      "en": "Tomorrow, I’ll study in the morning. I study every day.",
+      "words": [
+       [
+        "明日",
+        "ashita",
+        "tomorrow"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "朝",
+        "asa",
+        "morning"
+       ],
+       [
+        "に",
+        "ni",
+        "time marker"
+       ],
+       [
+        "勉強",
+        "benkyou",
+        "study"
+       ],
+       [
+        "し",
+        "shi",
+        "do (stem of する suru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "毎日",
+        "mainichi",
+        "every day"
+       ],
+       [
+        "勉強",
+        "benkyou",
+        "study"
+       ],
+       [
+        "し",
+        "shi",
+        "do (stem of する suru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "今、時間 が ありますか。",
       "romaji": "Ima, jikan ga arimasu ka.",
-      "en": "Do you have time now?"
+      "en": "Do you have time now?",
+      "words": [
+       [
+        "今",
+        "ima",
+        "now"
+       ],
+       [
+        "時間",
+        "jikan",
+        "time"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "あり",
+        "ari",
+        "exist (stem of ある aru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、あります。夜 は ひまです。",
       "romaji": "Hai, arimasu. Yoru wa hima desu.",
-      "en": "Yes, I do. I’m free at night."
+      "en": "Yes, I do. I’m free at night.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "あり",
+        "ari",
+        "exist (stem of ある aru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "夜",
+        "yoru",
+        "night"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "ひま",
+        "hima",
+        "free; having leisure"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "一週間 は 何日 ですか。",
       "romaji": "Isshuukan wa nannichi desu ka.",
-      "en": "How many days are in a week?"
+      "en": "How many days are in a week?",
+      "words": [
+       [
+        "一週間",
+        "isshuukan",
+        "one week"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "何日",
+        "nannichi",
+        "how many days"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "一週間 は 七日 です。",
       "romaji": "Isshuukan wa nanoka desu.",
-      "en": "There are seven days in a week."
+      "en": "There are seven days in a week.",
+      "words": [
+       [
+        "一週間",
+        "isshuukan",
+        "one week"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "七日",
+        "nanoka",
+        "seven days"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      }
     ]
    },
@@ -873,43 +2647,273 @@ export const tiny1000Lessons = [
     "items": [
      {
       "title": "今日",
-      "body": "今日は暑いです。 (Kyou wa atsui desu.) It's hot today."
+      "body": "今日は暑いです。 (Kyou wa atsui desu.) It's hot today.",
+      "words": [
+       [
+        "今日",
+        "kyou",
+        "today"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "暑い",
+        "atsui",
+        "hot"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "title": "明日",
-      "body": "明日行きます。 (Ashita ikimasu.) I'll go tomorrow."
+      "body": "明日行きます。 (Ashita ikimasu.) I'll go tomorrow.",
+      "words": [
+       [
+        "明日",
+        "ashita",
+        "tomorrow"
+       ],
+       [
+        "行き",
+        "iki",
+        "go (stem of 行く iku)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "昨日",
-      "body": "昨日は雨でした。 (Kinou wa ame deshita.) It was rainy yesterday."
+      "body": "昨日は雨でした。 (Kinou wa ame deshita.) It was rainy yesterday.",
+      "words": [
+       [
+        "昨日",
+        "kinou",
+        "yesterday"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "雨",
+        "ame",
+        "rain"
+       ],
+       [
+        "でした",
+        "deshita",
+        "was (polite)"
+       ]
+      ]
      },
      {
       "title": "今",
-      "body": "今、何時ですか。 (Ima, nanji desu ka.) What time is it now?"
+      "body": "今、何時ですか。 (Ima, nanji desu ka.) What time is it now?",
+      "words": [
+       [
+        "今",
+        "ima",
+        "now"
+       ],
+       [
+        "何時",
+        "nanji",
+        "what time"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "title": "時間",
-      "body": "時間がありません。 (Jikan ga arimasen.) I don't have time."
+      "body": "時間がありません。 (Jikan ga arimasen.) I don't have time.",
+      "words": [
+       [
+        "時間",
+        "jikan",
+        "time"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "あり",
+        "ari",
+        "exist (stem of ある aru)"
+       ],
+       [
+        "ません",
+        "masen",
+        "polite negative ending"
+       ]
+      ]
      },
      {
       "title": "朝",
-      "body": "朝、コーヒーを飲みます。 (Asa, koohii o nomimasu.) I drink coffee in the morning."
+      "body": "朝、コーヒーを飲みます。 (Asa, koohii o nomimasu.) I drink coffee in the morning.",
+      "words": [
+       [
+        "朝",
+        "asa",
+        "morning"
+       ],
+       [
+        "コーヒー",
+        "koohii",
+        "coffee"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "飲み",
+        "nomi",
+        "drink (stem of 飲む nomu)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "夜",
-      "body": "夜は静かです。 (Yoru wa shizuka desu.) The night is quiet."
+      "body": "夜は静かです。 (Yoru wa shizuka desu.) The night is quiet.",
+      "words": [
+       [
+        "夜",
+        "yoru",
+        "night"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "静か",
+        "shizuka",
+        "quiet"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "title": "毎日",
-      "body": "毎日勉強します。 (Mainichi benkyou shimasu.) I study every day."
+      "body": "毎日勉強します。 (Mainichi benkyou shimasu.) I study every day.",
+      "words": [
+       [
+        "毎日",
+        "mainichi",
+        "every day"
+       ],
+       [
+        "勉強",
+        "benkyou",
+        "study"
+       ],
+       [
+        "し",
+        "shi",
+        "do (stem of する suru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "週",
-      "body": "今週は忙しいです。 (Konshuu wa isogashii desu.) This week is busy."
+      "body": "今週は忙しいです。 (Konshuu wa isogashii desu.) This week is busy.",
+      "words": [
+       [
+        "今週",
+        "konshuu",
+        "this week"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "忙しい",
+        "isogashii",
+        "busy"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "title": "前",
-      "body": "駅の前にいます。 (Eki no mae ni imasu.) I'm in front of the station."
+      "body": "駅の前にいます。 (Eki no mae ni imasu.) I'm in front of the station.",
+      "words": [
+       [
+        "駅",
+        "eki",
+        "station"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "前",
+        "mae",
+        "front"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "い",
+        "i",
+        "be (stem of いる iru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      }
     ]
    },
@@ -1012,49 +3016,430 @@ export const tiny1000Lessons = [
       "who": "Mika",
       "ja": "アレックスさんの 名前は なんですか。",
       "romaji": "Arekkusu-san no namae wa nan desu ka?",
-      "en": "What is your name, Alex?"
+      "en": "What is your name, Alex?",
+      "words": [
+       [
+        "アレックス",
+        "arekkusu",
+        "Alex"
+       ],
+       [
+        "さん",
+        "san",
+        "honorific title"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "名前",
+        "namae",
+        "name"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "なん",
+        "nan",
+        "what"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "わたしの 名前は アレックスです。学生です。",
       "romaji": "Watashi no namae wa Arekkusu desu. Gakusei desu.",
-      "en": "My name is Alex. I’m a student."
+      "en": "My name is Alex. I’m a student.",
+      "words": [
+       [
+        "わたし",
+        "watashi",
+        "I, me"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "名前",
+        "namae",
+        "name"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "アレックス",
+        "arekkusu",
+        "Alex"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "学生",
+        "gakusei",
+        "student"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "あの 男の人は 先生ですか。",
       "romaji": "Ano otoko no hito wa sensei desu ka?",
-      "en": "Is that man a teacher?"
+      "en": "Is that man a teacher?",
+      "words": [
+       [
+        "あの",
+        "ano",
+        "that (over there)"
+       ],
+       [
+        "男",
+        "otoko",
+        "man, male"
+       ],
+       [
+        "の",
+        "no",
+        "linking particle"
+       ],
+       [
+        "人",
+        "hito",
+        "person"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "先生",
+        "sensei",
+        "teacher"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、先生です。あの 女の人は 友達です。",
       "romaji": "Hai, sensei desu. Ano onna no hito wa tomodachi desu.",
-      "en": "Yes, he is a teacher. That woman is my friend."
+      "en": "Yes, he is a teacher. That woman is my friend.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "先生",
+        "sensei",
+        "teacher"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "あの",
+        "ano",
+        "that (over there)"
+       ],
+       [
+        "女",
+        "onna",
+        "woman, female"
+       ],
+       [
+        "の",
+        "no",
+        "linking particle"
+       ],
+       [
+        "人",
+        "hito",
+        "person"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "友達",
+        "tomodachi",
+        "friend"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "この 子供は だれですか。",
       "romaji": "Kono kodomo wa dare desu ka?",
-      "en": "Who is this child?"
+      "en": "Who is this child?",
+      "words": [
+       [
+        "この",
+        "kono",
+        "this"
+       ],
+       [
+        "子供",
+        "kodomo",
+        "child"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "だれ",
+        "dare",
+        "who"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "この 子供は わたしの おいです。",
       "romaji": "Kono kodomo wa watashi no oi desu.",
-      "en": "This child is my nephew."
+      "en": "This child is my nephew.",
+      "words": [
+       [
+        "この",
+        "kono",
+        "this"
+       ],
+       [
+        "子供",
+        "kodomo",
+        "child"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "わたし",
+        "watashi",
+        "I, me"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "おい",
+        "oi",
+        "nephew"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "写真に お母さんと お父さんも いますか。",
       "romaji": "Shashin ni okaasan to otousan mo imasu ka?",
-      "en": "Are your mother and father in the picture too?"
+      "en": "Are your mother and father in the picture too?",
+      "words": [
+       [
+        "写真",
+        "shashin",
+        "photograph"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "お",
+        "o",
+        "honorific prefix"
+       ],
+       [
+        "母",
+        "kaa",
+        "mother (honorific reading)"
+       ],
+       [
+        "さん",
+        "san",
+        "honorific title"
+       ],
+       [
+        "と",
+        "to",
+        "and, with"
+       ],
+       [
+        "お",
+        "o",
+        "honorific prefix"
+       ],
+       [
+        "父",
+        "too",
+        "father (honorific reading)"
+       ],
+       [
+        "さん",
+        "san",
+        "honorific title"
+       ],
+       [
+        "も",
+        "mo",
+        "also marker"
+       ],
+       [
+        "い",
+        "i",
+        "be (stem of いる iru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、写真に 母と 父も います。家族の 写真です。",
       "romaji": "Hai, shashin ni haha to chichi mo imasu. Kazoku no shashin desu.",
-      "en": "Yes, my mother and father are in the picture too. It’s a family picture."
+      "en": "Yes, my mother and father are in the picture too. It’s a family picture.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "写真",
+        "shashin",
+        "photograph"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "母",
+        "haha",
+        "mother"
+       ],
+       [
+        "と",
+        "to",
+        "and, with"
+       ],
+       [
+        "父",
+        "chichi",
+        "father"
+       ],
+       [
+        "も",
+        "mo",
+        "also marker"
+       ],
+       [
+        "い",
+        "i",
+        "be (stem of いる iru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "家族",
+        "kazoku",
+        "family"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "写真",
+        "shashin",
+        "photograph"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      }
     ]
    },
@@ -1130,43 +3515,313 @@ export const tiny1000Lessons = [
     "items": [
      {
       "title": "友達",
-      "body": "友達と話します。 (Tomodachi to hanashimasu.) I talk with a friend."
+      "body": "友達と話します。 (Tomodachi to hanashimasu.) I talk with a friend.",
+      "words": [
+       [
+        "友達",
+        "tomodachi",
+        "friend"
+       ],
+       [
+        "と",
+        "to",
+        "with marker"
+       ],
+       [
+        "話し",
+        "hanashi",
+        "speak (stem of 話す hanasu)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "先生",
-      "body": "先生は優しいです。 (Sensei wa yasashii desu.) The teacher is kind."
+      "body": "先生は優しいです。 (Sensei wa yasashii desu.) The teacher is kind.",
+      "words": [
+       [
+        "先生",
+        "sensei",
+        "teacher"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "優しい",
+        "yasashii",
+        "kind, gentle"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "title": "学生",
-      "body": "学生が多いです。 (Gakusei ga ooi desu.) There are many students."
+      "body": "学生が多いです。 (Gakusei ga ooi desu.) There are many students.",
+      "words": [
+       [
+        "学生",
+        "gakusei",
+        "student"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "多い",
+        "ooi",
+        "many, numerous"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "title": "家族",
-      "body": "家族は四人です。 (Kazoku wa yonin desu.) There are four people in my family."
+      "body": "家族は四人です。 (Kazoku wa yonin desu.) There are four people in my family.",
+      "words": [
+       [
+        "家族",
+        "kazoku",
+        "family"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "四人",
+        "yonin",
+        "four people"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "title": "母",
-      "body": "母は料理が上手です。 (Haha wa ryouri ga jouzu desu.) My mother is good at cooking."
+      "body": "母は料理が上手です。 (Haha wa ryouri ga jouzu desu.) My mother is good at cooking.",
+      "words": [
+       [
+        "母",
+        "haha",
+        "mother"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "料理",
+        "ryouri",
+        "cooking, cuisine"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "上手",
+        "jouzu",
+        "skillful, good at"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "title": "父",
-      "body": "父は会社に行きます。 (Chichi wa kaisha ni ikimasu.) My father goes to work."
+      "body": "父は会社に行きます。 (Chichi wa kaisha ni ikimasu.) My father goes to work.",
+      "words": [
+       [
+        "父",
+        "chichi",
+        "father"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "会社",
+        "kaisha",
+        "company"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "行き",
+        "iki",
+        "go (stem of 行く iku)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "男",
-      "body": "男の人がいます。 (Otoko no hito ga imasu.) There is a man."
+      "body": "男の人がいます。 (Otoko no hito ga imasu.) There is a man.",
+      "words": [
+       [
+        "男",
+        "otoko",
+        "man, male"
+       ],
+       [
+        "の",
+        "no",
+        "linking particle"
+       ],
+       [
+        "人",
+        "hito",
+        "person"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "い",
+        "i",
+        "be (stem of いる iru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "女",
-      "body": "女の人が来ます。 (Onna no hito ga kimasu.) A woman is coming."
+      "body": "女の人が来ます。 (Onna no hito ga kimasu.) A woman is coming.",
+      "words": [
+       [
+        "女",
+        "onna",
+        "woman, female"
+       ],
+       [
+        "の",
+        "no",
+        "linking particle"
+       ],
+       [
+        "人",
+        "hito",
+        "person"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る kuru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "子供",
-      "body": "子供が好きです。 (Kodomo ga suki desu.) I like children."
+      "body": "子供が好きです。 (Kodomo ga suki desu.) I like children.",
+      "words": [
+       [
+        "子供",
+        "kodomo",
+        "child"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "好き",
+        "suki",
+        "liked, fond of"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "title": "名前",
-      "body": "お名前は何ですか。 (Onamae wa nan desu ka.) What is your name?"
+      "body": "お名前は何ですか。 (Onamae wa nan desu ka.) What is your name?",
+      "words": [
+       [
+        "お",
+        "o",
+        "honorific prefix"
+       ],
+       [
+        "名前",
+        "namae",
+        "name"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "何",
+        "nan",
+        "what"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      }
     ]
    },
@@ -1269,49 +3924,350 @@ export const tiny1000Lessons = [
       "who": "Mika",
       "ja": "これは 新しい 店 ですか。",
       "romaji": "Kore wa atarashii mise desu ka.",
-      "en": "Is this a new shop?"
+      "en": "Is this a new shop?",
+      "words": [
+       [
+        "これ",
+        "kore",
+        "this"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "新しい",
+        "atarashii",
+        "new"
+       ],
+       [
+        "店",
+        "mise",
+        "shop"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、新しい 店 です。店は 大きい です。",
       "romaji": "Hai, atarashii mise desu. Mise wa ookii desu.",
-      "en": "Yes, it’s a new shop. The shop is big."
+      "en": "Yes, it’s a new shop. The shop is big.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "新しい",
+        "atarashii",
+        "new"
+       ],
+       [
+        "店",
+        "mise",
+        "shop"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ],
+       [
+        "店",
+        "mise",
+        "shop"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "大きい",
+        "ookii",
+        "big"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "ケーキは おいしい ですか。",
       "romaji": "Keeki wa oishii desu ka.",
-      "en": "Is the cake delicious?"
+      "en": "Is the cake delicious?",
+      "words": [
+       [
+        "ケーキ",
+        "keeki",
+        "cake"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "おいしい",
+        "oishii",
+        "delicious"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、とても おいしい です。いい ですね。",
       "romaji": "Hai, totemo oishii desu. Ii desu ne.",
-      "en": "Yes, it’s very delicious. It’s nice."
+      "en": "Yes, it’s very delicious. It’s nice.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "とても",
+        "totemo",
+        "very"
+       ],
+       [
+        "おいしい",
+        "oishii",
+        "delicious"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ],
+       [
+        "いい",
+        "ii",
+        "good"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ],
+       [
+        "ね",
+        "ne",
+        "seeking agreement"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "コーヒーは 高い ですか。",
       "romaji": "Koohii wa takai desu ka.",
-      "en": "Is the coffee expensive?"
+      "en": "Is the coffee expensive?",
+      "words": [
+       [
+        "コーヒー",
+        "koohii",
+        "coffee"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "高い",
+        "takai",
+        "expensive"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "いいえ、安い です。この カップは 小さい です。",
       "romaji": "Iie, yasui desu. Kono kappu wa chiisai desu.",
-      "en": "No, it’s cheap. This cup is small."
+      "en": "No, it’s cheap. This cup is small.",
+      "words": [
+       [
+        "いいえ",
+        "iie",
+        "no"
+       ],
+       [
+        "安い",
+        "yasui",
+        "cheap"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ],
+       [
+        "この",
+        "kono",
+        "this"
+       ],
+       [
+        "カップ",
+        "kappu",
+        "cup"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "小さい",
+        "chiisai",
+        "small"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "この 店は 楽しい ですか。",
       "romaji": "Kono mise wa tanoshii desu ka.",
-      "en": "Is this shop fun?"
+      "en": "Is this shop fun?",
+      "words": [
+       [
+        "この",
+        "kono",
+        "this"
+       ],
+       [
+        "店",
+        "mise",
+        "shop"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "楽しい",
+        "tanoshii",
+        "fun"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、楽しい です。この 店が 好き です。でも、少し 忙しい です。",
       "romaji": "Hai, tanoshii desu. Kono mise ga suki desu. Demo, sukoshi isogashii desu.",
-      "en": "Yes, it’s fun. I like this shop. But I’m a little busy."
+      "en": "Yes, it’s fun. I like this shop. But I’m a little busy.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "楽しい",
+        "tanoshii",
+        "fun"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ],
+       [
+        "この",
+        "kono",
+        "this"
+       ],
+       [
+        "店",
+        "mise",
+        "shop"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "好き",
+        "suki",
+        "liked; favorite"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ],
+       [
+        "でも",
+        "demo",
+        "but"
+       ],
+       [
+        "少し",
+        "sukoshi",
+        "a little"
+       ],
+       [
+        "忙しい",
+        "isogashii",
+        "busy"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ]
+      ]
      }
     ]
    },
@@ -1387,43 +4343,248 @@ export const tiny1000Lessons = [
     "items": [
      {
       "title": "いい",
-      "body": "天気がいいです。 (Tenki ga ii desu.) The weather is nice."
+      "body": "天気がいいです。 (Tenki ga ii desu.) The weather is nice.",
+      "words": [
+       [
+        "天気",
+        "tenki",
+        "weather"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "いい",
+        "ii",
+        "good"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ]
+      ]
      },
      {
       "title": "大きい",
-      "body": "大きい家です。 (Ookii ie desu.) It's a big house."
+      "body": "大きい家です。 (Ookii ie desu.) It's a big house.",
+      "words": [
+       [
+        "大きい",
+        "ookii",
+        "big"
+       ],
+       [
+        "家",
+        "ie",
+        "house"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ]
+      ]
      },
      {
       "title": "小さい",
-      "body": "小さい犬です。 (Chiisai inu desu.) It's a small dog."
+      "body": "小さい犬です。 (Chiisai inu desu.) It's a small dog.",
+      "words": [
+       [
+        "小さい",
+        "chiisai",
+        "small"
+       ],
+       [
+        "犬",
+        "inu",
+        "dog"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ]
+      ]
      },
      {
       "title": "新しい",
-      "body": "新しい車です。 (Atarashii kuruma desu.) It's a new car."
+      "body": "新しい車です。 (Atarashii kuruma desu.) It's a new car.",
+      "words": [
+       [
+        "新しい",
+        "atarashii",
+        "new"
+       ],
+       [
+        "車",
+        "kuruma",
+        "car"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ]
+      ]
      },
      {
       "title": "高い",
-      "body": "この本は高いです。 (Kono hon wa takai desu.) This book is expensive."
+      "body": "この本は高いです。 (Kono hon wa takai desu.) This book is expensive.",
+      "words": [
+       [
+        "この",
+        "kono",
+        "this"
+       ],
+       [
+        "本",
+        "hon",
+        "book"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "高い",
+        "takai",
+        "expensive"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ]
+      ]
      },
      {
       "title": "安い",
-      "body": "安い店です。 (Yasui mise desu.) It's a cheap shop."
+      "body": "安い店です。 (Yasui mise desu.) It's a cheap shop.",
+      "words": [
+       [
+        "安い",
+        "yasui",
+        "cheap"
+       ],
+       [
+        "店",
+        "mise",
+        "shop"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ]
+      ]
      },
      {
       "title": "おいしい",
-      "body": "ご飯がおいしいです。 (Gohan ga oishii desu.) The food is delicious."
+      "body": "ご飯がおいしいです。 (Gohan ga oishii desu.) The food is delicious.",
+      "words": [
+       [
+        "ご飯",
+        "gohan",
+        "rice; meal"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "おいしい",
+        "oishii",
+        "delicious"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ]
+      ]
      },
      {
       "title": "楽しい",
-      "body": "日本語は楽しいです。 (Nihongo wa tanoshii desu.) Japanese is fun."
+      "body": "日本語は楽しいです。 (Nihongo wa tanoshii desu.) Japanese is fun.",
+      "words": [
+       [
+        "日本語",
+        "nihongo",
+        "Japanese language"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "楽しい",
+        "tanoshii",
+        "fun"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ]
+      ]
      },
      {
       "title": "忙しい",
-      "body": "今日は忙しいです。 (Kyou wa isogashii desu.) I'm busy today."
+      "body": "今日は忙しいです。 (Kyou wa isogashii desu.) I'm busy today.",
+      "words": [
+       [
+        "今日",
+        "kyou",
+        "today"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "忙しい",
+        "isogashii",
+        "busy"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ]
+      ]
      },
      {
       "title": "好き",
-      "body": "猫が好きです。 (Neko ga suki desu.) I like cats."
+      "body": "猫が好きです。 (Neko ga suki desu.) I like cats.",
+      "words": [
+       [
+        "猫",
+        "neko",
+        "cat"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "好き",
+        "suki",
+        "liked; favorite"
+       ],
+       [
+        "です",
+        "desu",
+        "is (polite)"
+       ]
+      ]
      }
     ]
    },
@@ -1526,49 +4687,360 @@ export const tiny1000Lessons = [
       "who": "Mika",
       "ja": "アレックスさん、会社 は どこ ですか。",
       "romaji": "Arekkusu-san, kaisha wa doko desu ka.",
-      "en": "Alex, where is your company?"
+      "en": "Alex, where is your company?",
+      "words": [
+       [
+        "アレックス",
+        "Arekkusu",
+        "Alex"
+       ],
+       [
+        "さん",
+        "san",
+        "honorific suffix"
+       ],
+       [
+        "会社",
+        "kaisha",
+        "company"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "どこ",
+        "doko",
+        "where"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "会社 は 駅 の 近く です。",
       "romaji": "Kaisha wa eki no chikaku desu.",
-      "en": "The company is near the station."
+      "en": "The company is near the station.",
+      "words": [
+       [
+        "会社",
+        "kaisha",
+        "company"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "駅",
+        "eki",
+        "station"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "近く",
+        "chikaku",
+        "nearby"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "車 で 会社 に 行きますか。",
       "romaji": "Kuruma de kaisha ni ikimasu ka.",
-      "en": "Do you go to the company by car?"
+      "en": "Do you go to the company by car?",
+      "words": [
+       [
+        "車",
+        "kuruma",
+        "car"
+       ],
+       [
+        "で",
+        "de",
+        "means marker"
+       ],
+       [
+        "会社",
+        "kaisha",
+        "company"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "行き",
+        "iki",
+        "go (stem of 行く iku)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "いいえ、電車 で 行きます。",
       "romaji": "Iie, densha de ikimasu.",
-      "en": "No, I go by train."
+      "en": "No, I go by train.",
+      "words": [
+       [
+        "いいえ",
+        "iie",
+        "no"
+       ],
+       [
+        "電車",
+        "densha",
+        "train"
+       ],
+       [
+        "で",
+        "de",
+        "means marker"
+       ],
+       [
+        "行き",
+        "iki",
+        "go (stem of 行く iku)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "店 で 水 と お茶 を 買いますか。",
       "romaji": "Mise de mizu to ocha o kaimasu ka.",
-      "en": "Do you buy water and tea at the shop?"
+      "en": "Do you buy water and tea at the shop?",
+      "words": [
+       [
+        "店",
+        "mise",
+        "store"
+       ],
+       [
+        "で",
+        "de",
+        "action location marker"
+       ],
+       [
+        "水",
+        "mizu",
+        "water"
+       ],
+       [
+        "と",
+        "to",
+        "and"
+       ],
+       [
+        "お茶",
+        "ocha",
+        "tea"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "買い",
+        "kai",
+        "buy (stem of 買う kau)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、店 で 水 と お茶 を 買います。",
       "romaji": "Hai, mise de mizu to ocha o kaimasu.",
-      "en": "Yes, I buy water and tea at the shop."
+      "en": "Yes, I buy water and tea at the shop.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "店",
+        "mise",
+        "store"
+       ],
+       [
+        "で",
+        "de",
+        "action location marker"
+       ],
+       [
+        "水",
+        "mizu",
+        "water"
+       ],
+       [
+        "と",
+        "to",
+        "and"
+       ],
+       [
+        "お茶",
+        "ocha",
+        "tea"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "買い",
+        "kai",
+        "buy (stem of 買う kau)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "家 に 本 が ありますか。",
       "romaji": "Ie ni hon ga arimasu ka.",
-      "en": "Is there a book at home?"
+      "en": "Is there a book at home?",
+      "words": [
+       [
+        "家",
+        "ie",
+        "home"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "本",
+        "hon",
+        "book"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "あり",
+        "ari",
+        "exist (stem of ある aru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、家 に 本 と 電話 が あります。",
       "romaji": "Hai, ie ni hon to denwa ga arimasu.",
-      "en": "Yes, there is a book and a phone at home."
+      "en": "Yes, there is a book and a phone at home.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "家",
+        "ie",
+        "home"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "本",
+        "hon",
+        "book"
+       ],
+       [
+        "と",
+        "to",
+        "and"
+       ],
+       [
+        "電話",
+        "denwa",
+        "telephone"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "あり",
+        "ari",
+        "exist (stem of ある aru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      }
     ]
    },
@@ -1644,43 +5116,273 @@ export const tiny1000Lessons = [
     "items": [
      {
       "title": "家",
-      "body": "家はここです。 (Ie wa koko desu.) The house is here."
+      "body": "家はここです。 (Ie wa koko desu.) The house is here.",
+      "words": [
+       [
+        "家",
+        "ie",
+        "home"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "ここ",
+        "koko",
+        "here"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "title": "学校",
-      "body": "学校は大きいです。 (Gakkou wa ookii desu.) The school is big."
+      "body": "学校は大きいです。 (Gakkou wa ookii desu.) The school is big.",
+      "words": [
+       [
+        "学校",
+        "gakkou",
+        "school"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "大きい",
+        "ookii",
+        "big"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "title": "会社",
-      "body": "会社は駅の前です。 (Kaisha wa eki no mae desu.) The company is in front of the station."
+      "body": "会社は駅の前です。 (Kaisha wa eki no mae desu.) The company is in front of the station.",
+      "words": [
+       [
+        "会社",
+        "kaisha",
+        "company"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "駅",
+        "eki",
+        "station"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "前",
+        "mae",
+        "front"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "title": "駅",
-      "body": "駅に行きます。 (Eki ni ikimasu.) I go to the station."
+      "body": "駅に行きます。 (Eki ni ikimasu.) I go to the station.",
+      "words": [
+       [
+        "駅",
+        "eki",
+        "station"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "行き",
+        "iki",
+        "go (stem of 行く iku)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "店",
-      "body": "新しい店があります。 (Atarashii mise ga arimasu.) There is a new shop."
+      "body": "新しい店があります。 (Atarashii mise ga arimasu.) There is a new shop.",
+      "words": [
+       [
+        "新しい",
+        "atarashii",
+        "new"
+       ],
+       [
+        "店",
+        "mise",
+        "store"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "あり",
+        "ari",
+        "exist (stem of ある aru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "水",
-      "body": "水をください。 (Mizu o kudasai.) Water, please."
+      "body": "水をください。 (Mizu o kudasai.) Water, please.",
+      "words": [
+       [
+        "水",
+        "mizu",
+        "water"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "ください",
+        "kudasai",
+        "please give"
+       ]
+      ]
      },
      {
       "title": "お茶",
-      "body": "お茶を飲みます。 (Ocha o nomimasu.) I drink tea."
+      "body": "お茶を飲みます。 (Ocha o nomimasu.) I drink tea.",
+      "words": [
+       [
+        "お茶",
+        "ocha",
+        "tea"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "飲み",
+        "nomi",
+        "drink (stem of 飲む nomu)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "本",
-      "body": "本を読みます。 (Hon o yomimasu.) I read a book."
+      "body": "本を読みます。 (Hon o yomimasu.) I read a book.",
+      "words": [
+       [
+        "本",
+        "hon",
+        "book"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "読み",
+        "yomi",
+        "read (stem of 読む yomu)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "車",
-      "body": "車があります。 (Kuruma ga arimasu.) I have a car."
+      "body": "車があります。 (Kuruma ga arimasu.) I have a car.",
+      "words": [
+       [
+        "車",
+        "kuruma",
+        "car"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "あり",
+        "ari",
+        "exist (stem of ある aru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "電話",
-      "body": "電話が来ます。 (Denwa ga kimasu.) A call comes in."
+      "body": "電話が来ます。 (Denwa ga kimasu.) A call comes in.",
+      "words": [
+       [
+        "電話",
+        "denwa",
+        "telephone"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る kuru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      }
     ]
    },
@@ -1783,49 +5485,515 @@ export const tiny1000Lessons = [
       "who": "Mika",
       "ja": "アレックスさんは どこに 住んで いますか。",
       "romaji": "Arekkusu-san wa doko ni sunde imasu ka?",
-      "en": "Alex, where do you live?"
+      "en": "Alex, where do you live?",
+      "words": [
+       [
+        "アレックス",
+        "arekkusu",
+        "Alex"
+       ],
+       [
+        "さん",
+        "san",
+        "honorific suffix"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "どこ",
+        "doko",
+        "where"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "住んで",
+        "sunde",
+        "live (te-form)"
+       ],
+       [
+        "い",
+        "i",
+        "be (auxiliary stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "東京に 住んで います。カフェで 働いて います。",
       "romaji": "Tōkyō ni sunde imasu. Kafe de hataraite imasu.",
-      "en": "I live in Tokyo. I work at a café."
+      "en": "I live in Tokyo. I work at a café.",
+      "words": [
+       [
+        "東京",
+        "toukyou",
+        "Tokyo"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "住んで",
+        "sunde",
+        "live (te-form)"
+       ],
+       [
+        "い",
+        "i",
+        "be (auxiliary stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "カフェ",
+        "kafe",
+        "cafe"
+       ],
+       [
+        "で",
+        "de",
+        "location marker"
+       ],
+       [
+        "働いて",
+        "hataraite",
+        "work (te-form)"
+       ],
+       [
+        "い",
+        "i",
+        "be (auxiliary stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "仕事で 日本語を 話しますか。",
       "romaji": "Shigoto de Nihongo o hanashimasu ka?",
-      "en": "Do you speak Japanese at work?"
+      "en": "Do you speak Japanese at work?",
+      "words": [
+       [
+        "仕事",
+        "shigoto",
+        "work"
+       ],
+       [
+        "で",
+        "de",
+        "context marker"
+       ],
+       [
+        "日本語",
+        "nihongo",
+        "Japanese language"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "話し",
+        "hanashi",
+        "speak (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい。日本語を 話します。お客さんの 話を 聞きます。",
       "romaji": "Hai. Nihongo o hanashimasu. Okyaku-san no hanashi o kikimasu.",
-      "en": "Yes. I speak Japanese. I listen to customers."
+      "en": "Yes. I speak Japanese. I listen to customers.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "日本語",
+        "nihongo",
+        "Japanese language"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "話し",
+        "hanashi",
+        "speak (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "お",
+        "o",
+        "honorific prefix"
+       ],
+       [
+        "客",
+        "kyaku",
+        "customer"
+       ],
+       [
+        "さん",
+        "san",
+        "honorific suffix"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "話",
+        "hanashi",
+        "speech; story"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "聞き",
+        "kiki",
+        "listen (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "休みの日に 本を 読みますか。",
       "romaji": "Yasumi no hi ni hon o yomimasu ka?",
-      "en": "Do you read books on your days off?"
+      "en": "Do you read books on your days off?",
+      "words": [
+       [
+        "休み",
+        "yasumi",
+        "day off"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "日",
+        "hi",
+        "day"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "本",
+        "hon",
+        "book"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "読み",
+        "yomi",
+        "read (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい。本を 読みます。ノートに ことばを 書きます。",
       "romaji": "Hai. Hon o yomimasu. Nōto ni kotoba o kakimasu.",
-      "en": "Yes. I read books. I write words in a notebook."
+      "en": "Yes. I read books. I write words in a notebook.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "本",
+        "hon",
+        "book"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "読み",
+        "yomi",
+        "read (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "ノート",
+        "nooto",
+        "notebook"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "ことば",
+        "kotoba",
+        "word"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "書き",
+        "kaki",
+        "write (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "その ペンを 使いますか。ノートを 持っていますか。",
       "romaji": "Sono pen o tsukaimasu ka? Nōto o motte imasu ka?",
-      "en": "Do you use that pen? Do you have a notebook?"
+      "en": "Do you use that pen? Do you have a notebook?",
+      "words": [
+       [
+        "その",
+        "sono",
+        "that"
+       ],
+       [
+        "ペン",
+        "pen",
+        "pen"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "使い",
+        "tsukai",
+        "use (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ],
+       [
+        "ノート",
+        "nooto",
+        "notebook"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "持って",
+        "motte",
+        "hold (te-form)"
+       ],
+       [
+        "い",
+        "i",
+        "be (auxiliary stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、ペンを 使います。ノートを 持っています。あとで コーヒーを 買って、ここで 待ちます。",
       "romaji": "Hai, pen o tsukaimasu. Nōto o motte imasu. Ato de kōhī o katte, koko de machimasu.",
-      "en": "Yes, I use a pen. I have a notebook. I’ll buy coffee later and wait here."
+      "en": "Yes, I use a pen. I have a notebook. I’ll buy coffee later and wait here.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "ペン",
+        "pen",
+        "pen"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "使い",
+        "tsukai",
+        "use (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "ノート",
+        "nooto",
+        "notebook"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "持って",
+        "motte",
+        "hold (te-form)"
+       ],
+       [
+        "い",
+        "i",
+        "be (auxiliary stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "あと",
+        "ato",
+        "later"
+       ],
+       [
+        "で",
+        "de",
+        "adverbial particle"
+       ],
+       [
+        "コーヒー",
+        "koohii",
+        "coffee"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "買って",
+        "katte",
+        "buy (te-form)"
+       ],
+       [
+        "ここ",
+        "koko",
+        "here"
+       ],
+       [
+        "で",
+        "de",
+        "location marker"
+       ],
+       [
+        "待ち",
+        "machi",
+        "wait (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      }
     ]
    },
@@ -1901,43 +6069,273 @@ export const tiny1000Lessons = [
     "items": [
      {
       "title": "買う",
-      "body": "本を買います。 (Hon o kaimasu.) I buy a book."
+      "body": "本を買います。 (Hon o kaimasu.) I buy a book.",
+      "words": [
+       [
+        "本",
+        "hon",
+        "book"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "買い",
+        "kai",
+        "buy (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "話す",
-      "body": "日本語を話します。 (Nihongo o hanashimasu.) I speak Japanese."
+      "body": "日本語を話します。 (Nihongo o hanashimasu.) I speak Japanese.",
+      "words": [
+       [
+        "日本語",
+        "nihongo",
+        "Japanese language"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "話し",
+        "hanashi",
+        "speak (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "聞く",
-      "body": "音楽を聞きます。 (Ongaku o kikimasu.) I listen to music."
+      "body": "音楽を聞きます。 (Ongaku o kikimasu.) I listen to music.",
+      "words": [
+       [
+        "音楽",
+        "ongaku",
+        "music"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "聞き",
+        "kiki",
+        "listen (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "読む",
-      "body": "新聞を読みます。 (Shinbun o yomimasu.) I read the newspaper."
+      "body": "新聞を読みます。 (Shinbun o yomimasu.) I read the newspaper.",
+      "words": [
+       [
+        "新聞",
+        "shinbun",
+        "newspaper"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "読み",
+        "yomi",
+        "read (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "書く",
-      "body": "名前を書きます。 (Namae o kakimasu.) I write my name."
+      "body": "名前を書きます。 (Namae o kakimasu.) I write my name.",
+      "words": [
+       [
+        "名前",
+        "namae",
+        "name"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "書き",
+        "kaki",
+        "write (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "使う",
-      "body": "電話を使います。 (Denwa o tsukaimasu.) I use the phone."
+      "body": "電話を使います。 (Denwa o tsukaimasu.) I use the phone.",
+      "words": [
+       [
+        "電話",
+        "denwa",
+        "telephone"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "使い",
+        "tsukai",
+        "use (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "待つ",
-      "body": "駅で待ちます。 (Eki de machimasu.) I wait at the station."
+      "body": "駅で待ちます。 (Eki de machimasu.) I wait at the station.",
+      "words": [
+       [
+        "駅",
+        "eki",
+        "station"
+       ],
+       [
+        "で",
+        "de",
+        "location marker"
+       ],
+       [
+        "待ち",
+        "machi",
+        "wait (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "持つ",
-      "body": "本を持っています。 (Hon o motte imasu.) I have a book."
+      "body": "本を持っています。 (Hon o motte imasu.) I have a book.",
+      "words": [
+       [
+        "本",
+        "hon",
+        "book"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "持って",
+        "motte",
+        "hold (te-form)"
+       ],
+       [
+        "い",
+        "i",
+        "be (auxiliary stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "住む",
-      "body": "東京に住んでいます。 (Toukyou ni sunde imasu.) I live in Tokyo."
+      "body": "東京に住んでいます。 (Toukyou ni sunde imasu.) I live in Tokyo.",
+      "words": [
+       [
+        "東京",
+        "toukyou",
+        "Tokyo"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "住んで",
+        "sunde",
+        "live (te-form)"
+       ],
+       [
+        "い",
+        "i",
+        "be (auxiliary stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "働く",
-      "body": "会社で働きます。 (Kaisha de hatarakimasu.) I work at a company."
+      "body": "会社で働きます。 (Kaisha de hatarakimasu.) I work at a company.",
+      "words": [
+       [
+        "会社",
+        "kaisha",
+        "company"
+       ],
+       [
+        "で",
+        "de",
+        "location marker"
+       ],
+       [
+        "働き",
+        "hataraki",
+        "work (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      }
     ]
    },
@@ -2050,49 +6448,285 @@ export const tiny1000Lessons = [
       "who": "Mika",
       "ja": "アレックスさん、数を 数えましょう。",
       "romaji": "Arakkusu-san, kazu o kazoemashou.",
-      "en": "Alex, let’s count."
+      "en": "Alex, let’s count.",
+      "words": [
+       [
+        "アレックス",
+        "Arekkusu",
+        "Alex (name)"
+       ],
+       [
+        "さん",
+        "san",
+        "Mr./Ms. suffix"
+       ],
+       [
+        "数",
+        "kazu",
+        "number"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "数え",
+        "kazoe",
+        "count (stem of 数える)"
+       ],
+       [
+        "ましょう",
+        "mashou",
+        "let's (polite volitional)"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、お願いします。",
       "romaji": "Hai, onegaishimasu.",
-      "en": "Yes, please."
+      "en": "Yes, please.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "お願い",
+        "onegai",
+        "request / favor"
+       ],
+       [
+        "します",
+        "shimasu",
+        "do (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "一、二、三 の 次は なんですか。",
       "romaji": "Ichi, ni, san no tsugi wa nan desu ka?",
-      "en": "What comes after one, two, three?"
+      "en": "What comes after one, two, three?",
+      "words": [
+       [
+        "一",
+        "ichi",
+        "one"
+       ],
+       [
+        "二",
+        "ni",
+        "two"
+       ],
+       [
+        "三",
+        "san",
+        "three"
+       ],
+       [
+        "の",
+        "no",
+        "of / possessive particle"
+       ],
+       [
+        "次",
+        "tsugi",
+        "next"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "なん",
+        "nan",
+        "what"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "四 です。",
       "romaji": "Yon desu.",
-      "en": "Four."
+      "en": "Four.",
+      "words": [
+       [
+        "四",
+        "yon",
+        "four"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "そうです。五、六、七 の 次は なんですか。",
       "romaji": "Sou desu. Go, roku, nana no tsugi wa nan desu ka?",
-      "en": "That’s right. What comes after five, six, seven?"
+      "en": "That’s right. What comes after five, six, seven?",
+      "words": [
+       [
+        "そう",
+        "sou",
+        "so / that's right"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "五",
+        "go",
+        "five"
+       ],
+       [
+        "六",
+        "roku",
+        "six"
+       ],
+       [
+        "七",
+        "nana",
+        "seven"
+       ],
+       [
+        "の",
+        "no",
+        "of / possessive particle"
+       ],
+       [
+        "次",
+        "tsugi",
+        "next"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "なん",
+        "nan",
+        "what"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "八 です。",
       "romaji": "Hachi desu.",
-      "en": "Eight."
+      "en": "Eight.",
+      "words": [
+       [
+        "八",
+        "hachi",
+        "eight"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "正解です。九 の 次は なんですか。",
       "romaji": "Seikai desu. Kyuu no tsugi wa nan desu ka?",
-      "en": "Correct. What comes after nine?"
+      "en": "Correct. What comes after nine?",
+      "words": [
+       [
+        "正解",
+        "seikai",
+        "correct answer"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "九",
+        "kyuu",
+        "nine"
+       ],
+       [
+        "の",
+        "no",
+        "of / possessive particle"
+       ],
+       [
+        "次",
+        "tsugi",
+        "next"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "なん",
+        "nan",
+        "what"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "十 です。",
       "romaji": "Juu desu.",
-      "en": "Ten."
+      "en": "Ten.",
+      "words": [
+       [
+        "十",
+        "juu",
+        "ten"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      }
     ]
    },
@@ -2168,43 +6802,188 @@ export const tiny1000Lessons = [
     "items": [
      {
       "title": "一",
-      "body": "一つください。 (Hitotsu kudasai.) One, please."
+      "body": "一つください。 (Hitotsu kudasai.) One, please.",
+      "words": [
+       [
+        "一つ",
+        "hitotsu",
+        "one (item)"
+       ],
+       [
+        "ください",
+        "kudasai",
+        "please give me"
+       ]
+      ]
      },
      {
       "title": "二",
-      "body": "二人います。 (Futari imasu.) There are two people."
+      "body": "二人います。 (Futari imasu.) There are two people.",
+      "words": [
+       [
+        "二人",
+        "futari",
+        "two people"
+       ],
+       [
+        "います",
+        "imasu",
+        "exist / are (animate beings)"
+       ]
+      ]
      },
      {
       "title": "三",
-      "body": "三時です。 (Sanji desu.) It's three o'clock."
+      "body": "三時です。 (Sanji desu.) It's three o'clock.",
+      "words": [
+       [
+        "三時",
+        "sanji",
+        "three o'clock"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "title": "四",
-      "body": "四月です。 (Shigatsu desu.) It's April."
+      "body": "四月です。 (Shigatsu desu.) It's April.",
+      "words": [
+       [
+        "四月",
+        "shigatsu",
+        "April"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "title": "五",
-      "body": "五分待ちます。 (Gofun machimasu.) I'll wait for five minutes."
+      "body": "五分待ちます。 (Gofun machimasu.) I'll wait for five minutes.",
+      "words": [
+       [
+        "五分",
+        "gofun",
+        "five minutes"
+       ],
+       [
+        "待ち",
+        "machi",
+        "wait (stem of 待つ)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "六",
-      "body": "六時に行きます。 (Rokuji ni ikimasu.) I'll go at six."
+      "body": "六時に行きます。 (Rokuji ni ikimasu.) I'll go at six.",
+      "words": [
+       [
+        "六時",
+        "rokuji",
+        "six o'clock"
+       ],
+       [
+        "に",
+        "ni",
+        "at / time marker"
+       ],
+       [
+        "行き",
+        "iki",
+        "go (stem of 行く)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "七",
-      "body": "七人います。 (Nananin imasu.) There are seven people."
+      "body": "七人います。 (Nananin imasu.) There are seven people.",
+      "words": [
+       [
+        "七人",
+        "shichinin",
+        "seven people"
+       ],
+       [
+        "います",
+        "imasu",
+        "exist / are (animate beings)"
+       ]
+      ]
      },
      {
       "title": "八",
-      "body": "八つあります。 (Yattsu arimasu.) There are eight."
+      "body": "八つあります。 (Yattsu arimasu.) There are eight.",
+      "words": [
+       [
+        "八つ",
+        "yattsu",
+        "eight (items)"
+       ],
+       [
+        "あります",
+        "arimasu",
+        "exist / there are (inanimate)"
+       ]
+      ]
      },
      {
       "title": "九",
-      "body": "九時に会います。 (Kuji ni aimasu.) We meet at nine."
+      "body": "九時に会います。 (Kuji ni aimasu.) We meet at nine.",
+      "words": [
+       [
+        "九時",
+        "kuji",
+        "nine o'clock"
+       ],
+       [
+        "に",
+        "ni",
+        "at / time marker"
+       ],
+       [
+        "会い",
+        "ai",
+        "meet (stem of 会う)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "十",
-      "body": "十分です。 (Juppun desu.) It's ten minutes."
+      "body": "十分です。 (Juppun desu.) It's ten minutes.",
+      "words": [
+       [
+        "十分",
+        "juppun",
+        "ten minutes"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      }
     ]
    },
@@ -2317,19 +7096,125 @@ export const tiny1000Lessons = [
       "who": "Mika",
       "ja": "コーヒーは とても おいしいですか。",
       "romaji": "Koohii wa totemo oishii desu ka.",
-      "en": "Is the coffee very good?"
+      "en": "Is the coffee very good?",
+      "words": [
+       [
+        "コーヒー",
+        "koohii",
+        "coffee"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "とても",
+        "totemo",
+        "very"
+       ],
+       [
+        "おいしい",
+        "oishii",
+        "delicious"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、とても おいしいです。でも、少し あついです。",
       "romaji": "Hai, totemo oishii desu. Demo, sukoshi atsui desu.",
-      "en": "Yes, it’s very good. But it’s a little hot."
+      "en": "Yes, it’s very good. But it’s a little hot.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "とても",
+        "totemo",
+        "very"
+       ],
+       [
+        "おいしい",
+        "oishii",
+        "delicious"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "でも",
+        "demo",
+        "but"
+       ],
+       [
+        "少し",
+        "sukoshi",
+        "a little"
+       ],
+       [
+        "あつい",
+        "atsui",
+        "hot"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "ミルクを もっと 入れますか。",
       "romaji": "Miruku o motto iremasu ka.",
-      "en": "Would you like more milk?"
+      "en": "Would you like more milk?",
+      "words": [
+       [
+        "ミルク",
+        "miruku",
+        "milk"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "もっと",
+        "motto",
+        "more"
+       ],
+       [
+        "入れ",
+        "ire",
+        "put in (stem of 入れる ireru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
@@ -2341,25 +7226,153 @@ export const tiny1000Lessons = [
       "who": "Mika",
       "ja": "もう 飲みましたか。",
       "romaji": "Mou nomimashita ka.",
-      "en": "Have you already had a drink?"
+      "en": "Have you already had a drink?",
+      "words": [
+       [
+        "もう",
+        "mou",
+        "already"
+       ],
+       [
+        "飲み",
+        "nomi",
+        "drink (stem of 飲む nomu)"
+       ],
+       [
+        "ました",
+        "mashita",
+        "polite past verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "まだです。少し さましてから 飲みます。",
       "romaji": "Mada desu. Sukoshi samashite kara nomimasu.",
-      "en": "Not yet. I’ll let it cool a little, then drink it."
+      "en": "Not yet. I’ll let it cool a little, then drink it.",
+      "words": [
+       [
+        "まだ",
+        "mada",
+        "not yet"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "少し",
+        "sukoshi",
+        "a little"
+       ],
+       [
+        "さまし",
+        "samashi",
+        "cool (stem of 冷ます samasu)"
+       ],
+       [
+        "て",
+        "te",
+        "te-form connector"
+       ],
+       [
+        "から",
+        "kara",
+        "after"
+       ],
+       [
+        "飲み",
+        "nomi",
+        "drink (stem of 飲む nomu)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "だから、ゆっくり 飲んでくださいね。",
       "romaji": "Dakara, yukkuri nonde kudasai ne.",
-      "en": "So, please drink it slowly."
+      "en": "So, please drink it slowly.",
+      "words": [
+       [
+        "だから",
+        "dakara",
+        "therefore"
+       ],
+       [
+        "ゆっくり",
+        "yukkuri",
+        "slowly"
+       ],
+       [
+        "飲ん",
+        "non",
+        "drink (stem of 飲む nomu)"
+       ],
+       [
+        "で",
+        "de",
+        "te-form connector"
+       ],
+       [
+        "ください",
+        "kudasai",
+        "please"
+       ],
+       [
+        "ね",
+        "ne",
+        "softening particle"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい。そして、また あした 飲みます。",
       "romaji": "Hai. Soshite, mata ashita nomimasu.",
-      "en": "Yes. And then, I’ll drink it again tomorrow."
+      "en": "Yes. And then, I’ll drink it again tomorrow.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "そして",
+        "soshite",
+        "and"
+       ],
+       [
+        "また",
+        "mata",
+        "again"
+       ],
+       [
+        "あした",
+        "ashita",
+        "tomorrow"
+       ],
+       [
+        "飲み",
+        "nomi",
+        "drink (stem of 飲む nomu)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      }
     ]
    },
@@ -2435,43 +7448,213 @@ export const tiny1000Lessons = [
     "items": [
      {
       "title": "とても",
-      "body": "とてもおいしいです。 (Totemo oishii desu.) It's very delicious."
+      "body": "とてもおいしいです。 (Totemo oishii desu.) It's very delicious.",
+      "words": [
+       [
+        "とても",
+        "totemo",
+        "very"
+       ],
+       [
+        "おいしい",
+        "oishii",
+        "delicious"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "title": "もっと",
-      "body": "もっと食べます。 (Motto tabemasu.) I'll eat more."
+      "body": "もっと食べます。 (Motto tabemasu.) I'll eat more.",
+      "words": [
+       [
+        "もっと",
+        "motto",
+        "more"
+       ],
+       [
+        "食べ",
+        "tabe",
+        "eat (stem of 食べる taberu)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "少し",
-      "body": "少し待ちます。 (Sukoshi machimasu.) I'll wait a little."
+      "body": "少し待ちます。 (Sukoshi machimasu.) I'll wait a little.",
+      "words": [
+       [
+        "少し",
+        "sukoshi",
+        "a little"
+       ],
+       [
+        "待ち",
+        "machi",
+        "wait (stem of 待つ matsu)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "たくさん",
-      "body": "たくさんあります。 (Takusan arimasu.) There's a lot."
+      "body": "たくさんあります。 (Takusan arimasu.) There's a lot.",
+      "words": [
+       [
+        "たくさん",
+        "takusan",
+        "a lot"
+       ],
+       [
+        "あり",
+        "ari",
+        "exist (stem of ある aru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "でも",
-      "body": "でも、高いです。 (Demo, takai desu.) But it's expensive."
+      "body": "でも、高いです。 (Demo, takai desu.) But it's expensive.",
+      "words": [
+       [
+        "でも",
+        "demo",
+        "but"
+       ],
+       [
+        "高い",
+        "takai",
+        "expensive"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "title": "そして",
-      "body": "そして、行きます。 (Soshite, ikimasu.) And then I go."
+      "body": "そして、行きます。 (Soshite, ikimasu.) And then I go.",
+      "words": [
+       [
+        "そして",
+        "soshite",
+        "and"
+       ],
+       [
+        "行き",
+        "iki",
+        "go (stem of 行く iku)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "だから",
-      "body": "だから行きません。 (Dakara ikimasen.) So I'm not going."
+      "body": "だから行きません。 (Dakara ikimasen.) So I'm not going.",
+      "words": [
+       [
+        "だから",
+        "dakara",
+        "therefore"
+       ],
+       [
+        "行き",
+        "iki",
+        "go (stem of 行く iku)"
+       ],
+       [
+        "ません",
+        "masen",
+        "polite negative ending"
+       ]
+      ]
      },
      {
       "title": "また",
-      "body": "また来ます。 (Mata kimasu.) I'll come again."
+      "body": "また来ます。 (Mata kimasu.) I'll come again.",
+      "words": [
+       [
+        "また",
+        "mata",
+        "again"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る kuru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "title": "まだ",
-      "body": "まだ分かりません。 (Mada wakarimasen.) I don't understand yet."
+      "body": "まだ分かりません。 (Mada wakarimasen.) I don't understand yet.",
+      "words": [
+       [
+        "まだ",
+        "mada",
+        "not yet"
+       ],
+       [
+        "分かり",
+        "wakari",
+        "understand (stem of 分かる wakaru)"
+       ],
+       [
+        "ません",
+        "masen",
+        "polite negative ending"
+       ]
+      ]
      },
      {
       "title": "もう",
-      "body": "もう食べました。 (Mou tabemashita.) I already ate."
+      "body": "もう食べました。 (Mou tabemashita.) I already ate.",
+      "words": [
+       [
+        "もう",
+        "mou",
+        "already"
+       ],
+       [
+        "食べ",
+        "tabe",
+        "eat (stem of 食べる taberu)"
+       ],
+       [
+        "ました",
+        "mashita",
+        "polite past verb ending"
+       ]
+      ]
      }
     ]
    },

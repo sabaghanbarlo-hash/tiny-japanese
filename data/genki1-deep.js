@@ -4,6 +4,8 @@ import { ask } from "./quiz-tools.js";
 import { particles } from "./genki1-particles.js";
 import { ichidan, godan, irregular, politeIchidan, politeGodan } from "./genki1-ch3a.js";
 import { politeIrregular, present, masenka, frequency, wordOrder } from "./genki1-ch3b.js";
+import { aruIru, location, pastNoun } from "./genki1-ch4a.js";
+import { pastVerb, nimoDemo, duration, takusan } from "./genki1-ch4b.js";
 const L = (who, ja, romaji, en) => ({ who, ja, romaji, en });
 const W = (ja, romaji, en) => ({ ja, kana: "", romaji, en });
 const E = (ja, ro, en, hl, bad) => ({ ja, ro, en, hl, bad: !!bad });
@@ -394,5 +396,6 @@ export const genki1Grammar = [
   ichidan, godan, irregular, politeIchidan, politeGodan, politeIrregular, present,
   pick("particle-wo", 17), pick("particle-de", 18), pick("particle-ni", 19), pick("particle-e", 20),
   masenka, frequency, wordOrder,
-  pick("particle-to", 24), pick("particle-ga", 25)
+  aruIru, location, pastNoun, pastVerb, nimoDemo, duration, takusan,
+  pick("particle-to", 31), pick("particle-ga", 32)
 ];

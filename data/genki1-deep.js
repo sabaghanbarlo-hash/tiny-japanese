@@ -2,6 +2,8 @@
 // Every grammar point gets its own lesson. Chapters are added here in Genki order as they are finished.
 import { ask } from "./quiz-tools.js";
 import { particles } from "./genki1-particles.js";
+import { ichidan, godan, irregular, politeIchidan, politeGodan } from "./genki1-ch3a.js";
+import { politeIrregular, present, masenka, frequency, wordOrder } from "./genki1-ch3b.js";
 const L = (who, ja, romaji, en) => ({ who, ja, romaji, en });
 const W = (ja, romaji, en) => ({ ja, kana: "", romaji, en });
 const E = (ja, ro, en, hl, bad) => ({ ja, ro, en, hl, bad: !!bad });
@@ -388,5 +390,8 @@ const yo = lesson({
 
 export const genki1Grammar = [
   pick("particle-wa", 1), desu, pick("particle-ka", 3), pick("particle-no", 4),
-  kosoado, pick("particle-mo", 6), janai, ne, yo
+  kosoado, pick("particle-mo", 6), janai, ne, yo,
+  ichidan, godan, irregular, politeIchidan, politeGodan, politeIrregular, present,
+  pick("particle-wo", 17), pick("particle-de", 18), pick("particle-ni", 19), pick("particle-e", 20),
+  masenka, frequency, wordOrder
 ];

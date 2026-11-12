@@ -1,7 +1,7 @@
 name: Genki grammar media
 
 # Makes the audio and videos for the Genki I Grammar course (genki-1-grammar), rebuilds the pages and commits to this branch.
-# Starts when this file is pushed to the genki-grammar branch. Nothing is deployed from here.
+# Chapters 1 to 3. Starts when this file is pushed to the genki-grammar branch. Nothing is deployed from here.
 on:
   push:
     branches: [genki-grammar]

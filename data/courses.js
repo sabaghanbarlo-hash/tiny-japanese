@@ -6,8 +6,6 @@ import { hiraganaLessons } from "./course-hiragana.js";
 import { katakanaLessons } from "./course-katakana.js";
 import { conversationLessons } from "./course-conversations.js";
 import { grammarLessons } from "./course-grammar.js";
-import { genki1Lessons } from "./course-genki1.js";
-import { particles as genki1ParticleLessons } from "./genki1-particles.js";
 import { genki1Grammar } from "./genki1-deep.js";
 import { kanjiLessons } from "./course-kanji.js";
 import { travelLessons } from "./course-travel.js";
@@ -90,24 +88,6 @@ export const courses = [
     lessons: grammarLessons
   },
   {
-    id: "genki-1",
-    title: "Genki I Companion",
-    tagline: "Follow the 12 chapters of Genki I with Mika and Alex, one grammar topic at a time.",
-    level: "Beginner",
-    topic: "Textbook companion",
-    description: "An independent study companion for the Genki I textbook, not affiliated with its publisher. Each lesson follows the grammar topics of one Genki chapter, but the dialogues, examples and quizzes are all original: a short story with Mika and Alex, vocabulary, clear grammar notes and a quiz. Use it next to your own copy of the book, or on its own.",
-    outcomes: [
-      "Introduce yourself, point at things and ask whose they are",
-      "Use verbs, adjectives and particles, the て form and casual speech",
-      "Compare things, talk about plans and experiences",
-      "Give reasons and advice, and say what you must do"
-    ],
-    audience: "Beginners who can read hiragana (take Hiragana Starter first if not) and are studying Genki I or want to follow the same path.",
-    videoCredit: "Voices: Mika and Alex (neural text-to-speech).",
-    pdf: "/downloads/genki-1-workbook.pdf",
-    lessons: genki1Lessons
-  },
-  {
     id: "genki-1-grammar",
     title: "Genki I Grammar, Point by Point",
     tagline: "Every Genki I grammar point gets its own lesson: a deep explanation, examples, common mistakes and a story.",
@@ -117,27 +97,12 @@ export const courses = [
     outcomes: [
       "Understand each basic grammar point on its own, not just memorise it",
       "Make polite sentences with は, です, か, の, も and the negative",
-      "Point at things, ask questions and sound natural with ね and よ"
+      "Point at things, ask questions and sound natural with ね and よ",
+      "Build sentences with verbs, the ます form, particles and the right word order"
     ],
     audience: "Complete beginners who can read hiragana and want every grammar point explained in depth.",
     videoCredit: "Voices: Mika and Alex (neural text-to-speech); teacher narration: neural text-to-speech.",
     lessons: genki1Grammar
-  },
-  {
-    id: "genki-1-particles",
-    title: "Genki I Particles",
-    tagline: "One short video for each Japanese particle: は, か, の, も, を, に, で, へ, と and が.",
-    level: "Beginner",
-    topic: "Textbook companion",
-    description: "A pilot for a one-concept-per-lesson way of learning Genki I grammar. Each lesson takes one particle, explains it from the start, shows examples, then puts it in a short story with Mika and Alex. An independent companion, not affiliated with the Genki publisher.",
-    outcomes: [
-      "Know what each basic particle does and how it is read",
-      "Choose between は and が, に and で, に and へ",
-      "Build simple sentences about who, what, where and when"
-    ],
-    audience: "Beginners who can read hiragana and want each grammar point explained on its own.",
-    videoCredit: "Voices: Mika and Alex (neural text-to-speech).",
-    lessons: genki1ParticleLessons
   },
   {
     id: "kanji-starter",

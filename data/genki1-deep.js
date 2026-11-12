@@ -393,5 +393,6 @@ export const genki1Grammar = [
   kosoado, pick("particle-mo", 6), janai, ne, yo,
   ichidan, godan, irregular, politeIchidan, politeGodan, politeIrregular, present,
   pick("particle-wo", 17), pick("particle-de", 18), pick("particle-ni", 19), pick("particle-e", 20),
-  masenka, frequency, wordOrder
+  masenka, frequency, wordOrder,
+  pick("particle-to", 24), pick("particle-ga", 25)
 ];

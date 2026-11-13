@@ -23,67 +23,464 @@ export const tinyConversationsLessons = [
       "who": "Mika",
       "ja": "初めまして。私は Mika です。",
       "romaji": "Hajimemashite. Watashi wa Mika desu.",
-      "en": "Nice to meet you. I’m Mika."
+      "en": "Nice to meet you. I’m Mika.",
+      "words": [
+       [
+        "初めまして",
+        "hajimemashite",
+        "nice to meet you"
+       ],
+       [
+        "私",
+        "watashi",
+        "I"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "Mika",
+        "Mika",
+        "name Mika"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "初めまして。私は Alex です。",
       "romaji": "Hajimemashite. Watashi wa Alex desu.",
-      "en": "Nice to meet you. I’m Alex."
+      "en": "Nice to meet you. I’m Alex.",
+      "words": [
+       [
+        "初めまして",
+        "hajimemashite",
+        "nice to meet you"
+       ],
+       [
+        "私",
+        "watashi",
+        "I"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "Alex",
+        "Alex",
+        "name Alex"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "Alexは 学生ですか。",
       "romaji": "Alex wa gakusei desu ka.",
-      "en": "Are you a student, Alex?"
+      "en": "Are you a student, Alex?",
+      "words": [
+       [
+        "Alex",
+        "Alex",
+        "name Alex"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "学生",
+        "gakusei",
+        "student"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、学生です。Mikaも 学生ですか。",
       "romaji": "Hai, gakusei desu. Mika mo gakusei desu ka.",
-      "en": "Yes, I am. Are you a student too, Mika?"
+      "en": "Yes, I am. Are you a student too, Mika?",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "学生",
+        "gakusei",
+        "student"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "Mika",
+        "Mika",
+        "name Mika"
+       ],
+       [
+        "も",
+        "mo",
+        "also"
+       ],
+       [
+        "学生",
+        "gakusei",
+        "student"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "はい、私も 学生です。今日の 授業は 日本語ですか。",
       "romaji": "Hai, watashi mo gakusei desu. Kyou no jugyou wa nihongo desu ka.",
-      "en": "Yes, I’m a student too. Is today’s class Japanese?"
+      "en": "Yes, I’m a student too. Is today’s class Japanese?",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "私",
+        "watashi",
+        "I"
+       ],
+       [
+        "も",
+        "mo",
+        "also"
+       ],
+       [
+        "学生",
+        "gakusei",
+        "student"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "今日",
+        "kyou",
+        "today"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "授業",
+        "jugyou",
+        "class"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "日本語",
+        "nihongo",
+        "Japanese language"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、日本語の 授業です。",
       "romaji": "Hai, nihongo no jugyou desu.",
-      "en": "Yes, it’s a Japanese class."
+      "en": "Yes, it’s a Japanese class.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "日本語",
+        "nihongo",
+        "Japanese language"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "授業",
+        "jugyou",
+        "class"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "日本語は 好きですか。",
       "romaji": "Nihongo wa suki desu ka.",
-      "en": "Do you like Japanese?"
+      "en": "Do you like Japanese?",
+      "words": [
+       [
+        "日本語",
+        "nihongo",
+        "Japanese language"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "好き",
+        "suki",
+        "liked / fond of"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、とても 好きです。Mikaは どうですか。",
       "romaji": "Hai, totemo suki desu. Mika wa dou desu ka.",
-      "en": "Yes, I like it a lot. How about you, Mika?"
+      "en": "Yes, I like it a lot. How about you, Mika?",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "とても",
+        "totemo",
+        "very"
+       ],
+       [
+        "好き",
+        "suki",
+        "liked / fond of"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "Mika",
+        "Mika",
+        "name Mika"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "どう",
+        "dou",
+        "how"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "私も 好きです。授業は 楽しいです。",
       "romaji": "Watashi mo suki desu. Jugyou wa tanoshii desu.",
-      "en": "I like it too. The class is fun."
+      "en": "I like it too. The class is fun.",
+      "words": [
+       [
+        "私",
+        "watashi",
+        "I"
+       ],
+       [
+        "も",
+        "mo",
+        "also"
+       ],
+       [
+        "好き",
+        "suki",
+        "liked / fond of"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "授業",
+        "jugyou",
+        "class"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "楽しい",
+        "tanoshii",
+        "fun"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "そうですか。よろしくお願いします。",
       "romaji": "Sou desu ka. Yoroshiku onegaishimasu.",
-      "en": "I see. I look forward to getting to know you."
+      "en": "I see. I look forward to getting to know you.",
+      "words": [
+       [
+        "そう",
+        "sou",
+        "so"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ],
+       [
+        "よろしく",
+        "yoroshiku",
+        "favorably"
+       ],
+       [
+        "お",
+        "o",
+        "polite prefix"
+       ],
+       [
+        "願い",
+        "negai",
+        "request (stem of 願う)"
+       ],
+       [
+        "し",
+        "shi",
+        "do (stem of する)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "よろしくお願いします。",
       "romaji": "Yoroshiku onegaishimasu.",
-      "en": "I look forward to getting to know you too."
+      "en": "I look forward to getting to know you too.",
+      "words": [
+       [
+        "よろしく",
+        "yoroshiku",
+        "favorably"
+       ],
+       [
+        "お",
+        "o",
+        "polite prefix"
+       ],
+       [
+        "願い",
+        "negai",
+        "request (stem of 願う)"
+       ],
+       [
+        "し",
+        "shi",
+        "do (stem of する)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      }
     ]
    },
@@ -170,61 +567,446 @@ export const tinyConversationsLessons = [
       "who": "Mika",
       "ja": "初めまして。Mikaです。よろしくお願いします。",
       "romaji": "Hajimemashite. Mika desu. Yoroshiku onegaishimasu.",
-      "en": "Nice to meet you. I'm Mika. I look forward to getting to know you."
+      "en": "Nice to meet you. I'm Mika. I look forward to getting to know you.",
+      "words": [
+       [
+        "初めまして",
+        "hajimemashite",
+        "nice to meet you"
+       ],
+       [
+        "Mika",
+        "Mika",
+        "name Mika"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "よろしく",
+        "yoroshiku",
+        "please treat me favorably"
+       ],
+       [
+        "お願いし",
+        "onegaishi",
+        "request (stem of お願いする)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "初めまして。Alexです。今日、ここに 来ました。",
       "romaji": "Hajimemashite. Alex desu. Kyou, koko ni kimashita.",
-      "en": "Nice to meet you. I'm Alex. I came here today."
+      "en": "Nice to meet you. I'm Alex. I came here today.",
+      "words": [
+       [
+        "初めまして",
+        "hajimemashite",
+        "nice to meet you"
+       ],
+       [
+        "Alex",
+        "Alex",
+        "name Alex"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "今日",
+        "kyou",
+        "today"
+       ],
+       [
+        "ここ",
+        "koko",
+        "here"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る kuru)"
+       ],
+       [
+        "ました",
+        "mashita",
+        "polite past ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "日本語を 勉強しますか。",
       "romaji": "Nihongo o benkyou shimasu ka.",
-      "en": "Do you study Japanese?"
+      "en": "Do you study Japanese?",
+      "words": [
+       [
+        "日本語",
+        "nihongo",
+        "Japanese language"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "勉強し",
+        "benkyou shi",
+        "study (stem of 勉強する)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、少し 勉強します。英語も 勉強しますか。",
       "romaji": "Hai, sukoshi benkyou shimasu. Eigo mo benkyou shimasu ka.",
-      "en": "Yes, I study a little. Do you study English too?"
+      "en": "Yes, I study a little. Do you study English too?",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "少し",
+        "sukoshi",
+        "a little"
+       ],
+       [
+        "勉強し",
+        "benkyou shi",
+        "study (stem of 勉強する)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "英語",
+        "eigo",
+        "English language"
+       ],
+       [
+        "も",
+        "mo",
+        "also marker"
+       ],
+       [
+        "勉強し",
+        "benkyou shi",
+        "study (stem of 勉強する)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "はい、大学で 英語を 勉強します。",
       "romaji": "Hai, daigaku de eigo o benkyou shimasu.",
-      "en": "Yes, I study English at university."
+      "en": "Yes, I study English at university.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "大学",
+        "daigaku",
+        "university"
+       ],
+       [
+        "で",
+        "de",
+        "location marker"
+       ],
+       [
+        "英語",
+        "eigo",
+        "English language"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "勉強し",
+        "benkyou shi",
+        "study (stem of 勉強する)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "日本語は 難しいです。でも、とても 楽しいです。",
       "romaji": "Nihongo wa muzukashii desu. Demo, totemo tanoshii desu.",
-      "en": "Japanese is difficult. But it's a lot of fun."
+      "en": "Japanese is difficult. But it's a lot of fun.",
+      "words": [
+       [
+        "日本語",
+        "nihongo",
+        "Japanese language"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "難しい",
+        "muzukashii",
+        "difficult"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "でも",
+        "demo",
+        "but"
+       ],
+       [
+        "とても",
+        "totemo",
+        "very"
+       ],
+       [
+        "楽しい",
+        "tanoshii",
+        "fun"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "英語は どうですか。",
       "romaji": "Eigo wa dou desu ka.",
-      "en": "How about English?"
+      "en": "How about English?",
+      "words": [
+       [
+        "英語",
+        "eigo",
+        "English language"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "どう",
+        "dou",
+        "how"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "英語も 楽しいです。日本語を 少し 話します。",
       "romaji": "Eigo mo tanoshii desu. Nihongo o sukoshi hanashimasu.",
-      "en": "English is fun too. I speak a little Japanese."
+      "en": "English is fun too. I speak a little Japanese.",
+      "words": [
+       [
+        "英語",
+        "eigo",
+        "English language"
+       ],
+       [
+        "も",
+        "mo",
+        "also marker"
+       ],
+       [
+        "楽しい",
+        "tanoshii",
+        "fun"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "日本語",
+        "nihongo",
+        "Japanese language"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "少し",
+        "sukoshi",
+        "a little"
+       ],
+       [
+        "話し",
+        "hanashi",
+        "speak (stem of 話す)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "じゃあ、一緒に 日本語と 英語を 話しませんか。",
       "romaji": "Jaa, issho ni Nihongo to Eigo o hanashimasen ka.",
-      "en": "Then, would you like to speak Japanese and English together?"
+      "en": "Then, would you like to speak Japanese and English together?",
+      "words": [
+       [
+        "じゃあ",
+        "jaa",
+        "well then"
+       ],
+       [
+        "一緒",
+        "issho",
+        "together"
+       ],
+       [
+        "に",
+        "ni",
+        "adverbial particle"
+       ],
+       [
+        "日本語",
+        "nihongo",
+        "Japanese language"
+       ],
+       [
+        "と",
+        "to",
+        "and marker"
+       ],
+       [
+        "英語",
+        "eigo",
+        "English language"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "話し",
+        "hanashi",
+        "speak (stem of 話す)"
+       ],
+       [
+        "ません",
+        "masen",
+        "polite negative ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、ぜひ。今日から 友達です。",
       "romaji": "Hai, zehi. Kyou kara tomodachi desu.",
-      "en": "Yes, I'd love to. We're friends starting today."
+      "en": "Yes, I'd love to. We're friends starting today.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "ぜひ",
+        "zehi",
+        "by all means"
+       ],
+       [
+        "今日",
+        "kyou",
+        "today"
+       ],
+       [
+        "から",
+        "kara",
+        "from marker"
+       ],
+       [
+        "友達",
+        "tomodachi",
+        "friend"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      }
     ]
    },
@@ -311,73 +1093,597 @@ export const tinyConversationsLessons = [
       "who": "Mika",
       "ja": "こんばんは。初めまして。私は Mika です。",
       "romaji": "Konbanwa. Hajimemashite. Watashi wa Mika desu.",
-      "en": "Good evening. Nice to meet you. I’m Mika."
+      "en": "Good evening. Nice to meet you. I’m Mika.",
+      "words": [
+       [
+        "こんばん",
+        "konban",
+        "this evening"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker; greeting particle"
+       ],
+       [
+        "初め",
+        "hajime",
+        "first time"
+       ],
+       [
+        "まして",
+        "mashite",
+        "polite connective ending"
+       ],
+       [
+        "私",
+        "watashi",
+        "I; me"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "Mika",
+        "Mika",
+        "Mika"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "こんばんは。Alex です。よろしくお願いします。",
       "romaji": "Konbanwa. Alex desu. Yoroshiku onegaishimasu.",
-      "en": "Good evening. I’m Alex. Nice to meet you."
+      "en": "Good evening. I’m Alex. Nice to meet you.",
+      "words": [
+       [
+        "こんばん",
+        "konban",
+        "this evening"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker; greeting particle"
+       ],
+       [
+        "Alex",
+        "Alex",
+        "Alex"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "よろしく",
+        "yoroshiku",
+        "please; favorably"
+       ],
+       [
+        "お",
+        "o",
+        "honorific prefix"
+       ],
+       [
+        "願い",
+        "negai",
+        "request (stem of 願う)"
+       ],
+       [
+        "し",
+        "shi",
+        "do (stem of する)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "Alex は どこから 来ましたか。",
       "romaji": "Alex wa doko kara kimashita ka.",
-      "en": "Where are you from, Alex?"
+      "en": "Where are you from, Alex?",
+      "words": [
+       [
+        "Alex",
+        "Alex",
+        "Alex"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "どこ",
+        "doko",
+        "where"
+       ],
+       [
+        "から",
+        "kara",
+        "from marker"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る)"
+       ],
+       [
+        "ました",
+        "mashita",
+        "polite past ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "外国から 来ました。町は 大きいです。",
       "romaji": "Gaikoku kara kimashita. Machi wa ookii desu.",
-      "en": "I’m from another country. My town is big."
+      "en": "I’m from another country. My town is big.",
+      "words": [
+       [
+        "外国",
+        "gaikoku",
+        "foreign country"
+       ],
+       [
+        "から",
+        "kara",
+        "from marker"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る)"
+       ],
+       [
+        "ました",
+        "mashita",
+        "polite past ending"
+       ],
+       [
+        "町",
+        "machi",
+        "town"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "大きい",
+        "ookii",
+        "big"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "そうですか。私は 京都から 来ました。",
       "romaji": "Sou desu ka. Watashi wa Kyouto kara kimashita.",
-      "en": "I see. I’m from Kyoto."
+      "en": "I see. I’m from Kyoto.",
+      "words": [
+       [
+        "そう",
+        "sou",
+        "so; that way"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ],
+       [
+        "私",
+        "watashi",
+        "I; me"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "京都",
+        "kyouto",
+        "Kyoto"
+       ],
+       [
+        "から",
+        "kara",
+        "from marker"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る)"
+       ],
+       [
+        "ました",
+        "mashita",
+        "polite past ending"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "京都は どうですか。",
       "romaji": "Kyouto wa dou desu ka.",
-      "en": "What is Kyoto like?"
+      "en": "What is Kyoto like?",
+      "words": [
+       [
+        "京都",
+        "kyouto",
+        "Kyoto"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "どう",
+        "dou",
+        "how"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "京都は とても きれいで、楽しい 町です。",
       "romaji": "Kyouto wa totemo kirei de, tanoshii machi desu.",
-      "en": "Kyoto is a very beautiful, fun town."
+      "en": "Kyoto is a very beautiful, fun town.",
+      "words": [
+       [
+        "京都",
+        "kyouto",
+        "Kyoto"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "とても",
+        "totemo",
+        "very"
+       ],
+       [
+        "きれい",
+        "kirei",
+        "beautiful; clean"
+       ],
+       [
+        "で",
+        "de",
+        "and; connective ending"
+       ],
+       [
+        "楽しい",
+        "tanoshii",
+        "fun; enjoyable"
+       ],
+       [
+        "町",
+        "machi",
+        "town"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "京都の 和食は おいしいですか。",
       "romaji": "Kyouto no washoku wa oishii desu ka.",
-      "en": "Is the Japanese food in Kyoto good?"
+      "en": "Is the Japanese food in Kyoto good?",
+      "words": [
+       [
+        "京都",
+        "kyouto",
+        "Kyoto"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "和食",
+        "washoku",
+        "Japanese cuisine"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "おいしい",
+        "oishii",
+        "delicious"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "はい、とても おいしいです。私は 和食が 好きです。",
       "romaji": "Hai, totemo oishii desu. Watashi wa washoku ga suki desu.",
-      "en": "Yes, it’s very good. I like Japanese food."
+      "en": "Yes, it’s very good. I like Japanese food.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "とても",
+        "totemo",
+        "very"
+       ],
+       [
+        "おいしい",
+        "oishii",
+        "delicious"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "私",
+        "watashi",
+        "I; me"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "和食",
+        "washoku",
+        "Japanese cuisine"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "好き",
+        "suki",
+        "liked; favorite"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "私も 和食が 好きです。京都に 行きたいです。",
       "romaji": "Watashi mo washoku ga suki desu. Kyouto ni ikitai desu.",
-      "en": "I like Japanese food too. I want to go to Kyoto."
+      "en": "I like Japanese food too. I want to go to Kyoto.",
+      "words": [
+       [
+        "私",
+        "watashi",
+        "I; me"
+       ],
+       [
+        "も",
+        "mo",
+        "also; too"
+       ],
+       [
+        "和食",
+        "washoku",
+        "Japanese cuisine"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "好き",
+        "suki",
+        "liked; favorite"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "京都",
+        "kyouto",
+        "Kyoto"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "行き",
+        "iki",
+        "go (stem of 行く)"
+       ],
+       [
+        "たい",
+        "tai",
+        "want to"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "明日 京都に 行きます。Alex も 行きますか。",
       "romaji": "Ashita Kyouto ni ikimasu. Alex mo ikimasu ka.",
-      "en": "I’m going to Kyoto tomorrow. Are you going too, Alex?"
+      "en": "I’m going to Kyoto tomorrow. Are you going too, Alex?",
+      "words": [
+       [
+        "明日",
+        "ashita",
+        "tomorrow"
+       ],
+       [
+        "京都",
+        "kyouto",
+        "Kyoto"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "行き",
+        "iki",
+        "go (stem of 行く)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "Alex",
+        "Alex",
+        "Alex"
+       ],
+       [
+        "も",
+        "mo",
+        "also; too"
+       ],
+       [
+        "行き",
+        "iki",
+        "go (stem of 行く)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、私も 明日 京都に 行きます。",
       "romaji": "Hai, watashi mo ashita Kyouto ni ikimasu.",
-      "en": "Yes, I’m going to Kyoto tomorrow too."
+      "en": "Yes, I’m going to Kyoto tomorrow too.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "私",
+        "watashi",
+        "I; me"
+       ],
+       [
+        "も",
+        "mo",
+        "also; too"
+       ],
+       [
+        "明日",
+        "ashita",
+        "tomorrow"
+       ],
+       [
+        "京都",
+        "kyouto",
+        "Kyoto"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "行き",
+        "iki",
+        "go (stem of 行く)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      }
     ]
    },
@@ -468,73 +1774,482 @@ export const tinyConversationsLessons = [
       "who": "Mika",
       "ja": "こんばんは。初めまして。Mikaです。",
       "romaji": "Konbanwa. Hajimemashite. Mika desu.",
-      "en": "Good evening. Nice to meet you. I’m Mika."
+      "en": "Good evening. Nice to meet you. I’m Mika.",
+      "words": [
+       [
+        "こんばんは",
+        "konbanwa",
+        "good evening"
+       ],
+       [
+        "初めまして",
+        "hajimemashite",
+        "nice to meet you"
+       ],
+       [
+        "Mika",
+        "Mika",
+        "Mika"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "こんばんは。初めまして。Alexです。",
       "romaji": "Konbanwa. Hajimemashite. Alex desu.",
-      "en": "Good evening. Nice to meet you. I’m Alex."
+      "en": "Good evening. Nice to meet you. I’m Alex.",
+      "words": [
+       [
+        "こんばんは",
+        "konbanwa",
+        "good evening"
+       ],
+       [
+        "初めまして",
+        "hajimemashite",
+        "nice to meet you"
+       ],
+       [
+        "Alex",
+        "Alex",
+        "Alex"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "Alexは どこの 国から 来ましたか。",
       "romaji": "Alex wa doko no kuni kara kimashita ka.",
-      "en": "What country did you come from, Alex?"
+      "en": "What country did you come from, Alex?",
+      "words": [
+       [
+        "Alex",
+        "Alex",
+        "Alex"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "どこ",
+        "doko",
+        "where"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "国",
+        "kuni",
+        "country"
+       ],
+       [
+        "から",
+        "kara",
+        "from"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る kuru)"
+       ],
+       [
+        "ました",
+        "mashita",
+        "polite past verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "私は 外国から 来ました。Mikaは？",
       "romaji": "Watashi wa gaikoku kara kimashita. Mika wa?",
-      "en": "I came from abroad. How about you, Mika?"
+      "en": "I came from abroad. How about you, Mika?",
+      "words": [
+       [
+        "私",
+        "watashi",
+        "I"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "外国",
+        "gaikoku",
+        "foreign country"
+       ],
+       [
+        "から",
+        "kara",
+        "from"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る kuru)"
+       ],
+       [
+        "ました",
+        "mashita",
+        "polite past verb ending"
+       ],
+       [
+        "Mika",
+        "Mika",
+        "Mika"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "私は 日本から 来ました。",
       "romaji": "Watashi wa Nihon kara kimashita.",
-      "en": "I came from Japan."
+      "en": "I came from Japan.",
+      "words": [
+       [
+        "私",
+        "watashi",
+        "I"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "日本",
+        "nihon",
+        "Japan"
+       ],
+       [
+        "から",
+        "kara",
+        "from"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る kuru)"
+       ],
+       [
+        "ました",
+        "mashita",
+        "polite past verb ending"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "日本ですか。日本は いい 国ですね。",
       "romaji": "Nihon desu ka. Nihon wa ii kuni desu ne.",
-      "en": "Japan? Japan is a nice country."
+      "en": "Japan? Japan is a nice country.",
+      "words": [
+       [
+        "日本",
+        "nihon",
+        "Japan"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ],
+       [
+        "日本",
+        "nihon",
+        "Japan"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "いい",
+        "ii",
+        "good"
+       ],
+       [
+        "国",
+        "kuni",
+        "country"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "ね",
+        "ne",
+        "agreement-seeking particle"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "はい。日本は とても いい 国です。",
       "romaji": "Hai. Nihon wa totemo ii kuni desu.",
-      "en": "Yes. Japan is a very nice country."
+      "en": "Yes. Japan is a very nice country.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "日本",
+        "nihon",
+        "Japan"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "とても",
+        "totemo",
+        "very"
+       ],
+       [
+        "いい",
+        "ii",
+        "good"
+       ],
+       [
+        "国",
+        "kuni",
+        "country"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "パーティーは 楽しいですか。",
       "romaji": "Paatii wa tanoshii desu ka.",
-      "en": "Is the party fun?"
+      "en": "Is the party fun?",
+      "words": [
+       [
+        "パーティー",
+        "paatii",
+        "party"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "楽しい",
+        "tanoshii",
+        "fun"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "はい、とても 楽しいです。Alexは？",
       "romaji": "Hai, totemo tanoshii desu. Alex wa?",
-      "en": "Yes, it’s very fun. How about you, Alex?"
+      "en": "Yes, it’s very fun. How about you, Alex?",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "とても",
+        "totemo",
+        "very"
+       ],
+       [
+        "楽しい",
+        "tanoshii",
+        "fun"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "Alex",
+        "Alex",
+        "Alex"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい。パーティーは 好きです。",
       "romaji": "Hai. Paatii wa suki desu.",
-      "en": "Yes. I like parties."
+      "en": "Yes. I like parties.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "パーティー",
+        "paatii",
+        "party"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "好き",
+        "suki",
+        "liked / fond of"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "そうですか。よろしくお願いします。",
       "romaji": "Sou desu ka. Yoroshiku onegaishimasu.",
-      "en": "I see. It’s nice to meet you."
+      "en": "I see. It’s nice to meet you.",
+      "words": [
+       [
+        "そう",
+        "sou",
+        "so / I see"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ],
+       [
+        "よろしく",
+        "yoroshiku",
+        "please treat me favorably"
+       ],
+       [
+        "お",
+        "o",
+        "honorific prefix"
+       ],
+       [
+        "願い",
+        "negai",
+        "request (stem of 願う negau)"
+       ],
+       [
+        "し",
+        "shi",
+        "do (stem of する suru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "ありがとう。よろしくお願いします。",
       "romaji": "Arigatoo. Yoroshiku onegaishimasu.",
-      "en": "Thank you. It’s nice to meet you."
+      "en": "Thank you. It’s nice to meet you.",
+      "words": [
+       [
+        "ありがとう",
+        "arigatou",
+        "thank you"
+       ],
+       [
+        "よろしく",
+        "yoroshiku",
+        "please treat me favorably"
+       ],
+       [
+        "お",
+        "o",
+        "honorific prefix"
+       ],
+       [
+        "願い",
+        "negai",
+        "request (stem of 願う negau)"
+       ],
+       [
+        "し",
+        "shi",
+        "do (stem of する suru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      }
     ]
    },
@@ -621,67 +2336,469 @@ export const tinyConversationsLessons = [
       "who": "Mika",
       "ja": "こんにちは。最近 引っ越しましたか。",
       "romaji": "Konnichiwa. Saikin hikkoshimashita ka.",
-      "en": "Hello. Did you move in recently?"
+      "en": "Hello. Did you move in recently?",
+      "words": [
+       [
+        "こんにちは",
+        "konnichiwa",
+        "hello"
+       ],
+       [
+        "最近",
+        "saikin",
+        "recently"
+       ],
+       [
+        "引っ越し",
+        "hikkoshi",
+        "move (stem of 引っ越す)"
+       ],
+       [
+        "まし",
+        "mashi",
+        "polite past auxiliary"
+       ],
+       [
+        "た",
+        "ta",
+        "past ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、昨日 ここに 引っ越しました。",
       "romaji": "Hai, kinou koko ni hikkoshimashita.",
-      "en": "Yes, I moved in here yesterday."
+      "en": "Yes, I moved in here yesterday.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "昨日",
+        "kinou",
+        "yesterday"
+       ],
+       [
+        "ここ",
+        "koko",
+        "here"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "引っ越し",
+        "hikkoshi",
+        "move (stem of 引っ越す)"
+       ],
+       [
+        "まし",
+        "mashi",
+        "polite past auxiliary"
+       ],
+       [
+        "た",
+        "ta",
+        "past ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "私は ミカです。隣に 住んでいます。",
       "romaji": "Watashi wa Mika desu. Tonari ni sunde imasu.",
-      "en": "I’m Mika. I live next door."
+      "en": "I’m Mika. I live next door.",
+      "words": [
+       [
+        "私",
+        "watashi",
+        "I"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "ミカ",
+        "Mika",
+        "Mika"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "隣",
+        "tonari",
+        "next door"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "住んで",
+        "sunde",
+        "live (te-form of 住む)"
+       ],
+       [
+        "い",
+        "i",
+        "be (auxiliary)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "アレックスです。よろしくお願いします。",
       "romaji": "Arekkusu desu. Yoroshiku onegaishimasu.",
-      "en": "I’m Alex. Nice to meet you."
+      "en": "I’m Alex. Nice to meet you.",
+      "words": [
+       [
+        "アレックス",
+        "Arekkusu",
+        "Alex"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "よろしく",
+        "yoroshiku",
+        "please treat me favorably"
+       ],
+       [
+        "お願い",
+        "onegai",
+        "request; favor"
+       ],
+       [
+        "し",
+        "shi",
+        "do (stem of する)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "どこから 来ましたか。",
       "romaji": "Doko kara kimashita ka.",
-      "en": "Where did you come from?"
+      "en": "Where did you come from?",
+      "words": [
+       [
+        "どこ",
+        "doko",
+        "where"
+       ],
+       [
+        "から",
+        "kara",
+        "from"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る)"
+       ],
+       [
+        "まし",
+        "mashi",
+        "polite past auxiliary"
+       ],
+       [
+        "た",
+        "ta",
+        "past ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "外国から 来ました。日本語を 少し 話します。",
       "romaji": "Gaikoku kara kimashita. Nihongo o sukoshi hanashimasu.",
-      "en": "I came from another country. I speak a little Japanese."
+      "en": "I came from another country. I speak a little Japanese.",
+      "words": [
+       [
+        "外国",
+        "gaikoku",
+        "foreign country"
+       ],
+       [
+        "から",
+        "kara",
+        "from"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る)"
+       ],
+       [
+        "まし",
+        "mashi",
+        "polite past auxiliary"
+       ],
+       [
+        "た",
+        "ta",
+        "past ending"
+       ],
+       [
+        "日本語",
+        "nihongo",
+        "Japanese language"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "少し",
+        "sukoshi",
+        "a little"
+       ],
+       [
+        "話し",
+        "hanashi",
+        "speak (stem of 話す)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "この アパートは 静かです。",
       "romaji": "Kono apaato wa shizuka desu.",
-      "en": "This apartment is quiet."
+      "en": "This apartment is quiet.",
+      "words": [
+       [
+        "この",
+        "kono",
+        "this"
+       ],
+       [
+        "アパート",
+        "apaato",
+        "apartment"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "静か",
+        "shizuka",
+        "quiet"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "そうですね。とても いいです。",
       "romaji": "Sou desu ne. Totemo ii desu.",
-      "en": "That’s right. It’s very nice."
+      "en": "That’s right. It’s very nice.",
+      "words": [
+       [
+        "そう",
+        "sou",
+        "so; that way"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "ね",
+        "ne",
+        "seeking agreement"
+       ],
+       [
+        "とても",
+        "totemo",
+        "very"
+       ],
+       [
+        "いい",
+        "ii",
+        "good"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "近くに 店が あります。",
       "romaji": "Chikaku ni mise ga arimasu.",
-      "en": "There’s a store nearby."
+      "en": "There’s a store nearby.",
+      "words": [
+       [
+        "近く",
+        "chikaku",
+        "nearby"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "店",
+        "mise",
+        "shop"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "あり",
+        "ari",
+        "exist (stem of ある)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "ありがとう。店は どこですか。",
       "romaji": "Arigatou. Mise wa doko desu ka.",
-      "en": "Thank you. Where is the store?"
+      "en": "Thank you. Where is the store?",
+      "words": [
+       [
+        "ありがとう",
+        "arigatou",
+        "thank you"
+       ],
+       [
+        "店",
+        "mise",
+        "shop"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "どこ",
+        "doko",
+        "where"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "ここから 真っ直ぐ 行くと 店が あります。",
       "romaji": "Koko kara massugu iku to mise ga arimasu.",
-      "en": "Go straight from here and there’s a store."
+      "en": "Go straight from here and there’s a store.",
+      "words": [
+       [
+        "ここ",
+        "koko",
+        "here"
+       ],
+       [
+        "から",
+        "kara",
+        "from"
+       ],
+       [
+        "真っ直ぐ",
+        "massugu",
+        "straight"
+       ],
+       [
+        "行く",
+        "iku",
+        "go"
+       ],
+       [
+        "と",
+        "to",
+        "when; if"
+       ],
+       [
+        "店",
+        "mise",
+        "shop"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "あり",
+        "ari",
+        "exist (stem of ある)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      }
     ]
    },
@@ -772,73 +2889,487 @@ export const tinyConversationsLessons = [
       "who": "Mika",
       "ja": "こんにちは。 私は Mika です。",
       "romaji": "Konnichiwa. Watashi wa Mika desu.",
-      "en": "Hello. I'm Mika."
+      "en": "Hello. I'm Mika.",
+      "words": [
+       [
+        "こんにちは",
+        "konnichiwa",
+        "hello"
+       ],
+       [
+        "私",
+        "watashi",
+        "I"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "Mika",
+        "Mika",
+        "Mika"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "初めまして。 Alex です。 よろしくお願いします。",
       "romaji": "Hajimemashite. Alex desu. Yoroshiku onegaishimasu.",
-      "en": "Nice to meet you. I'm Alex. Pleased to meet you."
+      "en": "Nice to meet you. I'm Alex. Pleased to meet you.",
+      "words": [
+       [
+        "初めまして",
+        "hajimemashite",
+        "nice to meet you"
+       ],
+       [
+        "Alex",
+        "Alex",
+        "Alex"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "よろしく",
+        "yoroshiku",
+        "please treat me favorably"
+       ],
+       [
+        "お",
+        "o",
+        "honorific prefix"
+       ],
+       [
+        "願い",
+        "negai",
+        "request / wish"
+       ],
+       [
+        "し",
+        "shi",
+        "do (stem of する)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "友達から 聞きました。",
       "romaji": "Tomodachi kara kikimashita.",
-      "en": "I heard about you from our friend."
+      "en": "I heard about you from our friend.",
+      "words": [
+       [
+        "友達",
+        "tomodachi",
+        "friend"
+       ],
+       [
+        "から",
+        "kara",
+        "from marker"
+       ],
+       [
+        "聞き",
+        "kiki",
+        "hear (stem of 聞く)"
+       ],
+       [
+        "ました",
+        "mashita",
+        "polite past ending"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "私も 友達から 聞きました。",
       "romaji": "Watashi mo tomodachi kara kikimashita.",
-      "en": "I heard about you from our friend too."
+      "en": "I heard about you from our friend too.",
+      "words": [
+       [
+        "私",
+        "watashi",
+        "I"
+       ],
+       [
+        "も",
+        "mo",
+        "also marker"
+       ],
+       [
+        "友達",
+        "tomodachi",
+        "friend"
+       ],
+       [
+        "から",
+        "kara",
+        "from marker"
+       ],
+       [
+        "聞き",
+        "kiki",
+        "hear (stem of 聞く)"
+       ],
+       [
+        "ました",
+        "mashita",
+        "polite past ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "この 店の コーヒーは おいしいですか。",
       "romaji": "Kono mise no koohii wa oishii desu ka.",
-      "en": "Is the coffee at this shop good?"
+      "en": "Is the coffee at this shop good?",
+      "words": [
+       [
+        "この",
+        "kono",
+        "this"
+       ],
+       [
+        "店",
+        "mise",
+        "shop"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "コーヒー",
+        "koohii",
+        "coffee"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "おいしい",
+        "oishii",
+        "delicious"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、とても おいしいです。 お茶も あります。",
       "romaji": "Hai, totemo oishii desu. Ocha mo arimasu.",
-      "en": "Yes, it's very good. They have tea too."
+      "en": "Yes, it's very good. They have tea too.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "とても",
+        "totemo",
+        "very"
+       ],
+       [
+        "おいしい",
+        "oishii",
+        "delicious"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "お",
+        "o",
+        "honorific prefix"
+       ],
+       [
+        "茶",
+        "cha",
+        "tea"
+       ],
+       [
+        "も",
+        "mo",
+        "also marker"
+       ],
+       [
+        "あり",
+        "ari",
+        "exist (stem of ある)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "じゃあ、何か 飲みませんか。",
       "romaji": "Jaa, nanika nomimasen ka.",
-      "en": "Well then, would you like something to drink?"
+      "en": "Well then, would you like something to drink?",
+      "words": [
+       [
+        "じゃあ",
+        "jaa",
+        "then"
+       ],
+       [
+        "何",
+        "nani",
+        "what"
+       ],
+       [
+        "か",
+        "ka",
+        "indefinite marker"
+       ],
+       [
+        "飲み",
+        "nomi",
+        "drink (stem of 飲む)"
+       ],
+       [
+        "ません",
+        "masen",
+        "polite negative ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "いいですね。 私は お茶を 飲みます。",
       "romaji": "Ii desu ne. Watashi wa ocha o nomimasu.",
-      "en": "Sounds good. I'll have tea."
+      "en": "Sounds good. I'll have tea.",
+      "words": [
+       [
+        "いい",
+        "ii",
+        "good"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "ね",
+        "ne",
+        "agreement-seeking ending"
+       ],
+       [
+        "私",
+        "watashi",
+        "I"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "お",
+        "o",
+        "honorific prefix"
+       ],
+       [
+        "茶",
+        "cha",
+        "tea"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "飲み",
+        "nomi",
+        "drink (stem of 飲む)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "お茶が 好きですか。",
       "romaji": "Ocha ga suki desu ka.",
-      "en": "Do you like tea?"
+      "en": "Do you like tea?",
+      "words": [
+       [
+        "お",
+        "o",
+        "honorific prefix"
+       ],
+       [
+        "茶",
+        "cha",
+        "tea"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "好き",
+        "suki",
+        "liked / fond"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、好きです。 コーヒーも 好きです。",
       "romaji": "Hai, suki desu. Koohii mo suki desu.",
-      "en": "Yes, I do. I like coffee too."
+      "en": "Yes, I do. I like coffee too.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "好き",
+        "suki",
+        "liked / fond"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "コーヒー",
+        "koohii",
+        "coffee"
+       ],
+       [
+        "も",
+        "mo",
+        "also marker"
+       ],
+       [
+        "好き",
+        "suki",
+        "liked / fond"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "そうですか。 一緒に 飲みましょう。",
       "romaji": "Sou desu ka. Issho ni nomimashou.",
-      "en": "I see. Let's have a drink together."
+      "en": "I see. Let's have a drink together.",
+      "words": [
+       [
+        "そう",
+        "sou",
+        "so"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ],
+       [
+        "一緒",
+        "issho",
+        "together"
+       ],
+       [
+        "に",
+        "ni",
+        "together marker"
+       ],
+       [
+        "飲み",
+        "nomi",
+        "drink (stem of 飲む)"
+       ],
+       [
+        "ましょう",
+        "mashou",
+        "polite suggestion ending"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい。 ありがとう。",
       "romaji": "Hai. Arigatou.",
-      "en": "Sure. Thanks."
+      "en": "Sure. Thanks.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "ありがとう",
+        "arigatou",
+        "thank you"
+       ]
+      ]
      }
     ]
    },
@@ -929,73 +3460,532 @@ export const tinyConversationsLessons = [
       "who": "Mika",
       "ja": "こんにちは。初めまして。",
       "romaji": "Konnichiwa. Hajimemashite.",
-      "en": "Hello. Nice to meet you."
+      "en": "Hello. Nice to meet you.",
+      "words": [
+       [
+        "こんにちは",
+        "konnichiwa",
+        "hello"
+       ],
+       [
+        "初め",
+        "hajime",
+        "first time"
+       ],
+       [
+        "まして",
+        "mashite",
+        "polite connective ending"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "こんにちは。初めまして。",
       "romaji": "Konnichiwa. Hajimemashite.",
-      "en": "Hello. Nice to meet you."
+      "en": "Hello. Nice to meet you.",
+      "words": [
+       [
+        "こんにちは",
+        "konnichiwa",
+        "hello"
+       ],
+       [
+        "初め",
+        "hajime",
+        "first time"
+       ],
+       [
+        "まして",
+        "mashite",
+        "polite connective ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "私は Mika です。名前は 何 ですか。",
       "romaji": "Watashi wa Mika desu. Namae wa nan desu ka.",
-      "en": "I’m Mika. What is your name?"
+      "en": "I’m Mika. What is your name?",
+      "words": [
+       [
+        "私",
+        "watashi",
+        "I"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "Mika",
+        "Mika",
+        "person's name"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "名前",
+        "namae",
+        "name"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "何",
+        "nani",
+        "what"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "Alex です。よろしくお願いします。",
       "romaji": "Alex desu. Yoroshiku onegaishimasu.",
-      "en": "I’m Alex. Nice to meet you."
+      "en": "I’m Alex. Nice to meet you.",
+      "words": [
+       [
+        "Alex",
+        "Alex",
+        "person's name"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "よろしく",
+        "yoroshiku",
+        "please / favorably"
+       ],
+       [
+        "お",
+        "o",
+        "honorific prefix"
+       ],
+       [
+        "願い",
+        "negai",
+        "wish (stem)"
+       ],
+       [
+        "し",
+        "shi",
+        "do (stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "仕事は 何 ですか。",
       "romaji": "Shigoto wa nan desu ka.",
-      "en": "What do you do for work?"
+      "en": "What do you do for work?",
+      "words": [
+       [
+        "仕事",
+        "shigoto",
+        "work / job"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "何",
+        "nani",
+        "what"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "私は 会社の 社員 です。会社で 働いています。",
       "romaji": "Watashi wa kaisha no shain desu. Kaisha de hataraite imasu.",
-      "en": "I’m a company employee. I work at a company."
+      "en": "I’m a company employee. I work at a company.",
+      "words": [
+       [
+        "私",
+        "watashi",
+        "I"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "会社",
+        "kaisha",
+        "company"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "社員",
+        "shain",
+        "company employee"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "会社",
+        "kaisha",
+        "company"
+       ],
+       [
+        "で",
+        "de",
+        "location of action marker"
+       ],
+       [
+        "働い",
+        "hatarai",
+        "work (te-form stem)"
+       ],
+       [
+        "て",
+        "te",
+        "connective ending"
+       ],
+       [
+        "い",
+        "i",
+        "be (continuous stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "そうですか。私は 学校の 先生 です。",
       "romaji": "Sou desu ka. Watashi wa gakkou no sensei desu.",
-      "en": "I see. I’m a teacher at a school."
+      "en": "I see. I’m a teacher at a school.",
+      "words": [
+       [
+        "そう",
+        "sou",
+        "so"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ],
+       [
+        "私",
+        "watashi",
+        "I"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "学校",
+        "gakkou",
+        "school"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "先生",
+        "sensei",
+        "teacher"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "先生の 仕事は 忙しい ですか。",
       "romaji": "Sensei no shigoto wa isogashii desu ka.",
-      "en": "Is a teacher’s job busy?"
+      "en": "Is a teacher’s job busy?",
+      "words": [
+       [
+        "先生",
+        "sensei",
+        "teacher"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "仕事",
+        "shigoto",
+        "work / job"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "忙し",
+        "isogashi",
+        "busy (adjective stem)"
+       ],
+       [
+        "い",
+        "i",
+        "adjective ending"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "はい、でも とても 楽しい です。",
       "romaji": "Hai, demo totemo tanoshii desu.",
-      "en": "Yes, but it’s very fun."
+      "en": "Yes, but it’s very fun.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "でも",
+        "demo",
+        "but"
+       ],
+       [
+        "とても",
+        "totemo",
+        "very"
+       ],
+       [
+        "楽し",
+        "tanosh",
+        "fun (adjective stem)"
+       ],
+       [
+        "い",
+        "i",
+        "adjective ending"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "いいですね。私も 仕事が 好き です。",
       "romaji": "Ii desu ne. Watashi mo shigoto ga suki desu.",
-      "en": "That’s nice. I like my job too."
+      "en": "That’s nice. I like my job too.",
+      "words": [
+       [
+        "いい",
+        "ii",
+        "good"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "ね",
+        "ne",
+        "agreement-seeking particle"
+       ],
+       [
+        "私",
+        "watashi",
+        "I"
+       ],
+       [
+        "も",
+        "mo",
+        "also particle"
+       ],
+       [
+        "仕事",
+        "shigoto",
+        "work / job"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "好き",
+        "suki",
+        "like / fond of"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "今日 ここで 話せて 嬉しい です。",
       "romaji": "Kyou koko de hanasete ureshii desu.",
-      "en": "I’m happy we could talk here today."
+      "en": "I’m happy we could talk here today.",
+      "words": [
+       [
+        "今日",
+        "kyou",
+        "today"
+       ],
+       [
+        "ここ",
+        "koko",
+        "here"
+       ],
+       [
+        "で",
+        "de",
+        "location of action marker"
+       ],
+       [
+        "話せ",
+        "hanase",
+        "can speak (stem)"
+       ],
+       [
+        "て",
+        "te",
+        "connective ending"
+       ],
+       [
+        "嬉し",
+        "ureshi",
+        "happy (adjective stem)"
+       ],
+       [
+        "い",
+        "i",
+        "adjective ending"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "私も 嬉しい です。また 話しましょう。",
       "romaji": "Watashi mo ureshii desu. Mata hanashimashou.",
-      "en": "I’m happy too. Let’s talk again."
+      "en": "I’m happy too. Let’s talk again.",
+      "words": [
+       [
+        "私",
+        "watashi",
+        "I"
+       ],
+       [
+        "も",
+        "mo",
+        "also particle"
+       ],
+       [
+        "嬉し",
+        "ureshi",
+        "happy (adjective stem)"
+       ],
+       [
+        "い",
+        "i",
+        "adjective ending"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "また",
+        "mata",
+        "again"
+       ],
+       [
+        "話し",
+        "hanashi",
+        "speak (stem)"
+       ],
+       [
+        "ましょう",
+        "mashou",
+        "let's (polite ending)"
+       ]
+      ]
      }
     ]
    },
@@ -1086,73 +4076,487 @@ export const tinyConversationsLessons = [
       "who": "Mika",
       "ja": "こんにちは。ここに いつ 来ましたか。",
       "romaji": "Konnichiwa. Koko ni itsu kimashita ka?",
-      "en": "Hello. When did you come here?"
+      "en": "Hello. When did you come here?",
+      "words": [
+       [
+        "こんにちは",
+        "konnichiwa",
+        "hello"
+       ],
+       [
+        "ここ",
+        "koko",
+        "here"
+       ],
+       [
+        "に",
+        "ni",
+        "location marker"
+       ],
+       [
+        "いつ",
+        "itsu",
+        "when"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る kuru)"
+       ],
+       [
+        "ました",
+        "mashita",
+        "polite past verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "三時間 前に 来ました。あなたは？",
       "romaji": "San-jikan mae ni kimashita. Anata wa?",
-      "en": "I came three hours ago. How about you?"
+      "en": "I came three hours ago. How about you?",
+      "words": [
+       [
+        "三",
+        "san",
+        "three"
+       ],
+       [
+        "時間",
+        "jikan",
+        "hours; time"
+       ],
+       [
+        "前",
+        "mae",
+        "before; ago"
+       ],
+       [
+        "に",
+        "ni",
+        "time marker"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る kuru)"
+       ],
+       [
+        "ました",
+        "mashita",
+        "polite past verb ending"
+       ],
+       [
+        "あなた",
+        "anata",
+        "you"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "私は 今日の 朝に 来ました。",
       "romaji": "Watashi wa kyou no asa ni kimashita.",
-      "en": "I came this morning."
+      "en": "I came this morning.",
+      "words": [
+       [
+        "私",
+        "watashi",
+        "I; me"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "今日",
+        "kyou",
+        "today"
+       ],
+       [
+        "の",
+        "no",
+        "possessive particle ('s, of)"
+       ],
+       [
+        "朝",
+        "asa",
+        "morning"
+       ],
+       [
+        "に",
+        "ni",
+        "time marker"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る kuru)"
+       ],
+       [
+        "ました",
+        "mashita",
+        "polite past verb ending"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "そうですか。公園は いいですね。",
       "romaji": "Sou desu ka. Kouen wa ii desu ne.",
-      "en": "I see. The park is nice."
+      "en": "I see. The park is nice.",
+      "words": [
+       [
+        "そう",
+        "sou",
+        "so; that way"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ],
+       [
+        "公園",
+        "kouen",
+        "park"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "いい",
+        "ii",
+        "good"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "ね",
+        "ne",
+        "agreement-seeking particle"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "はい。ここは 静かで、気持ちが いいです。",
       "romaji": "Hai. Koko wa shizuka de, kimochi ga ii desu.",
-      "en": "Yes. It’s quiet here, and it feels nice."
+      "en": "Yes. It’s quiet here, and it feels nice.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "ここ",
+        "koko",
+        "here"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "静か",
+        "shizuka",
+        "quiet"
+       ],
+       [
+        "で",
+        "de",
+        "connective form marker"
+       ],
+       [
+        "気持ち",
+        "kimochi",
+        "feeling"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "いい",
+        "ii",
+        "good"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "公園に よく 来ますか。",
       "romaji": "Kouen ni yoku kimasu ka?",
-      "en": "Do you come to the park often?"
+      "en": "Do you come to the park often?",
+      "words": [
+       [
+        "公園",
+        "kouen",
+        "park"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location marker"
+       ],
+       [
+        "よく",
+        "yoku",
+        "often"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る kuru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "いいえ。今日 来ました。",
       "romaji": "Iie. Kyou kimashita.",
-      "en": "No. I came today."
+      "en": "No. I came today.",
+      "words": [
+       [
+        "いいえ",
+        "iie",
+        "no"
+       ],
+       [
+        "今日",
+        "kyou",
+        "today"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る kuru)"
+       ],
+       [
+        "ました",
+        "mashita",
+        "polite past verb ending"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "私も 今日 来ました。",
       "romaji": "Watashi mo kyou kimashita.",
-      "en": "I came today too."
+      "en": "I came today too.",
+      "words": [
+       [
+        "私",
+        "watashi",
+        "I; me"
+       ],
+       [
+        "も",
+        "mo",
+        "also; too"
+       ],
+       [
+        "今日",
+        "kyou",
+        "today"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る kuru)"
+       ],
+       [
+        "ました",
+        "mashita",
+        "polite past verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "ここは 大きいですね。",
       "romaji": "Koko wa ookii desu ne.",
-      "en": "It’s big here."
+      "en": "It’s big here.",
+      "words": [
+       [
+        "ここ",
+        "koko",
+        "here"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "大きい",
+        "ookii",
+        "big"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "ね",
+        "ne",
+        "agreement-seeking particle"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "そうですね。木が たくさん あります。",
       "romaji": "Sou desu ne. Ki ga takusan arimasu.",
-      "en": "That’s right. There are lots of trees."
+      "en": "That’s right. There are lots of trees.",
+      "words": [
+       [
+        "そう",
+        "sou",
+        "so; that way"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "ね",
+        "ne",
+        "agreement-seeking particle"
+       ],
+       [
+        "木",
+        "ki",
+        "tree"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "たくさん",
+        "takusan",
+        "many; a lot"
+       ],
+       [
+        "あり",
+        "ari",
+        "exist (stem of ある aru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "一緒に 散歩しませんか。",
       "romaji": "Issho ni sanpo shimasen ka?",
-      "en": "Would you like to take a walk together?"
+      "en": "Would you like to take a walk together?",
+      "words": [
+       [
+        "一緒",
+        "issho",
+        "together"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location marker"
+       ],
+       [
+        "散歩",
+        "sanpo",
+        "walk; stroll"
+       ],
+       [
+        "し",
+        "shi",
+        "do (stem of する suru)"
+       ],
+       [
+        "ません",
+        "masen",
+        "polite negative verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい、ぜひ。歩きましょう。",
       "romaji": "Hai, zehi. Arukimashou.",
-      "en": "Yes, gladly. Let’s walk."
+      "en": "Yes, gladly. Let’s walk.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "ぜひ",
+        "zehi",
+        "by all means"
+       ],
+       [
+        "歩き",
+        "aruki",
+        "walk (stem of 歩く aruku)"
+       ],
+       [
+        "ましょう",
+        "mashou",
+        "polite volitional ending"
+       ]
+      ]
      }
     ]
    },
@@ -1239,61 +4643,441 @@ export const tinyConversationsLessons = [
       "who": "Mika",
       "ja": "こんにちは。 趣味は 何ですか。",
       "romaji": "Konnichiwa. Shumi wa nan desu ka.",
-      "en": "Hello. What is your hobby?"
+      "en": "Hello. What is your hobby?",
+      "words": [
+       [
+        "こんにちは",
+        "konnichiwa",
+        "hello"
+       ],
+       [
+        "趣味",
+        "shumi",
+        "hobby"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "何",
+        "nani",
+        "what"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "私は 音楽が 好きです。 歌うのも 好きです。",
       "romaji": "Watashi wa ongaku ga suki desu. Utau no mo suki desu.",
-      "en": "I like music. I like singing, too."
+      "en": "I like music. I like singing, too.",
+      "words": [
+       [
+        "私",
+        "watashi",
+        "I"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "音楽",
+        "ongaku",
+        "music"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "好き",
+        "suki",
+        "liked; fond of"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "歌",
+        "uta",
+        "sing (verb stem)"
+       ],
+       [
+        "う",
+        "u",
+        "dictionary-form ending"
+       ],
+       [
+        "の",
+        "no",
+        "nominalizer"
+       ],
+       [
+        "も",
+        "mo",
+        "also"
+       ],
+       [
+        "好き",
+        "suki",
+        "liked; fond of"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "私も 音楽が 好きです。 歌うのは 楽しいですね。",
       "romaji": "Watashi mo ongaku ga suki desu. Utau no wa tanoshii desu ne.",
-      "en": "I like music, too. Singing is fun, isn't it?"
+      "en": "I like music, too. Singing is fun, isn't it?",
+      "words": [
+       [
+        "私",
+        "watashi",
+        "I"
+       ],
+       [
+        "も",
+        "mo",
+        "also"
+       ],
+       [
+        "音楽",
+        "ongaku",
+        "music"
+       ],
+       [
+        "が",
+        "ga",
+        "subject marker"
+       ],
+       [
+        "好き",
+        "suki",
+        "liked; fond of"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "歌",
+        "uta",
+        "sing (verb stem)"
+       ],
+       [
+        "う",
+        "u",
+        "dictionary-form ending"
+       ],
+       [
+        "の",
+        "no",
+        "nominalizer"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "楽しい",
+        "tanoshii",
+        "fun; enjoyable"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "ね",
+        "ne",
+        "seeking agreement"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "本当ですか。 ここで 歌いますか。",
       "romaji": "Hontou desu ka. Koko de utaimasu ka.",
-      "en": "Really? Do you sing here?"
+      "en": "Really? Do you sing here?",
+      "words": [
+       [
+        "本当",
+        "hontou",
+        "truth; really"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ],
+       [
+        "ここ",
+        "koko",
+        "here"
+       ],
+       [
+        "で",
+        "de",
+        "location of action"
+       ],
+       [
+        "歌い",
+        "utai",
+        "sing (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "はい、ここで よく 歌います。",
       "romaji": "Hai, koko de yoku utaimasu.",
-      "en": "Yes, I often sing here."
+      "en": "Yes, I often sing here.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "ここ",
+        "koko",
+        "here"
+       ],
+       [
+        "で",
+        "de",
+        "location of action"
+       ],
+       [
+        "よく",
+        "yoku",
+        "often"
+       ],
+       [
+        "歌い",
+        "utai",
+        "sing (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "週末も ここに 来ます。",
       "romaji": "Shuumatsu mo koko ni kimasu.",
-      "en": "I come here on weekends, too."
+      "en": "I come here on weekends, too.",
+      "words": [
+       [
+        "週末",
+        "shuumatsu",
+        "weekend"
+       ],
+       [
+        "も",
+        "mo",
+        "also"
+       ],
+       [
+        "ここ",
+        "koko",
+        "here"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "来",
+        "ki",
+        "come (stem of 来る kuru)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "いつも 一人で 歌いますか。",
       "romaji": "Itsumo hitori de utaimasu ka.",
-      "en": "Do you always sing alone?"
+      "en": "Do you always sing alone?",
+      "words": [
+       [
+        "いつも",
+        "itsumo",
+        "always"
+       ],
+       [
+        "一人",
+        "hitori",
+        "one person; alone"
+       ],
+       [
+        "で",
+        "de",
+        "by means of; manner"
+       ],
+       [
+        "歌い",
+        "utai",
+        "sing (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "いいえ、友達と 歌います。",
       "romaji": "Iie, tomodachi to utaimasu.",
-      "en": "No, I sing with friends."
+      "en": "No, I sing with friends.",
+      "words": [
+       [
+        "いいえ",
+        "iie",
+        "no"
+       ],
+       [
+        "友達",
+        "tomodachi",
+        "friend"
+       ],
+       [
+        "と",
+        "to",
+        "with"
+       ],
+       [
+        "歌い",
+        "utai",
+        "sing (verb stem)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "じゃあ、一緒に 歌いませんか。",
       "romaji": "Jaa, issho ni utaimasen ka.",
-      "en": "Then, would you like to sing together?"
+      "en": "Then, would you like to sing together?",
+      "words": [
+       [
+        "じゃあ",
+        "jaa",
+        "well then"
+       ],
+       [
+        "一緒",
+        "issho",
+        "together"
+       ],
+       [
+        "に",
+        "ni",
+        "direction/location/time marker"
+       ],
+       [
+        "歌い",
+        "utai",
+        "sing (verb stem)"
+       ],
+       [
+        "ません",
+        "masen",
+        "polite negative ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "ぜひ。 とても 嬉しいです。",
       "romaji": "Zehi. Totemo ureshii desu.",
-      "en": "I’d love to. I’m very happy."
+      "en": "I’d love to. I’m very happy.",
+      "words": [
+       [
+        "ぜひ",
+        "zehi",
+        "by all means"
+       ],
+       [
+        "とても",
+        "totemo",
+        "very"
+       ],
+       [
+        "嬉しい",
+        "ureshii",
+        "happy; glad"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      }
     ]
    },
@@ -1384,61 +5168,436 @@ export const tinyConversationsLessons = [
       "who": "Mika",
       "ja": "こんにちは、 Alex。 駅で 会いましたね。",
       "romaji": "Konnichiwa, Alex. Eki de aimashita ne.",
-      "en": "Hello, Alex. We met at the station, didn’t we?"
+      "en": "Hello, Alex. We met at the station, didn’t we?",
+      "words": [
+       [
+        "こんにちは",
+        "konnichiwa",
+        "hello"
+       ],
+       [
+        "Alex",
+        "Alex",
+        "name"
+       ],
+       [
+        "駅",
+        "eki",
+        "station"
+       ],
+       [
+        "で",
+        "de",
+        "location marker ('at')"
+       ],
+       [
+        "会い",
+        "ai",
+        "meet (stem of 会う)"
+       ],
+       [
+        "ました",
+        "mashita",
+        "polite past ending"
+       ],
+       [
+        "ね",
+        "ne",
+        "seeking agreement"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "こんにちは、 Mika。 今日、会えて 嬉しい です。",
       "romaji": "Konnichiwa, Mika. Kyou, aete ureshii desu.",
-      "en": "Hello, Mika. I’m happy we met today."
+      "en": "Hello, Mika. I’m happy we met today.",
+      "words": [
+       [
+        "こんにちは",
+        "konnichiwa",
+        "hello"
+       ],
+       [
+        "Mika",
+        "Mika",
+        "name"
+       ],
+       [
+        "今日",
+        "kyou",
+        "today"
+       ],
+       [
+        "会え",
+        "ae",
+        "can meet (stem of 会える)"
+       ],
+       [
+        "て",
+        "te",
+        "te-form connective"
+       ],
+       [
+        "嬉しい",
+        "ureshii",
+        "glad"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "今日 は 楽しかった です。 どこへ 行きますか。",
       "romaji": "Kyou wa tanoshikatta desu. Doko e ikimasu ka.",
-      "en": "Today was fun. Where are you going?"
+      "en": "Today was fun. Where are you going?",
+      "words": [
+       [
+        "今日",
+        "kyou",
+        "today"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "楽しかった",
+        "tanoshikatta",
+        "was fun"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "どこ",
+        "doko",
+        "where"
+       ],
+       [
+        "へ",
+        "e",
+        "direction marker"
+       ],
+       [
+        "行き",
+        "iki",
+        "go (stem of 行く)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "家へ 帰ります。 あなた は どこへ 行きますか。",
       "romaji": "Ie e kaerimasu. Anata wa doko e ikimasu ka.",
-      "en": "I’m going home. Where are you going?"
+      "en": "I’m going home. Where are you going?",
+      "words": [
+       [
+        "家",
+        "ie",
+        "home"
+       ],
+       [
+        "へ",
+        "e",
+        "direction marker"
+       ],
+       [
+        "帰り",
+        "kaeri",
+        "return (stem of 帰る)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "あなた",
+        "anata",
+        "you"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "どこ",
+        "doko",
+        "where"
+       ],
+       [
+        "へ",
+        "e",
+        "direction marker"
+       ],
+       [
+        "行き",
+        "iki",
+        "go (stem of 行く)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "私 も 家へ 帰ります。 今日 は いい 天気 です ね。",
       "romaji": "Watashi mo ie e kaerimasu. Kyou wa ii tenki desu ne.",
-      "en": "I’m going home too. The weather is nice today, isn’t it?"
+      "en": "I’m going home too. The weather is nice today, isn’t it?",
+      "words": [
+       [
+        "私",
+        "watashi",
+        "I"
+       ],
+       [
+        "も",
+        "mo",
+        "also marker"
+       ],
+       [
+        "家",
+        "ie",
+        "home"
+       ],
+       [
+        "へ",
+        "e",
+        "direction marker"
+       ],
+       [
+        "帰り",
+        "kaeri",
+        "return (stem of 帰る)"
+       ],
+       [
+        "ます",
+        "masu",
+        "polite verb ending"
+       ],
+       [
+        "今日",
+        "kyou",
+        "today"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "いい",
+        "ii",
+        "good"
+       ],
+       [
+        "天気",
+        "tenki",
+        "weather"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "ね",
+        "ne",
+        "seeking agreement"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "そう です ね。 また 会いましょう。",
       "romaji": "Sou desu ne. Mata aimashou.",
-      "en": "That’s right. Let’s meet again."
+      "en": "That’s right. Let’s meet again.",
+      "words": [
+       [
+        "そう",
+        "sou",
+        "so"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "ね",
+        "ne",
+        "seeking agreement"
+       ],
+       [
+        "また",
+        "mata",
+        "again"
+       ],
+       [
+        "会い",
+        "ai",
+        "meet (stem of 会う)"
+       ],
+       [
+        "ましょう",
+        "mashou",
+        "polite volitional ending"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "はい。 来週、駅で 会いませんか。",
       "romaji": "Hai. Raishuu, eki de aimasen ka.",
-      "en": "Yes. Would you like to meet at the station next week?"
+      "en": "Yes. Would you like to meet at the station next week?",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "来週",
+        "raishuu",
+        "next week"
+       ],
+       [
+        "駅",
+        "eki",
+        "station"
+       ],
+       [
+        "で",
+        "de",
+        "location marker ('at')"
+       ],
+       [
+        "会い",
+        "ai",
+        "meet (stem of 会う)"
+       ],
+       [
+        "ません",
+        "masen",
+        "polite negative ending"
+       ],
+       [
+        "か",
+        "ka",
+        "question marker"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "もちろん。 来週 は 大丈夫 です。",
       "romaji": "Mochiron. Raishuu wa daijoubu desu.",
-      "en": "Of course. Next week works for me."
+      "en": "Of course. Next week works for me.",
+      "words": [
+       [
+        "もちろん",
+        "mochiron",
+        "of course"
+       ],
+       [
+        "来週",
+        "raishuu",
+        "next week"
+       ],
+       [
+        "は",
+        "wa",
+        "topic marker"
+       ],
+       [
+        "大丈夫",
+        "daijoubu",
+        "all right"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ]
+      ]
      },
      {
       "who": "Mika",
       "ja": "よかった です。 じゃあ、また 来週。",
       "romaji": "Yokatta desu. Jaa, mata raishuu.",
-      "en": "Great. See you next week, then."
+      "en": "Great. See you next week, then.",
+      "words": [
+       [
+        "よかった",
+        "yokatta",
+        "was good"
+       ],
+       [
+        "です",
+        "desu",
+        "is / am / are (polite)"
+       ],
+       [
+        "じゃあ",
+        "jaa",
+        "then"
+       ],
+       [
+        "また",
+        "mata",
+        "again"
+       ],
+       [
+        "来週",
+        "raishuu",
+        "next week"
+       ]
+      ]
      },
      {
       "who": "Alex",
       "ja": "はい。 さようなら。",
       "romaji": "Hai. Sayounara.",
-      "en": "Yes. Goodbye."
+      "en": "Yes. Goodbye.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "さようなら",
+        "sayounara",
+        "goodbye"
+       ]
+      ]
      }
     ]
    },

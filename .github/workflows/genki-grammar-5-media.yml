@@ -1,0 +1,53 @@
+name: Genki grammar chapter 5 media
+
+# (Second run after fixing two recap lines.) Makes the audio and videos for the chapter 5 lessons, removes the stale old-numbered と and が files, rebuilds the pages and commits to this branch. Nothing is deployed from here.
+on:
+  push:
+    branches: [genki-grammar-5b]
+    paths: [".github/workflows/genki-grammar-5-media.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  media:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-noto-cjk
+          pip install edge-tts numpy
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Check the course loads
+        run: node -e "import('./data/courses.js').then(m=>console.log(m.courses.map(c=>c.id+':'+c.lessons.length).join(',')))"
+      - name: Make the audio (this course only)
+        run: node video-tools/make-audio.mjs genki-1-grammar
+      - name: Make the new videos
+        run: |
+          node video-tools/make-videos.mjs genki-1-grammar i-adjectives
+          node video-tools/make-videos.mjs genki-1-grammar na-adjectives
+          node video-tools/make-videos.mjs genki-1-grammar adjective-noun
+          node video-tools/make-videos.mjs genki-1-grammar i-adj-negative
+          node video-tools/make-videos.mjs genki-1-grammar na-adj-negative
+          node video-tools/make-videos.mjs genki-1-grammar i-adj-past
+          node video-tools/make-videos.mjs genki-1-grammar na-adj-past
+          node video-tools/make-videos.mjs genki-1-grammar suki-kirai
+      - name: Rebuild the course pages
+        run: node build-courses.mjs
+      - name: Commit the results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A audio videos data courses courses.html index.html
+          git commit -m "Genki I Grammar chapter 5: videos, audio and pages" -m "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>" -m "Claude-Session: https://claude.ai/code/session_014EjoYbw5ddSSeKMRSp8i3L" || echo "Nothing to commit"
+          git push

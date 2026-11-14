@@ -102,6 +102,7 @@ export const courses = [
     ],
     audience: "Complete beginners who can read hiragana and want every grammar point explained in depth.",
     videoCredit: "Voices: Mika and Alex (neural text-to-speech); teacher narration: neural text-to-speech.",
+    pdf: "/downloads/genki-1-grammar-workbook.pdf",
     lessons: genki1Grammar
   },
   {

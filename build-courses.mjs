@@ -4,12 +4,15 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { courses } from "./data/courses.js";
+import { applyWbwOverlay } from "./wbw-overlay.js";
 import { SITE } from "./data/site.js";
 import { esc } from "./lesson-view.js";
 import { catalogPage } from "./catalog-view.js";
 import { lessonHTML, overviewHTML, courseCard, lessonPath, coursePath } from "./course-view.js";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
+// Word-by-word breakdowns for older courses (optional overlay file).
+try { const st = applyWbwOverlay(courses, JSON.parse(fs.readFileSync(path.join(root, "data", "wbw-ja.json"), "utf8"))); console.log(`Word-by-word overlay: ${st.applied} applied to ${st.lessons} lessons, ${st.mismatched} mismatched, ${st.missing} not present`); } catch (e) { if (e.code !== "ENOENT") throw e; }
 const write = (rel, text) => { const p = path.join(root, rel); fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, text); };
 
 const head = ({ title, desc, type = "article" }) => `<!doctype html>

@@ -57,3 +57,5 @@
 .wbw-w b { font-size: 1.05rem; line-height: 1.25; }
 .wbw-w i { font-style: normal; font-size: .74rem; opacity: .7; }
 .wbw-w em { font-style: normal; font-size: .76rem; line-height: 1.25; }
+
+.vocab li .wbw { grid-column: 1 / -1; }

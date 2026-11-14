@@ -26,11 +26,11 @@ export const hoursLabel = (c) => { const m = totalMinutes(c); return m >= 60 ? `
 
 const rich = (s) => esc(s).replace(/\{([^|}]+)\|([^}]+)\}/g, '<b lang="ja">$1</b>');
 const hlJa = (ja, h) => (h ? esc(ja).split(esc(h)).join(`<mark>${esc(h)}</mark>`) : esc(ja));
-const teachEx = (e) => `<li><div class="ja" lang="ja">${e.bad ? "✗ " : ""}${hlJa(e.ja, e.hl)}${e.bad ? "" : hearBtn(clip(e.ja, "mika", 0.85), e.ja)}</div><div class="ro">${esc(e.ro)}</div><div class="en">${esc(e.en)}</div></li>`;
+const teachEx = (e) => `<li><div class="ja" lang="ja">${e.bad ? "✗ " : ""}${hlJa(e.ja, e.hl)}${e.bad ? "" : hearBtn(clip(e.ja, "mika", 0.85), e.ja)}</div><div class="ro">${esc(e.ro)}</div><div class="en">${esc(e.en)}</div>${wbw(e.words)}</li>`;
 const wbw = (w) => (Array.isArray(w) && w.length) ? `<details class="wbw"><summary>Word by word</summary><div class="wbw-row" lang="ja">${w.map((t) => `<span class="wbw-w"><b>${esc(t[0])}</b><i>${esc(t[1])}</i><em>${esc(t[2])}</em></span>`).join("")}</div></details>` : "";
-const teachStep = (st) => `<div class="gitem"><h3>${esc(st.head)}</h3>${[].concat(st.say).map((p) => `<p>${rich(p)}</p>`).join("")}${(st.show || []).length ? `<ul class="dialogue">${st.show.map(teachEx).join("")}</ul>` : ""}${st.try ? `<details><summary>Try it: ${rich(st.try.q)}</summary><p lang="ja">${hlJa(st.try.ja, st.try.hl)}${hearBtn(clip(st.try.ja, "mika", 0.85), st.try.ja)}</p><p>${esc(st.try.ro)}: ${esc(st.try.en)}</p></details>` : ""}</div>`;
+const teachStep = (st) => `<div class="gitem"><h3>${esc(st.head)}</h3>${[].concat(st.say).map((p) => `<p>${rich(p)}</p>`).join("")}${(st.show || []).length ? `<ul class="dialogue">${st.show.map(teachEx).join("")}</ul>` : ""}${st.try ? `<details><summary>Try it: ${rich(st.try.q)}</summary><p lang="ja">${hlJa(st.try.ja, st.try.hl)}${hearBtn(clip(st.try.ja, "mika", 0.85), st.try.ja)}</p><p>${esc(st.try.ro)}: ${esc(st.try.en)}</p>${wbw(st.try.words)}</details>` : ""}</div>`;
 
-const wordRow = (v) => `<li><span class="vja" lang="ja">${esc(v.ja)}${v.kana ? ` <small>(${esc(v.kana)})</small>` : ""}${hearBtn(clip(v.ja, "mika", 0.85), v.ja)}</span><span class="vro">${esc(v.romaji)}</span><span class="ven">${esc(v.en)}</span></li>`;
+const wordRow = (v) => `<li><span class="vja" lang="ja">${esc(v.ja)}${v.kana ? ` <small>(${esc(v.kana)})</small>` : ""}${hearBtn(clip(v.ja, "mika", 0.85), v.ja)}</span><span class="vro">${esc(v.romaji)}</span><span class="ven">${esc(v.en)}</span>${wbw(v.words)}</li>`;
 
 function blockHTML(b, i) {
   const h = (t) => (t ? `<h2 id="b${i}-h">${esc(t)}</h2>` : "");

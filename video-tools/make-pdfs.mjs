@@ -82,6 +82,10 @@ function block(b) {
     case "points": return h + b.items.map((g) => `<div class="pt"><b>${esc(g.title)}</b>${esc(g.body)}</div>`).join("");
     case "tips": return `${h}<ul class="tips">${b.items.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>`;
     case "dialogue": return `${h}<table class="dl">${b.lines.map((d) => `<tr><td class="w">${esc(d.who)}</td><td><div class="ja">${esc(d.ja)}</div><div class="r" style="color:#8a2f43;font-weight:700">${esc(d.romaji)}</div><div>${esc(d.en)}</div></td></tr>`).join("")}</table>`;
+    case "teach": {
+      const plain = (t) => String(t).replace(/\{([^|}]*)\|([^}]*)\}/g, "$1 ($2)");
+      return h + b.steps.map((st) => `<div class="pt"><b>${esc(st.head)}${st.key ? ` — ${esc(st.key)}` : ""}</b>${(st.say || []).map((p) => `<p>${esc(plain(p))}</p>`).join("")}${(st.show || []).length ? `<table class="dl">${st.show.map((e) => `<tr><td class="ja">${esc(e.ja)}</td><td><div class="r" style="color:#8a2f43;font-weight:700">${esc(e.ro)}</div><div>${esc(e.en)}</div></td></tr>`).join("")}</table>` : ""}${st.try ? `<p><b style="display:inline">Try it:</b> ${esc(st.try.q)} <i>Answer: ${esc(st.try.ja)} (${esc(st.try.ro)}) — ${esc(st.try.en)}</i></p>` : ""}</div>`).join("");
+    }
     default: return "";
   }
 }

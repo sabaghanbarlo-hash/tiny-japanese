@@ -7220,7 +7220,49 @@ export const tiny1000Lessons = [
       "who": "Alex",
       "ja": "はい、ミルクを たくさん 入れてください。",
       "romaji": "Hai, miruku o takusan irete kudasai.",
-      "en": "Yes, please add a lot of milk."
+      "en": "Yes, please add a lot of milk.",
+      "words": [
+       [
+        "はい",
+        "hai",
+        "yes"
+       ],
+       [
+        "、",
+        "",
+        ""
+       ],
+       [
+        "ミルク",
+        "miruku",
+        "milk"
+       ],
+       [
+        "を",
+        "o",
+        "object marker"
+       ],
+       [
+        "たくさん",
+        "takusan",
+        "a lot"
+       ],
+       [
+        "入れて",
+        "irete",
+        "put in"
+       ],
+       [
+        "ください",
+        "kudasai",
+        "please"
+       ],
+       [
+        "。",
+        "",
+        ""
+       ]
+      ]
      },
      {
       "who": "Mika",

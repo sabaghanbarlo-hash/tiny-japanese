@@ -42,8 +42,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A downloads data courses courses.html index.html videos
-          git commit -m "Add Genki I Grammar workbook PDF, remove old Companion videos and workbook
-
-Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
-Claude-Session: https://claude.ai/code/session_014EjoYbw5ddSSeKMRSp8i3L" || echo "Nothing to commit"
+          git commit -m "Add Genki I Grammar workbook PDF, remove old Companion videos and workbook" -m "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>" -m "Claude-Session: https://claude.ai/code/session_014EjoYbw5ddSSeKMRSp8i3L" || echo "Nothing to commit"
           git push

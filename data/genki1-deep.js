@@ -14,6 +14,8 @@ import { mashou, mashouka, temoii, tewaIkenai } from "./genki1-ch6b.js";
 import { teimasu, tekara } from "./genki1-ch6c.js";
 import { plainPresent, plainNegative, plainPast } from "./genki1-ch7a.js";
 import { plainNoun, plainAdj, toOmou, toIu } from "./genki1-ch7b.js";
+import { tai, tari, kotoGaAru } from "./genki1-ch8a.js";
+import { yori, dochira, ichiban } from "./genki1-ch8b.js";
 const L = (who, ja, romaji, en) => ({ who, ja, romaji, en });
 const W = (ja, romaji, en) => ({ ja, kana: "", romaji, en });
 const E = (ja, ro, en, hl, bad) => ({ ja, ro, en, hl, bad: !!bad });
@@ -408,5 +410,6 @@ export const genki1Grammar = [
   pick("particle-to", 31), pick("particle-ga", 32),
   iAdj, naAdj, adjNoun, iNegative, naNegative, iPast, naPast, sukiKirai,
   teIchidan, teGodan, teKudasai, mashou, mashouka, temoii, tewaIkenai, teimasu, tekara,
-  plainPresent, plainNegative, plainPast, plainNoun, plainAdj, toOmou, toIu
+  plainPresent, plainNegative, plainPast, plainNoun, plainAdj, toOmou, toIu,
+  tai, tari, kotoGaAru, yori, dochira, ichiban
 ];

@@ -22,6 +22,8 @@ import { hoshii, tsumori, sugiru } from "./genki1-ch10a.js";
 import { houGaIi, mouMada, karaReason } from "./genki1-ch10b.js";
 import { niIkimasu, naru, node } from "./genki1-ch11a.js";
 import { maeNi, atoDe, nanika } from "./genki1-ch11b.js";
+import { kotoDekiru, nagara, ageruMorau } from "./genki1-ch12a.js";
+import { kureru, yaList, dake } from "./genki1-ch12b.js";
 const L = (who, ja, romaji, en) => ({ who, ja, romaji, en });
 const W = (ja, romaji, en) => ({ ja, kana: "", romaji, en });
 const E = (ja, ro, en, hl, bad) => ({ ja, ro, en, hl, bad: !!bad });
@@ -420,5 +422,6 @@ export const genki1Grammar = [
   tai, tari, kotoGaAru, yori, dochira, ichiban,
   nDesu, deshou, shi, naideKudasai, nakereba, nakuteMoIi,
   hoshii, tsumori, sugiru, houGaIi, mouMada, karaReason,
-  niIkimasu, naru, node, maeNi, atoDe, nanika
+  niIkimasu, naru, node, maeNi, atoDe, nanika,
+  kotoDekiru, nagara, ageruMorau, kureru, yaList, dake
 ];

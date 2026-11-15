@@ -25,3 +25,21 @@ export function applyWbwOverlay(courses, overlay) {
   }
   return stat;
 }
+
+// Free /learn/ lessons (data/lessons.js, instagram-lessons.js): data/wbw-lessons-ja.json maps "<file>/<lesson id>" -> { "dialogue.0.@": [...], "vocab.1.@": [...], "extra.0.items.2.@": [...] }.
+export function applyLessonWbw(lessons, overlay) {
+  const stat = { applied: 0, mismatched: 0, missing: 0, lessons: 0 };
+  for (const [key, paths] of Object.entries(overlay || {})) {
+    const lesson = lessons.find((l) => l.id === key.split("/")[1]);
+    if (!lesson) { stat.missing += Object.keys(paths).length; continue; }
+    stat.lessons++;
+    for (const [p, w] of Object.entries(paths)) {
+      const segs = p.split("."); segs.pop();
+      let o = lesson; for (const s of segs) o = o?.[s];
+      if (!o || typeof o.ja !== "string") { stat.missing++; continue; }
+      if (!Array.isArray(w) || norm(w.map((t) => t[0]).join("")) !== norm(o.ja)) { stat.mismatched++; continue; }
+      if (!o.words) { o.words = w; stat.applied++; }
+    }
+  }
+  return stat;
+}

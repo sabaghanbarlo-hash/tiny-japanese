@@ -6,8 +6,11 @@ import { fileURLToPath } from "node:url";
 import { lessons } from "./data/lessons.js";
 import { SITE } from "./data/site.js";
 import { esc, lessonHTML } from "./lesson-view.js";
+import { applyLessonWbw } from "./wbw-overlay.js";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
+// Word-by-word breakdowns for the free lessons (optional overlay file).
+try { const st = applyLessonWbw(lessons, JSON.parse(fs.readFileSync(path.join(root, "data", "wbw-lessons-ja.json"), "utf8"))); console.log(`Word-by-word overlay: ${st.applied} applied to ${st.lessons} lessons, ${st.mismatched} mismatched, ${st.missing} not present`); } catch (e) { if (e.code !== "ENOENT") throw e; }
 const page = (l) => `learn/${l.id}.html`;
 const label = (l) => l.episode ? `Episode ${l.episode}` : `Lesson ${l.number}`;
 

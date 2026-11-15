@@ -24,12 +24,13 @@ const videoFiles = {
   "im-allergic-to": "lesson-17-im-allergic-to"
 };
 
+export const wbw = (w) => (Array.isArray(w) && w.length) ? `<details class="wbw"><summary>Word by word</summary><div class="wbw-row" lang="ja">${w.map((t) => `<span class="wbw-w"><b>${esc(t[0])}</b><i>${esc(t[1])}</i><em>${esc(t[2])}</em></span>`).join("")}</div></details>` : "";
 export function lessonHTML(l, prev, next, href) {
   const label = (x) => x.episode ? `Episode ${x.episode}` : `Lesson ${x.number}`;
   const videoName = videoFiles[l.id];
   const videoBlock = videoName ? `<section class="block lesson-video" aria-labelledby="video-h"><h2 id="video-h">Watch this lesson</h2><video controls playsinline preload="metadata" style="display:block;width:100%;max-width:760px;border-radius:16px;background:#f6f0e8" poster="https://raw.githubusercontent.com/sabaghanbarlo-hash/tiny-japanese-video/main/output/${videoName}.jpg"><source src="https://raw.githubusercontent.com/sabaghanbarlo-hash/tiny-japanese-video/main/output/${videoName}.mp4" type="video/mp4">Your browser does not support embedded video. <a href="https://raw.githubusercontent.com/sabaghanbarlo-hash/tiny-japanese-video/main/output/${videoName}.mp4">Watch the lesson video</a>.</video><p class="muted">Watch Mika and Alex act out the dialogue, then practise the phrases below.</p></section>` : "";
-  const vocab = l.vocab.map((v) => `<li><span class="vja" lang="ja">${esc(v.ja)}${v.kana ? ` <small>(${esc(v.kana)})</small>` : ""}</span><span class="vro">${esc(v.romaji)}</span><span class="ven">${esc(v.en)}</span></li>`).join("");
-  const extra = (l.extra || []).map((x) => `<section class="block optional" aria-labelledby="ex-h"><h2 id="ex-h">${esc(x.title)}</h2><p class="muted">Optional. These lines are not part of the video dialogue.</p><ul class="dialogue">${x.items.map((d) => `<li><div class="ja" lang="ja">${esc(d.ja)}</div><div class="ro">${esc(d.romaji)}</div><div class="en">${esc(d.en)}</div></li>`).join("")}</ul></section>`).join("");
+  const vocab = l.vocab.map((v) => `<li><span class="vja" lang="ja">${esc(v.ja)}${v.kana ? ` <small>(${esc(v.kana)})</small>` : ""}</span><span class="vro">${esc(v.romaji)}</span><span class="ven">${esc(v.en)}</span>${wbw(v.words)}</li>`).join("");
+  const extra = (l.extra || []).map((x) => `<section class="block optional" aria-labelledby="ex-h"><h2 id="ex-h">${esc(x.title)}</h2><p class="muted">Optional. These lines are not part of the video dialogue.</p><ul class="dialogue">${x.items.map((d) => `<li><div class="ja" lang="ja">${esc(d.ja)}</div><div class="ro">${esc(d.romaji)}</div><div class="en">${esc(d.en)}</div>${wbw(d.words)}</li>`).join("")}</ul></section>`).join("");
   return `
 <nav class="crumbs" aria-label="Breadcrumb"><a href="${href({ lessons: true })}">← All lessons</a></nav>
 <header class="lesson-head"><p class="num">${label(l)} · ${esc(l.topic)}</p><h1 class="h1-md">${esc(l.title)}</h1>
@@ -37,7 +38,7 @@ export function lessonHTML(l, prev, next, href) {
 
 ${videoBlock}\n\n<section class="block" aria-labelledby="dlg-h"><h2 id="dlg-h">Dialogue</h2>
 <div class="toggles" role="group" aria-label="Show or hide help"><label><input type="checkbox" id="t-ro" checked> Romaji</label><label><input type="checkbox" id="t-en" checked> English</label></div>
-<ul class="dialogue" id="dialogue">${l.dialogue.map((d) => `<li><span class="who">${esc(d.who)}</span><div class="ja" lang="ja">${esc(d.ja)}</div><div class="ro">${esc(d.romaji)}</div><div class="en">${esc(d.en)}</div></li>`).join("")}</ul>
+<ul class="dialogue" id="dialogue">${l.dialogue.map((d) => `<li><span class="who">${esc(d.who)}</span><div class="ja" lang="ja">${esc(d.ja)}</div><div class="ro">${esc(d.romaji)}</div><div class="en">${esc(d.en)}</div>${wbw(d.words)}</li>`).join("")}</ul>
 <p class="muted">Tip: untick Romaji and English to test yourself, then tick them to check.</p></section>
 
 <section class="block" aria-labelledby="voc-h"><h2 id="voc-h">Vocabulary</h2><ul class="vocab">${vocab}</ul></section>

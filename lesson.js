@@ -2,6 +2,7 @@
 import { lessons } from "./data/lessons.js";
 import "./app.js";
 import { lessonHTML, wireLesson } from "./lesson-view.js";
+import { applyLessonWbw } from "./wbw-overlay.js";
 const $ = (s, r = document) => r.querySelector(s);
 const root = $("#lesson-root");
 const id = new URLSearchParams(location.search).get("id");
@@ -19,6 +20,7 @@ if (i < 0) {
   setMeta('meta[property="og:title"]', document.title); setMeta('meta[name="twitter:title"]', document.title);
   setMeta('meta[property="og:description"]', desc); setMeta('meta[name="twitter:description"]', desc);
   const href = (x) => (x.lessons ? "lessons.html" : `lesson.html?id=${encodeURIComponent(x.id)}`);
+  try { const ov = await fetch("data/wbw-lessons-ja.json").then((r) => (r.ok ? r.json() : {})); applyLessonWbw([l], ov); } catch { /* word-by-word is optional */ }
   root.innerHTML = lessonHTML(l, prev, next, href);
   wireLesson(root, l);
 }

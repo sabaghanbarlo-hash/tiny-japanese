@@ -1,0 +1,23 @@
+/* Kana video library */
+.kv-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:1.4rem 0 1rem}
+.kv-tabs button{font:inherit;font-weight:800;cursor:pointer;border:2px solid var(--rose);background:#fff;color:var(--rose);border-radius:99px;padding:10px 22px}
+.kv-tabs button small{font-weight:600;opacity:.8;margin-left:4px}
+.kv-tabs button[aria-selected="true"]{background:var(--rose);color:#fff}
+.kv-group{background:#fff;border-radius:22px;box-shadow:0 14px 34px #2d2a2e12;padding:6px 20px 18px;margin:0 0 16px}
+.kv-group summary{cursor:pointer;padding:14px 0;font-size:1.05rem;list-style-position:inside}
+.kv-group summary span{color:var(--soft);font-weight:600;font-size:.9rem;margin-left:6px}
+.kv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:10px}
+.kv-card{font:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:96px;border:0;border-radius:18px;background:var(--cream);color:var(--ink);padding:10px 6px;transition:transform .12s,box-shadow .12s}
+.kv-card:hover{transform:translateY(-2px);box-shadow:0 8px 18px #b8475c26}
+.kv-card:focus-visible,.kv-tabs button:focus-visible,.kv-close:focus-visible{outline:3px solid var(--rose);outline-offset:2px}
+.kv-kana{font:900 2rem/1.1 "Noto Serif JP","Noto Sans JP",serif}
+.kv-rom{font-size:.82rem;font-weight:700;color:var(--soft)}
+.kv-credit{margin-top:1.6rem;font-size:.85rem}
+.kv-dialog{border:0;border-radius:22px;padding:14px 14px 16px;width:min(94vw,980px);max-height:94vh;background:#fff;color:var(--ink)}
+.kv-dialog::backdrop{background:#14101acc}
+.kv-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.kv-head strong{font-size:1.1rem}
+.kv-close{font:inherit;font-size:1.6rem;line-height:1;cursor:pointer;border:0;border-radius:99px;width:42px;height:42px;background:var(--cream);color:var(--ink)}
+.kv-dialog video{display:block;width:100%;max-height:70vh;background:#000;border-radius:14px}
+.kv-nav{display:flex;justify-content:space-between;gap:10px;margin-top:12px}
+@media (prefers-reduced-motion:reduce){.kv-card{transition:none}}

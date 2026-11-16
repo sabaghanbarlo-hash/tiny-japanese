@@ -1072,3 +1072,11 @@ export const SCRIPTS = {
   ]
  }
 };
+
+// Which course unlocks which videos, and which videos stay free: the characters taught in each course's free preview lessons
+// (Hiragana Starter lessons 1-3 = vowels, K row, S row; Katakana Starter lessons 1-3 = vowels + K row, S + T rows, N + H rows).
+export const COURSE_OF = { hiragana: "hiragana-starter", katakana: "katakana-starter" };
+export const FREE = {
+  hiragana: "a i u e o ka ki ku ke ko sa shi su se so".split(" "),
+  katakana: "a i u e o ka ki ku ke ko sa shi su se so ta chi tsu te to na ni nu ne no ha hi fu he ho".split(" ")
+};

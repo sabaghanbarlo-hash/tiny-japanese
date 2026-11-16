@@ -1,0 +1,26 @@
+name: Import premium kana videos
+
+# Copies the premium (non-free) kana videos into the private premium storage and registers them as premium lessons.
+# Runs when this file is pushed to the kana-premium branch. Needs the ADMIN_SECRET repository secret.
+on:
+  push:
+    branches: [kana-premium]
+    paths: [".github/workflows/kana-premium-import.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Import
+        env:
+          ADMIN_SECRET: ${{ secrets.ADMIN_SECRET }}
+          ONLY: "hira-ma"
+        run: node tools/kana-premium-import.mjs

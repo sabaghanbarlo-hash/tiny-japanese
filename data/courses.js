@@ -15,6 +15,7 @@ import { tinyConversationsLessons } from "./course-tiny-conversations.js";
 export const courses = [
   {
     id: "hiragana-starter",
+    kanaVideos: "/kana-videos.html#hiragana",
     videoCredit: "Stroke order animation uses KanjiVG data (CC BY-SA 3.0, kanjivg.tagaini.net). Voices: Mika and Alex (neural text-to-speech).",
     title: "Hiragana Starter",
     tagline: "Read every hiragana character in 11 short lessons.",
@@ -33,6 +34,7 @@ export const courses = [
   },
   {
     id: "katakana-starter",
+    kanaVideos: "/kana-videos.html#katakana",
     videoCredit: "Stroke order animation uses KanjiVG data (CC BY-SA 3.0, kanjivg.tagaini.net). Voices: Mika and Alex (neural text-to-speech).",
     title: "Katakana Starter",
     tagline: "Read every katakana character in 11 short lessons.",

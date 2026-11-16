@@ -107,7 +107,7 @@ export function overviewHTML(c, SITE) {
 <ul class="meta"><li>${c.lessons.length} lessons</li><li>${hoursLabel(c)}</li><li>${esc(c.topic)}</li></ul>
 <p class="lead">${esc(c.description)}</p>
 ${priceBox(c, SITE)}
-<p class="cta-row"><a class="btn" id="start-btn" href="${lessonPath(c, c.lessons[0])}">Start lesson 1</a>${c.pdf ? ` <a class="btn ghost" href="${esc(c.pdf)}" download>Download the workbook (PDF)</a>` : ""}${c.premium ? ` <a class="btn ghost" id="pdf-btn" href="#" download hidden>Download the workbook (PDF)</a>` : ""}</p>
+<p class="cta-row"><a class="btn" id="start-btn" href="${lessonPath(c, c.lessons[0])}">Start lesson 1</a>${c.kanaVideos ? ` <a class="btn ghost" href="${esc(c.kanaVideos)}">Watch every character video</a>` : ""}${c.pdf ? ` <a class="btn ghost" href="${esc(c.pdf)}" download>Download the workbook (PDF)</a>` : ""}${c.premium ? ` <a class="btn ghost" id="pdf-btn" href="#" download hidden>Download the workbook (PDF)</a>` : ""}</p>
 <p class="progress" id="progress" role="status" hidden></p></header>
 <section class="block" aria-labelledby="out-h"><h2 id="out-h">What you'll learn</h2><ul class="notes">${c.outcomes.map((o) => `<li>${esc(o)}</li>`).join("")}</ul><p class="muted"><strong>Who it's for:</strong> ${esc(c.audience)}</p></section>
 <section class="block" aria-labelledby="syl-h"><h2 id="syl-h">Lessons</h2>

@@ -45,3 +45,9 @@ Each course has free lessons (the first 3, `freeLessons` in `data/premium-config
 
 ## Dashboard (visits, sign-ups, sales)
 `dashboard.html` (private, noindex; open it and enter the same admin secret as `/admin.html`) shows page views, sign-ups with their emails, and purchase requests / access codes for **both** sites. It talks to the Supabase edge function `dashboard`, which checks the secret through the `premium` function and reads `auth.users`, `purchase_requests`, `codes`, `code_devices` and `page_views` with the service role (nothing secret is in this repo). Every page sends one anonymous page view from `track.js` (imported by `auth.js`): site, path and referring site name only, no cookies and no IP address stored. Bots are filtered by user agent.
+
+## Kana video library (free for now)
+
+- `kana-videos.html` + `kana-videos.js` + `kana-videos.css` + `data/kana-videos.js`: one short video per hiragana and katakana character (208 in total: basic, voiced, combined), opened from a tile grid. Linked from `resources.html` and from the two kana course overview pages (`kanaVideos` in `data/courses.js`).
+- The videos are not stored in this repo (about 1.3 GB). `VIDEO_BASE` in `data/kana-videos.js` points at a tagged copy in the `tiny-japanese-youtube` repo (tag `kana-videos-v1`, folder `docs/videos`) served by the jsDelivr CDN. Each video has `<prefix>-<key>.mp4` and `.thumbnail.png` (prefix `hira` or `kata`).
+- **Making them premium later:** these are public URLs today, so anyone with a link can watch. To charge, upload them to the private Supabase `premium` bucket, change `VIDEO_BASE` and the player in `kana-videos.js` to fetch a signed URL after the access-code check (as `premium-core.js` does for the course lessons), and retire the public tag. Stroke order data is from KanjiVG (CC BY-SA 3.0): keep the credit line.

@@ -1,8 +1,8 @@
 // Kana video lessons: one short video per character (hiragana + katakana). Free for now.
 // The videos are plain public files today. To make them premium later, change VIDEO_BASE (e.g. to the private
 // storage) and add the access check in kana-videos.js (see how premium-core.js unlocks the paid lessons).
-// VIDEO_BASE serves a fixed, tagged copy of the tiny-japanese-youtube repo (tag kana-videos-v1) through the jsDelivr CDN.
-export const VIDEO_BASE = "https://cdn.jsdelivr.net/gh/sabaghanbarlo-hash/tiny-japanese-youtube@kana-videos-v1/docs/videos/";
+// VIDEO_BASE is the GitHub Pages site of the tiny-kana-videos repo (files in /videos, see that repo's README).
+export const VIDEO_BASE = "https://sabaghanbarlo-hash.github.io/tiny-kana-videos/videos/";
 export const CREDIT = "Stroke order animation uses KanjiVG data (CC BY-SA 3.0, kanjivg.tagaini.net). Voices: Mika and Alex (neural text-to-speech).";
 export const GROUPS = [
   { id: "basic", title: "Basic sounds", note: "The 46 core characters, in the order you learn them: vowels first, then each row." },

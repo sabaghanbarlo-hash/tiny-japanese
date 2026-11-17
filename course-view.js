@@ -3,12 +3,19 @@ import { esc } from "./lesson-view.js";
 import { audioMap } from "./data/audio-map.js";
 import { PREMIUM } from "./data/premium-config.js";
 import { lockPanelHTML } from "./premium-core.js";
+import { FUNNEL, checkoutUrl } from "./data/funnel-config.js";
+import { signupHTML } from "./funnel-core.js";
 
 // "Hear it" clips (made by video-tools/make-audio.mjs). A button only appears when its clip exists.
 const kata = (t) => [...t].map((c) => (c >= "\u3041" && c <= "\u3096" ? String.fromCharCode(c.charCodeAt(0) + 0x60) : c)).join("");
 const clip = (text, voice, speed) => { const id = audioMap[`${voice}|${speed}|${text}`]; return id ? `/audio/${id}.mp3` : ""; };
 const SPEAKER = `<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`;
 const hearBtn = (src, label) => (src ? `<button type="button" class="hear" data-audio="${src}" aria-label="Hear ${esc(label)}">${SPEAKER}</button>` : "");
+
+// Buy link for one course: its own link if it has one, else the shared checkout/pay link (see data/funnel-config.js).
+const buyLink = (c) => checkoutUrl(c.checkoutUrl || c.payUrl);
+// What the paywall shows under "What the full course includes".
+const includesOf = (c) => [`${c.lessons.length} lessons${c.noVideo ? " with full notes, dialogues and quizzes" : " with videos and quizzes"}`, ...c.outcomes.slice(0, 3)];
 
 export const lessonPath = (c, l) => `/courses/${c.id}/${String(l.number).padStart(2, "0")}-${l.id}.html`;
 export const coursePath = (c) => `/courses/${c.id}/index.html`;
@@ -75,7 +82,7 @@ ${l.blocks.map(blockHTML).join("\n")}
 <section class="block done-box" aria-label="Finish this lesson"><button type="button" class="btn ghost" id="complete" aria-pressed="false" hidden>Mark lesson as complete</button></section>`;
 }
 
-export function lessonHTML(c, l, prev, next) {
+export function lessonHTML(c, l, prev, next, funnelEnd = "") {
   const n = c.lessons.length;
   const head = `
 <nav class="crumbs" aria-label="Breadcrumb"><a href="${coursePath(c)}">← ${esc(c.title)}</a></nav>
@@ -88,13 +95,13 @@ export function lessonHTML(c, l, prev, next) {
  ${next ? `<a class="btn" href="${lessonPath(c, next)}">${next.number}. ${esc(next.title)} →</a>` : `<a class="btn" href="/courses.html">All courses →</a>`}
 </nav>`;
   const body = l.premium
-    ? `<div id="premium-slot" data-premium-lesson>${lockPanelHTML({ course: c.id, courseTitle: c.title, price: c.price, payUrl: c.payUrl || PREMIUM.payUrl, site: PREMIUM.site, heading: "This lesson is part of the full course", intro: `Lessons 1 to ${(c.freeLessons ?? PREMIUM.freeLessons)} are free. Unlock the rest of ${c.title} ${c.noVideo ? "to read this lesson and practise the quiz." : "to watch this lesson, practise the quiz and get the PDF workbook."}` })}</div>`
-    : lessonBody(c, l);
+    ? `<div id="premium-slot" data-premium-lesson>${lockPanelHTML({ course: c.id, courseTitle: c.title, price: c.price, payUrl: buyLink(c), site: PREMIUM.site, includes: includesOf(c), extraHTML: signupHTML({ where: `pw-${c.id}`, course: c.id }), heading: "This lesson is part of the full course", intro: `Lessons 1 to ${(c.freeLessons ?? PREMIUM.freeLessons)} are free. Unlock the rest of ${c.title} ${c.noVideo ? "to read this lesson and practise the quiz." : "to watch this lesson, practise the quiz and get the PDF workbook."}` })}</div>`
+    : lessonBody(c, l) + funnelEnd;
   return head + body + nav;
 }
 
 export function priceBox(c, SITE) {
-  if (c.premium) return `<div class="price-box"><p class="tag now">Free preview: lessons 1 to ${(c.freeLessons ?? PREMIUM.freeLessons)}</p><div data-pm-panel>${lockPanelHTML({ course: c.id, courseTitle: c.title, price: c.price, payUrl: c.payUrl || PREMIUM.payUrl, site: PREMIUM.site, heading: "Unlock the full course", intro: `The first ${(c.freeLessons ?? PREMIUM.freeLessons)} lessons are free to try. The full course adds ${c.lessons.length - (c.freeLessons ?? PREMIUM.freeLessons)} more lessons with ${c.noVideo ? "full notes, dialogues and quizzes" : "videos, quizzes and the PDF workbook"}.` })}</div><p class="pm-unlocked" data-pm-unlocked hidden><span class="pm-unlocked-tag">✓ Premium unlocked</span> ${c.noVideo ? "All lessons are open on this device." : "All lessons, videos and the workbook are open on this device."}</p></div>`;
+  if (c.premium) return `<div class="price-box"><p class="tag now">Free preview: lessons 1 to ${(c.freeLessons ?? PREMIUM.freeLessons)}</p><div data-pm-panel>${lockPanelHTML({ course: c.id, courseTitle: c.title, price: c.price, payUrl: buyLink(c), site: PREMIUM.site, includes: includesOf(c), extraHTML: signupHTML({ where: `ov-${c.id}`, course: c.id }), heading: "Unlock the full course", intro: `The first ${(c.freeLessons ?? PREMIUM.freeLessons)} lessons are free to try. The full course adds ${c.lessons.length - (c.freeLessons ?? PREMIUM.freeLessons)} more lessons with ${c.noVideo ? "full notes, dialogues and quizzes" : "videos, quizzes and the PDF workbook"}.` })}</div><p class="pm-unlocked" data-pm-unlocked hidden><span class="pm-unlocked-tag">✓ Premium unlocked</span> ${c.noVideo ? "All lessons are open on this device." : "All lessons, videos and the workbook are open on this device."}</p></div>`;
   if (c.buyUrl) return `<div class="price-box"><p class="price">${esc(c.price || "")}</p><a class="btn" href="${esc(c.buyUrl)}" rel="noopener">Buy this course</a></div>`;
   return `<div class="price-box"><p class="tag now">Free while we launch</p><p class="muted">Everything in this course is open to read right now, no account needed.</p></div>`;
 }

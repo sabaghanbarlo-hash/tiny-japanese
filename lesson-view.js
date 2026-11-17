@@ -25,7 +25,7 @@ const videoFiles = {
 };
 
 export const wbw = (w) => (Array.isArray(w) && w.length) ? `<details class="wbw"><summary>Word by word</summary><div class="wbw-row" lang="ja">${w.map((t) => `<span class="wbw-w"><b>${esc(t[0])}</b><i>${esc(t[1])}</i><em>${esc(t[2])}</em></span>`).join("")}</div></details>` : "";
-export function lessonHTML(l, prev, next, href) {
+export function lessonHTML(l, prev, next, href, funnelEnd = "") {
   const label = (x) => x.episode ? `Episode ${x.episode}` : `Lesson ${x.number}`;
   const videoName = videoFiles[l.id];
   const videoBlock = videoName ? `<section class="block lesson-video" aria-labelledby="video-h"><h2 id="video-h">Watch this lesson</h2><video controls playsinline preload="metadata" style="display:block;width:100%;max-width:760px;border-radius:16px;background:#f6f0e8" poster="https://raw.githubusercontent.com/sabaghanbarlo-hash/tiny-japanese-video/main/output/${videoName}.jpg"><source src="https://raw.githubusercontent.com/sabaghanbarlo-hash/tiny-japanese-video/main/output/${videoName}.mp4" type="video/mp4">Your browser does not support embedded video. <a href="https://raw.githubusercontent.com/sabaghanbarlo-hash/tiny-japanese-video/main/output/${videoName}.mp4">Watch the lesson video</a>.</video><p class="muted">Watch Mika and Alex act out the dialogue, then practise the phrases below.</p></section>` : "";
@@ -49,7 +49,7 @@ ${l.notes && l.notes.length ? `<section class="block" aria-labelledby="nt-h"><h2
 ${extra}
 
 <section class="block" aria-labelledby="qz-h"><h2 id="qz-h">Quick quiz</h2><p class="muted">Tap an answer to see feedback straight away. Your score is only kept while this page is open.</p><div id="quiz">${staticQuiz(l)}</div></section>
-
+${funnelEnd}
 <nav class="lesson-nav" aria-label="Lesson navigation">
  ${prev ? `<a class="btn ghost" href="${href(prev)}">← ${label(prev)}: ${esc(prev.title)}</a>` : "<span></span>"}
  <a class="btn ghost" href="${href({ lessons: true })}">All lessons</a>

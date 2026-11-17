@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Nunito:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700&display=swap">
 <link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="funnel.css">
 <script>document.documentElement.classList.add('js')</script>
 <title>Tiny Japanese | Learn Japanese One Tiny Step at a Time</title>
 <meta name="description" content="Learn beginner Japanese through short conversations, practical vocabulary, simple grammar explanations, and free interactive lessons with Mika and Alex.">
@@ -77,9 +78,9 @@
   <aside class="premium" aria-labelledby="pr-h">
    <svg class="crown" viewBox="0 0 36 34" aria-hidden="true"><path d="M3 28L1 8l10 8 7-12 7 12 10-8-2 20z" stroke-linejoin="round"/><rect x="3" y="28" width="30" height="4" rx="2"/></svg>
    <div class="copy">
-    <h3 id="pr-h">Premium Courses<br>Coming Soon!</h3>
-    <p>Take your Japanese to the next level with our premium courses.</p>
-    <a class="stay" href="#contact">Stay Tuned <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" style="display:inline;vertical-align:-1px"><path d="M12 20.5s-8.5-5.2-8.5-11.2A4.6 4.6 0 0112 6.8a4.6 4.6 0 018.5 2.5c0 6-8.5 11.2-8.5 11.2z" fill="#fff"/></svg></a>
+    <h3 id="pr-h">Starter Bundle<br>Only $12</h3>
+    <p>Learn hiragana, then speak your first Japanese.</p>
+    <a class="stay" href="#start-here">See the bundle <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" style="display:inline;vertical-align:-1px"><path d="M12 20.5s-8.5-5.2-8.5-11.2A4.6 4.6 0 0112 6.8a4.6 4.6 0 018.5 2.5c0 6-8.5 11.2-8.5 11.2z" fill="#fff"/></svg></a>
    </div>
   </aside>
  </section>
@@ -96,6 +97,31 @@
  </div>
 </div>
 
+<!-- funnel:start -->
+<section class="fn-home" id="start-here" aria-label="Start here">
+ <section class="fn-hero" aria-labelledby="fn-h-home">
+ <p class="fn-kicker">Start here</p>
+ <h2 id="fn-h-home">Starter Bundle</h2>
+ <p>Learn to read hiragana, then hold your first conversations in Japanese.</p>
+ <ul class="fn-includes"><li><strong>Hiragana Starter</strong>: Read every hiragana character in 11 short lessons.</li><li><strong>First Conversations</strong>: Ten everyday situations, from greetings to asking for help.</li></ul>
+ <p class="fn-price"><strong>$12</strong> one-time, no subscription <span class="fn-save">($12 instead of $21 separately)</span></p>
+ <p class="fn-actions"><a class="btn fn-big fn-buy" data-buy data-course="starter-bundle" href="https://pay.ypaylink.com/personal-link/1537/82655c22bb05b838c3eaf6e9fbf762f92862ad5a" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Get the Starter Bundle ($12)</a></p>
+ <p class="fn-code"><a href="/courses/hiragana-starter/index.html#pm-code-hiragana-starter">Already bought? Enter your code</a></p>
+ <p class="fn-refund">30-day refund: if a course isn't right for you, email us within 30 days of buying and we'll refund you in full. <a href="/about.html#refunds">Details</a></p>
+</section>
+ <form class="fn-signup" data-signup data-course="site" data-lead="/downloads/genki-1-grammar-workbook.pdf" data-lead-title="free Genki I Grammar workbook (PDF)" action="[EMAIL_FORM_ACTION_URL]" method="post">
+ <p class="fn-signup-h"><strong>Get the free Genki I Grammar workbook (PDF) and new lessons by email</strong></p>
+ <p class="fn-note">No spam. Unsubscribe any time.</p>
+ <div class="fn-row"><label class="fn-sr" for="fn-e-home">Your email</label><input id="fn-e-home" name="email" type="email" required autocomplete="email" placeholder="you@example.com"><button class="btn" type="submit">Send it to me</button></div>
+ <p class="pm-msg" data-msg role="status" aria-live="polite"></p>
+</form>
+ <details class="more-courses fn-more"><summary>More courses</summary>
+  <ul><li><a href="/courses/katakana-starter/index.html">Katakana Starter</a> <span class="fn-note">$9</span></li><li><a href="/courses/grammar-starter/index.html">Grammar Starter</a> <span class="fn-note">$12</span></li><li><a href="/courses/genki-1-grammar/index.html">Genki I Grammar, Point by Point</a> <span class="fn-note">Free</span></li><li><a href="/courses/kanji-starter/index.html">Kanji Starter</a> <span class="fn-note">$9</span></li><li><a href="/courses/travel-japanese/index.html">Travel Japanese</a> <span class="fn-note">$12</span></li><li><a href="/courses/tiny-1000/index.html">Tiny 1000</a> <span class="fn-note">$19</span></li><li><a href="/courses/tiny-conversations/index.html">Tiny Conversations</a> <span class="fn-note">$19</span></li></ul>
+  <p><a href="/courses.html">See all courses</a></p>
+ </details>
+</section>
+<!-- funnel:end -->
+
 <footer class="site-foot">
  <div class="in">
   <section id="about"><h2>About Tiny Japanese</h2>
@@ -104,7 +130,8 @@
   <section id="contact"><h2>Contact</h2>
    <p>Questions, corrections, or ideas for a future lesson? Email Saba at <a href="mailto:Sabaghanbarlo@gmail.com">Sabaghanbarlo@gmail.com</a>, or message Tiny Japanese on Instagram or YouTube.</p></section>
   <nav aria-label="Footer"><a href="index.html">Home</a><a href="courses.html">Courses</a><a href="lessons.html">Free Lessons</a><a href="tiny-words.html">Tiny Words</a><a href="resources.html">Resources</a><a data-ig href="#" target="_blank" rel="noopener" hidden>Instagram</a><a data-yt href="#" target="_blank" rel="noopener" hidden>YouTube</a></nav>
-  <p class="copy">© <span id="year">2026</span> Tiny Japanese · Small Steps. Big Dreams.</p>
+  <p class="fn-foot" style="margin:.25rem 0"><a data-email href="#" hidden></a> · <a href="/about.html">About &amp; refund policy</a></p>
+ <p class="copy">© <span id="year">2026</span> Tiny Japanese · Small Steps. Big Dreams.</p>
  </div>
 </footer>
 <script type="module" src="app.js"></script>

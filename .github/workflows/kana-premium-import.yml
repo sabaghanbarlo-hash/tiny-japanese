@@ -2,6 +2,7 @@ name: Import premium kana videos
 
 # Copies the premium (non-free) kana videos into the private premium storage and registers them as premium lessons.
 # Runs when this file is pushed to the kana-premium branch. Needs the ADMIN_SECRET repository secret.
+# Set ONLY (space-separated, e.g. "hira-ma kata-ma") to import just a few.
 on:
   push:
     branches: [kana-premium]
@@ -22,6 +23,5 @@ jobs:
       - name: Import
         env:
           ADMIN_SECRET: ${{ secrets.ADMIN_SECRET }}
-          ONLY: "hira-ma"
           RAW_BASE: "https://raw.githubusercontent.com/sabaghanbarlo-hash/tiny-kana-videos/main/videos/"
         run: node tools/kana-premium-import.mjs

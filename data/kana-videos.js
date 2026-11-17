@@ -1,8 +1,9 @@
-// Kana video lessons: one short video per character (hiragana + katakana). Free for now.
-// The videos are plain public files today. To make them premium later, change VIDEO_BASE (e.g. to the private
-// storage) and add the access check in kana-videos.js (see how premium-core.js unlocks the paid lessons).
-// VIDEO_BASE is the GitHub Pages site of the tiny-kana-videos repo (files in /videos, see that repo's README).
-export const VIDEO_BASE = "https://sabaghanbarlo-hash.github.io/tiny-kana-videos/videos/";
+// Kana video lessons: one short video per character (hiragana + katakana).
+// FREE videos (the characters taught in each course's free lessons, see FREE below) are public files on GitHub Pages: VIDEO_BASE
+// is the tiny-kana-free repo. Every other video is PREMIUM: it lives in the private premium storage and is registered as the premium
+// lesson kana-<prefix>-<key> of its course (tools/kana-premium-import.mjs); kana-videos.js asks the server for a signed link
+// after the access code is checked.
+export const VIDEO_BASE = "https://sabaghanbarlo-hash.github.io/tiny-kana-free/videos/";
 export const CREDIT = "Stroke order animation uses KanjiVG data (CC BY-SA 3.0, kanjivg.tagaini.net). Voices: Mika and Alex (neural text-to-speech).";
 export const GROUPS = [
   { id: "basic", title: "Basic sounds", note: "The 46 core characters, in the order you learn them: vowels first, then each row." },
@@ -1071,4 +1072,12 @@ export const SCRIPTS = {
    ]
   ]
  }
+};
+
+// Which course unlocks which videos, and which videos stay free: the characters taught in each course's free preview lessons
+// (Hiragana Starter lessons 1-3 = vowels, K row, S row; Katakana Starter lessons 1-3 = vowels + K row, S + T rows, N + H rows).
+export const COURSE_OF = { hiragana: "hiragana-starter", katakana: "katakana-starter" };
+export const FREE = {
+  hiragana: "a i u e o ka ki ku ke ko sa shi su se so".split(" "),
+  katakana: "a i u e o ka ki ku ke ko sa shi su se so ta chi tsu te to na ni nu ne no ha hi fu he ho".split(" ")
 };

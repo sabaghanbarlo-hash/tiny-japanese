@@ -21,3 +21,8 @@
 .kv-dialog video{display:block;width:100%;max-height:70vh;background:#000;border-radius:14px}
 .kv-nav{display:flex;justify-content:space-between;gap:10px;margin-top:12px}
 @media (prefers-reduced-motion:reduce){.kv-card{transition:none}}
+.kv-card{position:relative}
+.kv-lock-badge{position:absolute;top:6px;right:8px;font-size:.8rem;line-height:1}
+.kv-legend{margin:.2rem 0 1rem;font-size:.9rem;color:var(--soft)}
+.kv-dialog video[hidden]{display:none}
+.kv-lock{margin:0 0 6px;max-height:68vh;overflow:auto}

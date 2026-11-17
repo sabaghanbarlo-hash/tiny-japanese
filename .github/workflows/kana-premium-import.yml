@@ -23,4 +23,5 @@ jobs:
         env:
           ADMIN_SECRET: ${{ secrets.ADMIN_SECRET }}
           ONLY: "hira-ma"
+          RAW_BASE: "https://raw.githubusercontent.com/sabaghanbarlo-hash/tiny-kana-videos/main/videos/"
         run: node tools/kana-premium-import.mjs

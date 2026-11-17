@@ -4,6 +4,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { lessons } from "./data/lessons.js";
+import { courses, heroBundle } from "./data/courses.js";
+import { funnelEndHTML } from "./funnel-core.js";
 import { SITE } from "./data/site.js";
 import { esc, lessonHTML } from "./lesson-view.js";
 import { applyLessonWbw } from "./wbw-overlay.js";
@@ -32,6 +34,7 @@ const head = (l) => {
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/theme.css">
 <link rel="stylesheet" href="/lesson.css">
+<link rel="stylesheet" href="/funnel.css">
 <script>document.documentElement.classList.add('js')</script>
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
@@ -63,7 +66,7 @@ const body = (l, i) => `
  </nav>
 </header>
 <main id="main">
- <div class="wrap lesson-wrap" id="lesson-root" data-lesson="${esc(l.id)}">${lessonHTML(l, lessons[i - 1], lessons[i + 1], href)}
+ <div class="wrap lesson-wrap" id="lesson-root" data-lesson="${esc(l.id)}">${lessonHTML(l, lessons[i - 1], lessons[i + 1], href, funnelEnd)}
  </div>
 </main>
 <footer>
@@ -71,6 +74,7 @@ const body = (l, i) => `
   <div><strong>Tiny Japanese</strong><p>Learn Japanese one tiny step at a time.</p></div>
   <nav aria-label="Footer"><a href="/index.html">Home</a><a href="/courses.html">Courses</a><a href="/lessons.html">Free Lessons</a><a href="/tiny-words.html">Tiny Words</a><a href="/resources.html">Resources</a><a href="/index.html#about">About</a><a href="/index.html#contact">Contact</a><a data-ig href="#" target="_blank" rel="noopener" hidden>Instagram</a><a data-yt href="#" target="_blank" rel="noopener" hidden>YouTube</a></nav>
  </div>
+ <p class="fn-foot" style="margin:.25rem 0"><a data-email href="#" hidden></a> · <a href="/about.html">About &amp; refund policy</a></p>
  <p class="copy">© <span id="year">2026</span> Tiny Japanese</p>
 </footer>
 <script type="module" src="/lesson-static.js"></script>
@@ -78,6 +82,7 @@ const body = (l, i) => `
 </html>
 `;
 
+const funnelEnd = funnelEndHTML(heroBundle, courses, "end");
 fs.mkdirSync(path.join(root, "learn"), { recursive: true });
 lessons.forEach((l, i) => fs.writeFileSync(path.join(root, page(l)), head(l) + body(l, i)));
 

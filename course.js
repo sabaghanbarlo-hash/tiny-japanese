@@ -3,6 +3,7 @@
 import { courses } from "./data/courses.js";
 import { PREMIUM } from "./data/premium-config.js";
 import { createPremium } from "./premium-core.js";
+import { trackEvent } from "./track.js";
 import "./app.js";
 import { wireLesson, wireOverview, wireAudio } from "./course-view.js";
 
@@ -26,7 +27,9 @@ if (course) {
   if (lesson && lesson.premium) {
     const slot = root.querySelector("#premium-slot");
     pm.wireLock(slot, { courseTitle: course.title, onUnlock: async (code) => { const r = await showPremiumLesson(slot, course, lesson, code); if (!r.ok) slot.querySelector("[data-unlock] [data-msg]").textContent = pm.explain(r, course.title); } });
-    await pm.tryStored((code) => showPremiumLesson(slot, course, lesson, code));
+    // Count a paywall view only when no saved code unlocked the lesson.
+    const unlockedNow = await pm.tryStored((code) => showPremiumLesson(slot, course, lesson, code));
+    if (!unlockedNow) trackEvent("paywall_view", course.id);
   } else if (lesson) { wireLesson(root, course, lesson); wireAudio(root); }
   else {
     wireOverview(root, course);

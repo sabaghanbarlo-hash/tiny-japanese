@@ -1,6 +1,7 @@
 import { lessons } from "./data/lessons.js";
 import { SITE } from "./data/site.js";
 import "./auth.js";
+import "./funnel.js";
 const $ = (s, r = document) => r.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
@@ -21,6 +22,8 @@ if (list) {
 // Instagram links stay hidden until SITE.instagramUrl is set
 if (SITE.instagramUrl) document.querySelectorAll("[data-ig]").forEach((a) => { a.href = SITE.instagramUrl; a.hidden = false; });
 if (SITE.youtubeUrl) document.querySelectorAll("[data-yt]").forEach((a) => { a.href = SITE.youtubeUrl; a.hidden = false; });
+// Contact e-mail comes from SITE.email (data/site.js); links stay hidden while it is empty
+if (SITE.email) document.querySelectorAll("[data-email]").forEach((a) => { a.href = `mailto:${SITE.email}`; a.textContent = SITE.email; a.hidden = false; });
 const y = $("#year"); if (y) y.textContent = new Date().getFullYear();
 
 // Mobile menu

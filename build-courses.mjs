@@ -3,7 +3,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { courses } from "./data/courses.js";
+import { courses, heroBundle } from "./data/courses.js";
+import { funnelEndHTML, heroBoxHTML, signupHTML } from "./funnel-core.js";
 import { applyWbwOverlay } from "./wbw-overlay.js";
 import { SITE } from "./data/site.js";
 import { esc } from "./lesson-view.js";
@@ -30,6 +31,7 @@ const head = ({ title, desc, type = "article" }) => `<!doctype html>
 <link rel="stylesheet" href="/lesson.css">
 <link rel="stylesheet" href="/course.css">
 <link rel="stylesheet" href="/premium.css">
+<link rel="stylesheet" href="/funnel.css">
 <script>document.documentElement.classList.add('js')</script>
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
@@ -67,6 +69,7 @@ ${inner}
   <div><strong>Tiny Japanese</strong><p>Learn Japanese one tiny step at a time.</p></div>
   <nav aria-label="Footer"><a href="/index.html">Home</a><a href="/courses.html">Courses</a><a href="/lessons.html">Free Lessons</a><a href="/tiny-words.html">Tiny Words</a><a href="/resources.html">Resources</a><a href="/index.html#about">About</a><a href="/index.html#contact">Contact</a><a data-ig href="#" target="_blank" rel="noopener" hidden>Instagram</a><a data-yt href="#" target="_blank" rel="noopener" hidden>YouTube</a></nav>
  </div>
+ <p class="fn-foot" style="margin:.25rem 0"><a data-email href="#" hidden></a> · <a href="/about.html">About &amp; refund policy</a></p>
  <p class="copy">© <span id="year">2026</span> Tiny Japanese</p>
 </footer>
 <script type="module" src="/course.js"></script>
@@ -76,6 +79,7 @@ ${inner}
 
 // ---- Course overview and lesson pages ------------------------------------------------------------
 let pages = 0;
+const funnelEnd = funnelEndHTML(heroBundle, courses, "end");
 for (const c of courses) {
   write(coursePath(c).slice(1), shell(
     { title: `${c.title}: ${c.tagline} | Tiny Japanese`, desc: `${c.description}`.slice(0, 300), type: "website" },
@@ -85,7 +89,7 @@ for (const c of courses) {
     const title = `${c.title}, Lesson ${l.number}: ${l.title} | Tiny Japanese`;
     write(lessonPath(c, l).slice(1), shell(
       { title, desc: `${l.summary} Part of the ${c.title} course on Tiny Japanese.` },
-      `<div class="wrap lesson-wrap" id="course-root" data-course="${esc(c.id)}" data-lesson="${esc(l.id)}">${lessonHTML(c, l, c.lessons[i - 1], c.lessons[i + 1])}\n</div>`));
+      `<div class="wrap lesson-wrap" id="course-root" data-course="${esc(c.id)}" data-lesson="${esc(l.id)}">${lessonHTML(c, l, c.lessons[i - 1], c.lessons[i + 1], funnelEnd)}\n</div>`));
     pages++;
   });
 }
@@ -93,19 +97,23 @@ for (const c of courses) {
 // ---- Course catalog (page: catalog-view.js, look: catalog.css, per-card settings: data/catalog.js) ----------
 write("courses.html", catalogPage(courses, SITE));
 
-// ---- Course cards on the home page ---------------------------------------------------------------
+// ---- Hero product, e-mail sign-up and collapsed "More courses" on the home page --------------------
+// index.html keeps a <!-- funnel:start --> ... <!-- funnel:end --> block (between the page stage and the footer) that this script rewrites.
 const homePath = path.join(root, "index.html");
 let home = fs.readFileSync(homePath, "utf8");
-const block = `<!-- courses:start -->
-<section class="wrap" id="courses" aria-labelledby="co-h">
- <h2 id="co-h">Courses</h2>
- <p class="lead">Follow a topic from start to finish: learn to read hiragana and katakana, then hold your first conversations.</p>
- <div class="lesson-grid">${courses.map((c) => courseCard(c, "h3")).join("")}</div>
- <p class="more"><a class="btn ghost" href="/courses.html">See all courses</a></p>
+const others = courses.filter((c) => !heroBundle.includes.includes(c.id));
+const block = `<!-- funnel:start -->
+<section class="fn-home" id="start-here" aria-label="Start here">
+ ${heroBoxHTML(heroBundle, courses, { where: "home" })}
+ ${signupHTML({ where: "home" })}
+ <details class="more-courses fn-more"><summary>More courses</summary>
+  <ul>${others.map((c) => `<li><a href="${coursePath(c)}">${esc(c.title)}</a> <span class="fn-note">${esc(c.price || "Free")}</span></li>`).join("")}</ul>
+  <p><a href="/courses.html">See all courses</a></p>
+ </details>
 </section>
-<!-- courses:end -->`;
-if (home.includes("<!-- courses:start -->")) home = home.replace(/<!-- courses:start -->[\s\S]*?<!-- courses:end -->/, block);
-else home = home.replace(/(<section class="band" id="about")/, `${block}\n\n$1`);
+<!-- funnel:end -->`;
+if (!home.includes("<!-- funnel:start -->")) throw new Error("index.html is missing the <!-- funnel:start --> block");
+home = home.replace(/<!-- funnel:start -->[\s\S]*?<!-- funnel:end -->/, () => block);
 fs.writeFileSync(homePath, home);
 
-console.log(`Built ${pages} course pages in courses/, courses.html, and refreshed the home page course cards.`);
+console.log(`Built ${pages} course pages in courses/, courses.html, and refreshed the home page funnel block.`);

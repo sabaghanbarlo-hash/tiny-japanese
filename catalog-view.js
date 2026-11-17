@@ -3,6 +3,8 @@
 import { esc } from "./lesson-view.js";
 import { coursePath } from "./course-view.js";
 import { catalog, catalogDefault } from "./data/catalog.js";
+import { heroBundle } from "./data/courses.js";
+import { heroBoxHTML } from "./funnel-core.js";
 
 const TITLE = "Japanese Courses for Beginners | Tiny Japanese";
 const DESC = "Step-by-step beginner Japanese courses: learn to read hiragana and katakana, and hold your first real conversations. Short lessons with vocabulary, grammar and quizzes.";
@@ -27,6 +29,7 @@ const head = `<!doctype html>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Nunito:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@900&display=swap">
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/catalog.css">
+<link rel="stylesheet" href="/funnel.css">
 <script>document.documentElement.classList.add('js')</script>
 <title>${TITLE}</title>
 <meta name="description" content="${esc(DESC)}">
@@ -100,7 +103,9 @@ export function catalogPage(courses, SITE) {
 ${nav}
 <main id="main">
 ${hero}
-<div class="cc-grid" id="course-cards">${courses.map(catalogCard).join("")}</div>
+<div class="wrap fn-catalog">${heroBoxHTML(heroBundle, courses, { where: "catalog" })}</div>
+<details class="more-courses fn-more fn-more-catalog" id="more-courses"><summary>More courses</summary>
+<div class="cc-grid" id="course-cards">${courses.map(catalogCard).join("")}</div></details>
 ${cta}
 </main>
 <footer>
@@ -108,6 +113,7 @@ ${cta}
   <div><strong>Tiny Japanese</strong><p>Learn Japanese one tiny step at a time.</p></div>
   <nav aria-label="Footer"><a href="/index.html">Home</a><a href="/courses.html">Courses</a><a href="/lessons.html">Free Lessons</a><a href="/tiny-words.html">Tiny Words</a><a href="/resources.html">Resources</a><a href="/index.html#about">About</a><a href="/index.html#contact">Contact</a><a data-ig href="#" target="_blank" rel="noopener" hidden>Instagram</a><a data-yt href="#" target="_blank" rel="noopener" hidden>YouTube</a></nav>
  </div>
+ <p class="fn-foot" style="margin:.25rem 0"><a data-email href="#" hidden></a> · <a href="/about.html">About &amp; refund policy</a></p>
  <p class="copy">© <span id="year">2026</span> Tiny Japanese</p>
 </footer>
 <script type="module" src="/course.js"></script>

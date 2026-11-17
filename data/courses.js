@@ -184,3 +184,13 @@ export const courses = [
     lessons: tinyConversationsLessons
   }
 ];
+
+// Hero product: shown on the home page and at the end of every free lesson. It is not a course of its own (no pages are built for it):
+// it sells two existing courses together, and buyers receive an access code for each (see README, "Premium courses").
+export const heroBundle = {
+  id: "starter-bundle",
+  title: "Starter Bundle",
+  tagline: "Learn to read hiragana, then hold your first conversations in Japanese.",
+  includes: ["hiragana-starter", "first-conversations"],
+  price: "$12"
+};

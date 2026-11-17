@@ -1,0 +1,24 @@
+/* Funnel blocks: hero product, e-mail sign-up, "More courses". Works on every page; uses the site's colour variables when they exist. */
+.fn-hero,.fn-signup,.fn-more{max-width:46rem;margin:1.5rem auto;padding:1.25rem 1.25rem 1rem;border:2px solid var(--accent,#d84778);border-radius:18px;background:var(--card,#fff);color:inherit;font-family:inherit;line-height:1.45;text-align:left}
+.fn-hero h2{margin:.1rem 0 .4rem}
+.fn-kicker{margin:0;font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent,#d84778)}
+.fn-includes{padding-left:1.2rem;margin:.5rem 0}
+.fn-price{font-size:1.1rem;margin:.5rem 0}
+.fn-save,.fn-note{font-size:.9rem;opacity:.8}
+.fn-actions{margin:.75rem 0 .5rem}
+.fn-big{display:block;text-align:center;font-size:1.25rem;padding:1rem 1.25rem}
+.fn-code,.pm-have{margin:.25rem 0;font-size:.95rem;text-align:center}
+.fn-refund{margin:.5rem 0 0;font-size:.9rem;opacity:.85;text-align:center}
+.fn-signup{border-style:dashed}
+.fn-signup-h{margin:0 0 .25rem}
+.fn-row{display:flex;gap:.5rem;flex-wrap:wrap}
+.fn-row input{flex:1 1 12rem;font:inherit;padding:.65rem .8rem;border:1.5px solid #cdbfb2;border-radius:10px;min-width:0}
+.fn-sr{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fn-end{margin-top:2rem}
+.fn-more summary{cursor:pointer;font-weight:800}
+.fn-more ul{padding-left:1.2rem}
+.fn-home{padding:1rem;background:var(--blush,#fdf2f1)}
+.pm-includes{padding-left:1.2rem;margin:.25rem 0 .75rem}
+.fn-catalog{margin-bottom:1rem}
+.fn-more-catalog{max-width:none;border:0;background:transparent;padding:0}
+.fn-more-catalog>summary{max-width:46rem;margin:0 auto 1rem}

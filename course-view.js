@@ -72,14 +72,14 @@ ${video}
 ${hasDialogue ? `<div class="toggles" role="group" aria-label="Show or hide help"><label><input type="checkbox" id="t-ro" checked> Romaji</label><label><input type="checkbox" id="t-en" checked> English</label></div>` : ""}
 ${l.blocks.map(blockHTML).join("\n")}
 <section class="block" aria-labelledby="qz-h"><h2 id="qz-h">Quick quiz</h2><p class="muted">Tap an answer to see feedback straight away. Your score is only kept while this page is open.</p><div id="quiz">${staticQuiz(l.quiz)}</div></section>
-<section class="block done-box" aria-label="Finish this lesson"><button type="button" class="btn ghost" id="complete" aria-pressed="false" hidden>Mark lesson as complete</button></section>`;
+<section class="block done-box" aria-label="Finish this lesson"><button type="button" class="btn ghost" id="complete" aria-pressed="false" hidden>${c.kanaVideos ? "Mark practice as complete" : "Mark lesson as complete"}</button></section>`;
 }
 
 export function lessonHTML(c, l, prev, next) {
   const n = c.lessons.length;
   const head = `
 <nav class="crumbs" aria-label="Breadcrumb"><a href="${coursePath(c)}">← ${esc(c.title)}</a></nav>
-<header class="lesson-head"><p class="num">Lesson ${l.number} of ${n} · ${esc(l.time || "")}${l.premium ? '<span class="pm-lock-tag">Premium</span>' : ""}</p><h1 class="h1-md">${esc(l.title)}</h1>
+<header class="lesson-head"><p class="num">${c.kanaVideos ? "Practice" : "Lesson"} ${l.number} of ${n} · ${esc(l.time || "")}${l.premium ? '<span class="pm-lock-tag">Premium</span>' : ""}</p><h1 class="h1-md">${esc(l.title)}</h1>
 <p class="lead"><strong>Goal:</strong> ${esc(l.objective)}</p></header>`;
   const nav = `
 <nav class="lesson-nav" aria-label="Lesson navigation">
@@ -114,7 +114,7 @@ export function overviewHTML(c, SITE) {
 <ul class="meta">${c.kanaVideos ? `<li>${c.kanaVideoCount} writing videos</li><li>${c.lessons.length} practice lessons</li>` : `<li>${c.lessons.length} lessons</li>`}<li>${hoursLabel(c)}</li><li>${esc(c.topic)}</li></ul>
 <p class="lead">${esc(c.description)}</p>
 ${priceBox(c, SITE)}
-<p class="cta-row">${c.kanaVideos ? `<a class="btn" href="${esc(c.kanaVideos)}">Start with the writing videos</a> <a class="btn ghost" id="start-btn" href="${lessonPath(c, c.lessons[0])}">Practice lesson 1</a>` : `<a class="btn" id="start-btn" href="${lessonPath(c, c.lessons[0])}">Start lesson 1</a>`}${c.pdf ? ` <a class="btn ghost" href="${esc(c.pdf)}" download>Download the workbook (PDF)</a>` : ""}${c.premium ? ` <a class="btn ghost" id="pdf-btn" href="#" download hidden>Download the workbook (PDF)</a>` : ""}</p>
+<p class="cta-row">${c.kanaVideos ? `<a class="btn" href="${esc(c.kanaVideos)}">Start with the writing videos</a> <a class="btn ghost" id="start-btn" href="${lessonPath(c, c.lessons[0])}">Practice 1</a>` : `<a class="btn" id="start-btn" href="${lessonPath(c, c.lessons[0])}">Start lesson 1</a>`}${c.pdf ? ` <a class="btn ghost" href="${esc(c.pdf)}" download>Download the workbook (PDF)</a>` : ""}${c.premium ? ` <a class="btn ghost" id="pdf-btn" href="#" download hidden>Download the workbook (PDF)</a>` : ""}</p>
 <p class="progress" id="progress" role="status" hidden></p></header>
 ${c.kanaVideos ? kanaVideosSection(c) : ""}
 <section class="block" aria-labelledby="out-h"><h2 id="out-h">What you'll learn</h2><ul class="notes">${c.outcomes.map((o) => `<li>${esc(o)}</li>`).join("")}</ul><p class="muted"><strong>Who it's for:</strong> ${esc(c.audience)}</p></section>
@@ -195,7 +195,7 @@ export function wireLesson(root, c, l) {
   const btn = $("#complete");
   if (btn) {
     btn.hidden = false;
-    const paint = () => { const on = readProgress(c).includes(l.id); btn.setAttribute("aria-pressed", String(on)); btn.textContent = on ? "✓ Completed (tap to undo)" : "Mark lesson as complete"; };
+    const paint = () => { const on = readProgress(c).includes(l.id); btn.setAttribute("aria-pressed", String(on)); btn.textContent = on ? "✓ Completed (tap to undo)" : (c.kanaVideos ? "Mark practice as complete" : "Mark lesson as complete"); };
     paint();
     btn.onclick = () => { const ids = readProgress(c), on = ids.includes(l.id); writeProgress(c, on ? ids.filter((x) => x !== l.id) : [...ids, l.id]); paint(); };
   }
@@ -208,9 +208,9 @@ export function wireOverview(root, c) {
   if (!done.length || !p) return;
   const nextL = c.lessons.find((l) => !done.includes(l.id));
   p.hidden = false;
-  p.textContent = `${done.length} of ${c.lessons.length} lessons complete.`;
+  p.textContent = `${done.length} of ${c.lessons.length} ${c.kanaVideos ? "practice lessons" : "lessons"} complete.`;
   if (start) {
-    if (nextL) { start.href = lessonPath(c, nextL); start.textContent = `Continue: lesson ${nextL.number}`; }
-    else start.textContent = "Review lesson 1";
+    if (nextL) { start.href = lessonPath(c, nextL); start.textContent = `Continue: ${c.kanaVideos ? "practice" : "lesson"} ${nextL.number}`; }
+    else start.textContent = c.kanaVideos ? "Review practice 1" : "Review lesson 1";
   }
 }

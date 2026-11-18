@@ -18,7 +18,7 @@ const freeCount = (script, list) => list.filter((e) => isFree(script, e[0])).len
 root.innerHTML = `<p class="kv-legend">🔒 = premium video. Unlock it with your access code (the same code that opens the course).</p>
 <div class="kv-tabs" role="tablist" aria-label="Choose a script">${ids.map((id) =>
   `<button type="button" role="tab" id="tab-${id}" aria-controls="panel-${id}" data-tab="${id}">${SCRIPTS[id].title} <small>${count(SCRIPTS[id])} videos</small></button>`).join("")}</div>
-${ids.map((id) => `<div role="tabpanel" id="panel-${id}" aria-labelledby="tab-${id}" hidden>${GROUPS.map((g, gi) =>
+${ids.map((id) => `<div role="tabpanel" id="panel-${id}" aria-labelledby="tab-${id}" hidden><p class="kv-practice">Practise what you learn with the <a href="/courses/${COURSE_OF[id]}/">${courseOf(id).title} practice lessons</a>.</p>${GROUPS.map((g, gi) =>
   `<details class="kv-group"${gi === 0 ? " open" : ""}><summary><strong>${g.title}</strong> <span>${SCRIPTS[id][g.id].length} videos · ${freeCount(id, SCRIPTS[id][g.id])} free</span></summary><p class="muted">${g.note}</p>
 <div class="kv-grid">${SCRIPTS[id][g.id].map((e, i) => {
   const free = isFree(id, e[0]);

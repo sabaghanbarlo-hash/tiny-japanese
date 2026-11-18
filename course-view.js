@@ -94,9 +94,16 @@ export function lessonHTML(c, l, prev, next) {
 }
 
 export function priceBox(c, SITE) {
-  if (c.premium) return `<div class="price-box"><p class="tag now">Free preview: lessons 1 to ${(c.freeLessons ?? PREMIUM.freeLessons)}</p><div data-pm-panel>${lockPanelHTML({ course: c.id, courseTitle: c.title, price: c.price, payUrl: c.payUrl || PREMIUM.payUrl, site: PREMIUM.site, heading: "Unlock the full course", intro: `The first ${(c.freeLessons ?? PREMIUM.freeLessons)} lessons are free to try. The full course adds ${c.lessons.length - (c.freeLessons ?? PREMIUM.freeLessons)} more lessons with ${c.noVideo ? "full notes, dialogues and quizzes" : "videos, quizzes and the PDF workbook"}.` })}</div><p class="pm-unlocked" data-pm-unlocked hidden><span class="pm-unlocked-tag">✓ Premium unlocked</span> ${c.noVideo ? "All lessons are open on this device." : "All lessons, videos and the workbook are open on this device."}</p></div>`;
+  if (c.premium) return `<div class="price-box"><p class="tag now">${c.kanaVideos ? `Free preview: ${c.kanaFreeVideos} writing videos + practice lessons 1 to ${(c.freeLessons ?? PREMIUM.freeLessons)}` : `Free preview: lessons 1 to ${(c.freeLessons ?? PREMIUM.freeLessons)}`}</p><div data-pm-panel>${lockPanelHTML({ course: c.id, courseTitle: c.title, price: c.price, payUrl: c.payUrl || PREMIUM.payUrl, site: PREMIUM.site, heading: "Unlock the full course", intro: c.kanaVideos ? `The first ${c.kanaFreeVideos} writing videos and the first ${(c.freeLessons ?? PREMIUM.freeLessons)} practice lessons are free to try. The full course adds the other ${c.kanaVideoCount - c.kanaFreeVideos} writing videos and ${c.lessons.length - (c.freeLessons ?? PREMIUM.freeLessons)} more practice lessons with quizzes and the PDF workbook.` : `The first ${(c.freeLessons ?? PREMIUM.freeLessons)} lessons are free to try. The full course adds ${c.lessons.length - (c.freeLessons ?? PREMIUM.freeLessons)} more lessons with ${c.noVideo ? "full notes, dialogues and quizzes" : "videos, quizzes and the PDF workbook"}.` })}</div><p class="pm-unlocked" data-pm-unlocked hidden><span class="pm-unlocked-tag">✓ Premium unlocked</span> ${c.kanaVideos ? "All writing videos, practice lessons and the workbook are open on this device." : c.noVideo ? "All lessons are open on this device." : "All lessons, videos and the workbook are open on this device."}</p></div>`;
   if (c.buyUrl) return `<div class="price-box"><p class="price">${esc(c.price || "")}</p><a class="btn" href="${esc(c.buyUrl)}" rel="noopener">Buy this course</a></div>`;
   return `<div class="price-box"><p class="tag now">Free while we launch</p><p class="muted">Everything in this course is open to read right now, no account needed.</p></div>`;
+}
+
+function kanaVideosSection(c) {
+  return `<section class="block" aria-labelledby="vid-h"><h2 id="vid-h">The course: writing videos</h2>
+<p>This course is built around one short video for every character. Each video lets you hear the sound, watch the strokes being written in order, learn a memory trick, read real words and try a quick quiz. Follow them in order, from the vowels to the combined sounds. The first ${c.kanaFreeVideos} videos are free.</p>
+<ul class="notes"><li><strong>Basic sounds</strong>: the 46 core characters</li><li><strong>Voiced sounds</strong>: the 25 characters with dakuten and handakuten</li><li><strong>Combined sounds</strong>: the 33 sounds made with a small ゃ, ゅ or ょ</li></ul>
+<p class="cta-row"><a class="btn" href="${esc(c.kanaVideos)}">Start with the writing videos</a></p></section>`;
 }
 
 export function overviewHTML(c, SITE) {
@@ -104,24 +111,25 @@ export function overviewHTML(c, SITE) {
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/courses.html">← All courses</a></nav>
 <header class="lesson-head course-head"><p class="num">Course · ${esc(c.level)}</p><h1 class="h1-md">${esc(c.title)}</h1>
 <p class="lead">${esc(c.tagline)}</p>
-<ul class="meta"><li>${c.lessons.length} lessons</li><li>${hoursLabel(c)}</li><li>${esc(c.topic)}</li></ul>
+<ul class="meta">${c.kanaVideos ? `<li>${c.kanaVideoCount} writing videos</li><li>${c.lessons.length} practice lessons</li>` : `<li>${c.lessons.length} lessons</li>`}<li>${hoursLabel(c)}</li><li>${esc(c.topic)}</li></ul>
 <p class="lead">${esc(c.description)}</p>
 ${priceBox(c, SITE)}
-<p class="cta-row"><a class="btn" id="start-btn" href="${lessonPath(c, c.lessons[0])}">Start lesson 1</a>${c.kanaVideos ? ` <a class="btn ghost" href="${esc(c.kanaVideos)}">Watch every character video</a>` : ""}${c.pdf ? ` <a class="btn ghost" href="${esc(c.pdf)}" download>Download the workbook (PDF)</a>` : ""}${c.premium ? ` <a class="btn ghost" id="pdf-btn" href="#" download hidden>Download the workbook (PDF)</a>` : ""}</p>
+<p class="cta-row">${c.kanaVideos ? `<a class="btn" href="${esc(c.kanaVideos)}">Start with the writing videos</a> <a class="btn ghost" id="start-btn" href="${lessonPath(c, c.lessons[0])}">Practice lesson 1</a>` : `<a class="btn" id="start-btn" href="${lessonPath(c, c.lessons[0])}">Start lesson 1</a>`}${c.pdf ? ` <a class="btn ghost" href="${esc(c.pdf)}" download>Download the workbook (PDF)</a>` : ""}${c.premium ? ` <a class="btn ghost" id="pdf-btn" href="#" download hidden>Download the workbook (PDF)</a>` : ""}</p>
 <p class="progress" id="progress" role="status" hidden></p></header>
+${c.kanaVideos ? kanaVideosSection(c) : ""}
 <section class="block" aria-labelledby="out-h"><h2 id="out-h">What you'll learn</h2><ul class="notes">${c.outcomes.map((o) => `<li>${esc(o)}</li>`).join("")}</ul><p class="muted"><strong>Who it's for:</strong> ${esc(c.audience)}</p></section>
-<section class="block" aria-labelledby="syl-h"><h2 id="syl-h">Lessons</h2>
+<section class="block" aria-labelledby="syl-h"><h2 id="syl-h">${c.kanaVideos ? "Practice lessons" : "Lessons"}</h2>${c.kanaVideos ? `<p class="muted">Use these to practise what you learn in the writing videos: a chart, reading practice and a quiz for each step.</p>` : ""}
 <ol class="syllabus">${c.lessons.map((l) => `<li data-lesson-id="${esc(l.id)}"${l.premium ? ' class="is-premium-lesson"' : ""}><a href="${lessonPath(c, l)}"><span class="sn">${l.number}</span><span class="st"><strong>${esc(l.title)}${l.premium ? '<span class="pm-lock-tag">Premium</span>' : ""}</strong><small>${esc(l.summary)}</small></span><span class="sd" aria-hidden="true"></span></a></li>`).join("")}</ol></section>`;
 }
 
 export function courseCard(c, h = "h2") {
   return `<article class="card lesson-card course-card">
- <p class="num">${esc(c.level)} · ${c.lessons.length} lessons</p>
+ <p class="num">${esc(c.level)} · ${c.kanaVideos ? `${c.kanaVideoCount} writing videos + ${c.lessons.length} practice lessons` : `${c.lessons.length} lessons`}</p>
  <${h}>${esc(c.title)}</${h}>
  <p class="topic">${esc(c.topic)}</p>
  <p>${esc(c.tagline)}</p>
  <ul class="vprev" aria-label="Course highlights">${c.outcomes.slice(0, 2).map((o) => `<li>${esc(o)}</li>`).join("")}</ul>
- <p class="muted">${c.premium ? `First ${(c.freeLessons ?? PREMIUM.freeLessons)} lessons free · ${esc(c.price)} for the full course` : c.buyUrl ? esc(c.price) : "Free while we launch"} · ${hoursLabel(c)}</p>
+ <p class="muted">${c.premium ? (c.kanaVideos ? `First ${c.kanaFreeVideos} writing videos and ${(c.freeLessons ?? PREMIUM.freeLessons)} practice lessons free · ${esc(c.price)} for the full course` : `First ${(c.freeLessons ?? PREMIUM.freeLessons)} lessons free · ${esc(c.price)} for the full course`) : c.buyUrl ? esc(c.price) : "Free while we launch"} · ${hoursLabel(c)}</p>
  <a class="btn" href="${coursePath(c)}" aria-label="View course: ${esc(c.title)}">View course</a>
 </article>`;
 }

@@ -26,3 +26,4 @@
 .kv-legend{margin:.2rem 0 1rem;font-size:.9rem;color:var(--soft)}
 .kv-dialog video[hidden]{display:none}
 .kv-lock{margin:0 0 6px;max-height:68vh;overflow:auto}
+.kv-practice{margin:0 0 .9rem;font-size:.95rem}

@@ -42,6 +42,9 @@ const head = `<!doctype html>
 <meta name="twitter:title" content="${TITLE}">
 <meta name="twitter:description" content="${esc(DESC)}">
 <meta name="twitter:image" content="__SITE__/og.png">
+<link rel="stylesheet" href="/dark.css">
+<script>!function(){var d=document.documentElement,t;try{t=localStorage.getItem("tiny-theme")}catch(e){}"light"!==t&&"dark"!==t&&(t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");d.setAttribute("data-theme",t)}()</script>
+<script defer src="/theme-toggle.js"></script>
 </head>`;
 
 const nav = `<header class="nav">

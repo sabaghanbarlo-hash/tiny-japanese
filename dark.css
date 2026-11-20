@@ -143,7 +143,7 @@ html[data-theme="dark"] .pm-pay{border-top:1px dashed rgba(255,255,255,0.2)}
 html[data-theme="dark"] .pm-lock-tag{background:#271d1f;color:#d897a5}
 html[data-theme="dark"] .pm-unlocked-tag{background:#1c2620;color:#9ad6b2}
 /* from catalog.css */
-html[data-theme="dark"] body.catalog{background:radial-gradient(60% 30% at 0 40%,rgba(44,28,35,0.6),transparent),radial-gradient(50% 30% at 100% 70%,rgba(31,27,43,0.6),transparent),var(--blush)}
+html[data-theme="dark"] body.catalog{--blush:#1d181b;background:radial-gradient(60% 30% at 0 40%,rgba(90,45,68,0.4),transparent),radial-gradient(50% 30% at 100% 70%,rgba(55,48,100,0.4),transparent),#1d181b}
 html[data-theme="dark"] .catalog .nav{background:linear-gradient(#1e191b,#1d181a);border-bottom:1px solid rgba(255,255,255,0.2)}
 html[data-theme="dark"] .catalog .logo{color:#d6d3d7}
 html[data-theme="dark"] .catalog .nav nav a:not(.btn){color:#d6d3d7}
@@ -152,10 +152,7 @@ html[data-theme="dark"] .catalog .nav nav a[aria-current=page]{background:#28191
 html[data-theme="dark"] .catalog .nav .btn[data-yt]{background:#262626;color:#d6d3d7}
 html[data-theme="dark"] .catalog .nav .btn[data-yt]:hover{background:#19171d}
 html[data-theme="dark"] .catalog .nav .auth-link{color:#d6d3d7}
-html[data-theme="dark"] .catalog .ch{background:url("/assets/courses/hero.webp") 67% bottom/auto 56% no-repeat,linear-gradient(180deg,#8dadf3 0,#8dadf3 30%,#141620 70%,#251820 100%)}
-html[data-theme="dark"] .catalog .ch-title{color:#d6d3d7}
-html[data-theme="dark"] .catalog .ch-sub{color:#b49ed1}
-html[data-theme="dark"] .catalog .ch-heart{color:#d996b0}
+html[data-theme="dark"] .catalog .ch{background:url("/assets/courses/hero.webp") 67% bottom/auto 56% no-repeat,linear-gradient(180deg,#8dadf3 0,#8dadf3 30%,#b9c5f4 70%,#f2d3e6 100%)}
 html[data-theme="dark"] .catalog .cc{background:#2e1d24;border:3px solid rgba(255,255,255,0.2)}
 html[data-theme="dark"] .catalog .cc-art{background:linear-gradient(135deg,#2c1c22,#1b1d2b 60%,#26181e)}
 html[data-theme="dark"] .catalog .cc-pill{background:rgba(38,38,38,0.72);color:#d6d3d7}
@@ -168,9 +165,7 @@ html[data-theme="dark"] .catalog .cc-desc{color:#d6d3d7}
 html[data-theme="dark"] .catalog .cc-list{color:#b1a0cf}
 html[data-theme="dark"] .catalog .cc-list b{color:#d6d3d7}
 html[data-theme="dark"] .catalog .cc-btn:focus-visible,html[data-theme="dark"] .catalog .nav a:focus-visible{outline:3px solid #d6d3d7}
-html[data-theme="dark"] .catalog .cta{background:url("/assets/courses/cta.webp") right bottom/auto 62% no-repeat,linear-gradient(110deg,#2c1c22,#251c29 55%,#25171d)}
-html[data-theme="dark"] .catalog .cta h2{color:#d6d3d7}
-html[data-theme="dark"] .catalog .cta p{color:#b299d6}
+html[data-theme="dark"] .catalog .cta{background:url("/assets/courses/cta.webp") right bottom/auto 62% no-repeat,linear-gradient(110deg,#ffe0ec,#f0e2f6 55%,#f9c8dc)}
 /* from account.css */
 html[data-theme="dark"] .acct-card{background:#262626;border:1px solid var(--line,rgba(255,255,255,0.2));color:#d6d3d7)}
 html[data-theme="dark"] .acct-tabs{background:#2b1b1e)}
@@ -192,3 +187,8 @@ html[data-theme="dark"] .kv-dialog::backdrop{background:rgba(41,33,54,0.8)}
 html[data-theme="dark"] .kv-close{background:#1b1916;color:#d6d3d7}
 html[data-theme="dark"] .kv-dialog video{background:#2b2b2b}
 html[data-theme="dark"] .kv-legend{color:#bab4b8}
+/* Courses page: the hero and closing banners are light artwork, so they keep their original look (and dark text) in dark mode. */
+@media(min-width:1100px){
+html[data-theme="dark"] .catalog .ch{background:url("/assets/courses/hero.webp") center/cover no-repeat,linear-gradient(180deg,#8dadf3 0,#c5c6f3 60%,#f4d3e6 100%)}
+html[data-theme="dark"] .catalog .cta{background:url("/assets/courses/cta.webp") center/cover no-repeat,linear-gradient(110deg,#ffe0ec,#f0e2f6 55%,#f9c8dc)}
+}

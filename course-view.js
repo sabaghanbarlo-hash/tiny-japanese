@@ -158,6 +158,7 @@ const writeProgress = (c, ids) => { try { localStorage.setItem(key(c), JSON.stri
 
 export function wireLesson(root, c, l) {
   const $ = (s, r = root) => r.querySelector(s);
+  if (c.id === "tiny-1000") wirePractice(root);
   const ro = $("#t-ro"), en = $("#t-en");
   if (ro) ro.onchange = () => root.querySelectorAll(".dialogue").forEach((d) => d.classList.toggle("hide-ro", !ro.checked));
   if (en) en.onchange = () => root.querySelectorAll(".dialogue").forEach((d) => d.classList.toggle("hide-en", !en.checked));
@@ -213,4 +214,71 @@ export function wireOverview(root, c) {
     if (nextL) { start.href = lessonPath(c, nextL); start.textContent = `Continue: ${c.kanaVideos ? "practice" : "lesson"} ${nextL.number}`; }
     else start.textContent = c.kanaVideos ? "Review practice 1" : "Review lesson 1";
   }
+}
+
+// ---- Practice sentences (Tiny 1000) ------------------------------------------------------------------
+// Built in the browser from the lesson's own "Words in sentences" examples, so it works for free lessons and for premium lessons
+// (which arrive from the server as ready-made HTML). Each sentence is rebuilt from tappable word tiles, then checked.
+const readSentences = (root) => {
+  const sec = [...root.querySelectorAll("section.block")].find((s) => /^words in sentences$/i.test((s.querySelector("h2")?.textContent || "").trim()));
+  if (!sec) return [];
+  return [...sec.querySelectorAll(".gitem")].map((g) => {
+    const m = /^(.*?)\s*\(([^()]*)\)\s*(.*)$/s.exec((g.querySelector("p")?.textContent || "").trim());
+    if (!m) return null;
+    const tokens = [...g.querySelectorAll(".wbw-w")].map((w) => ({ ja: w.querySelector("b")?.textContent || "", ro: w.querySelector("i")?.textContent || "" })).filter((t) => t.ja);
+    return { word: (g.querySelector("h3")?.textContent || "").trim(), ja: m[1].trim(), ro: m[2].trim(), en: m[3].trim(), tokens: tokens.length ? tokens : [{ ja: m[1].trim(), ro: m[2].trim() }] };
+  }).filter((s) => s && s.ja && s.en);
+};
+
+export function wirePractice(root) {
+  if (root.querySelector("#practice")) return;
+  const items = readSentences(root);
+  if (!items.length) return;
+  const sec = document.createElement("section");
+  sec.className = "block practice";
+  sec.setAttribute("aria-labelledby", "pr-h");
+  sec.innerHTML = `<h2 id="pr-h">Practice sentences</h2><p class="muted">Use the words you just learned. Rebuild each sentence in Japanese by tapping the words in order, then say it out loud.</p><div id="practice"></div>`;
+  const anchor = root.querySelector(".done-box");
+  if (anchor) anchor.parentNode.insertBefore(sec, anchor); else root.appendChild(sec);
+  const box = sec.querySelector("#practice");
+  const shuffle = (a) => { const b = a.slice(); for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; };
+  let order, i, placed, bank, firstTry, state, fresh = true; // state: "build" | "ok" | "no" | "shown"
+  const start = () => { order = shuffle(items); i = 0; firstTry = 0; load(); };
+  const load = () => { const s = order[i]; placed = []; bank = shuffle(s.tokens.map((_, k) => k)); if (bank.length > 1 && bank.every((k, n) => k === n)) bank = bank.reverse(); state = "build"; fresh = true; draw(); };
+  const tile = (s, k, where) => `<button type="button" class="pr-tile" data-${where}="${k}" lang="ja"${state === "ok" || state === "shown" ? " disabled" : ""}><span class="pj">${esc(s.tokens[k].ja)}</span><span class="pt-ro">${esc(s.tokens[k].ro)}</span></button>`;
+  const solved = (s) => placed.length === s.tokens.length && placed.every((k, n) => s.tokens[k].ja === s.tokens[n].ja);
+  const sentence = (s) => `<p class="pja" lang="ja">${esc(s.ja)}</p><p class="pro">${esc(s.ro)}</p><p class="pen">${esc(s.en)}</p>`;
+  const draw = () => {
+    const s = order[i], n = order.length, done = state === "ok" || state === "shown";
+    const left = bank.filter((k) => !placed.includes(k));
+    box.innerHTML = `<p class="pr-count">Sentence ${i + 1} of ${n}</p><div class="pr-bar" aria-hidden="true"><span style="width:${(i / n) * 100}%"></span></div>
+${s.word ? `<p class="pr-word">Word: <b lang="ja">${esc(s.word)}</b></p>` : ""}<p class="pr-prompt">Say it in Japanese: <strong>“${esc(s.en)}”</strong></p>
+<div class="pr-answer${done ? " ok" : state === "no" ? " no" : ""}" aria-live="polite">${placed.map((k) => tile(s, k, "p")).join("")}</div>
+${done ? "" : `<div class="pr-bank" aria-label="Word tiles">${left.map((k) => tile(s, k, "b")).join("")}</div>`}
+<div class="pr-actions">${done ? `<button type="button" class="btn" data-a="next">${i + 1 < n ? "Next sentence →" : "See my result"}</button>` : `<button type="button" class="btn ghost" data-a="undo"${placed.length ? "" : " disabled"}>Undo</button><button type="button" class="btn ghost" data-a="show">Show answer</button>`}</div>
+<div class="pr-fb${state === "build" ? "" : " show " + (state === "no" ? "no" : "ok")}" role="status" aria-live="polite">${
+      state === "ok" ? `<strong>Correct!</strong> Now say it out loud.${sentence(s)}`
+      : state === "shown" ? `<strong>Here it is.</strong> Read it, then say it out loud.${sentence(s)}`
+      : state === "no" ? "Not quite. Tap a word in your sentence to take it back, or press Undo." : ""}</div>`;
+  };
+  const finish = () => {
+    box.innerHTML = `<div class="pr-result"><p class="big">${firstTry} / ${order.length}</p><p><strong>${firstTry === order.length ? "Perfect! Every sentence on the first try." : "sentences built correctly on the first try."}</strong></p><p class="muted">Say each sentence out loud once more. Speaking it helps the words stick.</p><div class="pr-actions"><button type="button" class="btn" data-a="again">Practise again</button></div></div>`;
+  };
+  box.addEventListener("click", (e) => {
+    const s = order[i];
+    const b = e.target.closest("[data-b]"), p = e.target.closest("[data-p]"), a = e.target.closest("[data-a]");
+    if (b && state !== "ok" && state !== "shown") {
+      placed.push(+b.dataset.b); state = "build";
+      if (placed.length === s.tokens.length) { if (solved(s)) { state = "ok"; if (fresh) firstTry++; } else { state = "no"; fresh = false; } }
+      draw();
+    } else if (p && (state === "build" || state === "no")) { placed.splice(placed.indexOf(+p.dataset.p), 1); state = "build"; draw(); }
+    else if (a) {
+      const act = a.dataset.a;
+      if (act === "undo") { placed.pop(); state = "build"; draw(); }
+      else if (act === "show") { placed = s.tokens.map((_, k) => k); state = "shown"; fresh = false; draw(); }
+      else if (act === "next") { if (i + 1 < order.length) { i++; load(); } else finish(); }
+      else if (act === "again") { start(); sec.scrollIntoView({ behavior: "smooth", block: "start" }); }
+    }
+  });
+  start();
 }

@@ -45,6 +45,9 @@ const head = ({ title, desc, type = "article" }) => `<!doctype html>
 <meta name="twitter:title" content="${esc(title)}">
 <meta name="twitter:description" content="${esc(desc)}">
 <meta name="twitter:image" content="${SITE.url}/og.png">
+<link rel="stylesheet" href="/dark.css">
+<script>!function(){var d=document.documentElement,t;try{t=localStorage.getItem("tiny-theme")}catch(e){}"light"!==t&&"dark"!==t&&(t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");d.setAttribute("data-theme",t)}()</script>
+<script defer src="/theme-toggle.js"></script>
 </head>`;
 
 const shell = (meta, inner, attrs = "") => `${head(meta)}

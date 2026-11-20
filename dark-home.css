@@ -1,0 +1,47 @@
+/* Dark mode for the whole site. Rules under html[data-theme="dark"] are generated from the light stylesheets; the toggle button styles are shared. */
+html[data-theme="dark"]{color-scheme:dark}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;flex:none;width:40px;height:40px;padding:0;border:1.5px solid rgba(128,128,128,.45);border-radius:50%;background:transparent;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.theme-toggle svg{display:block;width:20px;height:20px}
+.theme-toggle:hover{background:rgba(128,128,128,.16)}
+.theme-toggle:focus-visible{outline:3px solid currentColor;outline-offset:2px}
+.theme-toggle.in-bar{display:none;margin-left:auto;margin-right:6px}
+.theme-toggle.float{position:fixed;left:14px;bottom:14px;z-index:60;background:rgba(255,255,255,.92);color:#2d2a2e;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+html[data-theme="dark"] .theme-toggle.float{background:rgba(38,34,38,.94);color:#f2ecea;border-color:rgba(255,255,255,.28)}
+@media(max-width:899px){.theme-toggle.in-bar{display:inline-flex}.theme-toggle.in-nav{display:none}}
+/* from home.css */
+html[data-theme="dark"] body.home{background:#1c1817;color:#c8bbd1}
+html[data-theme="dark"] .skip{background:#262626}
+html[data-theme="dark"] .topbar{background:#1d1819;border-bottom:1px solid rgba(255,255,255,0.2)}
+html[data-theme="dark"] .burger{background:#26181b}
+html[data-theme="dark"] #menu{background:#1d1819;border-bottom:1px solid rgba(255,255,255,0.2)}
+html[data-theme="dark"] #menu a{color:#b69ad5}
+html[data-theme="dark"] #menu a[aria-current]{background:#26181b;color:#e090aa}
+html[data-theme="dark"] .hero{background:#1d252e}
+html[data-theme="dark"] .hero-copy{background:linear-gradient(#262626,#1c1817)}
+html[data-theme="dark"] .hero h1{color:#b69ad5}
+html[data-theme="dark"] .hero .sub{color:#b69ad5}
+html[data-theme="dark"] .mika{color:#e689ab}
+html[data-theme="dark"] .alex{color:#a9d897}
+html[data-theme="dark"] .explore{color:#b69ad5}
+html[data-theme="dark"] .journey{background:#2e1d1e;border:2px solid rgba(255,255,255,0.2)}
+html[data-theme="dark"] .journey h2{color:#b69ad5}
+html[data-theme="dark"] .step a{color:#b69ad5}
+html[data-theme="dark"] .pop-head h2{color:#b69ad5}
+html[data-theme="dark"] .view-all{border:2px solid rgba(255,255,255,0.2);background:#1e1818;color:#b89cd4}
+html[data-theme="dark"] .lcard{background:#262626;border:2px solid rgba(255,255,255,0.2)}
+html[data-theme="dark"] .lcard .row{color:#b69ad5}
+html[data-theme="dark"] .premium{background:#2b1b1f url(assets/home/premium-card.webp) right bottom/cover no-repeat;border:2px solid rgba(255,255,255,0.2)}
+html[data-theme="dark"] .premium h3{color:#b69ad5}
+html[data-theme="dark"] .premium p{color:#cec0db}
+html[data-theme="dark"] .crown{fill:#efce80;stroke:#eec981}
+@media (min-width:900px){html[data-theme="dark"] .stage{background:#1c1817}html[data-theme="dark"] .topbar{background:linear-gradient(rgba(38,38,38,0.62),rgba(38,38,38,0.38))}html[data-theme="dark"] #menu{background:none}html[data-theme="dark"] #menu a{color:#be9cd3}html[data-theme="dark"] #menu a[aria-current]{background:#26181b;color:#e08fa9}html[data-theme="dark"] #menu .dd{background:#262626;border:2px solid rgba(255,255,255,0.2)}html[data-theme="dark"] #menu .dd a:hover{background:#2e1d22}html[data-theme="dark"] .hero{background:url(assets/home/hero-bg.webp) center/100% 100% no-repeat}html[data-theme="dark"] .hero-copy{background:none}html[data-theme="dark"] .lets{color:#b69ad5}html[data-theme="dark"] .lets .heart{color:#e689ab}html[data-theme="dark"] .journey .j-sub{color:#c8bbd1}html[data-theme="dark"] .home .arrow{color:#9c8ca7}html[data-theme="dark"] .view-all{background:#1d1818}html[data-theme="dark"] .premium{background-image:url(assets/home/premium-card.webp)}html[data-theme="dark"] .bar .div{background:rgba(38,38,38,0.4)}}
+/* The hero artwork stays bright in dark mode, so the text and bar that sit on it on large screens keep their original dark colours. */
+@media (min-width:900px){
+html[data-theme="dark"] .topbar{background:linear-gradient(rgba(255,255,255,.62),rgba(255,255,255,.38))}
+html[data-theme="dark"] #menu a{color:#4a2760}
+html[data-theme="dark"] #menu a[aria-current]{background:#fdc8d6;color:#d23a6a}
+html[data-theme="dark"] #menu .dd a{color:#e6dcec}
+html[data-theme="dark"] .hero h1,html[data-theme="dark"] .hero .sub,html[data-theme="dark"] .explore,html[data-theme="dark"] .lets{color:#3b2158}
+html[data-theme="dark"] .mika,html[data-theme="dark"] .lets .heart{color:#e0407a}
+html[data-theme="dark"] .alex{color:#4f9a32}
+}
